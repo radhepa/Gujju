@@ -1,0 +1,51 @@
+{
+  "id": "u11",
+  "order": 11,
+  "title": "Yesterday",
+  "tip": "Verbs like જવું agree with whoever went: હું ગયો (a man), હું ગઈ (a woman). Verbs that take an object, like ખાવું and પીવું, turn હું into મેં and agree with the thing instead: મેં ચા પીધી, મેં શાક ખાધું.",
+  "lessons": [
+    { "id": "u11-l1", "title": "I went", "items": ["w-gayo", "w-gai", "w-gayaa", "w-gaikaale", "x-i-went-market-yesterday", "x-i-went-temple-morning", "x-we-went-village"], "translit": "hint" },
+    { "id": "u11-l2", "title": "Came and was", "items": ["w-aavyo", "w-aavee", "w-aavyaa", "w-hato", "w-hatee", "x-dad-came-home", "x-i-was-home"], "translit": "hide" },
+    { "id": "u11-l3", "title": "Last week, before", "items": ["w-hatun", "w-hataa", "w-gayaa-aThvaaDiye", "w-pahelaan", "x-last-week-city", "x-house-small-before"], "translit": "hide" },
+    { "id": "u11-l4", "title": "I ate, I drank", "items": ["w-men", "w-teNe", "w-khaadhun", "w-peedhee", "w-pustak", "w-vaanchyun", "x-i-drank-tea"], "translit": "hide" },
+    { "id": "u11-l5", "title": "Putting it together", "items": ["x-yesterday-ate-shaak", "x-i-ate-rotli", "x-he-read-book", "x-meera-was-home", "x-ravi-came-last-night"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-gayo", "type": "word", "gujarati": "ગયો", "translit": "gayo", "english": "went (m.)", "notes": "For a man or boy: હું ગયો, તે ગયો. The past of જવું agrees with whoever went." },
+    { "id": "w-gai", "type": "word", "gujarati": "ગઈ", "translit": "gai", "english": "went (f.)", "notes": "For a woman or girl: હું ગઈ, મીરા ગઈ." },
+    { "id": "w-gayaa", "type": "word", "gujarati": "ગયા", "translit": "gayaa", "english": "went (plural, polite)", "notes": "With અમે, તમે, તેઓ and respected elders: અમે ગયા, દાદા ગયા." },
+    { "id": "w-gaikaale", "type": "word", "gujarati": "ગઈકાલે", "translit": "gaikaale", "english": "yesterday", "notes": "ગઈ (gone) + કાલે, so it can only mean yesterday. Also written as two words: ગઈ કાલે." },
+    { "id": "x-i-went-market-yesterday", "type": "sentence", "gujarati": "હું ગઈકાલે બજાર ગયો.", "translit": "hun gaikaale bajaar gayo.", "english": "I went to the market yesterday (a man speaking).", "alts": ["I went to the market yesterday", "Yesterday I went to the market", "I went to market yesterday"], "notes": "A woman says હું ગઈકાલે બજાર ગઈ." },
+    { "id": "x-i-went-temple-morning", "type": "sentence", "gujarati": "હું સવારે મંદિર ગઈ.", "translit": "hun savaare mandir gai.", "english": "I went to the temple in the morning (a woman speaking).", "alts": ["I went to the temple in the morning", "In the morning I went to the temple", "I went to the temple this morning"], "notes": "A man says હું સવારે મંદિર ગયો." },
+    { "id": "x-we-went-village", "type": "sentence", "gujarati": "અમે ગામ ગયા.", "translit": "ame gaam gayaa.", "english": "We went to the village.", "alts": ["We went to our village", "We went to our hometown"] },
+
+    { "id": "w-aavyo", "type": "word", "gujarati": "આવ્યો", "translit": "aavyo", "english": "came (m.)", "notes": "From આવવું (to come): તે આવ્યો = he came." },
+    { "id": "w-aavee", "type": "word", "gujarati": "આવી", "translit": "aavee", "english": "came (f.)", "notes": "તે આવી = she came." },
+    { "id": "w-aavyaa", "type": "word", "gujarati": "આવ્યા", "translit": "aavyaa", "english": "came (plural, polite)", "notes": "With અમે, તમે, તેઓ and elders: પપ્પા આવ્યા." },
+    { "id": "w-hato", "type": "word", "gujarati": "હતો", "translit": "hato", "english": "was (m.)", "notes": "The past of છે. It agrees like an adjective: હતો, હતી, હતું, હતા." },
+    { "id": "w-hatee", "type": "word", "gujarati": "હતી", "translit": "hatee", "english": "was (f.)", "notes": "હું ઘરે હતી = I was at home (a woman speaking)." },
+    { "id": "x-dad-came-home", "type": "sentence", "gujarati": "પપ્પા ઘરે આવ્યા.", "translit": "pappaa ghare aavyaa.", "english": "Dad came home.", "alts": ["Dad has come home"], "notes": "Elders take the respectful plural: પપ્પા આવ્યા, not આવ્યો." },
+    { "id": "x-i-was-home", "type": "sentence", "gujarati": "હું ઘરે હતો.", "translit": "hun ghare hato.", "english": "I was at home (a man speaking).", "alts": ["I was at home", "I was home"], "notes": "A woman says હું ઘરે હતી." },
+
+    { "id": "w-hatun", "type": "word", "gujarati": "હતું", "translit": "hatun", "english": "was (neuter)", "notes": "For neuter words like ઘર: ઘર મોટું હતું." },
+    { "id": "w-hataa", "type": "word", "gujarati": "હતા", "translit": "hataa", "english": "were (plural, polite)", "notes": "અમે ઘરે હતા = we were at home." },
+    { "id": "w-gayaa-aThvaaDiye", "type": "word", "gujarati": "ગયા અઠવાડિયે", "translit": "gayaa aThvaaDiye", "english": "last week", "notes": "અઠવાડિયું = week. Here ગયા means \"gone by\"." },
+    { "id": "w-pahelaan", "type": "word", "gujarati": "પહેલાં", "translit": "pahelaan", "english": "before, earlier", "notes": "After a length of time it means \"ago\": બે દિવસ પહેલાં = two days ago." },
+    { "id": "x-last-week-city", "type": "sentence", "gujarati": "ગયા અઠવાડિયે અમે શહેરમાં હતા.", "translit": "gayaa aThvaaDiye ame shahermaan hataa.", "english": "Last week we were in the city.", "alts": ["We were in the city last week"], "notes": "શહેરમાં = in the city. Unit 13 covers માં." },
+    { "id": "x-house-small-before", "type": "sentence", "gujarati": "પહેલાં મારું ઘર નાનું હતું.", "translit": "pahelaan maarun ghar naanun hatun.", "english": "My house was small before.", "alts": ["Before my house was small", "Earlier my house was small", "My house used to be small"] },
+
+    { "id": "w-men", "type": "word", "gujarati": "મેં", "translit": "men", "english": "I (doer, past)", "notes": "With a past verb that takes an object, હું becomes મેં and the verb agrees with the object: મેં ચા પીધી." },
+    { "id": "w-teNe", "type": "word", "gujarati": "તેણે", "translit": "teNe", "english": "he, she (doer, past)", "notes": "The same pattern as મેં: તેણે ચા પીધી = he (or she) drank tea." },
+    { "id": "w-khaadhun", "type": "word", "gujarati": "ખાધું", "translit": "khaadhun", "english": "ate (neuter object)", "notes": "It agrees with what was eaten: મેં શાક ખાધું (neuter), મેં રોટલી ખાધી (feminine), મેં ભાત ખાધો (masculine)." },
+    { "id": "w-peedhee", "type": "word", "gujarati": "પીધી", "translit": "peedhee", "english": "drank (feminine object)", "notes": "ચા is feminine, so મેં ચા પીધી. પાણી is neuter: મેં પાણી પીધું." },
+    { "id": "w-pustak", "type": "word", "gujarati": "પુસ્તક", "translit": "pustak", "english": "book", "notes": "Neuter. Another everyday word for book is ચોપડી." },
+    { "id": "w-vaanchyun", "type": "word", "gujarati": "વાંચ્યું", "translit": "vaanchyun", "english": "read (past)", "notes": "From વાંચવું. Neuter, to agree with a neuter object like પુસ્તક." },
+    { "id": "x-i-drank-tea", "type": "sentence", "gujarati": "મેં ચા પીધી.", "translit": "men chaa peedhee.", "english": "I drank tea.", "alts": ["I had tea"], "notes": "Men and women both say this: the verb agrees with ચા (feminine), not with the speaker." },
+
+    { "id": "x-yesterday-ate-shaak", "type": "sentence", "gujarati": "ગઈકાલે મેં શાક ખાધું.", "translit": "gaikaale men shaak khaadhun.", "english": "Yesterday I ate vegetable curry.", "alts": ["I ate vegetable curry yesterday", "Yesterday I ate shaak", "I ate shaak yesterday"] },
+    { "id": "x-i-ate-rotli", "type": "sentence", "gujarati": "મેં રોટલી ખાધી.", "translit": "men roTlee khaadhee.", "english": "I ate rotli.", "alts": ["I ate flatbread"], "notes": "ખાધી, not ખાધું: રોટલી is feminine, and the verb agrees with what was eaten." },
+    { "id": "x-he-read-book", "type": "sentence", "gujarati": "તેણે પુસ્તક વાંચ્યું.", "translit": "teNe pustak vaanchyun.", "english": "He read a book.", "alts": ["She read a book", "He read the book", "She read the book"] },
+    { "id": "x-meera-was-home", "type": "sentence", "gujarati": "મીરા સવારે ઘરે હતી.", "translit": "meeraa savaare ghare hatee.", "english": "Meera was at home in the morning.", "alts": ["In the morning Meera was at home", "Meera was home in the morning"] },
+    { "id": "x-ravi-came-last-night", "type": "sentence", "gujarati": "રવિ ગઈકાલે રાત્રે ઘરે આવ્યો.", "translit": "ravi gaikaale raatre ghare aavyo.", "english": "Ravi came home last night.", "alts": ["Ravi came home yesterday night", "Last night Ravi came home"] }
+  ]
+}

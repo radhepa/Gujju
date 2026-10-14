@@ -1,0 +1,52 @@
+{
+  "id": "u17",
+  "order": 17,
+  "title": "Describing things",
+  "tip": "Adjectives ending in ો, ી, ું or ા agree with the noun: સારો મિત્ર, સારી ચા, સારું ઘર, સારા મિત્રો. Others, like લાલ and ખુશ, never change.",
+  "lessons": [
+    { "id": "u17-l1", "title": "Good, in every form", "items": ["w-saaro", "w-saaree", "w-saaraa", "w-kevun", "x-ravi-good-friend", "x-tea-is-good", "x-how-is-the-food"], "translit": "hint" },
+    { "id": "u17-l2", "title": "Colours", "items": ["w-rang", "w-laal", "w-leelo", "w-kaaLo", "w-saphed", "x-what-colour-is-this", "x-her-hair-is-black"], "translit": "hide" },
+    { "id": "u17-l3", "title": "Sweet and spicy", "items": ["w-bahu", "w-meeThun", "w-teekhun", "w-khaaTun", "w-khaarun", "x-dal-is-sweet", "x-curry-very-spicy"], "translit": "hide" },
+    { "id": "u17-l4", "title": "Weather and comparing", "items": ["w-garmee", "w-varsaad", "w-kartaan", "w-sauthee", "x-meera-older-than-ravi", "x-rain-better-than-heat"], "translit": "hide" },
+    { "id": "u17-l5", "title": "Putting it together", "items": ["x-very-hot-today", "x-it-is-raining", "x-city-bigger-than-village", "x-biggest-house", "x-too-little-salt", "x-tea-better-in-rain"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-saaro", "type": "word", "gujarati": "સારો", "translit": "saaro", "english": "good (masculine)", "notes": "For masculine words: સારો મિત્ર. You already know the neuter સારું: સારું ઘર." },
+    { "id": "w-saaree", "type": "word", "gujarati": "સારી", "translit": "saaree", "english": "good (feminine)", "notes": "For feminine words: સારી ચા." },
+    { "id": "w-saaraa", "type": "word", "gujarati": "સારા", "translit": "saaraa", "english": "good (masculine plural)", "notes": "For several masculine things, and for one person you respect: સારા મિત્રો. Neuter plurals take a nasal dot: સારાં." },
+    { "id": "w-kevun", "type": "word", "gujarati": "કેવું", "translit": "kevun", "english": "what kind of, how", "notes": "Asks what something is like, and agrees like સારું: ચા કેવી છે? How is the tea?" },
+    { "id": "x-ravi-good-friend", "type": "sentence", "gujarati": "રવિ સારો મિત્ર છે.", "translit": "ravi saaro mitra chhe.", "english": "Ravi is a good friend." },
+    { "id": "x-tea-is-good", "type": "sentence", "gujarati": "ચા સારી છે.", "translit": "chaa saaree chhe.", "english": "The tea is good.", "alts": ["Tea is good"], "notes": "ચા is feminine, so it's સારી." },
+    { "id": "x-how-is-the-food", "type": "sentence", "gujarati": "ખાવાનું કેવું છે?", "translit": "khaavaanun kevun chhe?", "english": "How is the food?", "alts": ["What is the food like"] },
+
+    { "id": "w-rang", "type": "word", "gujarati": "રંગ", "translit": "rang", "english": "colour", "notes": "Masculine: કયો રંગ? Which colour?" },
+    { "id": "w-laal", "type": "word", "gujarati": "લાલ", "translit": "laal", "english": "red", "notes": "It never changes: લાલ ગુલાબ (a red rose), લાલ સાડી (a red sari)." },
+    { "id": "w-leelo", "type": "word", "gujarati": "લીલો", "translit": "leelo", "english": "green (masculine)", "notes": "It changes like સારો: લીલો, લીલી, લીલું, લીલા." },
+    { "id": "w-kaaLo", "type": "word", "gujarati": "કાળો", "translit": "kaaLo", "english": "black (masculine)", "notes": "It changes like સારો: કાળો, કાળી, કાળું, કાળા." },
+    { "id": "w-saphed", "type": "word", "gujarati": "સફેદ", "translit": "saphed", "english": "white", "notes": "It never changes, like લાલ." },
+    { "id": "x-what-colour-is-this", "type": "sentence", "gujarati": "આ કયો રંગ છે?", "translit": "aa kayo rang chhe?", "english": "What colour is this?", "alts": ["Which colour is this"], "notes": "કયો (which) agrees with રંગ, which is masculine." },
+    { "id": "x-her-hair-is-black", "type": "sentence", "gujarati": "તેના વાળ કાળા છે.", "translit": "tenaa vaaL kaaLaa chhe.", "english": "Her hair is black.", "alts": ["His hair is black"], "notes": "In Gujarati વાળ (hair) is masculine plural, so it's તેના and કાળા. તેના agrees with the hair, not the owner, so it can mean his or her." },
+
+    { "id": "w-bahu", "type": "word", "gujarati": "બહુ", "translit": "bahu", "english": "very, a lot", "notes": "Before an adjective it means \"very\" or \"too\": બહુ ગરમ, very hot." },
+    { "id": "w-meeThun", "type": "word", "gujarati": "મીઠું", "translit": "meeThun", "english": "sweet (neuter)", "notes": "Masculine મીઠો, feminine મીઠી. As a noun, મીઠું also means salt." },
+    { "id": "w-teekhun", "type": "word", "gujarati": "તીખું", "translit": "teekhun", "english": "spicy (neuter)", "notes": "Hot with chilli. Masculine તીખો, feminine તીખી." },
+    { "id": "w-khaaTun", "type": "word", "gujarati": "ખાટું", "translit": "khaaTun", "english": "sour (neuter)" },
+    { "id": "w-khaarun", "type": "word", "gujarati": "ખારું", "translit": "khaarun", "english": "salty (neuter)" },
+    { "id": "x-dal-is-sweet", "type": "sentence", "gujarati": "દાળ મીઠી છે.", "translit": "daaL meeThee chhe.", "english": "The dal is sweet.", "notes": "દાળ is feminine, so મીઠું becomes મીઠી." },
+    { "id": "x-curry-very-spicy", "type": "sentence", "gujarati": "શાક બહુ તીખું છે.", "translit": "shaak bahu teekhun chhe.", "english": "The curry is very spicy.", "alts": ["The curry is too spicy", "The vegetable curry is very spicy", "The shaak is very spicy"] },
+
+    { "id": "w-garmee", "type": "word", "gujarati": "ગરમી", "translit": "garmee", "english": "heat, hot weather", "notes": "A noun, like ઠંડી: બહુ ગરમી છે, it's very hot." },
+    { "id": "w-varsaad", "type": "word", "gujarati": "વરસાદ", "translit": "varsaad", "english": "rain", "notes": "Masculine. Rain \"falls\": વરસાદ પડે છે, it's raining." },
+    { "id": "w-kartaan", "type": "word", "gujarati": "કરતાં", "translit": "kartaan", "english": "than", "notes": "It goes after the thing you compare with: રવિ કરતાં, than Ravi. The adjective itself doesn't change: મોટું here means \"bigger\". વધારે (more) can be added: વધારે મોટું." },
+    { "id": "w-sauthee", "type": "word", "gujarati": "સૌથી", "translit": "sauthee", "english": "most, -est (of all)", "notes": "Literally \"than all\": સૌથી મોટું, the biggest." },
+    { "id": "x-meera-older-than-ravi", "type": "sentence", "gujarati": "મીરા રવિ કરતાં મોટી છે.", "translit": "meeraa ravi kartaan moTee chhe.", "english": "Meera is older than Ravi.", "alts": ["Meera is bigger than Ravi"] },
+    { "id": "x-rain-better-than-heat", "type": "sentence", "gujarati": "ગરમી કરતાં વરસાદ સારો છે.", "translit": "garmee kartaan varsaad saaro chhe.", "english": "Rain is better than heat.", "alts": ["Rain is better than the heat"], "notes": "વરસાદ is masculine, so it's સારો. With કરતાં, સારો means \"better\"." },
+
+    { "id": "x-very-hot-today", "type": "sentence", "gujarati": "આજે બહુ ગરમી છે.", "translit": "aaje bahu garmee chhe.", "english": "It is very hot today.", "alts": ["It's very hot today", "Today it is very hot"] },
+    { "id": "x-it-is-raining", "type": "sentence", "gujarati": "વરસાદ પડે છે.", "translit": "varsaad paDe chhe.", "english": "It is raining.", "alts": ["It's raining"], "notes": "Literally \"rain falls\"." },
+    { "id": "x-city-bigger-than-village", "type": "sentence", "gujarati": "શહેર ગામ કરતાં મોટું છે.", "translit": "shaher gaam kartaan moTun chhe.", "english": "The city is bigger than the village.", "alts": ["A city is bigger than a village"] },
+    { "id": "x-biggest-house", "type": "sentence", "gujarati": "આ સૌથી મોટું ઘર છે.", "translit": "aa sauthee moTun ghar chhe.", "english": "This is the biggest house." },
+    { "id": "x-too-little-salt", "type": "sentence", "gujarati": "દાળમાં મીઠું ઓછું છે.", "translit": "daaLmaan meeThun ochhun chhe.", "english": "There is too little salt in the dal.", "alts": ["There's too little salt in the dal", "The dal needs more salt"], "notes": "Here મીઠું is the noun, salt." },
+    { "id": "x-tea-better-in-rain", "type": "sentence", "gujarati": "વરસાદમાં ચા વધારે સારી લાગે છે.", "translit": "varsaadmaan chaa vadhaare saaree laage chhe.", "english": "Tea tastes better in the rain.", "alts": ["Tea feels better in the rain", "Tea is nicer in the rain", "In the rain tea tastes better"], "notes": "લાગવું also means \"to seem\" or \"to taste\". વધારે સારી is \"better\" for a feminine word like ચા." }
+  ]
+}

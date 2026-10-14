@@ -1,0 +1,51 @@
+{
+  "id": "u13",
+  "order": 13,
+  "title": "Where things are",
+  "tip": "Gujarati puts \"in, on, from, of\" after the word: ઘરમાં (in the house), ટેબલ પર (on the table), રવિનું ઘર (Ravi's house). Before them a word ending in ો or ું usually changes to ા: રસ્તો → રસ્તામાં, મારું → મારા માટે.",
+  "lessons": [
+    { "id": "u13-l1", "title": "In, on, from", "items": ["w-maan", "w-par", "w-thee", "w-Tebal", "x-book-on-table", "x-bus-on-the-way", "x-comes-from-city"], "translit": "hint" },
+    { "id": "u13-l2", "title": "Up, down, in, out", "items": ["w-upar", "w-neeche", "w-andar", "w-bahaar", "w-paase", "x-dad-is-outside", "x-temple-near-market"], "translit": "hide" },
+    { "id": "u13-l3", "title": "Which way?", "items": ["w-paachhaL", "w-aagaL", "w-seedhaa", "w-Daabee-baaju", "w-jamNee-baaju", "x-go-straight-turn-left", "x-school-ahead-right"], "translit": "hide" },
+    { "id": "u13-l4", "title": "Whose? With whom?", "items": ["w-nun", "w-nee", "w-no", "w-saathe", "w-maaTe", "x-ravis-house", "x-tea-for-you"], "translit": "hide" },
+    { "id": "u13-l5", "title": "Putting it together", "items": ["x-meeras-sister-school", "x-ravis-brother-behind-house", "x-market-with-friend", "x-ravis-dad-upstairs"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-maan", "type": "word", "gujarati": "માં", "translit": "maan", "english": "in (joined to the word)", "notes": "Written onto the end of a word: ઘરમાં = in the house, શહેરમાં = in the city." },
+    { "id": "w-par", "type": "word", "gujarati": "પર", "translit": "par", "english": "on", "notes": "Written as a separate word: ટેબલ પર = on the table." },
+    { "id": "w-thee", "type": "word", "gujarati": "થી", "translit": "thee", "english": "from (joined to the word)", "notes": "Joined like માં: શહેરથી = from the city, ઘરેથી = from home." },
+    { "id": "w-Tebal", "type": "word", "gujarati": "ટેબલ", "translit": "Tebal", "english": "table", "notes": "Borrowed from English, like many everyday words." },
+    { "id": "x-book-on-table", "type": "sentence", "gujarati": "પુસ્તક ટેબલ પર છે.", "translit": "pustak Tebal par chhe.", "english": "The book is on the table." },
+    { "id": "x-bus-on-the-way", "type": "sentence", "gujarati": "બસ રસ્તામાં છે.", "translit": "bas rastaamaan chhe.", "english": "The bus is on the way.", "notes": "રસ્તો (road) becomes રસ્તા before માં. Words ending in ો change this way before a postposition." },
+    { "id": "x-comes-from-city", "type": "sentence", "gujarati": "તે શહેરથી આવે છે.", "translit": "te shaherthee aave chhe.", "english": "He comes from the city.", "alts": ["She comes from the city", "He is coming from the city", "She is coming from the city"] },
+
+    { "id": "w-upar", "type": "word", "gujarati": "ઉપર", "translit": "upar", "english": "up, upstairs, on top", "notes": "Also \"on top of\" or \"above\": ટેબલની ઉપર." },
+    { "id": "w-neeche", "type": "word", "gujarati": "નીચે", "translit": "neeche", "english": "down, under", "notes": "Also \"downstairs\". ટેબલ નીચે = under the table." },
+    { "id": "w-andar", "type": "word", "gujarati": "અંદર", "translit": "andar", "english": "inside", "notes": "અંદર આવો! = come in!" },
+    { "id": "w-bahaar", "type": "word", "gujarati": "બહાર", "translit": "bahaar", "english": "outside", "notes": "ઘરની બહાર = outside the house." },
+    { "id": "w-paase", "type": "word", "gujarati": "પાસે", "translit": "paase", "english": "near", "notes": "Also \"has\": મારી પાસે પૈસા છે = I have money." },
+    { "id": "x-dad-is-outside", "type": "sentence", "gujarati": "પપ્પા બહાર છે.", "translit": "pappaa bahaar chhe.", "english": "Dad is outside.", "alts": ["Dad is out"] },
+    { "id": "x-temple-near-market", "type": "sentence", "gujarati": "મંદિર બજાર પાસે છે.", "translit": "mandir bajaar paase chhe.", "english": "The temple is near the market.", "notes": "પાસે can follow the word directly, as here, or come after ની: બજારની પાસે. Both are common." },
+
+    { "id": "w-paachhaL", "type": "word", "gujarati": "પાછળ", "translit": "paachhaL", "english": "behind", "notes": "Usually after ની: ઘરની પાછળ = behind the house." },
+    { "id": "w-aagaL", "type": "word", "gujarati": "આગળ", "translit": "aagaL", "english": "ahead, in front", "notes": "The opposite of પાછળ." },
+    { "id": "w-seedhaa", "type": "word", "gujarati": "સીધા", "translit": "seedhaa", "english": "straight on", "notes": "સીધા જાઓ = go straight on." },
+    { "id": "w-Daabee-baaju", "type": "word", "gujarati": "ડાબી બાજુ", "translit": "Daabee baaju", "english": "on the left, to the left", "notes": "Literally \"the left side\". બાજુ = side." },
+    { "id": "w-jamNee-baaju", "type": "word", "gujarati": "જમણી બાજુ", "translit": "jamNee baaju", "english": "on the right, to the right", "notes": "Literally \"the right side\"." },
+    { "id": "x-go-straight-turn-left", "type": "sentence", "gujarati": "સીધા જાઓ, પછી ડાબી બાજુ વળો.", "translit": "seedhaa jaao, pachhee Daabee baaju vaLo.", "english": "Go straight on, then turn left.", "alts": ["Go straight then turn left", "Go straight on then turn to the left"], "notes": "જાઓ = go and વળો = turn, both polite commands." },
+    { "id": "x-school-ahead-right", "type": "sentence", "gujarati": "સ્કૂલ આગળ જમણી બાજુ છે.", "translit": "skool aagaL jamNee baaju chhe.", "english": "The school is ahead on the right.", "alts": ["The school is up ahead on the right"] },
+
+    { "id": "w-nun", "type": "word", "gujarati": "નું", "translit": "nun", "english": "of, 's (neuter)", "notes": "Joined to the owner and matched to the thing owned: રવિનું ઘર (ઘર is neuter)." },
+    { "id": "w-nee", "type": "word", "gujarati": "ની", "translit": "nee", "english": "of, 's (feminine)", "notes": "રવિની બહેન = Ravi's sister." },
+    { "id": "w-no", "type": "word", "gujarati": "નો", "translit": "no", "english": "of, 's (masculine)", "notes": "રવિનો ભાઈ = Ravi's brother. નો and નું become ના before plurals and elders (રવિના પપ્પા) and before a word with a postposition (રવિના ઘરમાં)." },
+    { "id": "w-saathe", "type": "word", "gujarati": "સાથે", "translit": "saathe", "english": "with", "notes": "મારી સાથે = with me; મિત્ર સાથે = with a friend." },
+    { "id": "w-maaTe", "type": "word", "gujarati": "માટે", "translit": "maaTe", "english": "for", "notes": "મારા માટે = for me, તમારા માટે = for you." },
+    { "id": "x-ravis-house", "type": "sentence", "gujarati": "આ રવિનું ઘર છે.", "translit": "aa ravinun ghar chhe.", "english": "This is Ravi's house." },
+    { "id": "x-tea-for-you", "type": "sentence", "gujarati": "આ ચા તમારા માટે છે.", "translit": "aa chaa tamaaraa maaTe chhe.", "english": "This tea is for you.", "notes": "તમારું becomes તમારા before માટે." },
+
+    { "id": "x-meeras-sister-school", "type": "sentence", "gujarati": "મીરાની બહેન સ્કૂલમાં છે.", "translit": "meeraanee bahen skoolmaan chhe.", "english": "Meera's sister is at school.", "alts": ["Meera's sister is in school", "Meera's sister is in the school"] },
+    { "id": "x-ravis-brother-behind-house", "type": "sentence", "gujarati": "રવિનો ભાઈ ઘરની પાછળ છે.", "translit": "ravino bhaai gharnee paachhaL chhe.", "english": "Ravi's brother is behind the house." },
+    { "id": "x-market-with-friend", "type": "sentence", "gujarati": "હું મારા મિત્ર સાથે બજાર જાઉં છું.", "translit": "hun maaraa mitra saathe bajaar jaaun chhun.", "english": "I am going to the market with my friend.", "alts": ["I go to the market with my friend", "I'm going to the market with my friend"] },
+    { "id": "x-ravis-dad-upstairs", "type": "sentence", "gujarati": "રવિના પપ્પા ઉપર છે.", "translit": "ravinaa pappaa upar chhe.", "english": "Ravi's dad is upstairs.", "notes": "રવિના, not રવિનો: પપ્પા takes the respectful plural." }
+  ]
+}

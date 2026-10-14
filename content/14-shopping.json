@@ -1,0 +1,51 @@
+{
+  "id": "u14",
+  "order": 14,
+  "title": "Shopping and money",
+  "tip": "A price goes with the thing's gender: ચા બાર રૂપિયાની છે (ચા is feminine), આ કેટલાનું છે? (neuter). For the time, ask કેટલા વાગ્યા છે? and answer બે વાગ્યા છે or સાડા ત્રણ વાગ્યા છે.",
+  "lessons": [
+    { "id": "u14-l1", "title": "Eleven to fifteen", "items": ["w-agiyaar", "w-baar", "w-ter", "w-chaud", "w-pandar", "w-roopiyaa", "x-tea-twelve-rupees"], "translit": "hint" },
+    { "id": "u14-l2", "title": "Sixteen to twenty-five", "items": ["w-soL", "w-sattar", "w-aDhaar", "w-ogNees", "w-pachees", "x-milk-twenty-five-rupees"], "translit": "hide" },
+    { "id": "u14-l3", "title": "How much is it?", "items": ["w-keTlaanun", "w-monghun", "w-sastun", "w-ochhun", "w-thoDun", "x-how-much-is-this", "x-bring-price-down"], "translit": "hide" },
+    { "id": "u14-l4", "title": "Kilos and the clock", "items": ["w-kilo", "w-khaanD", "w-vadhaare", "w-vaagyaa", "w-saaDaa", "x-what-time-is-it", "x-half-past-three"], "translit": "hide" },
+    { "id": "u14-l5", "title": "Putting it together", "items": ["x-kilo-of-sugar", "x-this-is-too-expensive", "x-hundred-too-much", "x-this-shop-cheap", "x-half-past-eleven"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-agiyaar", "type": "word", "gujarati": "અગિયાર", "translit": "agiyaar", "english": "eleven", "notes": "In digits: ૧૧." },
+    { "id": "w-baar", "type": "word", "gujarati": "બાર", "translit": "baar", "english": "twelve", "notes": "In digits: ૧૨." },
+    { "id": "w-ter", "type": "word", "gujarati": "તેર", "translit": "ter", "english": "thirteen", "notes": "In digits: ૧૩." },
+    { "id": "w-chaud", "type": "word", "gujarati": "ચૌદ", "translit": "chaud", "english": "fourteen", "notes": "In digits: ૧૪. ૌ is the vowel sign for ઔ." },
+    { "id": "w-pandar", "type": "word", "gujarati": "પંદર", "translit": "pandar", "english": "fifteen", "notes": "In digits: ૧૫." },
+    { "id": "w-roopiyaa", "type": "word", "gujarati": "રૂપિયા", "translit": "roopiyaa", "english": "rupees", "notes": "One rupee is એક રૂપિયો. Prices are said with the number first: દસ રૂપિયા." },
+    { "id": "x-tea-twelve-rupees", "type": "sentence", "gujarati": "ચા બાર રૂપિયાની છે.", "translit": "chaa baar roopiyaanee chhe.", "english": "The tea is twelve rupees.", "alts": ["Tea is twelve rupees", "The tea is 12 rupees", "Tea is 12 rupees", "The tea costs twelve rupees"], "notes": "Literally \"the tea is of twelve rupees\". ની matches ચા, which is feminine." },
+
+    { "id": "w-soL", "type": "word", "gujarati": "સોળ", "translit": "soL", "english": "sixteen", "notes": "In digits: ૧૬." },
+    { "id": "w-sattar", "type": "word", "gujarati": "સત્તર", "translit": "sattar", "english": "seventeen", "notes": "In digits: ૧૭." },
+    { "id": "w-aDhaar", "type": "word", "gujarati": "અઢાર", "translit": "aDhaar", "english": "eighteen", "notes": "In digits: ૧૮." },
+    { "id": "w-ogNees", "type": "word", "gujarati": "ઓગણીસ", "translit": "ogNees", "english": "nineteen", "notes": "In digits: ૧૯. Literally \"one short of twenty\" (વીસ)." },
+    { "id": "w-pachees", "type": "word", "gujarati": "પચીસ", "translit": "pachees", "english": "twenty-five", "notes": "In digits: ૨૫. Don't mix it up with પચાસ (50)." },
+    { "id": "x-milk-twenty-five-rupees", "type": "sentence", "gujarati": "આ દૂધ પચીસ રૂપિયાનું છે.", "translit": "aa doodh pachees roopiyaanun chhe.", "english": "This milk is twenty-five rupees.", "alts": ["This milk is 25 rupees", "This milk costs twenty-five rupees", "This milk costs 25 rupees"], "notes": "નું, because દૂધ is neuter." },
+
+    { "id": "w-keTlaanun", "type": "word", "gujarati": "કેટલાનું", "translit": "keTlaanun", "english": "how much (price, neuter)", "notes": "Literally \"of how much\". It matches the thing: કેટલાનું (neuter), કેટલાની (feminine), કેટલાનો (masculine)." },
+    { "id": "w-monghun", "type": "word", "gujarati": "મોંઘું", "translit": "monghun", "english": "expensive", "notes": "Agrees like other adjectives: મોંઘો, મોંઘી, મોંઘું." },
+    { "id": "w-sastun", "type": "word", "gujarati": "સસ્તું", "translit": "sastun", "english": "cheap", "notes": "Agrees like other adjectives: સસ્તો, સસ્તી, સસ્તું." },
+    { "id": "w-ochhun", "type": "word", "gujarati": "ઓછું", "translit": "ochhun", "english": "less, too little" },
+    { "id": "w-thoDun", "type": "word", "gujarati": "થોડું", "translit": "thoDun", "english": "a little", "notes": "With a feminine word it is થોડી: થોડી ચા." },
+    { "id": "x-how-much-is-this", "type": "sentence", "gujarati": "આ કેટલાનું છે?", "translit": "aa keTlaanun chhe?", "english": "How much is this?" },
+    { "id": "x-bring-price-down", "type": "sentence", "gujarati": "થોડું ઓછું કરો.", "translit": "thoDun ochhun karo.", "english": "Bring the price down a little.", "alts": ["Bring it down a little", "Make it a little less", "Reduce it a little", "Lower the price a little", "Bring down the price a little"], "notes": "The usual way to bargain. Literally \"make (it) a little less\"; કરો is the polite \"do\"." },
+
+    { "id": "w-kilo", "type": "word", "gujarati": "કિલો", "translit": "kilo", "english": "kilo", "notes": "એક કિલો, બે કિલો: it does not change." },
+    { "id": "w-khaanD", "type": "word", "gujarati": "ખાંડ", "translit": "khaanD", "english": "sugar", "notes": "Feminine: ખાંડ કેટલાની છે?" },
+    { "id": "w-vadhaare", "type": "word", "gujarati": "વધારે", "translit": "vadhaare", "english": "more, too much", "notes": "The opposite of ઓછું. થોડું વધારે = a little more." },
+    { "id": "w-vaagyaa", "type": "word", "gujarati": "વાગ્યા", "translit": "vaagyaa", "english": "o'clock", "notes": "Literally \"(the hours) have struck\". One o'clock is singular: એક વાગ્યો." },
+    { "id": "w-saaDaa", "type": "word", "gujarati": "સાડા", "translit": "saaDaa", "english": "half past", "notes": "Used from 3 up: સાડા ત્રણ = 3:30. Half past one is દોઢ and half past two is અઢી." },
+    { "id": "x-what-time-is-it", "type": "sentence", "gujarati": "કેટલા વાગ્યા છે?", "translit": "keTlaa vaagyaa chhe?", "english": "What time is it?", "notes": "Literally \"how many have struck?\"" },
+    { "id": "x-half-past-three", "type": "sentence", "gujarati": "સાડા ત્રણ વાગ્યા છે.", "translit": "saaDaa traN vaagyaa chhe.", "english": "It is half past three.", "alts": ["It's half past three", "It is three thirty", "It's three thirty"] },
+
+    { "id": "x-kilo-of-sugar", "type": "sentence", "gujarati": "એક કિલો ખાંડ કેટલાની છે?", "translit": "ek kilo khaanD keTlaanee chhe?", "english": "How much is a kilo of sugar?", "alts": ["How much is one kilo of sugar"], "notes": "કેટલાની, not કેટલાનું: ખાંડ is feminine." },
+    { "id": "x-this-is-too-expensive", "type": "sentence", "gujarati": "આ બહુ મોંઘું છે.", "translit": "aa bahu monghun chhe.", "english": "This is too expensive.", "alts": ["This is very expensive", "It is too expensive", "It's too expensive"], "notes": "બહુ = very, too." },
+    { "id": "x-hundred-too-much", "type": "sentence", "gujarati": "સો રૂપિયા બહુ વધારે છે.", "translit": "so roopiyaa bahu vadhaare chhe.", "english": "A hundred rupees is too much.", "alts": ["One hundred rupees is too much", "100 rupees is too much"] },
+    { "id": "x-this-shop-cheap", "type": "sentence", "gujarati": "આ દુકાન સસ્તી છે.", "translit": "aa dukaan sastee chhe.", "english": "This shop is cheap.", "notes": "સસ્તી, not સસ્તું: દુકાન is feminine." },
+    { "id": "x-half-past-eleven", "type": "sentence", "gujarati": "સાડા અગિયાર વાગ્યા છે.", "translit": "saaDaa agiyaar vaagyaa chhe.", "english": "It is half past eleven.", "alts": ["It's half past eleven", "It is eleven thirty", "It's eleven thirty"] }
+  ]
+}

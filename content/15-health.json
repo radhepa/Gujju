@@ -1,0 +1,52 @@
+{
+  "id": "u15",
+  "order": 15,
+  "title": "Body and feelings",
+  "tip": "Feelings happen to you in Gujarati: the person takes ને and the feeling is the subject. મને ભૂખ લાગી છે is literally \"to me hunger has struck\": I'm hungry.",
+  "lessons": [
+    { "id": "u15-l1", "title": "The body", "items": ["w-maathun", "w-peT", "w-haath", "w-pag", "w-aankh", "w-daant", "x-hands-cold"], "translit": "hint" },
+    { "id": "u15-l2", "title": "Hungry and cold", "items": ["w-mane", "w-laagvun", "w-bhookh", "w-taras", "w-thanDee", "x-i-am-hungry", "x-i-feel-cold"], "translit": "hide" },
+    { "id": "u15-l3", "title": "It hurts", "items": ["w-gaLun", "w-dukhvun", "w-taav", "w-davaa", "w-DokTar", "x-head-hurts", "x-i-have-fever"], "translit": "hide" },
+    { "id": "u15-l4", "title": "Happy, sad, tired", "items": ["w-Dar", "w-khush", "w-dukhee", "w-thaakelo", "w-beemaar", "x-i-am-scared", "x-ravi-is-tired"], "translit": "hide" },
+    { "id": "u15-l5", "title": "Putting it together", "items": ["x-where-does-it-hurt", "x-stomach-ache", "x-fever-and-throat", "x-happy-but-sad", "x-grandpa-has-fever"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-maathun", "type": "word", "gujarati": "માથું", "translit": "maathun", "english": "head", "notes": "Neuter, like ઘર: મારું માથું." },
+    { "id": "w-peT", "type": "word", "gujarati": "પેટ", "translit": "peT", "english": "stomach, tummy", "notes": "Neuter: મારું પેટ." },
+    { "id": "w-haath", "type": "word", "gujarati": "હાથ", "translit": "haath", "english": "hand, arm", "notes": "Masculine: મારો હાથ. One word covers the hand and the whole arm." },
+    { "id": "w-pag", "type": "word", "gujarati": "પગ", "translit": "pag", "english": "leg, foot", "notes": "Masculine: મારો પગ. One word for both the leg and the foot." },
+    { "id": "w-aankh", "type": "word", "gujarati": "આંખ", "translit": "aankh", "english": "eye", "notes": "Feminine: મારી આંખ. Eyes: આંખો." },
+    { "id": "w-daant", "type": "word", "gujarati": "દાંત", "translit": "daant", "english": "tooth, teeth", "notes": "Masculine, and the same word for one or many: મારો દાંત, મારા દાંત." },
+    { "id": "x-hands-cold", "type": "sentence", "gujarati": "મારા હાથ ઠંડા છે.", "translit": "maaraa haath ThanDaa chhe.", "english": "My hands are cold.", "notes": "હાથ is masculine and plural here, so મારો becomes મારા and ઠંડું becomes ઠંડા." },
+
+    { "id": "w-mane", "type": "word", "gujarati": "મને", "translit": "mane", "english": "to me, me", "notes": "The ને form of હું. Feelings, likes and needs are said this way: મને ભૂખ લાગી છે, I'm hungry." },
+    { "id": "w-laagvun", "type": "word", "gujarati": "લાગવું", "translit": "laagvun", "english": "to be felt, to feel", "notes": "The feeling is the subject and the person takes ને: મને ઠંડી લાગે છે, I feel cold (literally \"cold is felt by me\"). It also means \"to seem\"." },
+    { "id": "w-bhookh", "type": "word", "gujarati": "ભૂખ", "translit": "bhookh", "english": "hunger", "notes": "Feminine, so the verb ends in ી: ભૂખ લાગી છે." },
+    { "id": "w-taras", "type": "word", "gujarati": "તરસ", "translit": "taras", "english": "thirst", "notes": "Feminine too: મને તરસ લાગી છે, I'm thirsty." },
+    { "id": "w-thanDee", "type": "word", "gujarati": "ઠંડી", "translit": "ThanDee", "english": "the cold, cold weather", "notes": "A noun. Compare ઠંડું for a cold thing: પાણી ઠંડું છે, but મને ઠંડી લાગે છે. ઠંડી is also the feminine of ઠંડું: ઠંડી ચા, cold tea." },
+    { "id": "x-i-am-hungry", "type": "sentence", "gujarati": "મને ભૂખ લાગી છે.", "translit": "mane bhookh laagee chhe.", "english": "I am hungry.", "alts": ["I'm hungry"], "notes": "Literally \"hunger has struck me\". For hunger and thirst Gujarati uses this has-happened form." },
+    { "id": "x-i-feel-cold", "type": "sentence", "gujarati": "મને ઠંડી લાગે છે.", "translit": "mane ThanDee laage chhe.", "english": "I feel cold.", "alts": ["I am cold", "I'm cold"] },
+
+    { "id": "w-gaLun", "type": "word", "gujarati": "ગળું", "translit": "gaLun", "english": "throat", "notes": "Neuter: મારું ગળું." },
+    { "id": "w-dukhvun", "type": "word", "gujarati": "દુખવું", "translit": "dukhvun", "english": "to hurt, to ache", "notes": "The part that hurts is the subject: મારું માથું દુખે છે, my head hurts." },
+    { "id": "w-taav", "type": "word", "gujarati": "તાવ", "translit": "taav", "english": "fever", "notes": "Masculine. મને તાવ છે, I have a fever (literally \"to me is fever\")." },
+    { "id": "w-davaa", "type": "word", "gujarati": "દવા", "translit": "davaa", "english": "medicine", "notes": "Feminine. To take medicine is દવા લેવી." },
+    { "id": "w-DokTar", "type": "word", "gujarati": "ડૉક્ટર", "translit": "DokTar", "english": "doctor", "notes": "Borrowed from English. The sign ૉ marks the open \"o\" of English words." },
+    { "id": "x-head-hurts", "type": "sentence", "gujarati": "મારું માથું દુખે છે.", "translit": "maarun maathun dukhe chhe.", "english": "My head hurts.", "alts": ["I have a headache"] },
+    { "id": "x-i-have-fever", "type": "sentence", "gujarati": "મને તાવ છે.", "translit": "mane taav chhe.", "english": "I have a fever.", "alts": ["I have fever"] },
+
+    { "id": "w-Dar", "type": "word", "gujarati": "ડર", "translit": "Dar", "english": "fear", "notes": "Masculine. મને ડર લાગે છે, I'm scared. બીક (feminine) is just as common: મને બીક લાગે છે." },
+    { "id": "w-khush", "type": "word", "gujarati": "ખુશ", "translit": "khush", "english": "happy", "notes": "It never changes: હું ખુશ છું, મીરા ખુશ છે." },
+    { "id": "w-dukhee", "type": "word", "gujarati": "દુઃખી", "translit": "dukhee", "english": "sad, unhappy", "notes": "From દુઃખ (sorrow), the opposite of સુખ. It doesn't change for gender either." },
+    { "id": "w-thaakelo", "type": "word", "gujarati": "થાકેલો", "translit": "thaakelo", "english": "tired (masculine)", "notes": "Feminine થાકેલી. People more often say થાકી ગયો (a man) or થાકી ગઈ (a woman): હું થાકી ગયો છું, I'm tired." },
+    { "id": "w-beemaar", "type": "word", "gujarati": "બીમાર", "translit": "beemaar", "english": "ill, sick", "notes": "It never changes: તે બીમાર છે, he or she is ill." },
+    { "id": "x-i-am-scared", "type": "sentence", "gujarati": "મને ડર લાગે છે.", "translit": "mane Dar laage chhe.", "english": "I am scared.", "alts": ["I'm scared", "I am afraid", "I'm afraid", "I feel scared"] },
+    { "id": "x-ravi-is-tired", "type": "sentence", "gujarati": "રવિ થાકી ગયો છે.", "translit": "ravi thaakee gayo chhe.", "english": "Ravi is tired.", "alts": ["Ravi has got tired", "Ravi got tired"], "notes": "Literally \"Ravi has got tired\". For a woman: મીરા થાકી ગઈ છે." },
+
+    { "id": "x-where-does-it-hurt", "type": "sentence", "gujarati": "ક્યાં દુખે છે?", "translit": "kyaan dukhe chhe?", "english": "Where does it hurt?", "notes": "The first thing a doctor asks." },
+    { "id": "x-stomach-ache", "type": "sentence", "gujarati": "મારા પેટમાં દુખે છે.", "translit": "maaraa peTmaan dukhe chhe.", "english": "I have a stomach ache.", "alts": ["My stomach hurts", "My stomach aches", "I have a stomachache"], "notes": "With પેટ people say \"it hurts in my stomach\": પેટમાં, in the stomach." },
+    { "id": "x-fever-and-throat", "type": "sentence", "gujarati": "મને તાવ છે અને મારું ગળું દુખે છે.", "translit": "mane taav chhe ane maarun gaLun dukhe chhe.", "english": "I have a fever and my throat hurts.", "alts": ["I have fever and my throat hurts", "I have a fever and a sore throat"], "notes": "અને = and." },
+    { "id": "x-happy-but-sad", "type": "sentence", "gujarati": "મીરા ખુશ છે, પણ રવિ દુઃખી છે.", "translit": "meeraa khush chhe, paN ravi dukhee chhe.", "english": "Meera is happy, but Ravi is sad.", "alts": ["Meera is happy but Ravi is unhappy"], "notes": "પણ = but. It also means \"also, too\"." },
+    { "id": "x-grandpa-has-fever", "type": "sentence", "gujarati": "દાદાને તાવ છે.", "translit": "daadaane taav chhe.", "english": "Grandpa has a fever.", "alts": ["Grandfather has a fever", "Grandpa has fever"], "notes": "Any person can take ને, not just મને: દાદાને, to Grandpa." }
+  ]
+}

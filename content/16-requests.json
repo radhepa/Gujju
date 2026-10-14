@@ -1,0 +1,53 @@
+{
+  "id": "u16",
+  "order": 16,
+  "title": "Asking nicely",
+  "tip": "Commands have three levels. With તું use the bare stem: આવ (come). With તમે add ઓ: આવો. Add જો to make it gentle, or to mean later: આવજો (do come).",
+  "lessons": [
+    { "id": "u16-l1", "title": "Come in, sit down", "items": ["w-aav", "w-aavo", "w-bes", "w-beso", "w-aheen", "x-ravi-come-here", "x-come-in-come-in"], "translit": "hint" },
+    { "id": "u16-l2", "title": "Give and take", "items": ["w-aapvun", "w-levun", "w-lo", "w-pharee", "x-give-me-water", "x-have-some-tea", "x-do-come-again"], "translit": "hide" },
+    { "id": "u16-l3", "title": "Please", "items": ["w-jaraa", "w-maherbaanee-kareene", "w-dheeme", "w-bolo", "x-could-you-give-water", "x-please-speak-slowly", "x-could-you-say-again"], "translit": "hide" },
+    { "id": "u16-l4", "title": "No, thank you", "items": ["w-mahemaan", "w-naa-aabhaar", "w-have", "w-naheen", "w-jamvun", "x-will-you-have-tea", "x-enough-no-more"], "translit": "hide" },
+    { "id": "u16-l5", "title": "Putting it together", "items": ["x-come-in-sit-down", "x-mom-give-me-tea", "x-grandpa-sit-here", "x-tea-or-water", "x-have-some-dal", "x-eat-before-you-go"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-aav", "type": "word", "gujarati": "આવ", "translit": "aav", "english": "come! (friendly)", "notes": "The bare stem of આવવું. Use it with people you call તું: friends, children, brothers and sisters." },
+    { "id": "w-aavo", "type": "word", "gujarati": "આવો", "translit": "aavo", "english": "come! (polite)", "notes": "Stem + ઓ. Use it with people you call તમે: elders, strangers, guests." },
+    { "id": "w-bes", "type": "word", "gujarati": "બેસ", "translit": "bes", "english": "sit! (friendly)", "notes": "From બેસવું, to sit." },
+    { "id": "w-beso", "type": "word", "gujarati": "બેસો", "translit": "beso", "english": "sit! (polite)" },
+    { "id": "w-aheen", "type": "word", "gujarati": "અહીં", "translit": "aheen", "english": "here", "notes": "The opposite of ત્યાં (there)." },
+    { "id": "x-ravi-come-here", "type": "sentence", "gujarati": "રવિ, અહીં આવ.", "translit": "ravi, aheen aav.", "english": "Ravi, come here.", "alts": ["Come here Ravi"] },
+    { "id": "x-come-in-come-in", "type": "sentence", "gujarati": "આવો, આવો!", "translit": "aavo, aavo!", "english": "Come in, come in!", "alts": ["Come come", "Please come in"], "notes": "How a Gujarati host welcomes you at the door." },
+
+    { "id": "w-aapvun", "type": "word", "gujarati": "આપવું", "translit": "aapvun", "english": "to give", "notes": "Friendly આપ, polite આપો." },
+    { "id": "w-levun", "type": "word", "gujarati": "લેવું", "translit": "levun", "english": "to take, to have (food or drink)", "notes": "Friendly લે, polite લો. It's how you offer food: ચા લો, have some tea." },
+    { "id": "w-lo", "type": "word", "gujarati": "લો", "translit": "lo", "english": "take! have! (polite)", "notes": "The polite command of લેવું is short: લો, not લેઓ. Friendly: લે." },
+    { "id": "w-pharee", "type": "word", "gujarati": "ફરી", "translit": "pharee", "english": "again" },
+    { "id": "x-give-me-water", "type": "sentence", "gujarati": "મને પાણી આપ.", "translit": "mane paaNee aap.", "english": "Give me water.", "alts": ["Give me some water"], "notes": "Friendly, as you'd say it to a brother or sister." },
+    { "id": "x-have-some-tea", "type": "sentence", "gujarati": "ચા લો.", "translit": "chaa lo.", "english": "Have some tea.", "alts": ["Have tea", "Take some tea", "Please have some tea"] },
+    { "id": "x-do-come-again", "type": "sentence", "gujarati": "ફરી આવજો!", "translit": "pharee aavjo!", "english": "Do come again!", "alts": ["Come again", "Please come again"], "notes": "The જો ending makes a request gentle, often for later. That's why આવજો means goodbye: \"do come (again)\". With તું it is આવજે." },
+
+    { "id": "w-jaraa", "type": "word", "gujarati": "જરા", "translit": "jaraa", "english": "just, a little (softens a request)", "notes": "Put it before a request to make it gentle, like \"just\" in English." },
+    { "id": "w-maherbaanee-kareene", "type": "word", "gujarati": "મહેરબાની કરીને", "translit": "maherbaanee kareene", "english": "please (formal)", "notes": "Literally \"doing a kindness\". It's formal; with family and friends a polite verb and જરા are enough." },
+    { "id": "w-dheeme", "type": "word", "gujarati": "ધીમે", "translit": "dheeme", "english": "slowly" },
+    { "id": "w-bolo", "type": "word", "gujarati": "બોલો", "translit": "bolo", "english": "speak! say! (polite)", "notes": "From બોલવું. Friendly: બોલ." },
+    { "id": "x-could-you-give-water", "type": "sentence", "gujarati": "જરા પાણી આપશો?", "translit": "jaraa paaNee aapsho?", "english": "Could you give me some water?", "alts": ["Would you give me some water", "Will you give me some water", "Can you give me some water", "Could you give me a little water"], "notes": "Asking in the future, \"will you give?\", is the most polite way to ask." },
+    { "id": "x-please-speak-slowly", "type": "sentence", "gujarati": "મહેરબાની કરીને ધીમે બોલો.", "translit": "maherbaanee kareene dheeme bolo.", "english": "Please speak slowly.", "alts": ["Please speak slower", "Speak slowly please"] },
+    { "id": "x-could-you-say-again", "type": "sentence", "gujarati": "જરા ફરીથી બોલશો?", "translit": "jaraa phareethee bolsho?", "english": "Could you say that again?", "alts": ["Could you say it again", "Would you say that again", "Can you say that again", "Will you say it again"], "notes": "ફરીથી is ફરી + થી, \"once more\": the usual word when you ask someone to repeat. Plain ફરી બોલશો? is fine too." },
+
+    { "id": "w-mahemaan", "type": "word", "gujarati": "મહેમાન", "translit": "mahemaan", "english": "guest", "notes": "A guest always gets the polite forms: આવો, બેસો, ચા લેશો?" },
+    { "id": "w-naa-aabhaar", "type": "word", "gujarati": "ના, આભાર", "translit": "naa, aabhaar", "english": "no, thank you", "notes": "Polite, but a host will often offer again. Saying no twice is normal." },
+    { "id": "w-have", "type": "word", "gujarati": "હવે", "translit": "have", "english": "now" },
+    { "id": "w-naheen", "type": "word", "gujarati": "નહીં", "translit": "naheen", "english": "not, no more", "notes": "Used for refusing and for the future: હવે નહીં, not any more. For \"is not\" Gujarati uses નથી." },
+    { "id": "w-jamvun", "type": "word", "gujarati": "જમવું", "translit": "jamvun", "english": "to eat (a meal)", "notes": "A nicer word than ખાવું for having a meal. જમીને means \"after eating\"." },
+    { "id": "x-will-you-have-tea", "type": "sentence", "gujarati": "ચા લેશો?", "translit": "chaa lesho?", "english": "Will you have some tea?", "alts": ["Would you like some tea", "Will you have tea", "Would you like tea"] },
+    { "id": "x-enough-no-more", "type": "sentence", "gujarati": "બસ, હવે નહીં.", "translit": "bas, have naheen.", "english": "That's enough, no more.", "alts": ["Enough no more", "That is enough no more"], "notes": "બસ also means \"enough\". It's what you say when the host keeps filling your plate." },
+
+    { "id": "x-come-in-sit-down", "type": "sentence", "gujarati": "આવો, બેસો.", "translit": "aavo, beso.", "english": "Come in, sit down.", "alts": ["Come in and sit down", "Come and sit", "Come sit down"] },
+    { "id": "x-mom-give-me-tea", "type": "sentence", "gujarati": "મમ્મી, મને ચા આપ.", "translit": "mammee, mane chaa aap.", "english": "Mom, give me tea.", "alts": ["Mom give me some tea", "Mum give me tea", "Give me tea Mom"], "notes": "Many children call their mother તું, so the friendly form is normal here. With a father or grandparent many families use the polite form: પપ્પા, મને ચા આપો." },
+    { "id": "x-grandpa-sit-here", "type": "sentence", "gujarati": "દાદા, અહીં બેસો.", "translit": "daadaa, aheen beso.", "english": "Grandpa, sit here.", "alts": ["Grandpa please sit here", "Grandfather sit here", "Sit here Grandpa"], "notes": "Grandparents and other elders get the polite form." },
+    { "id": "x-tea-or-water", "type": "sentence", "gujarati": "ચા લેશો કે પાણી?", "translit": "chaa lesho ke paaNee?", "english": "Will you have tea or water?", "alts": ["Would you like tea or water"], "notes": "કે means \"or\" in questions." },
+    { "id": "x-have-some-dal", "type": "sentence", "gujarati": "થોડી દાળ લો.", "translit": "thoDee daaL lo.", "english": "Have some dal.", "alts": ["Have a little dal", "Take some dal", "Take a little dal"], "notes": "દાળ is feminine, so થોડું becomes થોડી." },
+    { "id": "x-eat-before-you-go", "type": "sentence", "gujarati": "જમીને જજો.", "translit": "jameene jajo.", "english": "Eat before you go.", "alts": ["Have a meal before you go", "Have dinner before you go", "Eat before you leave"], "notes": "Literally \"go after eating\". A host's warm way of asking you to stay for the meal." }
+  ]
+}

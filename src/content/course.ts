@@ -10,6 +10,14 @@ import u07 from '../../content/07-greetings.json';
 import u08 from '../../content/08-family.json';
 import u09 from '../../content/09-sentences.json';
 import u10 from '../../content/10-daily-life.json';
+import u11 from '../../content/11-past.json';
+import u12 from '../../content/12-future.json';
+import u13 from '../../content/13-places.json';
+import u14 from '../../content/14-shopping.json';
+import u15 from '../../content/15-health.json';
+import u16 from '../../content/16-requests.json';
+import u17 from '../../content/17-describing.json';
+import u18 from '../../content/18-can-must.json';
 
 // One JSON file per unit, so a unit can be checked and edited on its own.
 // Units, lessons and items are flattened into separate tables here.
@@ -29,7 +37,7 @@ interface UnitFile {
   items: (Omit<Item, 'audioFile' | 'type'> & { type: string; audioFile?: string | null })[];
 }
 
-export const unitFiles: UnitFile[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10];
+export const unitFiles: UnitFile[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18];
 
 export function buildCourse(files: UnitFile[]): Course {
   const units: Unit[] = [];

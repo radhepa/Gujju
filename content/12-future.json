@@ -1,0 +1,50 @@
+{
+  "id": "u12",
+  "order": 12,
+  "title": "Tomorrow",
+  "tip": "The future tense has a શ in it: હું જઈશ, અમે જઈશું, તમે જશો, તે જશે. For a plan, use the verb's stem + વાનો + છે: હું કાલે જવાનો છું (a man), હું કાલે જવાની છું (a woman).",
+  "lessons": [
+    { "id": "u12-l1", "title": "I will go", "items": ["w-jaish", "w-jashe", "w-jaishun", "w-jasho", "x-i-will-go-market", "x-we-will-go-temple", "x-where-will-you-go"], "translit": "hint" },
+    { "id": "u12-l2", "title": "Who will come?", "items": ["w-aaveesh", "w-aavshe", "w-aavtee-kaale", "w-pachhee", "x-dad-will-come-tomorrow", "x-i-will-come-later"], "translit": "hide" },
+    { "id": "u12-l3", "title": "See you tomorrow", "items": ["w-khaaish", "w-peeshun", "w-maLeeshun", "w-vaancheesh", "x-see-you-tomorrow", "x-tonight-i-will-read"], "translit": "hide" },
+    { "id": "u12-l4", "title": "Plans", "items": ["w-javaano", "w-javaanee", "w-javaanaa", "w-aavtaa-aThvaaDiye", "w-aavtaa-mahine", "x-going-to-go-tomorrow", "x-going-to-village-next-week"], "translit": "hide" },
+    { "id": "u12-l5", "title": "Putting it together", "items": ["x-mom-will-go-city", "x-we-are-going-village", "x-when-will-you-come", "x-i-will-eat-later", "x-this-evening-tea"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-jaish", "type": "word", "gujarati": "જઈશ", "translit": "jaish", "english": "will go (I)", "notes": "હું જઈશ = I will go. Men and women say it the same way: the future does not change for gender." },
+    { "id": "w-jashe", "type": "word", "gujarati": "જશે", "translit": "jashe", "english": "will go (he, she, they)", "notes": "તે જશે, તેઓ જશે. Respected elders take it too: દાદા જશે." },
+    { "id": "w-jaishun", "type": "word", "gujarati": "જઈશું", "translit": "jaishun", "english": "will go (we)", "notes": "અમે જઈશું." },
+    { "id": "w-jasho", "type": "word", "gujarati": "જશો", "translit": "jasho", "english": "will go (polite you)", "notes": "તમે જશો." },
+    { "id": "x-i-will-go-market", "type": "sentence", "gujarati": "હું કાલે બજાર જઈશ.", "translit": "hun kaale bajaar jaish.", "english": "I will go to the market tomorrow.", "alts": ["Tomorrow I will go to the market", "I'll go to the market tomorrow"], "notes": "કાલે means tomorrow here because the verb is future." },
+    { "id": "x-we-will-go-temple", "type": "sentence", "gujarati": "અમે મંદિર જઈશું.", "translit": "ame mandir jaishun.", "english": "We will go to the temple.", "alts": ["We'll go to the temple"] },
+    { "id": "x-where-will-you-go", "type": "sentence", "gujarati": "તમે ક્યાં જશો?", "translit": "tame kyaan jasho?", "english": "Where will you go?" },
+
+    { "id": "w-aaveesh", "type": "word", "gujarati": "આવીશ", "translit": "aaveesh", "english": "will come (I)", "notes": "હું આવીશ = I will come." },
+    { "id": "w-aavshe", "type": "word", "gujarati": "આવશે", "translit": "aavshe", "english": "will come (he, she, they)", "notes": "With અમે it is આવીશું, with તમે it is આવશો." },
+    { "id": "w-aavtee-kaale", "type": "word", "gujarati": "આવતી કાલે", "translit": "aavtee kaale", "english": "tomorrow", "notes": "આવતી (coming) + કાલે, so it can only mean tomorrow. Also written as one word: આવતીકાલે. Plain કાલે works too when the verb is future." },
+    { "id": "w-pachhee", "type": "word", "gujarati": "પછી", "translit": "pachhee", "english": "later, then", "notes": "Also \"after\": ખાધા પછી = after eating." },
+    { "id": "x-dad-will-come-tomorrow", "type": "sentence", "gujarati": "પપ્પા આવતી કાલે આવશે.", "translit": "pappaa aavtee kaale aavshe.", "english": "Dad will come tomorrow.", "alts": ["Tomorrow Dad will come"] },
+    { "id": "x-i-will-come-later", "type": "sentence", "gujarati": "હું પછી આવીશ.", "translit": "hun pachhee aaveesh.", "english": "I will come later.", "alts": ["I'll come later"] },
+
+    { "id": "w-khaaish", "type": "word", "gujarati": "ખાઈશ", "translit": "khaaish", "english": "will eat (I)", "notes": "Drop વું from ખાવું and add ઈશ: ખાઈશ." },
+    { "id": "w-peeshun", "type": "word", "gujarati": "પીશું", "translit": "peeshun", "english": "will drink (we)", "notes": "From પીવું: અમે પીશું." },
+    { "id": "w-maLeeshun", "type": "word", "gujarati": "મળીશું", "translit": "maLeeshun", "english": "will meet (we)", "notes": "From મળવું (to meet). કાલે મળીશું is the everyday \"see you tomorrow\"." },
+    { "id": "w-vaancheesh", "type": "word", "gujarati": "વાંચીશ", "translit": "vaancheesh", "english": "will read (I)", "notes": "From વાંચવું: હું વાંચીશ." },
+    { "id": "x-see-you-tomorrow", "type": "sentence", "gujarati": "કાલે મળીશું.", "translit": "kaale maLeeshun.", "english": "See you tomorrow.", "alts": ["We will meet tomorrow", "We'll meet tomorrow"] },
+    { "id": "x-tonight-i-will-read", "type": "sentence", "gujarati": "આજે રાત્રે હું પુસ્તક વાંચીશ.", "translit": "aaje raatre hun pustak vaancheesh.", "english": "Tonight I will read a book.", "alts": ["I will read a book tonight", "Tonight I'll read a book"] },
+
+    { "id": "w-javaano", "type": "word", "gujarati": "જવાનો", "translit": "javaano", "english": "going to go (m.)", "notes": "A plan: હું કાલે જવાનો છું = I am going to go tomorrow (a man speaking)." },
+    { "id": "w-javaanee", "type": "word", "gujarati": "જવાની", "translit": "javaanee", "english": "going to go (f.)", "notes": "હું કાલે જવાની છું (a woman speaking)." },
+    { "id": "w-javaanaa", "type": "word", "gujarati": "જવાના", "translit": "javaanaa", "english": "going to go (plural, polite)", "notes": "અમે જવાના છીએ, તમે જવાના છો." },
+    { "id": "w-aavtaa-aThvaaDiye", "type": "word", "gujarati": "આવતા અઠવાડિયે", "translit": "aavtaa aThvaaDiye", "english": "next week", "notes": "Literally \"in the coming week\". Compare ગયા અઠવાડિયે, last week." },
+    { "id": "w-aavtaa-mahine", "type": "word", "gujarati": "આવતા મહિને", "translit": "aavtaa mahine", "english": "next month", "notes": "મહિનો = month." },
+    { "id": "x-going-to-go-tomorrow", "type": "sentence", "gujarati": "હું કાલે જવાનો છું.", "translit": "hun kaale javaano chhun.", "english": "I am going to go tomorrow (a man speaking).", "alts": ["I am going to go tomorrow", "I'm going to go tomorrow", "I am going tomorrow", "I'm going tomorrow", "Tomorrow I am going to go", "Tomorrow I am going"], "notes": "A woman says હું કાલે જવાની છું." },
+    { "id": "x-going-to-village-next-week", "type": "sentence", "gujarati": "હું આવતા અઠવાડિયે ગામ જવાની છું.", "translit": "hun aavtaa aThvaaDiye gaam javaanee chhun.", "english": "I am going to go to the village next week (a woman speaking).", "alts": ["I am going to go to the village next week", "I am going to the village next week", "Next week I am going to go to the village", "Next week I am going to the village"], "notes": "A man says જવાનો છું." },
+
+    { "id": "x-mom-will-go-city", "type": "sentence", "gujarati": "મમ્મી આવતા મહિને શહેર જશે.", "translit": "mammee aavtaa mahine shaher jashe.", "english": "Mom will go to the city next month.", "alts": ["Next month Mom will go to the city"] },
+    { "id": "x-we-are-going-village", "type": "sentence", "gujarati": "અમે કાલે ગામ જવાના છીએ.", "translit": "ame kaale gaam javaanaa chhiye.", "english": "We are going to go to the village tomorrow.", "alts": ["We are going to the village tomorrow", "Tomorrow we are going to go to the village", "Tomorrow we are going to the village"] },
+    { "id": "x-when-will-you-come", "type": "sentence", "gujarati": "તમે ક્યારે આવશો?", "translit": "tame kyaare aavsho?", "english": "When will you come?", "notes": "આવશો is the polite \"you will come\", like જશો." },
+    { "id": "x-i-will-eat-later", "type": "sentence", "gujarati": "હું પછી ખાઈશ.", "translit": "hun pachhee khaaish.", "english": "I will eat later.", "alts": ["I'll eat later"] },
+    { "id": "x-this-evening-tea", "type": "sentence", "gujarati": "આજે સાંજે અમે ચા પીશું.", "translit": "aaje saanje ame chaa peeshun.", "english": "This evening we will drink tea.", "alts": ["We will drink tea this evening", "This evening we will have tea"] }
+  ]
+}
