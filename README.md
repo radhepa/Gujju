@@ -2,7 +2,7 @@
 
 <img src="docs/kesar.gif" alt="Kesar the lion waving, cheering, reading and walking" width="480">
 
-A free, Duolingo-style app for learning to read and write Gujarati. It starts with the script, because that's where most people get stuck (plenty of us grew up hearing Gujarati at home and still can't read a menu), then moves on to words and short sentences.
+A free app for learning to read and write Gujarati. It starts with the script, because that's where most people get stuck (plenty of us grew up hearing Gujarati at home and still can't read a menu), then moves on to words, real sentences and short stories.
 
 I'm a native speaker, and the course is built around that: which letters come first, which ones learners mix up, and how words are actually said at home rather than how a word list spells them.
 
@@ -24,6 +24,12 @@ Runs on iOS and the web from one Expo codebase, works offline, and keeps your pr
 - **Spaced repetition** with FSRS. Every letter, word and sentence has its own schedule, and the home screen shows how many are due today
 - **XP and a daily streak**, plus a test-out quiz to skip a unit you already know
 - **Transliteration fades out** across units 7 to 10 (shown, then tap-to-reveal, then gone) so you end up actually reading the script
+- **Sentence practice**, in the style of Clozemaster: a Gujarati sentence with one word blanked, pick it from four or type it (in Gujarati or in English letters), then see the whole sentence with every word glossed. Three collections, about 460 sentences from beginner to everyday conversation, each sentence on its own FSRS schedule until it's mastered
+- **A library**: four short graded stories (Kesar at the market, the thirsty crow, Navratri night, a letter to Ba). Tap any word for its meaning, show the transliteration word by word, reveal the English a sentence at a time, then practise the story's sentences
+- **Your own books**: paste any Gujarati (a recipe, a bhajan, a letter from home) and it becomes a book you can read with glosses and practise as cloze. Add the English after a `|` on a line if you have it. Sentences saved during practice go into a "My sentences" book
+- **A dictionary** of about 1,800 words and word forms, searchable in English, Gujarati or transliteration, with the dictionary form, notes and example sentences
+- **Read aloud** with the device's own Gujarati voice where there is one (most Android phones and Chrome). The speaker buttons stay hidden otherwise
+- **Progress**: a daily XP goal, best streak, a twelve-week activity grid and the reviews coming up this week
 - **Kesar** (કેસર), the mascot: a Gir lion in a saffron pagdi, named after saffron and the Gir Kesar mango
 
 ## Running it
@@ -42,10 +48,14 @@ On the web, number keys pick an answer, Enter checks and continues, and Backspac
 
 ```
 content/            one JSON file per unit: lessons + items
+content/cloze/      sentence practice collections
+content/books/      the built-in stories
+content/lexicon/    the word list that glosses every sentence
 src/app/            screens (Expo Router)
 src/lib/            exercises, lesson session, scoring, FSRS, streak; no React
 src/storage/        one Store interface, SQLite on iOS, IndexedDB on web
 src/session/        the lesson player and the five exercise views
+src/practice/       the sentence practice player
 src/mascot/         Kesar's rig (parts, joints, clips) and the component that animates it
 src/state/          progress context, the only thing screens talk to
 scripts/            renders Kesar outside the app: pose sheet, README gif, app icons
@@ -75,7 +85,31 @@ Each unit is one file in `content/`. An item looks like this:
 
 `npm test` checks the content too: unique ids, lessons only pointing at real items, Gujarati fields actually in Gujarati script, no two items sharing an answer, and every lesson producing 10 to 12 exercises.
 
-Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and an `n` after a vowel means the vowel is nasal (hun, chhun, kyaan).
+### Sentences, books and the word list
+
+A practice sentence carries its own blank and three wrong answers, and its transliteration lines up word for word with the Gujarati:
+
+```json
+{ "id": "ev-001", "gu": "હું ઘરે છું.", "tr": "hun ghare chhun.", "en": "I am at home.",
+  "cloze": "છું", "wrong": ["છે", "છો", "છીએ"] }
+```
+
+The wrong answers are picked to fail for a reason (here, only છું goes with હું), not just to be different words. Every word in every sentence, and every wrong answer, has an entry in `content/lexicon/`, which is what makes tap-to-gloss and the dictionary work. A pasted book has no hand-picked blanks, so it gets them automatically: the least common word the word list knows, with wrong answers of the same kind and the same ending.
+
+### Accuracy checks
+
+`npx jest accuracy` runs 100 checks over every piece of Gujarati in the app ([the list](src/content/accuracy.ts)). They're the things a machine can be sure of:
+
+- **Script**: Gujarati only, no stray Hindi letters, vowel signs in valid places, normalised Unicode, no danda
+- **Transliteration**: every word checked letter by letter against its spelling (retroflex capitals, long vowels, chh vs ch, ph, v), and the same word spelled the same way everywhere
+- **Translations**: questions stay questions, negatives stay negative, and numbers, days, colours, family words, time words, question words and pronouns all match
+- **Grammar**: હું takes છું, અમે takes છીએ, મેં never takes છું, postpositions joined to their word, no doubled words
+- **The blanks**: every wrong answer is glossed, is a single word, and doesn't secretly mean the same as the answer
+- **Spelling consistency**: no word spelled two ways (short vs long vowel, with and without a nasal mark, ન vs ણ)
+
+A violation someone has looked at and judged fine is listed with its reason, so the check stays strict for everything else. What the checks can't tell you is whether a sentence sounds natural. Every sentence has also had a separate read-through for that, and the open questions where families genuinely say it differently are in [docs/content-review.md](docs/content-review.md).
+
+Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and an `n` after a vowel means the vowel is nasal (hun, chhun, kyaan). Long vowels are doubled (aa, ee, oo), ફ is ph even where it sounds like f, and the silent vowel inside a word is dropped the way it's said (ghar, samje, chhokro).
 
 ## Status
 
@@ -84,10 +118,14 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 - [x] Script units 1 to 6
 - [x] Review queue with FSRS
 - [x] Word and sentence units 7 to 10 (first draft, about 120 words)
-- [ ] Full read-through of every item, and more vocabulary toward ~300 words
+- [x] Sentence practice, three collections (~460 sentences)
+- [x] Library: four graded stories and your own books
+- [x] Dictionary, read-aloud, daily goal and progress page
+- [x] 100 automated accuracy checks over all the Gujarati
+- [ ] My own read-through of everything, starting with the open questions in docs/content-review.md
 - [ ] Sign-in and sync between devices (Supabase)
 - [ ] iOS build on a real phone, web deploy on Vercel
-- [ ] Audio: one recording per item as `<item id>.m4a`. The `audioFile` field is already there
+- [ ] Recorded audio: one recording per item as `<item id>.m4a` (the `audioFile` field is already there), to replace device speech
 
 ## Mascot
 
