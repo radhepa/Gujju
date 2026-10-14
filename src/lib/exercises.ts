@@ -105,6 +105,7 @@ export function pickLetter(ctx: Ctx, it: Item): PickExercise {
     question: isWord ? 'Which word means this?' : isNumber ? 'Which is this number?' : 'Which letter makes this sound?',
     prompt: promptOf(it),
     promptTranslit: isWord ? translitFor(ctx, it) : undefined,
+    translitHint: ctx.mode === 'hint',
     optionsAreGujarati: true,
     options: shuffle([it.gujarati, ...wrong], ctx.rng),
     answer: it.gujarati,
@@ -124,8 +125,11 @@ export function matchPairs(ctx: Ctx, items: Item[]): MatchExercise {
   };
 }
 
+const isSingleWord = (s: string) => /^[\u0A80-\u0AFF]+$/.test(s);
+
+// Single words only: phrases like કેમ છો? are practised as whole items.
 export function canBuildWord(it: Item): boolean {
-  return it.type === 'word' && splitAksharas(it.gujarati).length >= 2;
+  return it.type === 'word' && isSingleWord(it.gujarati) && splitAksharas(it.gujarati).length >= 2;
 }
 
 // Taps akshara tiles in order to spell the word.
@@ -134,6 +138,7 @@ export function buildWord(ctx: Ctx, it: Item): BuildExercise {
   const candidates = new Set<string>();
   for (const i of shuffle(ctx.pool, ctx.rng)) {
     if (i.type === 'sentence') continue;
+    if (!isSingleWord(i.gujarati)) continue;
     for (const a of splitAksharas(i.gujarati)) if (!answer.includes(a)) candidates.add(a);
   }
   const extras = [...candidates].slice(0, answer.length >= 4 ? 2 : 3);
@@ -144,6 +149,7 @@ export function buildWord(ctx: Ctx, it: Item): BuildExercise {
     question: 'Spell this word',
     prompt: it.english,
     promptTranslit: translitFor(ctx, it),
+    translitHint: ctx.mode === 'hint',
     promptIsGujarati: false,
     tilesAreGujarati: true,
     tiles: shuffle([...answer, ...extras], ctx.rng),
@@ -161,7 +167,7 @@ export function buildSentence(ctx: Ctx, it: Item, toEnglish: boolean): BuildExer
   const lower = answer.map((t) => t.toLowerCase());
   const bank = new Set<string>();
   for (const i of shuffle(ctx.pool, ctx.rng)) {
-    if (i.id === it.id) continue;
+    if (i.id === it.id || i.type === 'letter' || i.type === 'number') continue;
     const words = i.type === 'sentence' ? tok(toEnglish ? i.english : i.gujarati) : [toEnglish ? i.english : i.gujarati];
     for (const w of words) {
       if (w.includes(' ') || w.includes('(')) continue;
@@ -176,6 +182,7 @@ export function buildSentence(ctx: Ctx, it: Item, toEnglish: boolean): BuildExer
     question: toEnglish ? 'Translate into English' : 'Translate into Gujarati',
     prompt: toEnglish ? it.gujarati : it.english,
     promptTranslit: toEnglish ? translitFor(ctx, it) : undefined,
+    translitHint: ctx.mode === 'hint',
     promptIsGujarati: toEnglish,
     tilesAreGujarati: !toEnglish,
     tiles: shuffle([...answer, ...extras], ctx.rng),

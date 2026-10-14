@@ -74,6 +74,8 @@ export interface PickExercise extends ExerciseBase {
   prompt: string;
   // Shown under the prompt when transliteration is allowed.
   promptTranslit?: string;
+  // Transliteration is there but hidden until tapped.
+  translitHint?: boolean;
   // Whether options are Gujarati script (needs the Gujarati font).
   optionsAreGujarati: boolean;
   options: string[];
@@ -90,6 +92,7 @@ export interface BuildExercise extends ExerciseBase {
   kind: 'build-word' | 'build-sentence';
   prompt: string;
   promptTranslit?: string;
+  translitHint?: boolean;
   promptIsGujarati: boolean;
   tilesAreGujarati: boolean;
   tiles: string[];

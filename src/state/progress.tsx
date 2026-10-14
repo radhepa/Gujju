@@ -1,0 +1,108 @@
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { course } from '../content/course';
+import { dayKey } from '../lib/dates';
+import { applyChanges, applySession, type SessionKind } from '../lib/progress';
+import type { Summary } from '../lib/session';
+import { dueCards } from '../lib/srs';
+import { computeStreak, type Streak } from '../lib/streak';
+import type { Settings, Snapshot } from '../lib/types';
+import { openStore } from '../storage/openStore';
+import type { Store } from '../storage/store';
+
+interface ProgressValue {
+  ready: boolean;
+  snapshot: Snapshot;
+  completed: Set<string>;
+  streak: Streak;
+  xpToday: number;
+  dueIds: string[];
+  learnedIds: string[];
+  finishSession(summary: Summary, kind: SessionKind, lessonIds: string[]): Promise<void>;
+  updateSettings(patch: Partial<Settings>): Promise<void>;
+  resetProgress(): Promise<void>;
+}
+
+const Ctx = createContext<ProgressValue | null>(null);
+
+const EMPTY: Snapshot = {
+  lessonProgress: [],
+  cards: [],
+  dailyStats: [],
+  settings: { retention: 0.9, alwaysShowTranslit: false },
+};
+
+// Local first: the UI updates from memory straight away and the write to
+// SQLite / IndexedDB happens behind it. Nothing waits on the network.
+export function ProgressProvider({ children }: { children: ReactNode }) {
+  const store = useRef<Store | null>(null);
+  const [snapshot, setSnapshot] = useState<Snapshot>(EMPTY);
+  const [ready, setReady] = useState(false);
+  // Re-evaluate "today" when the app has been left open past midnight.
+  const [today, setToday] = useState(() => dayKey(new Date()));
+
+  useEffect(() => {
+    let alive = true;
+    openStore()
+      .then(async (s) => {
+        store.current = s;
+        const snap = await s.load();
+        if (alive) setSnapshot(snap);
+      })
+      .catch((e) => console.warn('Could not load progress', e))
+      .finally(() => alive && setReady(true));
+    const t = setInterval(() => setToday(dayKey(new Date())), 60_000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
+  }, []);
+
+  const finishSession = useCallback(
+    async (summary: Summary, kind: SessionKind, lessonIds: string[]) => {
+      const changes = applySession(snapshot, summary, { kind, lessonIds, now: new Date() });
+      setSnapshot((s) => applyChanges(s, changes));
+      await store.current?.save(changes);
+    },
+    [snapshot],
+  );
+
+  const updateSettings = useCallback(
+    async (patch: Partial<Settings>) => {
+      const settings = { ...snapshot.settings, ...patch };
+      setSnapshot((s) => ({ ...s, settings }));
+      await store.current?.saveSettings(settings);
+    },
+    [snapshot.settings],
+  );
+
+  const resetProgress = useCallback(async () => {
+    setSnapshot((s) => ({ ...EMPTY, settings: s.settings }));
+    await store.current?.reset();
+  }, []);
+
+  const value = useMemo<ProgressValue>(() => {
+    const now = new Date();
+    const known = new Set(Object.keys(course.items));
+    const cards = snapshot.cards.filter((c) => known.has(c.itemId));
+    return {
+      ready,
+      snapshot,
+      completed: new Set(snapshot.lessonProgress.map((p) => p.lessonId)),
+      streak: computeStreak(snapshot.dailyStats, today),
+      xpToday: snapshot.dailyStats.find((s) => s.date === today)?.xp ?? 0,
+      dueIds: dueCards(cards, now).map((c) => c.itemId),
+      learnedIds: cards.map((c) => c.itemId),
+      finishSession,
+      updateSettings,
+      resetProgress,
+    };
+  }, [snapshot, ready, today, finishSession, updateSettings, resetProgress]);
+
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+}
+
+export function useProgress(): ProgressValue {
+  const v = useContext(Ctx);
+  if (!v) throw new Error('useProgress outside ProgressProvider');
+  return v;
+}

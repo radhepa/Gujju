@@ -1,7 +1,7 @@
 import { course, unitFiles } from '../content/course';
 import { splitAksharas } from '../lib/aksharas';
 
-const GUJARATI = /^[઀-૿\s.,!?]+$/;
+const GUJARATI = /^[\u0A80-\u0AFF\s.,!?]+$/;
 
 describe('content', () => {
   const allItems = unitFiles.flatMap((u) => u.items);
