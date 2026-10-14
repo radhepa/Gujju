@@ -1,5 +1,5 @@
 import type { Changes } from '../lib/progress';
-import type { Settings, Snapshot } from '../lib/types';
+import type { Book, Settings, Snapshot } from '../lib/types';
 
 // One interface over SQLite (iOS) and IndexedDB (web). Lesson and review
 // code only ever sees this. The data is small (a few hundred cards), so the
@@ -10,5 +10,7 @@ export interface Store {
   load(): Promise<Snapshot>;
   save(changes: Changes): Promise<void>;
   saveSettings(settings: Settings): Promise<void>;
+  saveBook(book: Book): Promise<void>;
+  deleteBook(id: string): Promise<void>;
   reset(): Promise<void>;
 }

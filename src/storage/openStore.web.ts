@@ -1,5 +1,5 @@
 import { mergeStat, type Changes } from '../lib/progress';
-import { DEFAULT_SETTINGS, type Settings, type Snapshot } from '../lib/types';
+import { DEFAULT_SETTINGS, type Book, type Settings, type Snapshot } from '../lib/types';
 import { memoryStore } from './memory';
 import type { Store } from './store';
 
@@ -7,8 +7,9 @@ import type { Store } from './store';
 // cross-origin isolation headers, which isn't worth it for a few hundred rows.
 
 const DB_NAME = 'gujju';
-const VERSION = 1;
-const STORES = ['lesson_progress', 'card_state', 'review_log', 'daily_stats', 'settings'] as const;
+const VERSION = 2;
+// Cleared by a progress reset. Settings and books are kept.
+const PROGRESS = ['lesson_progress', 'card_state', 'review_log', 'daily_stats'] as const;
 
 function req<T>(r: IDBRequest<T>): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -28,15 +29,23 @@ function done(tx: IDBTransaction): Promise<void> {
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const r = indexedDB.open(DB_NAME, VERSION);
-    r.onupgradeneeded = () => {
+    r.onupgradeneeded = (e) => {
       const db = r.result;
-      db.createObjectStore('lesson_progress', { keyPath: 'lessonId' });
-      db.createObjectStore('card_state', { keyPath: 'itemId' });
-      db.createObjectStore('review_log', { autoIncrement: true });
-      db.createObjectStore('daily_stats', { keyPath: 'date' });
-      db.createObjectStore('settings');
+      if (e.oldVersion < 1) {
+        db.createObjectStore('lesson_progress', { keyPath: 'lessonId' });
+        db.createObjectStore('card_state', { keyPath: 'itemId' });
+        db.createObjectStore('review_log', { autoIncrement: true });
+        db.createObjectStore('daily_stats', { keyPath: 'date' });
+        db.createObjectStore('settings');
+      }
+      if (e.oldVersion < 2) db.createObjectStore('books', { keyPath: 'id' });
     };
-    r.onsuccess = () => resolve(r.result);
+    r.onsuccess = () => {
+      // If a newer version of the app opens the database in another tab,
+      // let it upgrade instead of leaving it waiting on this one.
+      r.result.onversionchange = () => r.result.close();
+      resolve(r.result);
+    };
     r.onerror = () => reject(r.error);
   });
 }
@@ -52,18 +61,20 @@ export async function openStore(): Promise<Store> {
 
   return {
     async load(): Promise<Snapshot> {
-      const tx = db.transaction(['lesson_progress', 'card_state', 'daily_stats', 'settings'], 'readonly');
-      const [lessonProgress, cards, dailyStats, settings] = await Promise.all([
+      const tx = db.transaction(['lesson_progress', 'card_state', 'daily_stats', 'settings', 'books'], 'readonly');
+      const [lessonProgress, cards, dailyStats, settings, books] = await Promise.all([
         req(tx.objectStore('lesson_progress').getAll()),
         req(tx.objectStore('card_state').getAll()),
         req(tx.objectStore('daily_stats').getAll()),
         req(tx.objectStore('settings').get('settings')),
+        req(tx.objectStore('books').getAll()),
       ]);
       return {
         lessonProgress,
         cards,
         dailyStats,
         settings: { ...DEFAULT_SETTINGS, ...(settings ?? {}) },
+        books,
       };
     },
 
@@ -90,9 +101,21 @@ export async function openStore(): Promise<Store> {
       await done(tx);
     },
 
+    async saveBook(book: Book) {
+      const tx = db.transaction('books', 'readwrite');
+      tx.objectStore('books').put(book);
+      await done(tx);
+    },
+
+    async deleteBook(id: string) {
+      const tx = db.transaction('books', 'readwrite');
+      tx.objectStore('books').delete(id);
+      await done(tx);
+    },
+
     async reset() {
-      const tx = db.transaction([...STORES].filter((s) => s !== 'settings'), 'readwrite');
-      for (const s of STORES) if (s !== 'settings') tx.objectStore(s).clear();
+      const tx = db.transaction([...PROGRESS], 'readwrite');
+      for (const s of PROGRESS) tx.objectStore(s).clear();
       await done(tx);
     },
   };

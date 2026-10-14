@@ -3,6 +3,7 @@ import { Alert, Platform, Pressable, StyleSheet, Switch, View } from 'react-nati
 import { course } from '../content/course';
 import { NEW_PER_DAY } from '../lib/progress';
 import { router } from 'expo-router';
+import { useGujaratiVoice } from '../lib/speech';
 import { Kesar } from '../mascot/Kesar';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
@@ -27,7 +28,8 @@ function confirm(message: string, onYes: () => void) {
 
 export default function SettingsScreen() {
   const { snapshot, updateSettings, resetProgress, learnedIds } = useProgress();
-  const { retention, alwaysShowTranslit } = snapshot.settings;
+  const { retention, alwaysShowTranslit, speak: speakOn } = snapshot.settings;
+  const voice = useGujaratiVoice(true);
   const step = (d: number) => {
     const next = Math.round((retention + d) * 100) / 100;
     updateSettings({ retention: Math.min(MAX_RETENTION, Math.max(MIN_RETENTION, next)) });
@@ -77,6 +79,25 @@ export default function SettingsScreen() {
         />
       </View>
 
+      <View style={[styles.card, styles.row]}>
+        <View style={{ flex: 1 }}>
+          <Text weight="black" style={styles.label}>
+            Read Gujarati aloud
+          </Text>
+          <Text style={styles.help}>
+            {voice
+              ? 'Speaker buttons use this device’s Gujarati voice.'
+              : 'This device has no Gujarati voice, so there are no speaker buttons. Android phones and Chrome usually have one.'}
+          </Text>
+        </View>
+        <Switch
+          value={speakOn}
+          onValueChange={(v) => updateSettings({ speak: v })}
+          trackColor={{ true: colors.green, false: colors.line }}
+          thumbColor="#fff"
+        />
+      </View>
+
       <Pressable onPress={() => router.push('/kesar')} style={[styles.card, styles.row]} accessibilityRole="button">
         <Kesar size={64} tappable={false} />
         <View style={{ flex: 1 }}>
@@ -101,7 +122,7 @@ export default function SettingsScreen() {
           label="Reset progress"
           variant="red"
           style={{ marginTop: 12 }}
-          onPress={() => confirm('This deletes all your lessons, reviews and streak on this device.', resetProgress)}
+          onPress={() => confirm('This deletes all your lessons, reviews, sentence practice and streak on this device. Your books are kept.', resetProgress)}
         />
       </View>
     </Screen>

@@ -5,7 +5,7 @@ import type { Summary } from '../lib/session';
 import { dueCards, review, scheduler } from '../lib/srs';
 import { DEFAULT_SETTINGS, type Snapshot } from '../lib/types';
 
-const empty: Snapshot = { lessonProgress: [], cards: [], dailyStats: [], settings: DEFAULT_SETTINGS };
+const empty: Snapshot = { lessonProgress: [], cards: [], dailyStats: [], settings: DEFAULT_SETTINGS, books: [] };
 const now = new Date(2026, 9, 14, 9, 0);
 
 const summary = (grades: Summary['grades'], accuracy = 1): Summary => ({

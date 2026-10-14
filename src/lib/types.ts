@@ -146,14 +146,26 @@ export interface DailyStatRow {
   newItems: number;
 }
 
+// How sentence practice takes answers: four options, or typed (Gujarati
+// script or transliteration).
+export type ClozeMode = 'choice' | 'type';
+
 export interface Settings {
   retention: number;
   alwaysShowTranslit: boolean;
+  // XP a day that fills the goal ring.
+  dailyGoal: number;
+  clozeMode: ClozeMode;
+  // Read words and sentences aloud when the device has a Gujarati voice.
+  speak: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   retention: 0.9,
   alwaysShowTranslit: false,
+  dailyGoal: 50,
+  clozeMode: 'choice',
+  speak: true,
 };
 
 export interface Snapshot {
@@ -161,4 +173,64 @@ export interface Snapshot {
   cards: CardRow[];
   dailyStats: DailyStatRow[];
   settings: Settings;
+  // Books the learner made; the built-in ones ship with the app.
+  books: Book[];
+}
+
+// Sentence practice and books. These mirror content/cloze, content/books
+// and content/lexicon.
+
+export type Pos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'post' | 'conj' | 'part' | 'num' | 'interj' | 'q';
+
+// One surface form of a word as it appears in a sentence (ઘરે, ઘરમાં and
+// ઘર are three entries). `base` points at the dictionary form.
+export interface LexEntry {
+  gu: string;
+  tr: string;
+  en: string;
+  pos: Pos;
+  base?: string;
+  note?: string;
+}
+
+export interface ClozeSentence {
+  id: string;
+  gu: string;
+  // Word for word with `gu`: the same number of words, in the same order.
+  tr: string;
+  en: string;
+  // The word that gets blanked, exactly as it appears in `gu`.
+  cloze: string;
+  // Three wrong answers that look like they could fit but don't.
+  wrong: string[];
+  note?: string;
+}
+
+export interface Collection {
+  id: string;
+  title: string;
+  titleGu: string;
+  level: 1 | 2 | 3;
+  blurb: string;
+  sentences: ClozeSentence[];
+}
+
+export interface BookSentence {
+  id: string;
+  gu: string;
+  tr?: string;
+  en?: string;
+  cloze?: string;
+  wrong?: string[];
+}
+
+export interface Book {
+  id: string;
+  title: string;
+  titleGu?: string;
+  level?: 1 | 2 | 3;
+  blurb?: string;
+  builtIn: boolean;
+  createdAt?: string;
+  sentences: BookSentence[];
 }

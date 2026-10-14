@@ -1,0 +1,27 @@
+{
+  "id": "kesar-market",
+  "title": "Kesar at the market",
+  "titleGu": "કેસર બજારમાં",
+  "level": 1,
+  "blurb": "Kesar the lion takes his shopping list to the market, counts his rupees and comes home with a tasty surprise.",
+  "builtIn": true,
+  "sentences": [
+    {"id": "km-01", "gu": "કેસર ગીરનો એક નાનો સિંહ છે.", "tr": "kesar geerno ek naano sinh chhe.", "en": "Kesar is a young lion from Gir.", "cloze": "સિંહ", "wrong": ["વાઘ", "હાથી", "કાગડો"]},
+    {"id": "km-02", "gu": "તે કેસરી પાઘડી પહેરે છે.", "tr": "te kesaree paaghDee pahere chhe.", "en": "He wears a saffron pagdi.", "cloze": "પાઘડી", "wrong": ["ટોપી", "સાડી", "બંગડી"]},
+    {"id": "km-03", "gu": "કેસરને ઢોકળાં બહુ ભાવે છે.", "tr": "kesarne DhokLaan bahu bhaave chhe.", "en": "Kesar loves dhokla.", "cloze": "ઢોકળાં", "wrong": ["થેપલાં", "ભજિયાં", "પાતરાં"]},
+    {"id": "km-04", "gu": "આજે કેસર બજાર જાય છે.", "tr": "aaje kesar bajaar jaay chhe.", "en": "Today Kesar is going to the market.", "cloze": "બજાર", "wrong": ["મંદિર", "સ્કૂલ", "ખેતર"]},
+    {"id": "km-05", "gu": "કેસર પાસે એક યાદી છે.", "tr": "kesar paase ek yaadee chhe.", "en": "Kesar has a list.", "cloze": "યાદી", "wrong": ["થેલી", "ચોપડી", "છત્રી"]},
+    {"id": "km-06", "gu": "યાદીમાં ટામેટાં, બટાકા અને ઢોકળાં છે.", "tr": "yaadeemaan TaameTaan, baTaakaa ane DhokLaan chhe.", "en": "On the list are tomatoes, potatoes and dhokla.", "cloze": "બટાકા", "wrong": ["કેળાં", "મરચાં", "ભીંડા"]},
+    {"id": "km-07", "gu": "બજારમાં બધા કેસરને નમસ્તે કહે છે.", "tr": "bajaarmaan badhaa kesarne namaste kahe chhe.", "en": "At the market everyone says namaste to Kesar.", "cloze": "નમસ્તે", "wrong": ["આવજો", "આભાર", "ના"]},
+    {"id": "km-08", "gu": "પહેલાં કેસર શાકવાળા પાસે જાય છે.", "tr": "pahelaan kesar shaakvaaLaa paase jaay chhe.", "en": "First Kesar goes to the vegetable seller.", "cloze": "શાકવાળા", "wrong": ["ચાવાળા", "દૂધવાળા", "ફૂલવાળા"]},
+    {"id": "km-09", "gu": "કેસર કહે છે, બે કિલો ટામેટાં અને એક કિલો બટાકા આપો.", "tr": "kesar kahe chhe, be kilo TaameTaan ane ek kilo baTaakaa aapo.", "en": "Kesar says, two kilos of tomatoes and one kilo of potatoes, please.", "cloze": "બે", "wrong": ["ત્રણ", "ચાર", "પાંચ"]},
+    {"id": "km-10", "gu": "શાકવાળો શાક તોલે છે.", "tr": "shaakvaaLo shaak tole chhe.", "en": "The vegetable seller weighs the vegetables.", "cloze": "તોલે", "wrong": ["ખાય", "ફેંકે", "રાંધે"]},
+    {"id": "km-11", "gu": "કેસર પૈસા ગણે છે: દસ, વીસ, ત્રીસ, ચાળીસ રૂપિયા.", "tr": "kesar paisaa gaNe chhe: das, vees, trees, chaaLees roopiyaa.", "en": "Kesar counts out the money: ten, twenty, thirty, forty rupees.", "cloze": "ગણે", "wrong": ["ખાય", "ફેંકે", "ભૂલે"]},
+    {"id": "km-12", "gu": "પછી કેસર ફરસાણની દુકાને જાય છે.", "tr": "pachhee kesar pharsaaNnee dukaane jaay chhe.", "en": "Then Kesar goes to the snack shop.", "cloze": "ફરસાણની", "wrong": ["ચાની", "દૂધની", "ફૂલની"]},
+    {"id": "km-13", "gu": "ઢોકળાં ગરમ અને પોચાં છે.", "tr": "DhokLaan garam ane pochaan chhe.", "en": "The dhokla are hot and soft.", "cloze": "પોચાં", "wrong": ["કડક", "સૂકાં", "કાચાં"]},
+    {"id": "km-14", "gu": "કેસર અડધો કિલો ઢોકળાં ખરીદે છે.", "tr": "kesar aDdho kilo DhokLaan khareede chhe.", "en": "Kesar buys half a kilo of dhokla.", "cloze": "ખરીદે", "wrong": ["વેચે", "ફેંકે", "ભૂલે"]},
+    {"id": "km-15", "gu": "દુકાનવાળા ભાઈ કેસરને એક ઢોકળું મફત આપે છે.", "tr": "dukaanvaaLaa bhaai kesarne ek DhokLun maphat aape chhe.", "en": "The shopkeeper gives Kesar one dhokla for free.", "cloze": "આપે", "wrong": ["ખાય", "વેચે", "તોલે"]},
+    {"id": "km-16", "gu": "કેસર કહે છે, આભાર!", "tr": "kesar kahe chhe, aabhaar!", "en": "Kesar says, thank you!", "cloze": "આભાર", "wrong": ["આવજો", "નમસ્તે", "ના"]},
+    {"id": "km-17", "gu": "કેસર ખુશ છે અને ઘરે જાય છે.", "tr": "kesar khush chhe ane ghare jaay chhe.", "en": "Kesar is happy and goes home.", "cloze": "ખુશ", "wrong": ["દુઃખી", "ગુસ્સે", "ભૂખ્યો"]}
+  ]
+}

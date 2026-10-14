@@ -1,0 +1,26 @@
+{
+  "id": "thirsty-crow",
+  "title": "The thirsty crow",
+  "titleGu": "તરસ્યો કાગડો",
+  "level": 1,
+  "blurb": "On a hot summer day a crow finds a pot with too little water, and has a clever idea.",
+  "builtIn": true,
+  "sentences": [
+    {"id": "tc-01", "gu": "ઉનાળાનો એક ગરમ દિવસ હતો.", "tr": "unaaLaano ek garam divas hato.", "en": "It was a hot summer day.", "cloze": "ઉનાળાનો", "wrong": ["શિયાળાનો", "ચોમાસાનો", "રવિવારનો"]},
+    {"id": "tc-02", "gu": "એક કાગડાને ખૂબ તરસ લાગી.", "tr": "ek kaagDaane khoob taras laagee.", "en": "A crow was very thirsty.", "cloze": "તરસ", "wrong": ["ભૂખ", "ઊંઘ", "ઠંડી"]},
+    {"id": "tc-03", "gu": "તે પાણી શોધવા આમતેમ ઊડ્યો.", "tr": "te paaNee shodhvaa aamtem ooDyo.", "en": "He flew here and there looking for water.", "cloze": "ઊડ્યો", "wrong": ["દોડ્યો", "સૂતો", "રડ્યો"]},
+    {"id": "tc-04", "gu": "પણ ક્યાંય પાણી ન મળ્યું.", "tr": "paN kyaany paaNee na maLyun.", "en": "But he found no water anywhere.", "cloze": "પાણી", "wrong": ["દૂધ", "તેલ", "ફળ"]},
+    {"id": "tc-05", "gu": "અંતે તેણે એક ઘડો જોયો.", "tr": "ante teNe ek ghaDo joyo.", "en": "At last he saw a water pot.", "cloze": "ઘડો", "wrong": ["કૂવો", "પથ્થર", "ડબ્બો"]},
+    {"id": "tc-06", "gu": "ઘડામાં થોડું પાણી હતું.", "tr": "ghaDaamaan thoDun paaNee hatun.", "en": "There was a little water in the pot.", "cloze": "થોડું", "wrong": ["ઘણું", "બધું", "ગંદું"]},
+    {"id": "tc-07", "gu": "પણ પાણી બહુ નીચે હતું.", "tr": "paN paaNee bahu neeche hatun.", "en": "But the water was very low.", "cloze": "નીચે", "wrong": ["ઉપર", "બહાર", "પાસે"]},
+    {"id": "tc-08", "gu": "કાગડાની ચાંચ પાણી સુધી ન પહોંચી.", "tr": "kaagDaanee chaanch paaNee sudhee na pahonchee.", "en": "The crow's beak did not reach the water.", "cloze": "ચાંચ", "wrong": ["પાંખ", "પૂંછડી", "આંખ"]},
+    {"id": "tc-09", "gu": "કાગડો વિચારવા લાગ્યો.", "tr": "kaagDo vichaarvaa laagyo.", "en": "The crow began to think.", "cloze": "વિચારવા", "wrong": ["રડવા", "સૂવા", "ગાવા"]},
+    {"id": "tc-10", "gu": "ઘડા પાસે તેણે નાના કાંકરા જોયા.", "tr": "ghaDaa paase teNe naanaa kaankraa joyaa.", "en": "Near the pot he saw some small pebbles.", "cloze": "કાંકરા", "wrong": ["દાણા", "કીડા", "પાંદડાં"]},
+    {"id": "tc-11", "gu": "તેણે એક કાંકરો ચાંચમાં લઈને ઘડામાં નાખ્યો.", "tr": "teNe ek kaankro chaanchmaan laine ghaDaamaan naakhyo.", "en": "He picked up a pebble in his beak and dropped it into the pot.", "cloze": "નાખ્યો", "wrong": ["ખાધો", "ગણ્યો", "તોડ્યો"]},
+    {"id": "tc-12", "gu": "તેણે એક પછી એક ઘણા કાંકરા નાખ્યા.", "tr": "teNe ek pachhee ek ghaNaa kaankraa naakhyaa.", "en": "One by one, he dropped in many pebbles.", "cloze": "ઘણા", "wrong": ["થોડા", "બે", "ત્રણ"]},
+    {"id": "tc-13", "gu": "ધીમે ધીમે પાણી ઉપર આવ્યું.", "tr": "dheeme dheeme paaNee upar aavyun.", "en": "Slowly the water came up.", "cloze": "ઉપર", "wrong": ["નીચે", "બહાર", "અંદર"]},
+    {"id": "tc-14", "gu": "તરસ્યા કાગડાએ પેટ ભરીને પાણી પીધું.", "tr": "tarasyaa kaagDaae peT bhareene paaNee peedhun.", "en": "The thirsty crow drank all the water he wanted.", "cloze": "પીધું", "wrong": ["ખાધું", "ઢોળ્યું", "ફેંક્યું"]},
+    {"id": "tc-15", "gu": "પછી તે ખુશ થઈને ઊડી ગયો.", "tr": "pachhee te khush thaine ooDee gayo.", "en": "Then he flew away happily.", "cloze": "ખુશ", "wrong": ["દુઃખી", "તરસ્યો", "ગુસ્સે"]},
+    {"id": "tc-16", "gu": "મહેનત અને બુદ્ધિથી બધું શક્ય છે.", "tr": "mahenat ane buddhithee badhun shakya chhe.", "en": "With hard work and cleverness, anything is possible.", "cloze": "બુદ્ધિથી", "wrong": ["ગુસ્સાથી", "આળસથી", "ડરથી"]}
+  ]
+}

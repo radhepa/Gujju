@@ -41,7 +41,7 @@
     { "id": "w-lakhvun", "type": "word", "gujarati": "લખવું", "translit": "lakhvun", "english": "to write" },
 
     { "id": "x-i-eat-rotli", "type": "sentence", "gujarati": "હું રોટલી ખાઉં છું.", "translit": "hun roTlee khaaun chhun.", "english": "I eat rotli.", "alts": ["I am eating rotli"] },
-    { "id": "x-mom-drinks-tea", "type": "sentence", "gujarati": "મમ્મી ચા પીએ છે.", "translit": "mammee chaa peeye chhe.", "english": "Mom drinks tea.", "alts": ["Mom is drinking tea"] },
+    { "id": "x-mom-drinks-tea", "type": "sentence", "gujarati": "મમ્મી ચા પીએ છે.", "translit": "mammee chaa piye chhe.", "english": "Mom drinks tea.", "alts": ["Mom is drinking tea"] },
     { "id": "x-we-go-market", "type": "sentence", "gujarati": "અમે બજાર જઈએ છીએ.", "translit": "ame bajaar jaiye chhiye.", "english": "We are going to the market.", "alts": ["We go to the market"] },
     { "id": "x-night-read", "type": "sentence", "gujarati": "રાત્રે હું વાંચું છું.", "translit": "raatre hun vaanchun chhun.", "english": "At night I read.", "alts": ["I read at night"] },
     { "id": "x-dad-comes-home", "type": "sentence", "gujarati": "પપ્પા ઘરે આવે છે.", "translit": "pappaa ghare aave chhe.", "english": "Dad is coming home.", "alts": ["Dad comes home"] }

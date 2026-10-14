@@ -25,8 +25,8 @@
     { "id": "x-this-is-house", "type": "sentence", "gujarati": "આ ઘર છે.", "translit": "aa ghar chhe.", "english": "This is a house.", "alts": ["This is the house"] },
     { "id": "x-who-is-that", "type": "sentence", "gujarati": "તે કોણ છે?", "translit": "te koN chhe?", "english": "Who is that?", "alts": ["Who is he", "Who is she"] },
 
-    { "id": "w-moTun", "type": "word", "gujarati": "મોટું", "translit": "moTun", "english": "big (for things)", "notes": "Things like a house take the ું ending: મોટું ઘર." },
-    { "id": "w-naanun", "type": "word", "gujarati": "નાનું", "translit": "naanun", "english": "small (for things)" },
+    { "id": "w-moTun", "type": "word", "gujarati": "મોટું", "translit": "moTun", "english": "big (neuter)", "notes": "Neuter words like ઘર (house) take the ું ending: મોટું ઘર." },
+    { "id": "w-naanun", "type": "word", "gujarati": "નાનું", "translit": "naanun", "english": "small (neuter)" },
     { "id": "w-garam", "type": "word", "gujarati": "ગરમ", "translit": "garam", "english": "hot" },
     { "id": "w-thanDun", "type": "word", "gujarati": "ઠંડું", "translit": "ThanDun", "english": "cold" },
     { "id": "w-chaa", "type": "word", "gujarati": "ચા", "translit": "chaa", "english": "tea" },

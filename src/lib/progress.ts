@@ -56,7 +56,9 @@ export function isLessonOpen(course: Course, completed: Set<string>, lessonId: s
   return completed.has(lessonId) || status.next?.id === lessonId;
 }
 
-export type SessionKind = 'lesson' | 'review' | 'test-out';
+// practice: a round of sentence cloze (from a collection or a book). It
+// keeps its own cards and doesn't use the course's new-item budget.
+export type SessionKind = 'lesson' | 'review' | 'test-out' | 'practice';
 
 export interface StatDelta {
   xp: number;
@@ -88,7 +90,8 @@ export function applySession(snap: Snapshot, summary: Summary, opts: ApplyOption
   const f = scheduler(snap.settings.retention);
   const cardsById = new Map(snap.cards.map((c) => [c.itemId, c]));
   const today = snap.dailyStats.find((s) => s.date === date);
-  let newBudget = Math.max(0, NEW_PER_DAY - (today?.newItems ?? 0));
+  const practice = kind === 'practice';
+  let newBudget = practice ? Infinity : Math.max(0, NEW_PER_DAY - (today?.newItems ?? 0));
 
   const cards: CardRow[] = [];
   const logs: ReviewLogRow[] = [];
@@ -102,7 +105,7 @@ export function applySession(snap: Snapshot, summary: Summary, opts: ApplyOption
     }
     if (!prev) {
       newBudget--;
-      newItems++;
+      if (!practice) newItems++;
     }
     cards.push(review(f, itemId, prev, grade, now));
     logs.push({ userId: LOCAL_USER, itemId, rating: grade, reviewedAt: at });
@@ -123,8 +126,9 @@ export function applySession(snap: Snapshot, summary: Summary, opts: ApplyOption
     lessonProgress,
     stats: {
       xp: summary.xp,
-      lessonsDone: kind === 'review' ? 0 : 1,
-      reviewsDone: kind === 'review' ? 1 : 0,
+      lessonsDone: kind === 'review' || practice ? 0 : 1,
+      // A practice round keeps the streak alive the same way a review does.
+      reviewsDone: kind === 'review' || practice ? 1 : 0,
       newItems,
     },
   };

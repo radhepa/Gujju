@@ -3,7 +3,9 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { course } from '../content/course';
+import { isPracticeCard } from '../lib/cloze';
 import { unitStatuses, type UnitStatus } from '../lib/progress';
+import { isDue } from '../lib/srs';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
 import { Kesar } from '../mascot/Kesar';
@@ -12,7 +14,9 @@ import { Gu, Text } from '../ui/Text';
 import { colors, shadow } from '../ui/theme';
 
 export default function Home() {
-  const { completed, streak, xpToday, dueIds, learnedIds, snapshot } = useProgress();
+  const { completed, streak, xpToday, dueIds, learnedIds, snapshot, cardRows } = useProgress();
+  const now = new Date();
+  const sentencesDue = [...cardRows.values()].filter((c) => isPracticeCard(c.itemId) && isDue(c, now)).length;
   const statuses = unitStatuses(course, completed);
   const best = new Map(snapshot.lessonProgress.map((p) => [p.lessonId, p.bestAccuracy]));
   const current = statuses.find((s) => s.open && !s.finished)?.unit.id;
@@ -55,6 +59,26 @@ export default function Home() {
         {dueIds.length > 0 && <Button label="Review" variant="green" onPress={() => router.push('/review')} />}
       </View>
 
+      <View style={styles.tiles}>
+        <Tile
+          icon="chatbubbles"
+          label="Sentences"
+          sub={sentencesDue ? `${sentencesDue} due` : 'વાક્યો'}
+          color={colors.primary}
+          onPress={() => router.push('/practice')}
+        />
+        <Tile icon="library" label="Library" sub="પુસ્તકો" color={colors.teal} onPress={() => router.push('/library')} />
+        <Tile icon="search" label="Dictionary" sub="શબ્દકોશ" color={colors.green} onPress={() => router.push('/dictionary')} />
+        <Tile
+          icon="stats-chart"
+          label="Progress"
+          sub={`${Math.min(xpToday, snapshot.settings.dailyGoal)}/${snapshot.settings.dailyGoal} XP`}
+          color={colors.primaryDark}
+          onPress={() => router.push('/stats')}
+          fill={Math.min(1, xpToday / snapshot.settings.dailyGoal)}
+        />
+      </View>
+
       {statuses.map((s) => (
         <UnitCard
           key={s.unit.id}
@@ -66,6 +90,40 @@ export default function Home() {
         />
       ))}
     </Screen>
+  );
+}
+
+type TileIcon = 'chatbubbles' | 'library' | 'search' | 'stats-chart';
+
+function Tile({
+  icon,
+  label,
+  sub,
+  color,
+  onPress,
+  fill,
+}: {
+  icon: TileIcon;
+  label: string;
+  sub: string;
+  color: string;
+  onPress: () => void;
+  fill?: number;
+}) {
+  const isGu = /[\u0A80-\u0AFF]/.test(sub);
+  return (
+    <Pressable onPress={onPress} style={({ pressed }) => [styles.tile, shadow, pressed && { opacity: 0.8 }]} accessibilityRole="button" accessibilityLabel={label}>
+      <Ionicons name={icon} size={26} color={color} />
+      <Text weight="black" style={styles.tileLabel}>
+        {label}
+      </Text>
+      {isGu ? <Gu style={styles.tileSub}>{sub}</Gu> : <Text style={styles.tileSubText}>{sub}</Text>}
+      {fill !== undefined ? (
+        <View style={styles.tileTrack}>
+          <View style={[styles.tileFill, { width: `${fill * 100}%`, backgroundColor: color }]} />
+        </View>
+      ) : null}
+    </Pressable>
   );
 }
 
@@ -204,6 +262,23 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   reviewCount: { fontSize: 18 },
+  tiles: { flexDirection: 'row', gap: 8, marginBottom: 18 },
+  tile: {
+    flex: 1,
+    alignItems: 'center',
+    gap: 2,
+    backgroundColor: colors.card,
+    borderRadius: 16,
+    borderWidth: 2,
+    borderColor: colors.line,
+    paddingVertical: 12,
+    paddingHorizontal: 4,
+  },
+  tileLabel: { fontSize: 13 },
+  tileSub: { fontSize: 12, lineHeight: 18, color: colors.muted },
+  tileSubText: { fontSize: 11, lineHeight: 18, color: colors.muted },
+  tileTrack: { width: '70%', height: 4, borderRadius: 2, backgroundColor: colors.line, overflow: 'hidden', marginTop: 2 },
+  tileFill: { height: '100%' },
   reviewSub: { fontSize: 14, color: colors.muted, marginTop: 2 },
   unit: {
     backgroundColor: colors.card,

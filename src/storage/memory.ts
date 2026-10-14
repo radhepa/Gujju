@@ -1,11 +1,11 @@
 import { applyChanges, type Changes } from '../lib/progress';
-import { DEFAULT_SETTINGS, type ReviewLogRow, type Settings, type Snapshot } from '../lib/types';
+import { DEFAULT_SETTINGS, type Book, type ReviewLogRow, type Settings, type Snapshot } from '../lib/types';
 import type { Store } from './store';
 
 // Used in tests, and as a fallback if the real storage won't open
 // (private browsing, for example). Progress lasts until the tab closes.
 export function memoryStore(): Store & { logs: ReviewLogRow[] } {
-  let snap: Snapshot = { lessonProgress: [], cards: [], dailyStats: [], settings: DEFAULT_SETTINGS };
+  let snap: Snapshot = { lessonProgress: [], cards: [], dailyStats: [], settings: DEFAULT_SETTINGS, books: [] };
   const logs: ReviewLogRow[] = [];
   return {
     logs,
@@ -19,8 +19,15 @@ export function memoryStore(): Store & { logs: ReviewLogRow[] } {
     async saveSettings(settings: Settings) {
       snap = { ...snap, settings };
     },
+    async saveBook(book: Book) {
+      snap = { ...snap, books: [...snap.books.filter((b) => b.id !== book.id), book] };
+    },
+    async deleteBook(id: string) {
+      snap = { ...snap, books: snap.books.filter((b) => b.id !== id) };
+    },
     async reset() {
-      snap = { lessonProgress: [], cards: [], dailyStats: [], settings: snap.settings };
+      // Books are the learner's own writing, so a progress reset keeps them.
+      snap = { lessonProgress: [], cards: [], dailyStats: [], settings: snap.settings, books: snap.books };
       logs.length = 0;
     },
   };

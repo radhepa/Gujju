@@ -1,0 +1,28 @@
+{
+  "id": "letter-to-ba",
+  "title": "A letter to Ba",
+  "titleGu": "બાને પત્ર",
+  "level": 3,
+  "blurb": "Far from home, Priya writes her first letter in Gujarati to Ba, full of snow, kites, undhiyu and a promise.",
+  "builtIn": true,
+  "sentences": [
+    {"id": "lb-01", "gu": "પૂજ્ય બા, જય શ્રી કૃષ્ણ.", "tr": "poojya baa, jay shree krushNa.", "en": "Dear Ba, Jay Shree Krishna.", "cloze": "બા", "wrong": ["દાદા", "મામા", "કાકા"]},
+    {"id": "lb-02", "gu": "બા, તમારી તબિયત કેમ છે?", "tr": "baa, tamaaree tabiyat kem chhe?", "en": "Ba, how is your health?", "cloze": "તબિયત", "wrong": ["ગાય", "ચોપડી", "બહેન"]},
+    {"id": "lb-03", "gu": "અમે અહીં અમેરિકામાં મજામાં છીએ.", "tr": "ame aheen amerikaamaan majaamaan chhiye.", "en": "We are doing well here in America.", "cloze": "મજામાં", "wrong": ["બીમાર", "દુઃખી", "ઉદાસ"]},
+    {"id": "lb-04", "gu": "પણ મને ઘરની બહુ યાદ આવે છે.", "tr": "paN mane gharnee bahu yaad aave chhe.", "en": "But I miss home a lot.", "cloze": "ઘરની", "wrong": ["સ્કૂલની", "ગાડીની", "બરફની"]},
+    {"id": "lb-05", "gu": "અહીં શિયાળામાં ખૂબ બરફ પડે છે.", "tr": "aheen shiyaaLaamaan khoob baraph paDe chhe.", "en": "Here it snows a lot in winter.", "cloze": "બરફ", "wrong": ["વરસાદ", "તડકો", "ગરમી"]},
+    {"id": "lb-06", "gu": "હું દર શનિવારે ગુજરાતી શીખવા જાઉં છું.", "tr": "hun dar shanivaare gujaraatee sheekhvaa jaaun chhun.", "en": "Every Saturday I go to learn Gujarati.", "cloze": "શનિવારે", "wrong": ["રવિવારે", "સોમવારે", "મંગળવારે"]},
+    {"id": "lb-07", "gu": "હવે હું ગુજરાતી વાંચી અને લખી શકું છું.", "tr": "have hun gujaraatee vaanchee ane lakhee shakun chhun.", "en": "Now I can read and write Gujarati.", "cloze": "લખી", "wrong": ["ખાઈ", "રમી", "સૂઈ"]},
+    {"id": "lb-08", "gu": "એટલે આ પત્ર હું જાતે ગુજરાતીમાં લખું છું.", "tr": "eTle aa patra hun jaate gujaraateemaan lakhun chhun.", "en": "So I am writing this letter in Gujarati myself.", "cloze": "પત્ર", "wrong": ["ગીત", "વાર્તા", "ચોપડી"]},
+    {"id": "lb-09", "gu": "મને ગયા વર્ષની ઉત્તરાયણ હજી યાદ છે.", "tr": "mane gayaa varshnee uttaraayaN hajee yaad chhe.", "en": "I still remember last year's Uttarayan.", "cloze": "વર્ષની", "wrong": ["મહિનાની", "અઠવાડિયાની", "રવિવારની"]},
+    {"id": "lb-10", "gu": "આપણે આખો દિવસ અગાસી પર પતંગ ઉડાડ્યા.", "tr": "aapNe aakho divas agaasee par patang uDaaDyaa.", "en": "We flew kites on the terrace all day.", "cloze": "પતંગ", "wrong": ["ફુગ્ગા", "કબૂતર", "વિમાન"]},
+    {"id": "lb-11", "gu": "તમે બધાં માટે ગરમ ઊંધિયું અને જલેબી બનાવ્યાં હતાં.", "tr": "tame badhaan maaTe garam oondhiyun ane jalebee banaavyaan hataan.", "en": "You had made hot undhiyu and jalebi for everyone.", "cloze": "ઊંધિયું", "wrong": ["ખમણ", "શ્રીખંડ", "દૂધપાક"]},
+    {"id": "lb-12", "gu": "અહીં કોઈ તમારા જેવું ઊંધિયું બનાવતું નથી.", "tr": "aheen koi tamaaraa jevun oondhiyun banaavtun nathee.", "en": "Nobody here makes undhiyu like yours.", "cloze": "બનાવતું", "wrong": ["ખાતું", "વેચતું", "ખરીદતું"]},
+    {"id": "lb-13", "gu": "જાન્યુઆરીમાં અમે બધાં ગુજરાત આવીશું.", "tr": "jaanyuaareemaan ame badhaan gujaraat aaveeshun.", "en": "In January we will all come to Gujarat.", "cloze": "આવીશું", "wrong": ["આવ્યાં", "આવે", "આવો"]},
+    {"id": "lb-14", "gu": "આ વખતે મારો પતંગ સૌથી ઊંચો ઊડશે!", "tr": "aa vakhate maaro patang sauthee ooncho ooDshe!", "en": "This time my kite will fly the highest!", "cloze": "ઊંચો", "wrong": ["નીચો", "ધીમો", "નાનો"]},
+    {"id": "lb-15", "gu": "હું તમને ગુજરાતીમાં એક વાર્તા પણ વાંચી સંભળાવીશ.", "tr": "hun tamne gujaraateemaan ek vaartaa paN vaanchee sambhLaaveesh.", "en": "I will also read you a story in Gujarati.", "cloze": "વાર્તા", "wrong": ["કવિતા", "છાપું", "યાદી"]},
+    {"id": "lb-16", "gu": "તમારું ધ્યાન રાખજો.", "tr": "tamaarun dhyaan raakhjo.", "en": "Take care of yourself.", "cloze": "ધ્યાન", "wrong": ["નામ", "ઘર", "પાણી"]},
+    {"id": "lb-17", "gu": "દાદાને મારા જય શ્રી કૃષ્ણ કહેજો.", "tr": "daadaane maaraa jay shree krushNa kahejo.", "en": "Please say Jay Shree Krishna to Dada for me.", "cloze": "દાદાને", "wrong": ["મામાને", "કાકાને", "ફોઈને"]},
+    {"id": "lb-18", "gu": "તમારી વહાલી પૌત્રી, પ્રિયા.", "tr": "tamaaree vahaalee pautree, priyaa.", "en": "Your loving granddaughter, Priya.", "cloze": "પૌત્રી", "wrong": ["દીકરી", "બહેન", "મમ્મી"]}
+  ]
+}

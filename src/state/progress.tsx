@@ -5,7 +5,8 @@ import { applyChanges, applySession, type SessionKind } from '../lib/progress';
 import type { Summary } from '../lib/session';
 import { dueCards } from '../lib/srs';
 import { computeStreak, type Streak } from '../lib/streak';
-import type { Settings, Snapshot } from '../lib/types';
+import { isPracticeCard } from '../lib/cloze';
+import { DEFAULT_SETTINGS, type Book, type CardRow, type Settings, type Snapshot } from '../lib/types';
 import { openStore } from '../storage/openStore';
 import type { Store } from '../storage/store';
 
@@ -17,8 +18,12 @@ interface ProgressValue {
   xpToday: number;
   dueIds: string[];
   learnedIds: string[];
+  // Every card by id, course and practice alike.
+  cardRows: Map<string, CardRow>;
   finishSession(summary: Summary, kind: SessionKind, lessonIds: string[]): Promise<void>;
   updateSettings(patch: Partial<Settings>): Promise<void>;
+  saveBook(book: Book): Promise<void>;
+  deleteBook(id: string): Promise<void>;
   resetProgress(): Promise<void>;
 }
 
@@ -28,7 +33,8 @@ const EMPTY: Snapshot = {
   lessonProgress: [],
   cards: [],
   dailyStats: [],
-  settings: { retention: 0.9, alwaysShowTranslit: false },
+  settings: DEFAULT_SETTINGS,
+  books: [],
 };
 
 // Local first: the UI updates from memory straight away and the write to
@@ -76,14 +82,27 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   );
 
   const resetProgress = useCallback(async () => {
-    setSnapshot((s) => ({ ...EMPTY, settings: s.settings }));
+    setSnapshot((s) => ({ ...EMPTY, settings: s.settings, books: s.books }));
     await store.current?.reset();
+  }, []);
+
+  const saveBook = useCallback(async (book: Book) => {
+    setSnapshot((s) => ({ ...s, books: [...s.books.filter((b) => b.id !== book.id), book] }));
+    await store.current?.saveBook(book);
+  }, []);
+
+  const deleteBook = useCallback(async (id: string) => {
+    setSnapshot((s) => ({ ...s, books: s.books.filter((b) => b.id !== id) }));
+    await store.current?.deleteBook(id);
   }, []);
 
   const value = useMemo<ProgressValue>(() => {
     const now = new Date();
     const known = new Set(Object.keys(course.items));
     const cards = snapshot.cards.filter((c) => known.has(c.itemId));
+    const cardRows = new Map(
+      snapshot.cards.filter((c) => known.has(c.itemId) || isPracticeCard(c.itemId)).map((c) => [c.itemId, c]),
+    );
     return {
       ready,
       snapshot,
@@ -92,11 +111,14 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       xpToday: snapshot.dailyStats.find((s) => s.date === today)?.xp ?? 0,
       dueIds: dueCards(cards, now).map((c) => c.itemId),
       learnedIds: cards.map((c) => c.itemId),
+      cardRows,
       finishSession,
       updateSettings,
       resetProgress,
+      saveBook,
+      deleteBook,
     };
-  }, [snapshot, ready, today, finishSession, updateSettings, resetProgress]);
+  }, [snapshot, ready, today, finishSession, updateSettings, resetProgress, saveBook, deleteBook]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

@@ -3,6 +3,7 @@ import { mergeStat, type Changes } from '../lib/progress';
 import {
   DEFAULT_SETTINGS,
   LOCAL_USER,
+  type Book,
   type CardRow,
   type DailyStatRow,
   type LessonProgressRow,
@@ -56,6 +57,12 @@ CREATE TABLE IF NOT EXISTS settings (
   key TEXT PRIMARY KEY NOT NULL,
   value TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS books (
+  user_id TEXT NOT NULL,
+  id TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (user_id, id)
+);
 `;
 
 type Row = Record<string, string | number | null>;
@@ -94,6 +101,7 @@ export async function openStore(): Promise<Store> {
       const cards = await db.getAllAsync<Row>('SELECT * FROM card_state WHERE user_id = ?', LOCAL_USER);
       const stats = await db.getAllAsync<Row>('SELECT * FROM daily_stats WHERE user_id = ?', LOCAL_USER);
       const s = await db.getFirstAsync<Row>("SELECT value FROM settings WHERE key = 'settings'");
+      const books = await db.getAllAsync<Row>('SELECT data FROM books WHERE user_id = ?', LOCAL_USER);
       return {
         lessonProgress: lp.map(
           (r): LessonProgressRow => ({
@@ -106,6 +114,7 @@ export async function openStore(): Promise<Store> {
         cards: cards.map(toCard),
         dailyStats: stats.map(toStat),
         settings: s ? { ...DEFAULT_SETTINGS, ...JSON.parse(s.value as string) } : DEFAULT_SETTINGS,
+        books: books.map((r) => JSON.parse(r.data as string) as Book),
       };
     },
 
@@ -174,6 +183,19 @@ export async function openStore(): Promise<Store> {
         "INSERT OR REPLACE INTO settings (key, value) VALUES ('settings', ?)",
         JSON.stringify(settings),
       );
+    },
+
+    async saveBook(book: Book) {
+      await db.runAsync(
+        'INSERT OR REPLACE INTO books (user_id, id, data) VALUES (?, ?, ?)',
+        LOCAL_USER,
+        book.id,
+        JSON.stringify(book),
+      );
+    },
+
+    async deleteBook(id: string) {
+      await db.runAsync('DELETE FROM books WHERE user_id = ? AND id = ?', LOCAL_USER, id);
     },
 
     async reset() {

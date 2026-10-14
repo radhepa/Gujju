@@ -1,0 +1,28 @@
+{
+  "id": "navratri",
+  "title": "Navratri night",
+  "titleGu": "નવરાત્રિની રાત",
+  "level": 2,
+  "blurb": "Riya, her cousins and Ba hunt for the dandiya, dress up and dance garba on the first night of Navratri.",
+  "builtIn": true,
+  "sentences": [
+    {"id": "nv-01", "gu": "આજે નવરાત્રિની પહેલી રાત છે.", "tr": "aaje navraatrinee pahelee raat chhe.", "en": "Tonight is the first night of Navratri.", "cloze": "પહેલી", "wrong": ["છેલ્લી", "બીજી", "ત્રીજી"]},
+    {"id": "nv-02", "gu": "રિયાના ઘરે મામાનાં બાળકો નેહા અને કરણ આવ્યાં છે.", "tr": "riyaanaa ghare maamaanaan baaLko nehaa ane karaN aavyaan chhe.", "en": "Neha and Karan, the children of Riya's mama, have come to her house.", "cloze": "મામાનાં", "wrong": ["કાકાનાં", "માસીનાં", "ફોઈનાં"]},
+    {"id": "nv-03", "gu": "બા સાથે ત્રણેય ગરબા રમવા જવાનાં છે.", "tr": "baa saathe traNey garbaa ramvaa javaanaan chhe.", "en": "All three are going with Ba to dance garba.", "cloze": "ગરબા", "wrong": ["ક્રિકેટ", "પત્તાં", "સંતાકૂકડી"]},
+    {"id": "nv-04", "gu": "બા રિયાને લાલ ચણિયાચોળી પહેરાવે છે.", "tr": "baa riyaane laal chaNiyaachoLee paheraave chhe.", "en": "Ba dresses Riya in a red chaniya choli.", "cloze": "ચણિયાચોળી", "wrong": ["સાડી", "ઝભ્ભો", "ટોપી"]},
+    {"id": "nv-05", "gu": "ચોળી પર નાના નાના અરીસા ચમકે છે.", "tr": "choLee par naanaa naanaa areesaa chamke chhe.", "en": "Tiny mirrors sparkle on the blouse.", "cloze": "અરીસા", "wrong": ["મોતી", "દીવા", "સિક્કા"]},
+    {"id": "nv-06", "gu": "કરણે રંગીન કેડિયું પહેર્યું છે.", "tr": "karaNe rangeen keDiyun paheryun chhe.", "en": "Karan is wearing a colourful kediyu.", "cloze": "રંગીન", "wrong": ["ફાટેલું", "જૂનું", "મેલું"]},
+    {"id": "nv-07", "gu": "નેહા પૂછે છે, મારા દાંડિયા ક્યાં છે?", "tr": "nehaa poochhe chhe, maaraa daanDiyaa kyaan chhe?", "en": "Neha asks, where are my dandiya sticks?", "cloze": "ક્યાં", "wrong": ["કોણ", "શું", "ક્યારે"]},
+    {"id": "nv-08", "gu": "બા હસીને કહે છે, કબાટમાં છે.", "tr": "baa haseene kahe chhe, kabaaTmaan chhe.", "en": "Ba laughs and says, they are in the cupboard.", "cloze": "કબાટમાં", "wrong": ["રસોડામાં", "ખિસ્સામાં", "બગીચામાં"]},
+    {"id": "nv-09", "gu": "રાત્રે બધાં ગરબાના મેદાનમાં પહોંચે છે.", "tr": "raatre badhaan garbaanaa medaanmaan pahonche chhe.", "en": "At night everyone reaches the garba ground.", "cloze": "રાત્રે", "wrong": ["સવારે", "બપોરે", "કાલે"]},
+    {"id": "nv-10", "gu": "પહેલાં બા માતાજીની આરતી ઉતારે છે.", "tr": "pahelaan baa maataajeenee aartee utaare chhe.", "en": "First Ba does the aarti for the Mother Goddess.", "cloze": "આરતી", "wrong": ["રસોઈ", "રોટલી", "ચોપડી"]},
+    {"id": "nv-11", "gu": "પછી ઢોલ વાગે છે અને ગરબા શરૂ થાય છે.", "tr": "pachhee Dhol vaage chhe ane garbaa sharoo thaay chhe.", "en": "Then the dhol plays and the garba begins.", "cloze": "ઢોલ", "wrong": ["ઘંટ", "ફોન", "શંખ"]},
+    {"id": "nv-12", "gu": "બધાં મોટા કૂંડાળામાં ગરબા રમે છે.", "tr": "badhaan moTaa koonDaaLaamaan garbaa rame chhe.", "en": "Everyone dances garba in a big circle.", "cloze": "રમે", "wrong": ["ખાય", "સૂએ", "વાંચે"]},
+    {"id": "nv-13", "gu": "રિયા તાળી પાડે છે અને ગોળ ગોળ ફરે છે.", "tr": "riyaa taaLee paaDe chhe ane goL goL phare chhe.", "en": "Riya claps and spins round and round.", "cloze": "તાળી", "wrong": ["ચીસ", "બૂમ", "ફોટો"]},
+    {"id": "nv-14", "gu": "દાંડિયા રાસમાં નેહા અને કરણ સૌથી ઝડપી છે.", "tr": "daanDiyaa raasmaan nehaa ane karaN sauthee jhaDpee chhe.", "en": "In the dandiya raas, Neha and Karan are the fastest.", "cloze": "ઝડપી", "wrong": ["ધીમાં", "આળસુ", "થાકેલાં"]},
+    {"id": "nv-15", "gu": "બા ખુરશી પર બેસીને બધાંને જુએ છે.", "tr": "baa khurshee par beseene badhaanne jue chhe.", "en": "Ba sits on a chair and watches everyone.", "cloze": "ખુરશી", "wrong": ["ઝાડ", "છત", "હીંચકા"]},
+    {"id": "nv-16", "gu": "ગરબા પછી બા બધાંને ચેવડો અને સુખડી આપે છે.", "tr": "garbaa pachhee baa badhaanne chevDo ane sukhDee aape chhe.", "en": "After the garba, Ba gives everyone chevdo and sukhdi.", "cloze": "ચેવડો", "wrong": ["ખીચડી", "શાક", "ભાત"]},
+    {"id": "nv-17", "gu": "રિયા થાકી ગઈ છે, પણ તે ખૂબ ખુશ છે.", "tr": "riyaa thaakee gai chhe, paN te khoob khush chhe.", "en": "Riya is tired, but she is very happy.", "cloze": "થાકી", "wrong": ["સૂઈ", "ખોવાઈ", "ડરી"]},
+    {"id": "nv-18", "gu": "તે કહે છે, કાલે ફરી ગરબા રમીશું!", "tr": "te kahe chhe, kaale pharee garbaa rameeshun!", "en": "She says, tomorrow we will dance garba again!", "cloze": "રમીશું", "wrong": ["ખાઈશું", "સૂઈશું", "લખીશું"]}
+  ]
+}

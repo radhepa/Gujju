@@ -14,14 +14,14 @@
     { "id": "w-kem-chho", "type": "word", "gujarati": "કેમ છો?", "translit": "kem chho?", "english": "how are you?", "notes": "The everyday Gujarati hello. Literally \"how are (you)?\"" },
     { "id": "w-majaamaan", "type": "word", "gujarati": "મજામાં", "translit": "majaamaan", "english": "doing well", "notes": "The usual answer to કેમ છો?" },
     { "id": "w-aavjo", "type": "word", "gujarati": "આવજો", "translit": "aavjo", "english": "goodbye", "notes": "Literally \"do come (again)\"." },
-    { "id": "w-jay-shree-krishna", "type": "word", "gujarati": "જય શ્રી કૃષ્ણ", "translit": "jay shree krushNa", "english": "hello (to elders)", "notes": "A very common greeting in Gujarati families, especially to elders. ૃ is the vowel sign for ઋ." },
+    { "id": "w-jay-shree-krishna", "type": "word", "gujarati": "જય શ્રી કૃષ્ણ", "translit": "jay shree krushNa", "english": "hello, goodbye (respectful)", "notes": "A very common greeting in many Gujarati families, and the usual way to greet elders. It works for goodbye too. ૃ is the vowel sign for ઋ." },
 
-    { "id": "w-aabhaar", "type": "word", "gujarati": "આભાર", "translit": "aabhaar", "english": "thank you" },
+    { "id": "w-aabhaar", "type": "word", "gujarati": "આભાર", "translit": "aabhaar", "english": "thank you", "notes": "Polite and a little formal. In everyday speech many Gujaratis just say \"thank you\" in English." },
     { "id": "w-haa", "type": "word", "gujarati": "હા", "translit": "haa", "english": "yes" },
     { "id": "w-naa", "type": "word", "gujarati": "ના", "translit": "naa", "english": "no" },
-    { "id": "w-maaf-karjo", "type": "word", "gujarati": "માફ કરજો", "translit": "maaf karjo", "english": "sorry" },
+    { "id": "w-maaf-karjo", "type": "word", "gujarati": "માફ કરજો", "translit": "maaph karjo", "english": "sorry", "notes": "Literally \"please forgive (me)\". It also works as \"excuse me\"." },
     { "id": "w-saarun", "type": "word", "gujarati": "સારું", "translit": "saarun", "english": "okay, good" },
-    { "id": "w-chaalo", "type": "word", "gujarati": "ચાલો", "translit": "chaalo", "english": "let's go" },
+    { "id": "w-chaalo", "type": "word", "gujarati": "ચાલો", "translit": "chaalo", "english": "let's go", "notes": "Also used to wrap up a chat: ચાલો, આવજો! (okay then, bye!)" },
 
     { "id": "w-naam", "type": "word", "gujarati": "નામ", "translit": "naam", "english": "name" },
     { "id": "w-shun", "type": "word", "gujarati": "શું", "translit": "shun", "english": "what" },
