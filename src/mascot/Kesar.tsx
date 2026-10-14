@@ -15,6 +15,7 @@ import { Gu } from '../ui/Text';
 import {
   BOX,
   BREATH_MS,
+  BREATH_SX,
   BREATH_SY,
   CLIPS,
   PARALLAX,
@@ -80,8 +81,11 @@ function transformsFor(node: RigNode, clip: Clip, d: Drivers, k: number) {
   if (tr.rotate) t.push({ rotate: curve(d.clock, tr.rotate, at, (v) => `${v}deg`) });
   if (tr.sx) t.push({ scaleX: curve(d.clock, tr.sx, at) });
   if (tr.sy) t.push({ scaleY: curve(d.clock, tr.sy, at) });
-  if (node.id === 'breath') t.push({ scaleY: curve(d.breath, BREATH_SY) });
-  if (node.id === 'eyes') t.push({ scaleY: d.blink });
+  if (node.id === 'breath') {
+    t.push({ scaleX: curve(d.breath, BREATH_SX) });
+    t.push({ scaleY: curve(d.breath, BREATH_SY) });
+  }
+  if (node.id === 'eyeL' || node.id === 'eyeR') t.push({ scaleY: d.blink });
   return { transform: t, opacity: tr.opacity ? curve(d.clock, tr.opacity, at) : undefined };
 }
 
@@ -255,8 +259,8 @@ function Bubble({ text, size }: { text: string; size: number }) {
       style={[
         styles.bubble,
         {
-          left: (150 - BOX.x) * u,
-          top: (6 - BOX.y) * u,
+          left: (160 - BOX.x) * u,
+          top: (-18 - BOX.y) * u,
           minWidth: 104 * u,
           height: 44 * u,
           borderRadius: 20 * u,

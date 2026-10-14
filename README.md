@@ -91,9 +91,11 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 
 ## Mascot
 
-Kesar is a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the fan on his pagdi). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
+Kesar is drawn the same way as Pip, the panda from my fitness app [FitPip](https://github.com/radhepa/FitPip): no outlines, soft two-tone shading, bead eyes with two highlights, short brow strokes, a band with fluttering ties, and the same idle timing. They're meant to look like they came from the same hand.
 
-On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
+He's a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the fan on his pagdi). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
+
+His face does a lot of the acting: brows lift, worry and squeeze into a wink, eyes widen or glance around, the blush deepens. On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
 
 <img src="docs/kesar-poses.png" alt="All of Kesar's poses" width="560">
 

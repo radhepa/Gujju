@@ -11,7 +11,7 @@ import { Resvg } from '@resvg/resvg-js';
 import gifenc from 'gifenc';
 import { writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { BOX, BREATH_MS, BREATH_SY, CLIPS, PARALLAX, RIG, findNode, rank, sample, visible, withDefs } from '../src/mascot/rig.ts';
+import { BOX, BREATH_MS, BREATH_SX, BREATH_SY, CLIPS, PARALLAX, RIG, findNode, rank, sample, visible, withDefs } from '../src/mascot/rig.ts';
 
 const VB = `${BOX.x} ${BOX.y} ${BOX.w} ${BOX.h}`;
 const VIEW = BOX.w;
@@ -27,9 +27,12 @@ function transform(node, clip, t, ambient, gaze) {
   let x = sample(tr.x, t, 0, at);
   let y = sample(tr.y, t, 0, at);
   const r = sample(tr.rotate, t, 0, at);
-  const sx = sample(tr.sx, t, 1, at);
+  let sx = sample(tr.sx, t, 1, at);
   let sy = sample(tr.sy, t, 1, at);
-  if (node.id === 'breath') sy *= sample(BREATH_SY, ambient, 1);
+  if (node.id === 'breath') {
+    sx *= sample(BREATH_SX, ambient, 1);
+    sy *= sample(BREATH_SY, ambient, 1);
+  }
   const para = PARALLAX[node.id];
   if (para) {
     x += (gaze[0] + (clip.face.look?.[0] ?? 0)) * para[0];
@@ -50,7 +53,7 @@ function draw(node, clip, t, ambient, gaze) {
 }
 
 function bubble(text) {
-  return `<g transform="translate(150 6)">
+  return `<g transform="translate(160 -18)">
     <rect width="104" height="44" rx="20" fill="#fff" stroke="#7A3D14" stroke-width="3"/>
     <path d="M18 42l-8 14 20-12" fill="#fff" stroke="#7A3D14" stroke-width="3" stroke-linejoin="round"/>
     <rect x="12" y="38" width="22" height="5" fill="#fff"/>
