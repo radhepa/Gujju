@@ -1,0 +1,43 @@
+{
+  "id": "u03",
+  "order": 3,
+  "title": "Consonants II",
+  "tip": "ત થ દ ધ ન are made with the tongue touching the back of your top teeth, softer than an English t or d. Lower-case ta and da in the transliteration mean this softer sound.",
+  "lessons": [
+    { "id": "u03-l1", "title": "ત થ દ ધ ન", "items": ["l-ta", "l-tha", "l-da", "l-dha", "l-na"] },
+    { "id": "u03-l2", "title": "પ ફ બ ભ મ", "items": ["l-pa", "l-pha", "l-ba", "l-bha", "l-ma"] },
+    { "id": "u03-l3", "title": "ય ર લ વ", "items": ["l-ya", "l-ra", "l-la", "l-va"] },
+    { "id": "u03-l4", "title": "શ ષ સ હ ળ", "items": ["l-sha", "l-ssa", "l-sa", "l-ha", "l-lla"] },
+    { "id": "u03-l5", "title": "First words", "items": ["w-ghar", "w-phal", "w-kamal", "w-nal", "w-bas", "w-rath", "w-mag", "w-gagan"] }
+  ],
+  "items": [
+    { "id": "l-ta", "type": "letter", "gujarati": "ત", "translit": "ta", "english": "", "notes": "Soft t, tongue on the teeth.", "confusables": ["l-tha", "l-tta"] },
+    { "id": "l-tha", "type": "letter", "gujarati": "થ", "translit": "tha", "english": "", "notes": "Soft t with a puff of air. Not the th in \"the\".", "confusables": ["l-ta"] },
+    { "id": "l-da", "type": "letter", "gujarati": "દ", "translit": "da", "english": "", "notes": "Soft d, tongue on the teeth.", "confusables": ["l-dha", "l-dda"] },
+    { "id": "l-dha", "type": "letter", "gujarati": "ધ", "translit": "dha", "english": "", "notes": "Soft d with a breath. Looks a lot like ઘ (gha).", "confusables": ["l-da", "l-gha"] },
+    { "id": "l-na", "type": "letter", "gujarati": "ન", "translit": "na", "english": "", "notes": "The everyday n.", "confusables": ["l-nna"] },
+    { "id": "l-pa", "type": "letter", "gujarati": "પ", "translit": "pa", "english": "", "notes": "Like the p in \"spin\", no puff.", "confusables": ["l-pha"] },
+    { "id": "l-pha", "type": "letter", "gujarati": "ફ", "translit": "pha", "english": "", "notes": "p with a puff. Many speakers say it like f.", "confusables": ["l-pa"] },
+    { "id": "l-ba", "type": "letter", "gujarati": "બ", "translit": "ba", "english": "", "notes": "Like the b in \"bat\".", "confusables": ["l-bha"] },
+    { "id": "l-bha", "type": "letter", "gujarati": "ભ", "translit": "bha", "english": "", "notes": "b with a breath, as in ભાઈ (bhaai, brother).", "confusables": ["l-ba"] },
+    { "id": "l-ma", "type": "letter", "gujarati": "મ", "translit": "ma", "english": "", "notes": "Like the m in \"mat\"." },
+    { "id": "l-ya", "type": "letter", "gujarati": "ય", "translit": "ya", "english": "", "notes": "Like the y in \"yes\"." },
+    { "id": "l-ra", "type": "letter", "gujarati": "ર", "translit": "ra", "english": "", "notes": "A light tap of the tongue, like the tt in American \"butter\"." },
+    { "id": "l-la", "type": "letter", "gujarati": "લ", "translit": "la", "english": "", "notes": "Like the l in \"let\".", "confusables": ["l-lla"] },
+    { "id": "l-va", "type": "letter", "gujarati": "વ", "translit": "va", "english": "", "notes": "Somewhere between v and w." },
+    { "id": "l-sha", "type": "letter", "gujarati": "શ", "translit": "sha", "english": "", "notes": "Like the sh in \"shoe\".", "confusables": ["l-ssa", "l-sa"] },
+    { "id": "l-ssa", "type": "letter", "gujarati": "ષ", "translit": "Sha", "english": "", "notes": "Said the same as શ in Gujarati. It shows up in Sanskrit words like ભાષા (bhaashaa, language).", "confusables": ["l-sha"] },
+    { "id": "l-sa", "type": "letter", "gujarati": "સ", "translit": "sa", "english": "", "notes": "Like the s in \"sun\".", "confusables": ["l-sha"] },
+    { "id": "l-ha", "type": "letter", "gujarati": "હ", "translit": "ha", "english": "", "notes": "Like the h in \"hat\"." },
+    { "id": "l-lla", "type": "letter", "gujarati": "ળ", "translit": "La", "english": "", "notes": "An l with the tongue curled back. English has nothing like it; Hindi doesn't either.", "confusables": ["l-la"] },
+
+    { "id": "w-ghar", "type": "word", "gujarati": "ઘર", "translit": "ghar", "english": "house", "notes": "The last letter's built-in a is usually dropped: ghar, not ghara." },
+    { "id": "w-phal", "type": "word", "gujarati": "ફળ", "translit": "phaL", "english": "fruit" },
+    { "id": "w-kamal", "type": "word", "gujarati": "કમળ", "translit": "kamaL", "english": "lotus" },
+    { "id": "w-nal", "type": "word", "gujarati": "નળ", "translit": "naL", "english": "tap (faucet)" },
+    { "id": "w-bas", "type": "word", "gujarati": "બસ", "translit": "bas", "english": "bus", "notes": "Also means \"that's enough\"." },
+    { "id": "w-rath", "type": "word", "gujarati": "રથ", "translit": "rath", "english": "chariot" },
+    { "id": "w-mag", "type": "word", "gujarati": "મગ", "translit": "mag", "english": "mung beans" },
+    { "id": "w-gagan", "type": "word", "gujarati": "ગગન", "translit": "gagan", "english": "sky" }
+  ]
+}

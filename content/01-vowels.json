@@ -1,0 +1,27 @@
+{
+  "id": "u01",
+  "order": 1,
+  "title": "Vowels",
+  "tip": "Gujarati has no capital letters and no line on top like Hindi. Each vowel here is the form used at the start of a word.",
+  "lessons": [
+    { "id": "u01-l1", "title": "First vowels", "items": ["l-a", "l-aa", "l-i", "l-ee"] },
+    { "id": "u01-l2", "title": "Short and long", "items": ["l-u", "l-oo", "l-ru", "l-e"] },
+    { "id": "u01-l3", "title": "The rest", "items": ["l-ai", "l-o", "l-au", "l-am", "l-ah"] },
+    { "id": "u01-l4", "title": "All the vowels", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-a", "type": "letter", "gujarati": "અ", "translit": "a", "english": "", "notes": "Short a, like the u in \"but\".", "confusables": ["l-aa"] },
+    { "id": "l-aa", "type": "letter", "gujarati": "આ", "translit": "aa", "english": "", "notes": "Long a, like the a in \"father\". It is અ with a bar added.", "confusables": ["l-a"] },
+    { "id": "l-i", "type": "letter", "gujarati": "ઇ", "translit": "i", "english": "", "notes": "Like the i in \"sit\".", "confusables": ["l-ee"] },
+    { "id": "l-ee", "type": "letter", "gujarati": "ઈ", "translit": "ee", "english": "", "notes": "Like the ee in \"see\". In everyday speech ઇ and ઈ sound almost the same; spelling is where they differ.", "confusables": ["l-i"] },
+    { "id": "l-u", "type": "letter", "gujarati": "ઉ", "translit": "u", "english": "", "notes": "Like the u in \"put\".", "confusables": ["l-oo"] },
+    { "id": "l-oo", "type": "letter", "gujarati": "ઊ", "translit": "oo", "english": "", "notes": "Like the oo in \"moon\".", "confusables": ["l-u"] },
+    { "id": "l-ru", "type": "letter", "gujarati": "ઋ", "translit": "ru", "english": "", "notes": "Said \"ru\". Mostly in words from Sanskrit, like ઋષિ (rushi, sage)." },
+    { "id": "l-e", "type": "letter", "gujarati": "એ", "translit": "e", "english": "", "notes": "Like the ay in \"say\".", "confusables": ["l-ai"] },
+    { "id": "l-ai", "type": "letter", "gujarati": "ઐ", "translit": "ai", "english": "", "notes": "Like the ai in \"aisle\". It is એ with a second stroke on top.", "confusables": ["l-e"] },
+    { "id": "l-o", "type": "letter", "gujarati": "ઓ", "translit": "o", "english": "", "notes": "Like the o in \"go\". Built from આ with a stroke on top.", "confusables": ["l-au", "l-aa"] },
+    { "id": "l-au", "type": "letter", "gujarati": "ઔ", "translit": "au", "english": "", "notes": "Like the ow in \"cow\".", "confusables": ["l-o"] },
+    { "id": "l-am", "type": "letter", "gujarati": "અં", "translit": "am", "english": "", "notes": "The dot (anusvara) makes the vowel nasal, said partly through the nose.", "confusables": ["l-ah", "l-a"] },
+    { "id": "l-ah", "type": "letter", "gujarati": "અઃ", "translit": "ah", "english": "", "notes": "The two dots (visarga) add a short breath of h. Rare outside Sanskrit words.", "confusables": ["l-am"] }
+  ]
+}

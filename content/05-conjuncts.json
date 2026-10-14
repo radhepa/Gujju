@@ -1,0 +1,31 @@
+{
+  "id": "u05",
+  "order": 5,
+  "title": "Joined letters",
+  "tip": "The halant (્) removes a consonant's built-in a, so it can join onto the next letter. ક્ + ય = ક્ય (kya). Some joins get their own shape, like ક્ષ and જ્ઞ.",
+  "lessons": [
+    { "id": "u05-l1", "title": "The halant", "items": ["s-k-halant", "w-kyaan", "w-tyaan", "w-kyaare", "w-skool"] },
+    { "id": "u05-l2", "title": "ક્ષ and જ્ઞ", "items": ["l-ksha", "l-gna", "w-kshamaa", "w-shikshak", "w-gnaan"] },
+    { "id": "u05-l3", "title": "Common joins", "items": ["w-mitra", "w-prem", "w-shree", "w-dharm", "w-rasto", "w-angrejee"] }
+  ],
+  "items": [
+    { "id": "s-k-halant", "type": "letter", "gujarati": "ક્", "translit": "k", "english": "", "notes": "With the halant underneath, ક is just k, no vowel.", "confusables": ["l-ka"] },
+    { "id": "w-kyaan", "type": "word", "gujarati": "ક્યાં", "translit": "kyaan", "english": "where", "notes": "The dot on top makes the aa nasal. An n after a vowel in the transliteration means this." },
+    { "id": "w-tyaan", "type": "word", "gujarati": "ત્યાં", "translit": "tyaan", "english": "there" },
+    { "id": "w-kyaare", "type": "word", "gujarati": "ક્યારે", "translit": "kyaare", "english": "when" },
+    { "id": "w-skool", "type": "word", "gujarati": "સ્કૂલ", "translit": "skool", "english": "school" },
+
+    { "id": "l-ksha", "type": "letter", "gujarati": "ક્ષ", "translit": "ksha", "english": "", "notes": "ક્ + ષ, but written as its own shape.", "confusables": ["l-gna"] },
+    { "id": "l-gna", "type": "letter", "gujarati": "જ્ઞ", "translit": "gna", "english": "", "notes": "Built from જ્ + ઞ, but Gujarati speakers say it \"gna\".", "confusables": ["l-ksha"] },
+    { "id": "w-kshamaa", "type": "word", "gujarati": "ક્ષમા", "translit": "kshamaa", "english": "forgiveness" },
+    { "id": "w-shikshak", "type": "word", "gujarati": "શિક્ષક", "translit": "shikshak", "english": "teacher" },
+    { "id": "w-gnaan", "type": "word", "gujarati": "જ્ઞાન", "translit": "gnaan", "english": "knowledge" },
+
+    { "id": "w-mitra", "type": "word", "gujarati": "મિત્ર", "translit": "mitra", "english": "friend", "notes": "ત્ર is ત + ર. A ર after another consonant becomes a small slanted stroke." },
+    { "id": "w-prem", "type": "word", "gujarati": "પ્રેમ", "translit": "prem", "english": "love" },
+    { "id": "w-shree", "type": "word", "gujarati": "શ્રી", "translit": "shree", "english": "Mr. (respectful title)", "notes": "શ્ર is શ + ર and has its own shape." },
+    { "id": "w-dharm", "type": "word", "gujarati": "ધર્મ", "translit": "dharm", "english": "religion, duty", "notes": "A ર before another consonant becomes the little hook on top of it." },
+    { "id": "w-rasto", "type": "word", "gujarati": "રસ્તો", "translit": "rasto", "english": "road" },
+    { "id": "w-angrejee", "type": "word", "gujarati": "અંગ્રેજી", "translit": "angrejee", "english": "English (language)" }
+  ]
+}

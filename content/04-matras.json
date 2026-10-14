@@ -1,0 +1,49 @@
+{
+  "id": "u04",
+  "order": 4,
+  "title": "Vowel signs",
+  "tip": "After a consonant, a vowel is written as a small sign (a matra) instead of its full letter. The sign replaces the built-in a: ક + ા = કા (kaa).",
+  "lessons": [
+    { "id": "u04-l1", "title": "ા  aa", "items": ["s-kaa", "s-raa", "w-maa", "w-kaan", "w-naak", "w-raat"] },
+    { "id": "u04-l2", "title": "િ ી  i, ee", "items": ["s-ki", "s-kee", "w-dil", "w-kheer", "w-teer", "w-divas"] },
+    { "id": "u04-l3", "title": "ુ ૂ  u, oo", "items": ["s-ku", "s-koo", "w-phool", "w-sukh", "w-doodh", "w-gulaab"] },
+    { "id": "u04-l4", "title": "ે ૈ  e, ai", "items": ["s-ke", "s-kai", "w-tel", "w-desh", "w-khetar", "w-paisaa"] },
+    { "id": "u04-l5", "title": "ો ૌ  o, au", "items": ["s-ko", "s-kau", "w-mor", "w-chor", "w-dhol", "w-maun"] }
+  ],
+  "items": [
+    { "id": "s-kaa", "type": "letter", "gujarati": "કા", "translit": "kaa", "english": "", "notes": "ા is the sign for આ (aa).", "confusables": ["l-ka", "s-ko"] },
+    { "id": "s-raa", "type": "letter", "gujarati": "રા", "translit": "raa", "english": "" },
+    { "id": "w-maa", "type": "word", "gujarati": "મા", "translit": "maa", "english": "mother" },
+    { "id": "w-kaan", "type": "word", "gujarati": "કાન", "translit": "kaan", "english": "ear" },
+    { "id": "w-naak", "type": "word", "gujarati": "નાક", "translit": "naak", "english": "nose" },
+    { "id": "w-raat", "type": "word", "gujarati": "રાત", "translit": "raat", "english": "night" },
+
+    { "id": "s-ki", "type": "letter", "gujarati": "કિ", "translit": "ki", "english": "", "notes": "િ is written before the consonant but said after it.", "confusables": ["s-kee"] },
+    { "id": "s-kee", "type": "letter", "gujarati": "કી", "translit": "kee", "english": "", "notes": "ી comes after the consonant, where you'd expect.", "confusables": ["s-ki"] },
+    { "id": "w-dil", "type": "word", "gujarati": "દિલ", "translit": "dil", "english": "heart" },
+    { "id": "w-kheer", "type": "word", "gujarati": "ખીર", "translit": "kheer", "english": "rice pudding" },
+    { "id": "w-teer", "type": "word", "gujarati": "તીર", "translit": "teer", "english": "arrow" },
+    { "id": "w-divas", "type": "word", "gujarati": "દિવસ", "translit": "divas", "english": "day" },
+
+    { "id": "s-ku", "type": "letter", "gujarati": "કુ", "translit": "ku", "english": "", "notes": "ુ hangs under the consonant.", "confusables": ["s-koo"] },
+    { "id": "s-koo", "type": "letter", "gujarati": "કૂ", "translit": "koo", "english": "", "confusables": ["s-ku"] },
+    { "id": "w-phool", "type": "word", "gujarati": "ફૂલ", "translit": "phool", "english": "flower" },
+    { "id": "w-sukh", "type": "word", "gujarati": "સુખ", "translit": "sukh", "english": "happiness" },
+    { "id": "w-doodh", "type": "word", "gujarati": "દૂધ", "translit": "doodh", "english": "milk" },
+    { "id": "w-gulaab", "type": "word", "gujarati": "ગુલાબ", "translit": "gulaab", "english": "rose" },
+
+    { "id": "s-ke", "type": "letter", "gujarati": "કે", "translit": "ke", "english": "", "notes": "One stroke on top for e.", "confusables": ["s-kai"] },
+    { "id": "s-kai", "type": "letter", "gujarati": "કૈ", "translit": "kai", "english": "", "notes": "Two strokes on top for ai.", "confusables": ["s-ke"] },
+    { "id": "w-tel", "type": "word", "gujarati": "તેલ", "translit": "tel", "english": "oil" },
+    { "id": "w-desh", "type": "word", "gujarati": "દેશ", "translit": "desh", "english": "country" },
+    { "id": "w-khetar", "type": "word", "gujarati": "ખેતર", "translit": "khetar", "english": "field (farm)" },
+    { "id": "w-paisaa", "type": "word", "gujarati": "પૈસા", "translit": "paisaa", "english": "money" },
+
+    { "id": "s-ko", "type": "letter", "gujarati": "કો", "translit": "ko", "english": "", "notes": "ા plus one stroke on top makes o.", "confusables": ["s-kau", "s-kaa"] },
+    { "id": "s-kau", "type": "letter", "gujarati": "કૌ", "translit": "kau", "english": "", "confusables": ["s-ko"] },
+    { "id": "w-mor", "type": "word", "gujarati": "મોર", "translit": "mor", "english": "peacock" },
+    { "id": "w-chor", "type": "word", "gujarati": "ચોર", "translit": "chor", "english": "thief" },
+    { "id": "w-dhol", "type": "word", "gujarati": "ઢોલ", "translit": "Dhol", "english": "drum" },
+    { "id": "w-maun", "type": "word", "gujarati": "મૌન", "translit": "maun", "english": "silence" }
+  ]
+}

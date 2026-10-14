@@ -1,0 +1,30 @@
+{
+  "id": "u02",
+  "order": 2,
+  "title": "Consonants I",
+  "tip": "Every consonant carries a built-in \"a\": ક is ka, not k. Letters come in groups of five, ordered by where your mouth makes the sound. A capital in the transliteration (Ta, Da, Na) means the tongue curls back to the roof of the mouth.",
+  "lessons": [
+    { "id": "u02-l1", "title": "ક ખ ગ ઘ ઙ", "items": ["l-ka", "l-kha", "l-ga", "l-gha", "l-nga"] },
+    { "id": "u02-l2", "title": "ચ છ જ ઝ ઞ", "items": ["l-cha", "l-chha", "l-ja", "l-jha", "l-nya"] },
+    { "id": "u02-l3", "title": "ટ ઠ ડ ઢ ણ", "items": ["l-tta", "l-ttha", "l-dda", "l-ddha", "l-nna"] },
+    { "id": "u02-l4", "title": "Breath or no breath", "items": [], "review": true },
+    { "id": "u02-l5", "title": "All fifteen", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-ka", "type": "letter", "gujarati": "ક", "translit": "ka", "english": "", "notes": "Like the k in \"skin\", with no puff of air.", "confusables": ["l-kha"] },
+    { "id": "l-kha", "type": "letter", "gujarati": "ખ", "translit": "kha", "english": "", "notes": "k with a puff of air, like \"k\" in \"kite\" said firmly.", "confusables": ["l-ka"] },
+    { "id": "l-ga", "type": "letter", "gujarati": "ગ", "translit": "ga", "english": "", "notes": "Like the g in \"go\".", "confusables": ["l-gha"] },
+    { "id": "l-gha", "type": "letter", "gujarati": "ઘ", "translit": "gha", "english": "", "notes": "g with a breath after it. Watch out: ઘ and ધ (dha) look alike.", "confusables": ["l-ga", "l-dha"] },
+    { "id": "l-nga", "type": "letter", "gujarati": "ઙ", "translit": "nga", "english": "", "notes": "The ng in \"sing\". You will almost never see it on its own.", "confusables": ["l-dda"] },
+    { "id": "l-cha", "type": "letter", "gujarati": "ચ", "translit": "cha", "english": "", "notes": "Like the ch in \"chair\", no puff.", "confusables": ["l-chha"] },
+    { "id": "l-chha", "type": "letter", "gujarati": "છ", "translit": "chha", "english": "", "notes": "ch with a puff of air. You will see it everywhere in છે (chhe, is).", "confusables": ["l-cha"] },
+    { "id": "l-ja", "type": "letter", "gujarati": "જ", "translit": "ja", "english": "", "notes": "Like the j in \"jam\".", "confusables": ["l-jha"] },
+    { "id": "l-jha", "type": "letter", "gujarati": "ઝ", "translit": "jha", "english": "", "notes": "j with a breath after it. In borrowed words it is often said like z.", "confusables": ["l-ja"] },
+    { "id": "l-nya", "type": "letter", "gujarati": "ઞ", "translit": "nya", "english": "", "notes": "Like the ny in \"canyon\". Rare on its own." },
+    { "id": "l-tta", "type": "letter", "gujarati": "ટ", "translit": "Ta", "english": "", "notes": "A t with the tongue curled back. Closer to the English t than ત is.", "confusables": ["l-ttha", "l-ta"] },
+    { "id": "l-ttha", "type": "letter", "gujarati": "ઠ", "translit": "Tha", "english": "", "notes": "Curled-back t with a puff of air.", "confusables": ["l-tta", "l-ddha"] },
+    { "id": "l-dda", "type": "letter", "gujarati": "ડ", "translit": "Da", "english": "", "notes": "A d with the tongue curled back, like the English d.", "confusables": ["l-ddha", "l-da"] },
+    { "id": "l-ddha", "type": "letter", "gujarati": "ઢ", "translit": "Dha", "english": "", "notes": "Curled-back d with a breath, as in ઢોલ (Dhol, drum).", "confusables": ["l-dda", "l-ttha"] },
+    { "id": "l-nna", "type": "letter", "gujarati": "ણ", "translit": "Na", "english": "", "notes": "An n with the tongue curled back. Never starts a word.", "confusables": ["l-na"] }
+  ]
+}
