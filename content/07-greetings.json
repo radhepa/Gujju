@@ -1,0 +1,39 @@
+{
+  "id": "u07",
+  "order": 7,
+  "title": "Greetings",
+  "tip": "From here on every word is in Gujarati script. The transliteration starts out visible and slowly fades, so lean on your reading.",
+  "lessons": [
+    { "id": "u07-l1", "title": "Hello and goodbye", "items": ["w-namaste", "w-kem-chho", "w-majaamaan", "w-aavjo", "w-jay-shree-krishna"], "translit": "show" },
+    { "id": "u07-l2", "title": "Yes, no, thanks", "items": ["w-aabhaar", "w-haa", "w-naa", "w-maaf-karjo", "w-saarun", "w-chaalo"], "translit": "show" },
+    { "id": "u07-l3", "title": "What's your name?", "items": ["w-naam", "w-shun", "w-maarun", "w-tamaarun", "w-chhe", "x-your-name", "x-my-name"], "translit": "show" },
+    { "id": "u07-l4", "title": "A first conversation", "items": ["x-how-are-you", "x-i-am-fine", "x-thanks-bye", "x-yes-okay"], "translit": "hint" }
+  ],
+  "items": [
+    { "id": "w-namaste", "type": "word", "gujarati": "નમસ્તે", "translit": "namaste", "english": "hello", "notes": "Polite and works with anyone." },
+    { "id": "w-kem-chho", "type": "word", "gujarati": "કેમ છો?", "translit": "kem chho?", "english": "how are you?", "notes": "The everyday Gujarati hello. Literally \"how are (you)?\"" },
+    { "id": "w-majaamaan", "type": "word", "gujarati": "મજામાં", "translit": "majaamaan", "english": "doing well", "notes": "The usual answer to કેમ છો?" },
+    { "id": "w-aavjo", "type": "word", "gujarati": "આવજો", "translit": "aavjo", "english": "goodbye", "notes": "Literally \"do come (again)\"." },
+    { "id": "w-jay-shree-krishna", "type": "word", "gujarati": "જય શ્રી કૃષ્ણ", "translit": "jay shree krushNa", "english": "hello (to elders)", "notes": "A very common greeting in Gujarati families, especially to elders. ૃ is the vowel sign for ઋ." },
+
+    { "id": "w-aabhaar", "type": "word", "gujarati": "આભાર", "translit": "aabhaar", "english": "thank you" },
+    { "id": "w-haa", "type": "word", "gujarati": "હા", "translit": "haa", "english": "yes" },
+    { "id": "w-naa", "type": "word", "gujarati": "ના", "translit": "naa", "english": "no" },
+    { "id": "w-maaf-karjo", "type": "word", "gujarati": "માફ કરજો", "translit": "maaf karjo", "english": "sorry" },
+    { "id": "w-saarun", "type": "word", "gujarati": "સારું", "translit": "saarun", "english": "okay, good" },
+    { "id": "w-chaalo", "type": "word", "gujarati": "ચાલો", "translit": "chaalo", "english": "let's go" },
+
+    { "id": "w-naam", "type": "word", "gujarati": "નામ", "translit": "naam", "english": "name" },
+    { "id": "w-shun", "type": "word", "gujarati": "શું", "translit": "shun", "english": "what" },
+    { "id": "w-maarun", "type": "word", "gujarati": "મારું", "translit": "maarun", "english": "my" },
+    { "id": "w-tamaarun", "type": "word", "gujarati": "તમારું", "translit": "tamaarun", "english": "your (polite)" },
+    { "id": "w-chhe", "type": "word", "gujarati": "છે", "translit": "chhe", "english": "is", "notes": "It goes at the end of the sentence." },
+    { "id": "x-your-name", "type": "sentence", "gujarati": "તમારું નામ શું છે?", "translit": "tamaarun naam shun chhe?", "english": "What is your name?" },
+    { "id": "x-my-name", "type": "sentence", "gujarati": "મારું નામ મીરા છે.", "translit": "maarun naam meeraa chhe.", "english": "My name is Meera." },
+
+    { "id": "x-how-are-you", "type": "sentence", "gujarati": "તમે કેમ છો?", "translit": "tame kem chho?", "english": "How are you?" },
+    { "id": "x-i-am-fine", "type": "sentence", "gujarati": "હું મજામાં છું.", "translit": "hun majaamaan chhun.", "english": "I am fine.", "alts": ["I am doing well", "I am well"] },
+    { "id": "x-thanks-bye", "type": "sentence", "gujarati": "આભાર, આવજો!", "translit": "aabhaar, aavjo!", "english": "Thanks, goodbye!", "alts": ["Thank you goodbye"] },
+    { "id": "x-yes-okay", "type": "sentence", "gujarati": "હા, સારું.", "translit": "haa, saarun.", "english": "Yes, okay." }
+  ]
+}

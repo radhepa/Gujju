@@ -1,0 +1,42 @@
+{
+  "id": "u08",
+  "order": 8,
+  "title": "People and family",
+  "tip": "Gujarati has a separate word for almost every relative, depending on which side of the family they're on. Elders get the respectful plural: મારા દાદા, not મારો દાદા.",
+  "lessons": [
+    { "id": "u08-l1", "title": "Parents and siblings", "items": ["w-mammee", "w-pappaa", "w-bhaai", "w-bahen", "w-parivaar"], "translit": "show" },
+    { "id": "u08-l2", "title": "Grandparents", "items": ["w-daadaa", "w-daadee", "w-naanaa", "w-naanee", "x-my-grandfather"], "translit": "hint" },
+    { "id": "u08-l3", "title": "Aunts, uncles, children", "items": ["w-kaakaa", "w-maamaa", "w-maasee", "w-phoee", "w-deekaro", "w-deekaree"], "translit": "hint" },
+    { "id": "u08-l4", "title": "I, you, big, small", "items": ["w-hun", "w-tun", "w-tame", "w-te", "w-ame", "w-moTo", "w-naano", "x-brother-older", "x-sister-younger"], "translit": "hint" }
+  ],
+  "items": [
+    { "id": "w-mammee", "type": "word", "gujarati": "મમ્મી", "translit": "mammee", "english": "mom", "notes": "The more traditional word is મા (maa)." },
+    { "id": "w-pappaa", "type": "word", "gujarati": "પપ્પા", "translit": "pappaa", "english": "dad" },
+    { "id": "w-bhaai", "type": "word", "gujarati": "ભાઈ", "translit": "bhaai", "english": "brother", "notes": "Also added after a man's name as a friendly title: રમેશભાઈ." },
+    { "id": "w-bahen", "type": "word", "gujarati": "બહેન", "translit": "bahen", "english": "sister", "notes": "Also added after a woman's name: મીરાબહેન." },
+    { "id": "w-parivaar", "type": "word", "gujarati": "પરિવાર", "translit": "parivaar", "english": "family" },
+
+    { "id": "w-daadaa", "type": "word", "gujarati": "દાદા", "translit": "daadaa", "english": "grandfather (dad's side)" },
+    { "id": "w-daadee", "type": "word", "gujarati": "દાદી", "translit": "daadee", "english": "grandmother (dad's side)" },
+    { "id": "w-naanaa", "type": "word", "gujarati": "નાના", "translit": "naanaa", "english": "grandfather (mom's side)" },
+    { "id": "w-naanee", "type": "word", "gujarati": "નાની", "translit": "naanee", "english": "grandmother (mom's side)" },
+    { "id": "x-my-grandfather", "type": "sentence", "gujarati": "આ મારા દાદા છે.", "translit": "aa maaraa daadaa chhe.", "english": "This is my grandfather." },
+
+    { "id": "w-kaakaa", "type": "word", "gujarati": "કાકા", "translit": "kaakaa", "english": "uncle (dad's brother)" },
+    { "id": "w-maamaa", "type": "word", "gujarati": "મામા", "translit": "maamaa", "english": "uncle (mom's brother)" },
+    { "id": "w-maasee", "type": "word", "gujarati": "માસી", "translit": "maasee", "english": "aunt (mom's sister)" },
+    { "id": "w-phoee", "type": "word", "gujarati": "ફોઈ", "translit": "phoee", "english": "aunt (dad's sister)" },
+    { "id": "w-deekaro", "type": "word", "gujarati": "દીકરો", "translit": "deekaro", "english": "son" },
+    { "id": "w-deekaree", "type": "word", "gujarati": "દીકરી", "translit": "deekaree", "english": "daughter" },
+
+    { "id": "w-hun", "type": "word", "gujarati": "હું", "translit": "hun", "english": "I" },
+    { "id": "w-tun", "type": "word", "gujarati": "તું", "translit": "tun", "english": "you (friendly)", "notes": "For friends, younger people and family. Use તમે with elders and strangers." },
+    { "id": "w-tame", "type": "word", "gujarati": "તમે", "translit": "tame", "english": "you (polite)" },
+    { "id": "w-te", "type": "word", "gujarati": "તે", "translit": "te", "english": "he, she, that" },
+    { "id": "w-ame", "type": "word", "gujarati": "અમે", "translit": "ame", "english": "we" },
+    { "id": "w-moTo", "type": "word", "gujarati": "મોટો", "translit": "moTo", "english": "big, older (for a boy)", "notes": "Ends in ો for masculine, ી for feminine: મોટો ભાઈ, મોટી બહેન." },
+    { "id": "w-naano", "type": "word", "gujarati": "નાનો", "translit": "naano", "english": "small, younger (for a boy)" },
+    { "id": "x-brother-older", "type": "sentence", "gujarati": "મારો ભાઈ મોટો છે.", "translit": "maaro bhaai moTo chhe.", "english": "My brother is older.", "alts": ["My brother is big"] },
+    { "id": "x-sister-younger", "type": "sentence", "gujarati": "મારી બહેન નાની છે.", "translit": "maaree bahen naanee chhe.", "english": "My sister is younger.", "alts": ["My sister is small", "My sister is little"] }
+  ]
+}

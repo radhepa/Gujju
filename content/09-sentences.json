@@ -1,0 +1,52 @@
+{
+  "id": "u09",
+  "order": 9,
+  "title": "Simple sentences",
+  "tip": "The verb goes last: \"I home at am\" (હું ઘરે છું). \"Am / is / are\" changes with the person: હું છું, તું છે, અમે છીએ, તમે છો.",
+  "lessons": [
+    { "id": "u09-l1", "title": "I am, we are", "items": ["w-chhun", "w-chhiye", "w-chho", "w-ghare", "x-i-am-home", "x-we-are-home", "x-where-are-you"], "translit": "hint" },
+    { "id": "u09-l2", "title": "This and that", "items": ["w-aa", "w-koN", "x-what-is-this", "x-this-is-house", "x-who-is-that"], "translit": "hint" },
+    { "id": "u09-l3", "title": "Big, small, hot, cold", "items": ["w-moTun", "w-naanun", "w-garam", "w-thanDun", "w-chaa", "w-paaNee", "x-house-big", "x-tea-hot", "x-water-cold"], "translit": "hint" },
+    { "id": "u09-l4", "title": "Mine and yours", "items": ["w-taarun", "w-tenun", "x-my-house", "x-your-name-friendly", "x-his-name"], "translit": "hide" },
+    { "id": "u09-l5", "title": "Things I do", "items": ["w-bolun", "w-sheekhun", "w-jaaun", "w-gujaraatee", "x-learning-gujarati", "x-speak-gujarati", "x-going-home"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-chhun", "type": "word", "gujarati": "છું", "translit": "chhun", "english": "am", "notes": "Only with હું: હું છું." },
+    { "id": "w-chhiye", "type": "word", "gujarati": "છીએ", "translit": "chhiye", "english": "are (with we)" },
+    { "id": "w-chho", "type": "word", "gujarati": "છો", "translit": "chho", "english": "are (with polite you)" },
+    { "id": "w-ghare", "type": "word", "gujarati": "ઘરે", "translit": "ghare", "english": "at home", "notes": "ઘર (house) + એ (at)." },
+    { "id": "x-i-am-home", "type": "sentence", "gujarati": "હું ઘરે છું.", "translit": "hun ghare chhun.", "english": "I am at home.", "alts": ["I am home"] },
+    { "id": "x-we-are-home", "type": "sentence", "gujarati": "અમે ઘરે છીએ.", "translit": "ame ghare chhiye.", "english": "We are at home.", "alts": ["We are home"] },
+    { "id": "x-where-are-you", "type": "sentence", "gujarati": "તમે ક્યાં છો?", "translit": "tame kyaan chho?", "english": "Where are you?" },
+
+    { "id": "w-aa", "type": "word", "gujarati": "આ", "translit": "aa", "english": "this", "notes": "Same letter as the vowel આ, used as a word." },
+    { "id": "w-koN", "type": "word", "gujarati": "કોણ", "translit": "koN", "english": "who" },
+    { "id": "x-what-is-this", "type": "sentence", "gujarati": "આ શું છે?", "translit": "aa shun chhe?", "english": "What is this?" },
+    { "id": "x-this-is-house", "type": "sentence", "gujarati": "આ ઘર છે.", "translit": "aa ghar chhe.", "english": "This is a house.", "alts": ["This is the house"] },
+    { "id": "x-who-is-that", "type": "sentence", "gujarati": "તે કોણ છે?", "translit": "te koN chhe?", "english": "Who is that?", "alts": ["Who is he", "Who is she"] },
+
+    { "id": "w-moTun", "type": "word", "gujarati": "મોટું", "translit": "moTun", "english": "big (for things)", "notes": "Things like a house take the ું ending: મોટું ઘર." },
+    { "id": "w-naanun", "type": "word", "gujarati": "નાનું", "translit": "naanun", "english": "small (for things)" },
+    { "id": "w-garam", "type": "word", "gujarati": "ગરમ", "translit": "garam", "english": "hot" },
+    { "id": "w-thanDun", "type": "word", "gujarati": "ઠંડું", "translit": "ThanDun", "english": "cold" },
+    { "id": "w-chaa", "type": "word", "gujarati": "ચા", "translit": "chaa", "english": "tea" },
+    { "id": "w-paaNee", "type": "word", "gujarati": "પાણી", "translit": "paaNee", "english": "water" },
+    { "id": "x-house-big", "type": "sentence", "gujarati": "ઘર મોટું છે.", "translit": "ghar moTun chhe.", "english": "The house is big." },
+    { "id": "x-tea-hot", "type": "sentence", "gujarati": "ચા ગરમ છે.", "translit": "chaa garam chhe.", "english": "The tea is hot." },
+    { "id": "x-water-cold", "type": "sentence", "gujarati": "પાણી ઠંડું છે.", "translit": "paaNee ThanDun chhe.", "english": "The water is cold." },
+
+    { "id": "w-taarun", "type": "word", "gujarati": "તારું", "translit": "taarun", "english": "your (friendly)" },
+    { "id": "w-tenun", "type": "word", "gujarati": "તેનું", "translit": "tenun", "english": "his, her" },
+    { "id": "x-my-house", "type": "sentence", "gujarati": "આ મારું ઘર છે.", "translit": "aa maarun ghar chhe.", "english": "This is my house." },
+    { "id": "x-your-name-friendly", "type": "sentence", "gujarati": "તારું નામ શું છે?", "translit": "taarun naam shun chhe?", "english": "What's your name?", "notes": "Friendly version, for kids and friends." },
+    { "id": "x-his-name", "type": "sentence", "gujarati": "તેનું નામ રવિ છે.", "translit": "tenun naam ravi chhe.", "english": "His name is Ravi." },
+
+    { "id": "w-bolun", "type": "word", "gujarati": "બોલું", "translit": "bolun", "english": "(I) speak" },
+    { "id": "w-sheekhun", "type": "word", "gujarati": "શીખું", "translit": "sheekhun", "english": "(I) learn" },
+    { "id": "w-jaaun", "type": "word", "gujarati": "જાઉં", "translit": "jaaun", "english": "(I) go" },
+    { "id": "w-gujaraatee", "type": "word", "gujarati": "ગુજરાતી", "translit": "gujaraatee", "english": "Gujarati" },
+    { "id": "x-learning-gujarati", "type": "sentence", "gujarati": "હું ગુજરાતી શીખું છું.", "translit": "hun gujaraatee sheekhun chhun.", "english": "I am learning Gujarati.", "alts": ["I learn Gujarati"] },
+    { "id": "x-speak-gujarati", "type": "sentence", "gujarati": "હું ગુજરાતી બોલું છું.", "translit": "hun gujaraatee bolun chhun.", "english": "I speak Gujarati.", "alts": ["I am speaking Gujarati"] },
+    { "id": "x-going-home", "type": "sentence", "gujarati": "હું ઘરે જાઉં છું.", "translit": "hun ghare jaaun chhun.", "english": "I am going home.", "alts": ["I go home"] }
+  ]
+}

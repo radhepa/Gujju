@@ -1,0 +1,49 @@
+{
+  "id": "u10",
+  "order": 10,
+  "title": "Daily life",
+  "tip": "Verbs in the dictionary end in વું: ખાવું (to eat). Drop વું and add the ending for the person: હું ખાઉં છું, તે ખાય છે.",
+  "lessons": [
+    { "id": "u10-l1", "title": "Food", "items": ["w-roTlee", "w-daaL", "w-bhaat", "w-shaak", "w-khaavaanun", "x-food-ready"], "translit": "hint" },
+    { "id": "u10-l2", "title": "Places", "items": ["w-bajaar", "w-mandir", "w-dukaan", "w-shaher", "w-gaam", "x-where-temple"], "translit": "hide" },
+    { "id": "u10-l3", "title": "Time of day", "items": ["w-savaar", "w-bapor", "w-saanj", "w-aaje", "w-kaale", "x-morning-tea"], "translit": "hide" },
+    { "id": "u10-l4", "title": "Everyday verbs", "items": ["w-khaavun", "w-peevun", "w-javun", "w-aavvun", "w-soovun", "w-vaanchvun", "w-lakhvun"], "translit": "hide" },
+    { "id": "u10-l5", "title": "Putting it together", "items": ["x-i-eat-rotli", "x-mom-drinks-tea", "x-we-go-market", "x-night-read", "x-dad-comes-home"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-roTlee", "type": "word", "gujarati": "રોટલી", "translit": "roTlee", "english": "flatbread (rotli)" },
+    { "id": "w-daaL", "type": "word", "gujarati": "દાળ", "translit": "daaL", "english": "lentil soup (dal)", "notes": "Gujarati dal is often a little sweet." },
+    { "id": "w-bhaat", "type": "word", "gujarati": "ભાત", "translit": "bhaat", "english": "rice (cooked)" },
+    { "id": "w-shaak", "type": "word", "gujarati": "શાક", "translit": "shaak", "english": "vegetable curry", "notes": "રોટલી, દાળ, ભાત, શાક together is the classic everyday Gujarati meal." },
+    { "id": "w-khaavaanun", "type": "word", "gujarati": "ખાવાનું", "translit": "khaavaanun", "english": "food" },
+    { "id": "x-food-ready", "type": "sentence", "gujarati": "ખાવાનું તૈયાર છે.", "translit": "khaavaanun taiyaar chhe.", "english": "The food is ready.", "alts": ["Food is ready"] },
+
+    { "id": "w-bajaar", "type": "word", "gujarati": "બજાર", "translit": "bajaar", "english": "market" },
+    { "id": "w-mandir", "type": "word", "gujarati": "મંદિર", "translit": "mandir", "english": "temple" },
+    { "id": "w-dukaan", "type": "word", "gujarati": "દુકાન", "translit": "dukaan", "english": "shop" },
+    { "id": "w-shaher", "type": "word", "gujarati": "શહેર", "translit": "shaher", "english": "city" },
+    { "id": "w-gaam", "type": "word", "gujarati": "ગામ", "translit": "gaam", "english": "village, hometown", "notes": "\"Which gaam are you from?\" is a classic first question between Gujaratis." },
+    { "id": "x-where-temple", "type": "sentence", "gujarati": "મંદિર ક્યાં છે?", "translit": "mandir kyaan chhe?", "english": "Where is the temple?" },
+
+    { "id": "w-savaar", "type": "word", "gujarati": "સવાર", "translit": "savaar", "english": "morning" },
+    { "id": "w-bapor", "type": "word", "gujarati": "બપોર", "translit": "bapor", "english": "afternoon" },
+    { "id": "w-saanj", "type": "word", "gujarati": "સાંજ", "translit": "saanj", "english": "evening" },
+    { "id": "w-aaje", "type": "word", "gujarati": "આજે", "translit": "aaje", "english": "today" },
+    { "id": "w-kaale", "type": "word", "gujarati": "કાલે", "translit": "kaale", "english": "tomorrow, yesterday", "notes": "The same word for both. The verb tells you which." },
+    { "id": "x-morning-tea", "type": "sentence", "gujarati": "સવારે હું ચા પીઉં છું.", "translit": "savaare hun chaa peeun chhun.", "english": "In the morning I drink tea.", "alts": ["I drink tea in the morning"] },
+
+    { "id": "w-khaavun", "type": "word", "gujarati": "ખાવું", "translit": "khaavun", "english": "to eat" },
+    { "id": "w-peevun", "type": "word", "gujarati": "પીવું", "translit": "peevun", "english": "to drink" },
+    { "id": "w-javun", "type": "word", "gujarati": "જવું", "translit": "javun", "english": "to go" },
+    { "id": "w-aavvun", "type": "word", "gujarati": "આવવું", "translit": "aavvun", "english": "to come" },
+    { "id": "w-soovun", "type": "word", "gujarati": "સૂવું", "translit": "soovun", "english": "to sleep" },
+    { "id": "w-vaanchvun", "type": "word", "gujarati": "વાંચવું", "translit": "vaanchvun", "english": "to read" },
+    { "id": "w-lakhvun", "type": "word", "gujarati": "લખવું", "translit": "lakhvun", "english": "to write" },
+
+    { "id": "x-i-eat-rotli", "type": "sentence", "gujarati": "હું રોટલી ખાઉં છું.", "translit": "hun roTlee khaaun chhun.", "english": "I eat rotli.", "alts": ["I am eating rotli"] },
+    { "id": "x-mom-drinks-tea", "type": "sentence", "gujarati": "મમ્મી ચા પીએ છે.", "translit": "mammee chaa peeye chhe.", "english": "Mom drinks tea.", "alts": ["Mom is drinking tea"] },
+    { "id": "x-we-go-market", "type": "sentence", "gujarati": "અમે બજાર જઈએ છીએ.", "translit": "ame bajaar jaiye chhiye.", "english": "We are going to the market.", "alts": ["We go to the market"] },
+    { "id": "x-night-read", "type": "sentence", "gujarati": "રાત્રે હું વાંચું છું.", "translit": "raatre hun vaanchun chhun.", "english": "At night I read.", "alts": ["I read at night"] },
+    { "id": "x-dad-comes-home", "type": "sentence", "gujarati": "પપ્પા ઘરે આવે છે.", "translit": "pappaa ghare aave chhe.", "english": "Dad is coming home.", "alts": ["Dad comes home"] }
+  ]
+}

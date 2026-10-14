@@ -6,6 +6,10 @@ import u03 from '../../content/03-consonants-2.json';
 import u04 from '../../content/04-matras.json';
 import u05 from '../../content/05-conjuncts.json';
 import u06 from '../../content/06-numbers.json';
+import u07 from '../../content/07-greetings.json';
+import u08 from '../../content/08-family.json';
+import u09 from '../../content/09-sentences.json';
+import u10 from '../../content/10-daily-life.json';
 
 // One JSON file per unit, so a unit can be checked and edited on its own.
 // Units, lessons and items are flattened into separate tables here.
@@ -25,7 +29,7 @@ interface UnitFile {
   items: (Omit<Item, 'audioFile' | 'type'> & { type: string; audioFile?: string | null })[];
 }
 
-export const unitFiles: UnitFile[] = [u01, u02, u03, u04, u05, u06];
+export const unitFiles: UnitFile[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10];
 
 export function buildCourse(files: UnitFile[]): Course {
   const units: Unit[] = [];
