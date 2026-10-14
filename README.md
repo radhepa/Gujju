@@ -91,7 +91,7 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 
 ## Mascot
 
-Kesar is drawn the same way as Pip, the panda from my fitness app [FitPip](https://github.com/radhepa/FitPip): no outlines, soft two-tone shading, bead eyes with two highlights, short brow strokes, a band with fluttering ties, and the same idle timing. They're meant to look like they came from the same hand.
+Kesar is drawn in the same style as Pip, the panda from my fitness app [FitPip](https://github.com/radhepa/FitPip): no outlines, soft two-tone shading, bead eyes with two highlights, brows that do the acting, a band with fluttering ties, and the same idle timing. His face is his own (a broad lion head, rosy nose, little fangs when he grins), but the two should look like they came from the same hand.
 
 He's a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the fan on his pagdi). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
 

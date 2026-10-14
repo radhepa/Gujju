@@ -2,11 +2,11 @@
 // them. Plain data with no React, so the app (Kesar.tsx) and the preview
 // renderer (scripts/render-kesar.mjs) draw from exactly the same source.
 //
-// He's drawn the same way as Pip, the panda in FitPip: no outlines, soft
-// gradient shapes with a darker second colour for ears, paws and feet, bead
-// eyes with two highlights on light eye patches, short brow strokes, a band
-// with fluttering ties, and the same idle timing. Face shapes that are shared
-// with Pip are kept in Pip's coordinates and shifted into place with `pip()`.
+// He's drawn in the same style as Pip, the panda in FitPip: no outlines,
+// soft gradient shapes with a darker second colour for ears, paws and feet,
+// bead eyes with two highlights, brows that act, a band with fluttering ties,
+// and the same idle timing. His face is his own. A few body shapes borrowed
+// from Pip are kept in Pip's coordinates and shifted into place with `pip()`.
 //
 // Coordinates are a 260 x 260 design box; the ground line is y = 234.
 
@@ -244,44 +244,54 @@ const ear = `
   <circle cx="67" cy="87" r="7" fill="#F2B977"/>
   <circle cx="60" cy="80" r="2.2" fill="#FFE3B0" opacity=".8"/>`;
 
-// Pip's head shape, fluffy cheeks and all.
-const faceCoat = pip(`
-  <path d="M74 88c4-32 25-49 62-49s62 21 64 51l9 20-9 1 7 15-13-1c-7 25-31 40-59 40-31 0-54-15-61-40l-13 1 8-14-9-2Z" fill="url(#k-coat)"/>`);
+// His own face, drawn in Pip's manner: a broad lion head with soft cheek
+// fluff, round amber bead eyes, tufted brows, a two-lobed muzzle.
+const faceCoat = `
+  <path d="M72 92C72 62 98 46 130 46C162 46 188 62 188 92C190 100 197 104 195 112C200 116 196 124 192 127C194 133 189 139 184 140C176 160 156 170 130 170C104 170 84 160 76 140C71 139 66 133 68 127C64 124 60 116 65 112C63 104 70 100 72 92Z" fill="url(#k-coat)"/>
+  ${stroke('M70 118C72 124 74 128 77 131M190 118C188 124 186 128 183 131', '#FFE6A0', 2, 'opacity=".55"')}`;
 
-// Light fur round the eyes and on the muzzle, and a lion's tear marks.
-const patches = pip(`
-  <path d="M82 104c3-19 17-25 30-17 13 8 13 25 5 39-19 6-30-3-35-22ZM188 104c-3-19-17-25-30-17-13 8-13 25-5 39 19 6 30-3 35-22Z" fill="url(#k-cream)"/>
-  <path d="m92 119 22-1-5 22ZM178 119l-22-1 5 22Z" fill="#C8691C" opacity=".9"/>
-  <path d="M87 135c6-16 29-20 48-8 19-12 42-8 48 8-8 17-26 24-48 24s-40-7-48-24Z" fill="url(#k-cream)"/>`) +
-  dots([[109, 140], [112, 145], [106.5, 146], [151, 140], [148, 145], [153.5, 146]], 1, '#D39552');
+// Light fur under the eyes, a lion's tear lines, the puffy whisker pads.
+const patches = `
+  <path d="M86 119Q100 129 114 119Q112 132 100 134Q88 132 86 119ZM146 119Q160 129 174 119Q172 132 160 134Q148 132 146 119Z" fill="url(#k-cream)"/>
+  ${stroke('M110.5 121Q114 129 118.5 134M149.5 121Q146 129 141.5 134', '#B5601E', 2, 'opacity=".5"')}
+  <path d="M130 132C124 128 108 130 106 141C104 151 114 157 123 154C126 158 134 158 137 154C146 157 156 151 154 141C152 130 136 128 130 132Z" fill="url(#k-cream)"/>
+  ${dots([[114, 142], [117, 146.5], [112, 147.5], [146, 142], [143, 146.5], [148, 147.5]], 1, '#D39552')}`;
 
-const blush = pip(`<g fill="${BLUSH}" opacity=".65"><ellipse cx="87" cy="127" rx="9" ry="4.5"/><ellipse cx="183" cy="127" rx="9" ry="4.5"/></g>`);
-const blushHot = pip(`<g fill="${BLUSH}" opacity=".5"><ellipse cx="87" cy="127" rx="10" ry="5.5"/><ellipse cx="183" cy="127" rx="10" ry="5.5"/></g>`);
+const blush = `<g fill="#F09BB0" opacity=".55"><circle cx="86" cy="134" r="6.5"/><circle cx="174" cy="134" r="6.5"/></g>`;
+const blushHot = `<g fill="#F09BB0" opacity=".5"><circle cx="86" cy="134" r="8"/><circle cx="174" cy="134" r="8"/></g>`;
 
-const browL = pip(stroke('m96 91 12-2', BROW, 3.5));
-const browR = pip(stroke('m160 89 12 2', BROW, 3.5));
+// Tufted brows: thick at the inner end, tapering out.
+const browL = `<path d="${taper([107.5, 95], [102, 91], [95.5, 91], [89, 96], 5.4, 1.8)}" fill="${BROW}"/>`;
+const browR = mirror(browL);
 
-// Pip's bead eyes, in lion amber.
-const bead = (x: number) => `
-  <g transform="translate(${x} 110)">
-    <ellipse rx="10" ry="13" fill="${EYE}"/>
-    <ellipse cy="5" rx="6.5" ry="6" fill="#7E4517"/>
-    <circle cx="-3" cy="-5" r="3.5" fill="#fff"/>
-    <circle cx="4" cy="4" r="1.6" fill="#FFD9A0"/>
+// Round bead eyes with bright amber, highlight on the right, a lash flick.
+const bead = (x: number, outer: number) => `
+  <g transform="translate(${x} 111)">
+    <ellipse rx="10.5" ry="11.5" fill="${EYE}"/>
+    <ellipse cy="4.5" rx="7" ry="5.6" fill="#C9812E"/>
+    <circle cx="3.6" cy="-4.2" r="3.4" fill="#fff"/>
+    <circle cx="-3.6" cy="4" r="1.5" fill="#FFE2B0"/>
+    ${stroke(`M${outer * 9.6} -5.5l${outer * 3.6} -2.6`, EYE, 2.4)}
   </g>`;
 
-const happyEyes = pip(stroke('M95 114q10-15 20 0m40 0q10-15 20 0', EYE, 4.5));
-const closedEyes = pip(stroke('M96 113q9 8 18 0m42 0q9 8 18 0', EYE, 4));
+const happyEyes =
+  stroke('M90 115Q100 102 110 115M150 115Q160 102 170 115', EYE, 4.4) + stroke('M90 115l-3.4-2.2M170 115l3.4-2.2', EYE, 2.2);
+const closedEyes =
+  stroke('M91 112Q100 119 109 112M151 112Q160 119 169 112', EYE, 4) + stroke('M91 112l-3.2 1.4M169 112l3.2 1.4', EYE, 2);
 
-const nose = pip(`
-  <path d="M128 131q7-4 14 0c0 4-4 7-7 7s-7-3-7-7Z" fill="#2E1406"/>
-  ${stroke('m131 131 4-1', '#B07A4A', 1.8)}`);
-const mouthSmile = pip(stroke('M124 143q6 6 11-1 5 7 11 1', MOUTH, 2.5));
-const mouthOpen = pip(`
-  <path d="M123 142q12 6 24 0c-1 18-22 18-24 0Z" fill="#2E1206"/>
-  <path d="M127 151q8-7 16 0-8 8-16 0" fill="#F1A8BD"/>`);
-const mouthO = pip(`<ellipse cx="135" cy="146" rx="3.5" ry="4" fill="#4A200A"/>`);
-const mouthWavy = pip(stroke('M124 146q2.75-3 5.5 0t5.5 0t5.5 0t5.5 0', MOUTH, 2.4));
+// A broad, rosy lion nose and a Y-shaped mouth; the grin shows two little fangs.
+const nose = `
+  <path d="M121 133C121 129 139 129 139 133C139 137 134 141 130 142C126 141 121 137 121 133Z" fill="#9A4A3C"/>
+  <path d="M123 133C123 130.5 137 130.5 137 133C135 134 125 134 123 133Z" fill="#C46B5C"/>
+  <ellipse cx="126.5" cy="132.4" rx="2.6" ry="1.2" fill="#fff" opacity=".55"/>
+  ${stroke('M130 142V146', MOUTH, 2.2)}`;
+const mouthSmile = stroke('M130 146Q125 151.5 119 148.5M130 146Q135 151.5 141 148.5', MOUTH, 2.4);
+const mouthOpen = `
+  <path d="M118 147Q130 151 142 147Q140 163 130 163Q120 163 118 147Z" fill="#2E1206"/>
+  <path d="M123.5 157.5Q130 153 136.5 157.5Q134.5 162.5 130 162.5Q125.5 162.5 123.5 157.5Z" fill="#F1A8BD"/>
+  <path d="M121.4 148.2L125.6 149L123.6 153.2ZM138.6 148.2L134.4 149L136.4 153.2Z" fill="#FFFBF2"/>`;
+const mouthO = `<ellipse cx="130" cy="151" rx="4" ry="4.6" fill="#4A200A"/>`;
+const mouthWavy = stroke('M119 151q2.75-3 5.5 0t5.5 0t5.5 0t5.5 0', MOUTH, 2.4);
 
 // The pagdi: a wrapped dome above Pip's band, a diamond jewel, ties behind.
 function folds(): string {
@@ -415,22 +425,22 @@ export const RIG: RigNode = {
                 { id: 'patches', svg: patches },
                 { id: 'blush', svg: blush },
                 { id: 'blushHot', svg: blushHot, when: { effect: 'hearts' } },
-                { id: 'browL', pivot: [97, 90], svg: browL },
-                { id: 'browR', pivot: [161, 90], svg: browR },
+                { id: 'browL', pivot: [98, 93], svg: browL },
+                { id: 'browR', pivot: [162, 93], svg: browR },
                 {
                   id: 'gaze',
                   when: { eyes: ['open'] },
                   children: [
-                    { id: 'eyeL', pivot: [100, 110], svg: bead(100) },
-                    { id: 'eyeR', pivot: [160, 110], svg: bead(160) },
+                    { id: 'eyeL', pivot: [100, 111], svg: bead(100, -1) },
+                    { id: 'eyeR', pivot: [160, 111], svg: bead(160, 1) },
                   ],
                 },
                 { id: 'eyesHappy', svg: happyEyes, when: { eyes: ['happy'] } },
                 { id: 'eyesClosed', svg: closedEyes, when: { eyes: ['closed'] } },
                 { id: 'nose', svg: nose },
                 { id: 'mouthSmile', svg: mouthSmile, when: { mouth: ['smile'] } },
-                { id: 'mouthOpen', pivot: [130, 146], svg: mouthOpen, when: { mouth: ['open'] } },
-                { id: 'mouthO', pivot: [130, 146], svg: mouthO, when: { mouth: ['o'] } },
+                { id: 'mouthOpen', pivot: [130, 151], svg: mouthOpen, when: { mouth: ['open'] } },
+                { id: 'mouthO', pivot: [130, 151], svg: mouthO, when: { mouth: ['o'] } },
                 { id: 'mouthWavy', svg: mouthWavy, when: { mouth: ['wavy'] } },
               ],
             },
