@@ -6,7 +6,7 @@ import { course } from '../content/course';
 import { unitStatuses, type UnitStatus } from '../lib/progress';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
-import { Kesar } from '../ui/Kesar';
+import { Kesar } from '../mascot/Kesar';
 import { Screen } from '../ui/Screen';
 import { Gu, Text } from '../ui/Text';
 import { colors, shadow } from '../ui/theme';

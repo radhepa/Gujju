@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import type { Summary } from '../lib/session';
 import { Button } from '../ui/Button';
-import { Kesar, type Pose } from '../ui/Kesar';
+import { Kesar, type Pose } from '../mascot/Kesar';
 import { Screen } from '../ui/Screen';
 import { Text } from '../ui/Text';
 import { colors } from '../ui/theme';

@@ -46,8 +46,9 @@ src/app/            screens (Expo Router)
 src/lib/            exercises, lesson session, scoring, FSRS, streak; no React
 src/storage/        one Store interface, SQLite on iOS, IndexedDB on web
 src/session/        the lesson player and the five exercise views
+src/mascot/         Kesar's rig (parts, joints, clips) and the component that animates it
 src/state/          progress context, the only thing screens talk to
-scripts/            sprite sheet slicer and icon generator
+scripts/            renders Kesar outside the app: pose sheet, README gif, app icons
 ```
 
 **Content is data, progress is a database.** Units, lessons and items live in JSON in the repo, so the course is version controlled and doesn't need a backend. Only progress is stored: `lesson_progress`, `card_state`, `review_log` and `daily_stats`, with column names that map straight onto Supabase tables for when sync is added.
@@ -90,4 +91,10 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 
 ## Mascot
 
-Kesar's sprite sheet is in `assets/mascot/source.jpg`. `python scripts/slice-mascot.py` cuts it into one strip of equal-size frames (finding each pose by the gaps around it, since the poses don't stay inside the guide grid), and `python scripts/make-icons.py` makes the app icon, splash and favicon from his idle pose.
+Kesar is a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the fan on his pagdi). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
+
+On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
+
+<img src="docs/kesar-poses.png" alt="All of Kesar's poses" width="560">
+
+`npm run kesar -- poses|gif|icons` renders him outside the app from the same rig, which is how the gif above and the app icon are made. His original sprite sheet is kept in `assets/mascot/source.jpg` as the design reference.
