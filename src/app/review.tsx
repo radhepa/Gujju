@@ -42,7 +42,7 @@ export default function ReviewScreen() {
     );
   }
 
-  if (!exercises.length) return <Notice title="Nothing to review" body="Come back tomorrow." />;
+  if (!exercises.length) return <Notice title="Nothing to review" body="Come back tomorrow." pose="sleep" />;
 
   return <SessionPlayer exercises={exercises} onFinish={onFinish} onClose={goBack} />;
 }

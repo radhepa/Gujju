@@ -2,6 +2,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Alert, Platform, Pressable, StyleSheet, Switch, View } from 'react-native';
 import { course } from '../content/course';
 import { NEW_PER_DAY } from '../lib/progress';
+import { router } from 'expo-router';
+import { Kesar } from '../mascot/Kesar';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
 import { goBack } from '../ui/nav';
@@ -74,6 +76,17 @@ export default function SettingsScreen() {
           thumbColor="#fff"
         />
       </View>
+
+      <Pressable onPress={() => router.push('/kesar')} style={[styles.card, styles.row]} accessibilityRole="button">
+        <Kesar size={64} tappable={false} />
+        <View style={{ flex: 1 }}>
+          <Text weight="black" style={styles.label}>
+            Meet Kesar
+          </Text>
+          <Text style={styles.help}>See every pose and play with him.</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={20} color={colors.muted} />
+      </Pressable>
 
       <View style={styles.card}>
         <Text weight="black" style={styles.label}>

@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { course } from '../content/course';
 import { current, isFinished, startSession, submit, summarize, type Summary } from '../lib/session';
 import type { Exercise } from '../lib/types';
+import { Kesar } from '../mascot/Kesar';
 import { Button } from '../ui/Button';
 import { buzz } from '../ui/feedback';
 import { Screen } from '../ui/Screen';
@@ -95,19 +96,24 @@ export function SessionPlayer({
 
       {result && (
         <View style={[styles.sheet, { backgroundColor: result.correct ? colors.greenSoft : colors.redSoft }]}>
-          <Text weight="black" style={[styles.verdict, { color: result.correct ? colors.greenDark : colors.redDark }]}>
-            {result.correct ? 'Nice!' : ex.kind === 'match-pairs' ? 'Almost. This one comes back later.' : 'Correct answer:'}
-          </Text>
-          {!result.correct && result.solution ? (
-            result.solutionIsGujarati ? (
-              <Gu style={styles.solutionGu}>{result.solution}</Gu>
-            ) : (
-              <Text weight="bold" style={styles.solution}>
-                {result.solution}
+          <View style={styles.sheetRow}>
+            <Kesar size={76} reaction={result.correct ? 'nod' : 'oops'} reactionKey={session.index} tappable={false} />
+            <View style={{ flex: 1 }}>
+              <Text weight="black" style={[styles.verdict, { color: result.correct ? colors.greenDark : colors.redDark }]}>
+                {result.correct ? 'Nice!' : ex.kind === 'match-pairs' ? 'Almost. This one comes back later.' : 'Correct answer:'}
               </Text>
-            )
-          ) : null}
-          {notes ? <Text style={styles.notes}>{notes}</Text> : null}
+              {!result.correct && result.solution ? (
+                result.solutionIsGujarati ? (
+                  <Gu style={styles.solutionGu}>{result.solution}</Gu>
+                ) : (
+                  <Text weight="bold" style={styles.solution}>
+                    {result.solution}
+                  </Text>
+                )
+              ) : null}
+              {notes ? <Text style={styles.notes}>{notes}</Text> : null}
+            </View>
+          </View>
           <Button label="Continue" variant={result.correct ? 'green' : 'red'} onPress={next} />
         </View>
       )}
@@ -122,7 +128,8 @@ const styles = StyleSheet.create({
   retry: { color: colors.primaryDark, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 4 },
   question: { fontSize: 22, marginBottom: 8 },
   body: { flex: 1, paddingBottom: 16 },
-  sheet: { marginHorizontal: -16, paddingHorizontal: 16, paddingTop: 16, paddingBottom: 20, gap: 8 },
+  sheet: { marginHorizontal: -16, paddingHorizontal: 16, paddingTop: 10, paddingBottom: 20, gap: 8 },
+  sheetRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginLeft: -8 },
   verdict: { fontSize: 20 },
   solution: { fontSize: 18, color: colors.redDark },
   solutionGu: { fontSize: 26, lineHeight: 40, color: colors.redDark },
