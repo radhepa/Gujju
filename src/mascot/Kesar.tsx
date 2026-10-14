@@ -40,8 +40,20 @@ const VB = `${BOX.x} ${BOX.y} ${BOX.w} ${BOX.h}`;
 const origin = ([x, y]: [number, number]) =>
   `${((x - BOX.x) / BOX.w) * 100}% ${((y - BOX.y) / BOX.h) * 100}%`;
 
+// Gradient and clip ids are global to the page on the web, and a screen
+// left mounted underneath (hidden) would otherwise own "k-coat": every
+// Kesar on top would then lose his colours. So each part gets its own ids.
+let partSeq = 0;
+
 const Part = memo(function Part({ svg, size }: { svg: string; size: number }) {
-  const xml = useMemo(() => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${VB}">${withDefs(svg)}</svg>`, [svg]);
+  const uid = useMemo(() => `k${(++partSeq).toString(36)}-`, []);
+  const xml = useMemo(
+    () =>
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${VB}">${withDefs(svg)}</svg>`
+        .replace(/id="k-/g, `id="${uid}`)
+        .replace(/url\(#k-/g, `url(#${uid}`),
+    [svg, uid],
+  );
   return <SvgXml xml={xml} width={size} height={size} />;
 });
 

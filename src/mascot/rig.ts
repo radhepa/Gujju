@@ -38,11 +38,11 @@ const GRADIENTS: Record<string, string> = {
   'k-paw': `<linearGradient id="k-paw" gradientUnits="userSpaceOnUse" x1="75" y1="195" x2="91" y2="214"><stop stop-color="#AE5A1C"/><stop offset="1" stop-color="#5E2A0A"/></linearGradient>`,
   'k-turban': `<linearGradient id="k-turban" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#FF8A3E"/><stop offset=".55" stop-color="#F0601F"/><stop offset="1" stop-color="#C63E0E"/></linearGradient>`,
   'k-band': `<linearGradient id="k-band" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF4D2"/><stop offset="1" stop-color="#F8D78E"/></linearGradient>`,
-  'k-plume': `<linearGradient id="k-plume" x1="0" y1="1" x2=".35" y2="0"><stop stop-color="#FFF8E8"/><stop offset=".42" stop-color="#FFEFC8"/><stop offset=".72" stop-color="#FFD27A"/><stop offset="1" stop-color="#F7A93E"/></linearGradient>`,
+  'k-plume': `<linearGradient id="k-plume" x1="0" y1="1" x2=".35" y2="0"><stop stop-color="#FFC15A"/><stop offset=".45" stop-color="#F58A2A"/><stop offset="1" stop-color="#D9481A"/></linearGradient>`,
   'k-gold': `<linearGradient id="k-gold" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#FFF1B0"/><stop offset=".5" stop-color="#FFD36E"/><stop offset="1" stop-color="#D9971F"/></linearGradient>`,
   'k-iris': `<linearGradient id="k-iris" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4A230C"/><stop offset=".55" stop-color="#A3601F"/><stop offset="1" stop-color="#E5A03E"/></linearGradient>`,
   'k-aura': `<radialGradient id="k-aura"><stop stop-color="#FFB347" stop-opacity=".26"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></radialGradient>`,
-  'k-glow': `<radialGradient id="k-glow"><stop stop-color="#FFF3B0" stop-opacity=".85"/><stop offset="1" stop-color="#FFF3B0" stop-opacity="0"/></radialGradient>`,
+  'k-glow': `<radialGradient id="k-glow"><stop stop-color="#FFD36B" stop-opacity=".55"/><stop offset="1" stop-color="#FFD36B" stop-opacity="0"/></radialGradient>`,
   'k-page': `<linearGradient id="k-page" gradientUnits="userSpaceOnUse" x1="131" y1="0" x2="161" y2="0"><stop stop-color="#E6CB98"/><stop offset=".45" stop-color="#FAEDCF"/><stop offset="1" stop-color="#FFFBF0"/></linearGradient>`,
 };
 
@@ -376,10 +376,14 @@ const turban = `
   <path d="M128.7 72.4l1.8-2.2" stroke="#FF9AAE" stroke-width="1.2" stroke-linecap="round"/>
   <path d="M130 87.5C128.4 89.6 128.4 91.4 130 92.4C131.6 91.4 131.6 89.6 130 87.5Z" fill="#FFFBEF"/>`;
 
-// The kalgi: a cream plume pinned to the sarpech, curling over the top.
+// The kalgi: a saffron plume pinned to the sarpech, curling over the top.
+// Warm and edged in a deeper orange so it reads as part of the pagdi, not a
+// pale shape that melts into a cream background.
+const PLUME = 'M130 66C121 55 119.5 37 132 25Q139 19.5 147 21Q141.5 24 140.5 30C139.5 44 136 56 130 66Z';
 const crest = `
-  <path d="M130 66C121 55 119.5 37 132 25Q139 19.5 147 21Q141.5 24 140.5 30C139.5 44 136 56 130 66Z" fill="url(#k-plume)"/>
-  ${stroke('M130 64C127.5 51 129 37 140 26', '#E8B65E', 1.3)}
+  <path d="${PLUME}" fill="#B8461A" transform="translate(130 44) scale(1.08) translate(-130 -44)"/>
+  <path d="${PLUME}" fill="url(#k-plume)"/>
+  ${stroke('M130 64C127.5 51 129 37 140 26', '#FFE1A6', 1.3, 'opacity=".8"')}
   <circle cx="130" cy="66" r="3.2" fill="url(#k-gold)"/>`;
 
 // A cloth tail along a cubic, tapering from w0 to w1, with a swallowtail
@@ -577,10 +581,10 @@ export const RIG: RigNode = {
       ],
     },
     ...fx('sparkles', [
-      ['fx1', 49, 104, star('#FFE5A0')],
-      ['fx2', 218, 126, star('#FFC98C')],
-      ['fx3', 76, 53, star('#FFC98C')],
-      ['fx4', 192, 48, star('#FFE5A0')],
+      ['fx1', 49, 104, star('#F5B127')],
+      ['fx2', 218, 126, star('#F08A2A')],
+      ['fx3', 76, 53, star('#F08A2A')],
+      ['fx4', 192, 48, star('#F5B127')],
     ]),
     ...fx('hearts', [
       ['fx1', 49, 104, heart],

@@ -126,5 +126,10 @@ if (cmd === 'icons') {
   writeFileSync('assets/splash-icon.png', render(zoom(still(), '10 0 240 240'), 1024).png);
   writeFileSync('assets/android-icon-foreground.png', render(zoom(still(), '-30 -40 320 320'), 512).png);
   writeFileSync('assets/favicon.png', render(zoom(still(), '64 14 132 132'), 48).png);
+  // Android's themed icon: one flat silhouette that the launcher tints.
+  const mono = zoom(still({ shadow: false }), '-30 -40 320 320')
+    .replace(/(<svg[^>]*>)/, '$1<defs><filter id="mono"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter></defs><g filter="url(#mono)">')
+    .replace(/<\/svg>$/, '</g></svg>');
+  writeFileSync('assets/android-icon-monochrome.png', render(mono, 432).png);
   console.log('icons written');
 }
