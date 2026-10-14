@@ -4,12 +4,16 @@ export const colors = {
   bg: '#FBF6EE',
   card: '#FFFFFF',
   ink: '#2A2420',
-  muted: '#7D7168',
+  muted: '#74685F',
+  // Darker grey for text on tinted fills, where muted is too faint.
+  inkSoft: '#5E534B',
   line: '#E9E0D4',
   lineDark: '#D6CABB',
   primary: '#E58E26',
   primaryDark: '#B96A12',
   primarySoft: '#FCEBD3',
+  // Deep enough to carry white text (unit bands).
+  primaryDeep: '#B05F0C',
   green: '#3E9B5B',
   greenDark: '#2C7443',
   greenSoft: '#E2F3E7',

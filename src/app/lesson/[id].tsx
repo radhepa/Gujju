@@ -21,13 +21,16 @@ export default function LessonScreen() {
     [lesson?.id, seed],
   );
   const [summary, setSummary] = useState<Summary | null>(null);
+  // Whether this run was the first time through, read before finishing marks it done.
+  const [firstTime, setFirstTime] = useState(false);
 
   const onFinish = useCallback(
     (s: Summary) => {
+      setFirstTime(!!lesson && !completed.has(lesson.id));
       setSummary(s);
       if (lesson) finishSession(s, 'lesson', [lesson.id]).catch((e) => console.warn('Save failed', e));
     },
-    [lesson, finishSession],
+    [lesson, completed, finishSession],
   );
 
   if (!lesson || (!summary && !isLessonOpen(course, completed, lesson.id))) {
@@ -36,6 +39,7 @@ export default function LessonScreen() {
 
   if (summary) {
     const unit = course.units.find((u) => u.id === lesson.unitId)!;
+    const items = lesson.items.map((i) => course.items[i]).filter(Boolean);
     return (
       <SessionComplete
         title="Lesson complete!"
@@ -43,6 +47,7 @@ export default function LessonScreen() {
         summary={summary}
         streak={streak.days}
         onContinue={() => goBack()}
+        words={items.length ? { label: firstTime ? 'New in your reviews' : 'In this lesson', items } : undefined}
       />
     );
   }

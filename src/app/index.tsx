@@ -166,16 +166,19 @@ function UnitCard({
   onToggle: () => void;
 }) {
   const { unit, lessons, done, open, finished, next } = status;
-  const band = finished ? colors.green : open ? colors.primary : colors.locked;
+  // Deep fills so the white heading stays readable; locked units sit back in
+  // a pale band with dark text instead.
+  const band = finished ? colors.greenDark : open ? colors.primaryDeep : colors.line;
+  const fg = open ? '#fff' : colors.inkSoft;
 
   return (
     <View style={[styles.unit, shadow]}>
       <Pressable onPress={onToggle} style={[styles.unitHead, { backgroundColor: band }]} accessibilityRole="button">
         <View style={{ flex: 1 }}>
-          <Text weight="bold" style={styles.unitKicker}>
+          <Text weight="bold" style={[styles.unitKicker, !open && { color: fg }]}>
             Unit {unit.order}
           </Text>
-          <Text weight="black" style={styles.unitTitle}>
+          <Text weight="black" style={[styles.unitTitle, { color: fg }]}>
             {unit.title}
           </Text>
         </View>
@@ -186,7 +189,7 @@ function UnitCard({
             {done}/{lessons.length}
           </Text>
         ) : (
-          <Ionicons name="lock-closed" size={22} color="#fff" />
+          <Ionicons name="lock-closed" size={22} color={fg} />
         )}
       </Pressable>
 
@@ -337,7 +340,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   unitHead: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 12 },
-  unitKicker: { color: 'rgba(255,255,255,0.85)', fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.8 },
+  unitKicker: { color: 'rgba(255,255,255,0.9)', fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.8 },
   unitTitle: { color: '#fff', fontSize: 20 },
   unitCount: { color: '#fff', fontSize: 16 },
   unitBody: { padding: 12, gap: 4 },

@@ -1,9 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import type { Summary } from '../lib/session';
+import type { Item } from '../lib/types';
 import { Button } from '../ui/Button';
 import { Kesar, type Pose } from '../mascot/Kesar';
 import { Screen } from '../ui/Screen';
-import { Text } from '../ui/Text';
+import { Gu, Text } from '../ui/Text';
 import { colors } from '../ui/theme';
 
 export function SessionComplete({
@@ -13,6 +14,7 @@ export function SessionComplete({
   streak,
   onContinue,
   pose = 'cheer',
+  words,
 }: {
   title: string;
   subtitle?: string;
@@ -20,11 +22,15 @@ export function SessionComplete({
   streak: number;
   onContinue: () => void;
   pose?: Pose;
+  // What the lesson taught, shown as chips under the stats.
+  words?: { label: string; items: Item[] };
 }) {
+  const sentences = words?.items.filter((i) => i.type === 'sentence').length ?? 0;
+  const chips = words?.items.filter((i) => i.type !== 'sentence') ?? [];
   return (
     <Screen scroll={false}>
       <View style={styles.wrap}>
-        <Kesar size={170} pose={pose} />
+        <Kesar size={words ? 140 : 170} pose={pose} />
         <Text weight="black" style={styles.title}>
           {title}
         </Text>
@@ -34,6 +40,26 @@ export function SessionComplete({
           <Stat label="First try" value={`${Math.round(summary.accuracy * 100)}%`} color={colors.green} />
           <Stat label="Streak" value={`${streak} ${streak === 1 ? 'day' : 'days'}`} color={colors.teal} />
         </View>
+        {words && (chips.length > 0 || sentences > 0) ? (
+          <View style={styles.words}>
+            <Text weight="black" style={styles.wordsLabel}>
+              {words.label}
+            </Text>
+            <View style={styles.chips}>
+              {chips.map((i) => (
+                <Gu key={i.id} style={styles.chip} accessibilityLabel={`${i.gujarati}, ${i.english}`}>
+                  {i.gujarati}
+                </Gu>
+              ))}
+              {sentences > 0 ? (
+                <Text style={styles.more}>
+                  {chips.length ? '+' : ''}
+                  {sentences} {sentences === 1 ? 'sentence' : 'sentences'}
+                </Text>
+              ) : null}
+            </View>
+          </View>
+        ) : null}
       </View>
       <Button label="Continue" onPress={onContinue} style={styles.go} />
     </Screen>
@@ -69,5 +95,28 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
   },
   statValue: { fontSize: 20, paddingVertical: 12 },
+  words: {
+    alignSelf: 'stretch',
+    marginTop: 8,
+    padding: 14,
+    gap: 8,
+    backgroundColor: colors.card,
+    borderWidth: 2,
+    borderColor: colors.line,
+    borderRadius: 16,
+  },
+  wordsLabel: { fontSize: 13, color: colors.muted, textTransform: 'uppercase', letterSpacing: 0.8 },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8 },
+  chip: {
+    fontSize: 17,
+    lineHeight: 28,
+    paddingHorizontal: 10,
+    backgroundColor: colors.bg,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  more: { fontSize: 14, color: colors.muted },
   go: { marginBottom: 16 },
 });

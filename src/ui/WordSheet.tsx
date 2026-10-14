@@ -32,18 +32,20 @@ export function WordSheet({ word, onClose }: { word: string | null; onClose: () 
     <Modal visible={!!word} transparent animationType="slide" onRequestClose={onClose}>
       <Pressable style={styles.scrim} onPress={onClose} accessibilityLabel="Close" />
       <View style={styles.sheet}>
+        <View style={styles.handle} />
         <View style={styles.inner}>
           <View style={styles.top}>
-            <Gu bold style={styles.word}>
-              {word}
-            </Gu>
-            {word ? <Speak text={word} size={26} /> : null}
-            <View style={{ flex: 1 }} />
-            <Pressable onPress={onClose} accessibilityLabel="Close" hitSlop={12}>
-              <Ionicons name="close" size={26} color={colors.locked} />
+            <View style={styles.headword}>
+              <Gu bold style={styles.word}>
+                {word}
+              </Gu>
+              {tr ? <Text style={styles.tr}>{tr}</Text> : null}
+            </View>
+            {word ? <Speak text={word} size={22} framed /> : null}
+            <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel="Close" hitSlop={12} style={styles.close}>
+              <Ionicons name="close" size={24} color={colors.muted} />
             </Pressable>
           </View>
-          {tr ? <Text style={styles.tr}>{tr}</Text> : null}
 
           {entries.length ? (
             entries.map((e, i) => (
@@ -90,15 +92,20 @@ const styles = StyleSheet.create({
   scrim: { flex: 1, backgroundColor: 'rgba(42,36,32,0.35)' },
   sheet: {
     backgroundColor: colors.card,
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
-    paddingTop: 14,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    borderTopWidth: 2,
+    borderColor: colors.line,
+    paddingTop: 10,
     paddingBottom: 30,
   },
+  handle: { width: 40, height: 5, borderRadius: 3, backgroundColor: colors.lineDark, alignSelf: 'center', marginBottom: 8 },
   inner: { width: '100%', maxWidth, alignSelf: 'center', paddingHorizontal: 20, gap: 6 },
-  top: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  top: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  headword: { flex: 1, flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', columnGap: 10 },
   word: { fontSize: 34, lineHeight: 52 },
-  tr: { fontSize: 16, color: colors.muted, marginTop: -6 },
+  tr: { fontSize: 16, color: colors.muted },
+  close: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   row: { borderTopWidth: 1, borderColor: colors.line, paddingTop: 8, marginTop: 4 },
   en: { fontSize: 18 },
   pos: { fontSize: 13, color: colors.muted, fontStyle: 'italic' },
