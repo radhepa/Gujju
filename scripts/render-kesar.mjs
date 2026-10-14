@@ -9,7 +9,7 @@
 
 import { Resvg } from '@resvg/resvg-js';
 import gifenc from 'gifenc';
-import { writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { BOX, BREATH_MS, BREATH_SX, BREATH_SY, CLIPS, PARALLAX, RIG, findNode, rank, sample, visible, withDefs } from '../src/mascot/rig.ts';
 
@@ -131,5 +131,14 @@ if (cmd === 'icons') {
     .replace(/(<svg[^>]*>)/, '$1<defs><filter id="mono"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter></defs><g filter="url(#mono)">')
     .replace(/<\/svg>$/, '</g></svg>');
   writeFileSync('assets/android-icon-monochrome.png', render(mono, 432).png);
+  // Home-screen icons for the installed web app. iOS rounds the corners
+  // itself; the maskable one leaves room for Android's circle crop.
+  mkdirSync('public/icons', { recursive: true });
+  const tile = zoom(still({ background: '#FCEBD3' }), '20 6 220 220');
+  writeFileSync('public/icons/icon-192.png', render(tile, 192).png);
+  writeFileSync('public/icons/icon-512.png', render(tile, 512).png);
+  writeFileSync('public/icons/apple-touch-icon.png', render(tile, 180).png);
+  const padded = zoom(still(), '-20 -30 300 300').replace(/(<svg[^>]*>)/, '$1<rect x="-100" y="-100" width="500" height="500" fill="#FCEBD3"/>');
+  writeFileSync('public/icons/maskable-512.png', render(padded, 512).png);
   console.log('icons written');
 }
