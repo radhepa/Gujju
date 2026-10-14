@@ -1,0 +1,477 @@
+[
+  {
+    "id": "how-to",
+    "type": "tips",
+    "title": "How to learn from what you watch",
+    "tips": [
+      "Start with songs and kids' stories. They repeat the same simple words, so you hear them again and again.",
+      "Watch once just for the story, then rewatch a short scene and listen for words you already know.",
+      "Turn on Gujarati subtitles when they're offered. Seeing the script while you hear it trains your reading and your ear together.",
+      "Shadow short lines: pause, repeat a sentence out loud, and copy the rhythm, not just the words.",
+      "Keep a list of new words and phrases, then add them to a Gujju book so they come back in review.",
+      "Pick one thing to notice each time, like how people greet each other, ask questions or say no.",
+      "Don't worry about catching everything. Understanding the gist and a handful of new words is real progress."
+    ]
+  },
+
+  {
+    "id": "kevi-rite-jaish",
+    "title": "Kevi Rite Jaish",
+    "titleGu": "કેવી રીતે જઈશ?",
+    "type": "film",
+    "year": 2012,
+    "level": 2,
+    "about": "Abhishek Jain's comedy-drama about an Ahmedabad family whose father is set on sending his son to America by any means, even illegal ones. Its success is widely credited with starting the new wave of urban Gujarati films.",
+    "learn": "Family arguments between parents and grown children make it a good source of everyday household Gujarati.",
+    "tags": ["comedy", "drama", "family", "Ahmedabad"],
+    "link": "https://en.wikipedia.org/wiki/Kevi_Rite_Jaish"
+  },
+  {
+    "id": "bey-yaar",
+    "title": "Bey Yaar",
+    "titleGu": "બે યાર",
+    "type": "film",
+    "year": 2014,
+    "level": 2,
+    "about": "Two childhood friends in Ahmedabad get conned, make things worse with a risky plan involving a painting, and then set up a sting to win it back. It was a long-running hit and played at festivals abroad.",
+    "learn": "Friends teasing and scheming together gives you lots of casual, natural speech between young adults.",
+    "tags": ["comedy", "friends", "Ahmedabad"],
+    "link": "https://en.wikipedia.org/wiki/Bey_Yaar"
+  },
+  {
+    "id": "chhello-divas",
+    "title": "Chhello Divas",
+    "titleGu": "છેલ્લો દિવસ",
+    "type": "film",
+    "year": 2015,
+    "level": 2,
+    "about": "A coming-of-age comedy that follows a group of eight friends through their last year of college, with pranks, crushes and goodbyes. It was a big box-office hit and was later remade in Hindi.",
+    "learn": "Quick back-and-forth between college friends shows how young people actually talk to each other.",
+    "tags": ["comedy", "friends", "college"],
+    "link": "https://en.wikipedia.org/wiki/Chhello_Divas"
+  },
+  {
+    "id": "gujjubhai-the-great",
+    "title": "Gujjubhai the Great",
+    "titleGu": "ગુજ્જુભાઈ ધ ગ્રેટ",
+    "type": "film",
+    "year": 2015,
+    "level": 2,
+    "about": "Siddharth Randeria brings his stage character Gujjubhai to film as a father whose scheme to match his daughter with a shy employee spirals out of control. It grew out of a popular series of Gujarati plays.",
+    "learn": "Broad, stage-style comedy where the big reactions help you follow the jokes even when you miss words.",
+    "tags": ["comedy", "family", "stage"],
+    "link": "https://en.wikipedia.org/wiki/Gujjubhai_the_Great"
+  },
+  {
+    "id": "wrong-side-raju",
+    "title": "Wrong Side Raju",
+    "titleGu": "રોંગ સાઈડ રાજુ",
+    "type": "film",
+    "year": 2016,
+    "level": 3,
+    "about": "An Ahmedabad driver is pressured into taking the blame for a fatal hit-and-run, and the truth slowly comes out. It won the National Film Award for Best Gujarati Feature Film.",
+    "learn": "A tense story keeps you watching even when you miss words, which makes it a good stretch once comedies feel comfortable.",
+    "tags": ["thriller", "drama", "award-winner", "Ahmedabad"],
+    "link": "https://en.wikipedia.org/wiki/Wrong_Side_Raju"
+  },
+  {
+    "id": "carry-on-kesar",
+    "title": "Carry On Kesar",
+    "titleGu": "કેરી ઑન કેસર",
+    "type": "film",
+    "year": 2017,
+    "level": 2,
+    "about": "A traditional small-town couple with no children decide to start a family at an age when their friends are becoming grandparents. Supriya Pathak and Darshan Jariwala lead the cast.",
+    "learn": "Conversations between an older couple at home give you everyday domestic Gujarati across generations.",
+    "tags": ["comedy", "drama", "family"],
+    "link": "https://en.wikipedia.org/wiki/Carry_On_Kesar"
+  },
+  {
+    "id": "love-ni-bhavai",
+    "title": "Love Ni Bhavai",
+    "type": "film",
+    "year": 2017,
+    "level": 2,
+    "about": "A romance about an Ahmedabad radio jockey who has sworn off love, and two men who complicate that. It ran for more than 100 days in theatres, with music by Sachin–Jigar.",
+    "learn": "A modern city romance, good for hearing how young urban Gujaratis talk about love, work and relationships.",
+    "tags": ["romance", "music", "Ahmedabad"],
+    "link": "https://en.wikipedia.org/wiki/Love_Ni_Bhavai"
+  },
+  {
+    "id": "dhh",
+    "title": "Dhh",
+    "titleGu": "ઢ",
+    "type": "film",
+    "year": 2017,
+    "level": 1,
+    "about": "A children's film about three struggling schoolboys who write to a magician they admire, hoping he can help them pass their exams. Naseeruddin Shah plays the magician, and it won the National Film Award for Best Gujarati Feature Film.",
+    "learn": "Kids talking about school, homework and exams keeps the vocabulary simple and close to what beginners already know.",
+    "tags": ["kids", "school", "award-winner"],
+    "link": "https://en.wikipedia.org/wiki/Dhh"
+  },
+  {
+    "id": "reva",
+    "title": "Reva",
+    "titleGu": "રેવા",
+    "type": "film",
+    "year": 2018,
+    "level": 3,
+    "about": "A self-centred young NRI travels to an ashram on the Narmada river to reclaim an inheritance and finds his plans upended. It is based on Dhruv Bhatt's novel Tatvamasi and won the National Film Award for Best Gujarati Feature Film.",
+    "learn": "Spiritual and rural themes bring in richer, more literary vocabulary, so it suits confident learners.",
+    "tags": ["drama", "adventure", "novel", "award-winner"],
+    "link": "https://en.wikipedia.org/wiki/Reva_(film)"
+  },
+  {
+    "id": "hellaro",
+    "title": "Hellaro",
+    "titleGu": "હેલ્લારો",
+    "type": "film",
+    "year": 2019,
+    "level": 3,
+    "about": "Set in a drought-hit village in the Rann of Kutch in 1975, it follows women who are forbidden to dance garba and begin dancing in secret. It was the first Gujarati film to win the National Film Award for Best Feature Film.",
+    "learn": "A 1970s village setting means rural speech, and the garba songs are a highlight even before you follow every line.",
+    "tags": ["drama", "period", "garba", "Kutch", "award-winner"],
+    "link": "https://en.wikipedia.org/wiki/Hellaro"
+  },
+  {
+    "id": "chaal-jeevi-laiye",
+    "title": "Chaal Jeevi Laiye!",
+    "titleGu": "ચાલ જીવી લઈએ!",
+    "type": "film",
+    "year": 2019,
+    "level": 2,
+    "about": "A workaholic son takes a road trip to Kedarnath with his terminally ill father, and the journey brings them closer. It became one of the highest-grossing Gujarati films ever.",
+    "learn": "Long father-son conversations on the road give you clear, emotional, everyday dialogue.",
+    "tags": ["comedy", "drama", "family", "road trip"],
+    "link": "https://en.wikipedia.org/wiki/Chaal_Jeevi_Laiye!"
+  },
+  {
+    "id": "21mu-tiffin",
+    "title": "21mu Tiffin",
+    "titleGu": "૨૧મું ટિફિન",
+    "type": "film",
+    "year": 2021,
+    "level": 2,
+    "about": "A homemaker who runs a tiffin (home-cooked lunch) service sees her life differently after she takes on her 21st customer. It is based on a short story by Raam Mori and played at several film festivals.",
+    "learn": "Kitchen, food and family-life vocabulary in a quiet, character-driven story.",
+    "tags": ["drama", "food", "family", "short story"],
+    "link": "https://en.wikipedia.org/wiki/21mu_Tiffin"
+  },
+  {
+    "id": "last-film-show",
+    "title": "Chhello Show (Last Film Show)",
+    "type": "film",
+    "year": 2021,
+    "level": 2,
+    "about": "Pan Nalin's film about a nine-year-old boy in a Saurashtra village who sneaks into a cinema's projection booth and falls in love with movies. It was India's official entry for the Oscars and won the National Film Award for Best Gujarati Feature Film; it premiered in 2021 and opened in Indian cinemas in 2022.",
+    "learn": "A child's-eye story with a simple plot, so you can follow along while hearing Gujarati in a village setting.",
+    "tags": ["drama", "kids", "village", "award-winner"],
+    "link": "https://en.wikipedia.org/wiki/Last_Film_Show"
+  },
+  {
+    "id": "kehvatlal-parivar",
+    "title": "Kehvatlal Parivar",
+    "type": "film",
+    "year": 2022,
+    "level": 2,
+    "about": "A family comedy about a traditional father who has a saying for every occasion and keeps clashing with his modern children. Siddharth Randeria and Supriya Pathak star.",
+    "learn": "The title plays on kahevat (proverb), and the father's habit of quoting sayings is a fun way to meet Gujarati proverbs.",
+    "tags": ["comedy", "family", "proverbs"],
+    "link": "https://en.wikipedia.org/wiki/Kehvatlal_Parivar"
+  },
+  {
+    "id": "fakt-mahilao-maate",
+    "title": "Fakt Mahilao Maate",
+    "type": "film",
+    "year": 2022,
+    "level": 2,
+    "about": "A young man suddenly gains the power to hear what women are thinking and decides to use it to help people with their relationships. Yash Soni stars, with a cameo by Amitabh Bachchan.",
+    "learn": "A light, modern comedy with a simple premise, so the story is easy to follow while you listen for everyday phrases.",
+    "tags": ["comedy", "romance", "fantasy"],
+    "link": "https://en.wikipedia.org/wiki/Fakt_Mahilao_Maate"
+  },
+  {
+    "id": "kutch-express",
+    "title": "Kutch Express",
+    "type": "film",
+    "year": 2023,
+    "level": 2,
+    "about": "A housewife and artist in Bhuj discovers her husband's affair and, backed by her outspoken mother-in-law, decides to build a life of her own. Manasi Parekh won the National Film Award for Best Actress for it.",
+    "learn": "Strong conversations between women of different generations, set in Kutch, add variety beyond city films.",
+    "tags": ["drama", "family", "Kutch", "award-winner"],
+    "link": "https://en.wikipedia.org/wiki/Kutch_Express_(film)"
+  },
+  {
+    "id": "laalo",
+    "title": "Laalo – Krishna Sada Sahaayate",
+    "titleGu": "લાલો – કૃષ્ણ સદા સહાયતે",
+    "type": "film",
+    "year": 2025,
+    "level": 2,
+    "about": "A devotional drama about a rickshaw driver, stranded at a farmhouse, who has visions of Krishna that push him to face his past. Shot around Junagadh, it became a word-of-mouth hit and the highest-grossing Gujarati film so far.",
+    "learn": "Its devotional theme brings in words around Krishna, prayer and faith that many heritage learners hear at home.",
+    "tags": ["drama", "devotional", "Junagadh"],
+    "link": "https://en.wikipedia.org/wiki/Laalo_%E2%80%93_Krishna_Sada_Sahaayate"
+  },
+  {
+    "id": "bhavni-bhavai",
+    "title": "Bhavni Bhavai",
+    "titleGu": "ભવની ભવાઈ",
+    "type": "film",
+    "year": 1980,
+    "level": 3,
+    "about": "Ketan Mehta's classic retells a folk tale about a cruel king and a lost heir, using the style of Bhavai, Gujarat's traditional folk theatre, to take on caste discrimination. Naseeruddin Shah, Smita Patil and Om Puri star.",
+    "learn": "Folk-theatre style and an older register make it hard going, but it is a rich look at Gujarati storytelling traditions.",
+    "tags": ["classic", "folk theatre", "satire"],
+    "link": "https://en.wikipedia.org/wiki/Bhavni_Bhavai"
+  },
+  {
+    "id": "mehndi-rang-lagyo",
+    "title": "Mehndi Rang Lagyo",
+    "titleGu": "મેંદી રંગ લાગ્યો",
+    "type": "film",
+    "year": 1960,
+    "level": 3,
+    "about": "A 1960 romance starring Rajendra Kumar, remembered above all for Avinash Vyas's songs. Its garba song \"Mehndi Te Vavi Malve\" is still played at weddings and Navratri.",
+    "learn": "The dialogue is old-fashioned, but the songs are worth learning because you are likely to hear them at family celebrations.",
+    "tags": ["classic", "romance", "music", "garba"],
+    "link": "https://en.wikipedia.org/wiki/Mendi_Rang_Lagyo"
+  },
+
+  {
+    "id": "kadak-mitthi",
+    "title": "Kadak Mitthi",
+    "type": "series",
+    "level": 2,
+    "about": "A comedy web series built around phone calls between a mother in Gujarat and her daughter, who has moved to Mumbai for work. Aarti Patel and Aarohi Patel play the pair; it began on OHO Gujarati.",
+    "learn": "Short, phone-call conversations about daily life are close to the kind of Gujarati heritage learners have with their own parents.",
+    "tags": ["comedy", "family", "conversation"],
+    "link": "https://rollingstoneindia.com/gujarati-family-sitcom-kadak-mitthi-drops-new-season/"
+  },
+  {
+    "id": "kacho-papad-pako-papad",
+    "title": "Kacho Papad Pako Papad",
+    "type": "series",
+    "year": 2017,
+    "level": 2,
+    "about": "A romantic comedy web series about the Maniyar family, a middle-class joint family in Gujarat, and their marriage and romance dilemmas. It launched on SonyLIV and was billed as the first Gujarati rom-com web series.",
+    "learn": "A whole joint family under one roof means lots of everyday talk between relatives of every age.",
+    "tags": ["comedy", "romance", "family"],
+    "link": "https://www.medianews4u.com/sonyliv-launches-gujarati-rom-com-web-series-kacho-papad-pako-papad/"
+  },
+  {
+    "id": "what-the-fafda",
+    "title": "What The Fafda",
+    "type": "series",
+    "year": 2023,
+    "level": 2,
+    "about": "A ShemarooMe comedy anthology where each episode pokes fun at a different kind of quirky professional people deal with in daily life. The large cast includes Pratik Gandhi, Sanjay Goradia and Tiku Talsania.",
+    "learn": "Self-contained episodes set in everyday situations, so you can watch one at a time and pick up practical phrases.",
+    "tags": ["comedy", "anthology"],
+    "link": "https://www.mediainfoline.com/entertainment/shemaroome-presents-new-web-series-what-the-fafda-an-epic-laugh-riot-featuring-more-than-40-top-gujarati-artists"
+  },
+  {
+    "id": "vitthal-teedi",
+    "title": "Vitthal Teedi",
+    "titleGu": "વિઠ્ઠલ તીડી",
+    "type": "series",
+    "year": 2021,
+    "level": 3,
+    "about": "A drama web series set in 1980s Saurashtra about a humble village man whose talent at cards pulls him into the gambling world. Directed by Abhishek Jain and starring Pratik Gandhi.",
+    "learn": "Village settings in Saurashtra make this a good challenge for learners ready to hear speech beyond city Gujarati.",
+    "tags": ["drama", "period", "Saurashtra"],
+    "link": "https://en.wikipedia.org/wiki/Vitthal_Teedi"
+  },
+  {
+    "id": "rasoi-show",
+    "title": "Rasoi Show",
+    "titleGu": "રસોઈ શો",
+    "type": "series",
+    "year": 2004,
+    "level": 1,
+    "about": "A long-running Gujarati TV cookery show on Colors Gujarati (formerly ETV Gujarati), where guests from around Gujarat cook their own recipes. It passed 6,000 episodes in 2023.",
+    "learn": "You can see what is being chopped, mixed and fried, so the cooking words make sense even before you understand every sentence.",
+    "tags": ["cooking", "TV", "food"],
+    "link": "https://en.wikipedia.org/wiki/Rasoi_Show"
+  },
+  {
+    "id": "taarak-mehta",
+    "title": "Taarak Mehta Ka Ooltah Chashmah (Hindi)",
+    "type": "series",
+    "year": 2008,
+    "level": 2,
+    "about": "This is a Hindi sitcom, not a Gujarati one, set in a Mumbai housing society. It is based on Taarak Mehta's column in the Gujarati magazine Chitralekha, and its central Gada family has roots in Kutch, Gujarat.",
+    "learn": "Mostly Hindi, so watch it for the Gujarati family life, food and festivals, and for the Gujarati words that come up in the Gada household.",
+    "tags": ["comedy", "Hindi", "family"],
+    "link": "https://en.wikipedia.org/wiki/Taarak_Mehta_Ka_Ooltah_Chashmah"
+  },
+
+  {
+    "id": "pa-pa-pagli-gujarati",
+    "title": "Pa Pa Pagli Gujarati",
+    "type": "youtube",
+    "level": 1,
+    "about": "A YouTube channel of animated Gujarati balgeet (children's songs), rhymes and short varta (stories).",
+    "learn": "Classic Gujarati nursery songs with video titles in Gujarati script, short and repetitive enough to sing along with.",
+    "tags": ["kids", "songs", "rhymes"],
+    "link": "https://www.youtube.com/@PaPaPagliGujarati"
+  },
+  {
+    "id": "kids-planet-gujarati",
+    "title": "Kids Planet Gujarati",
+    "type": "youtube",
+    "level": 1,
+    "about": "A YouTube channel of animated Gujarati fairy tales, moral stories and nursery rhymes for children.",
+    "learn": "Familiar stories like the monkey and the crocodile, so you already know the plot and can focus on the words.",
+    "tags": ["kids", "stories", "rhymes"],
+    "link": "https://www.youtube.com/@KidsPlanetGujarati"
+  },
+  {
+    "id": "gujarati-rasoi",
+    "title": "Gujarati Rasoi",
+    "type": "youtube",
+    "level": 1,
+    "about": "A cooking channel where the host, Shilpa, makes Gujarati home recipes like patra, dal dhokli and muthiya, explained in Gujarati.",
+    "learn": "Kitchen vocabulary and simple instructions you can follow by watching, ideal for practising imperatives like \"add\" and \"mix\".",
+    "tags": ["cooking", "food"],
+    "link": "https://www.youtube.com/@GujaratiRasoi"
+  },
+  {
+    "id": "khajur-bhai",
+    "title": "Khajur Bhai",
+    "type": "youtube",
+    "level": 2,
+    "about": "The comedy channel of Nitin Jani, known as Khajur Bhai, one of the best-known Gujarati comedians online. His sketches often play on village life, gossip and family situations.",
+    "learn": "Short comic sketches full of colloquial, informal Gujarati that you won't hear on the news.",
+    "tags": ["comedy", "sketches"],
+    "link": "https://www.youtube.com/@ComedyKingKhajurBhai"
+  },
+  {
+    "id": "bbc-news-gujarati",
+    "title": "BBC News Gujarati",
+    "type": "youtube",
+    "level": 3,
+    "about": "The BBC's Gujarati-language news service on YouTube, covering news from Gujarat, India and the world.",
+    "learn": "Clear, carefully pronounced standard Gujarati, though news uses more formal vocabulary than everyday speech.",
+    "tags": ["news"],
+    "link": "https://www.youtube.com/@BBCNewsGujarati"
+  },
+  {
+    "id": "vtv-gujarati-news",
+    "title": "VTV Gujarati News",
+    "type": "youtube",
+    "level": 3,
+    "about": "A Gujarati digital news channel from the Sambhaav media group, with live updates and news from Gujarat.",
+    "learn": "Fast, real-world news Gujarati; try short clips on topics you already know about from English news.",
+    "tags": ["news", "Gujarat"],
+    "link": "https://www.youtube.com/@VTVGujaratiNews"
+  },
+
+  {
+    "id": "garba",
+    "title": "Garba songs",
+    "titleGu": "ગરબા",
+    "type": "music",
+    "level": 1,
+    "about": "Garba is Gujarat's circle dance, danced through the nine nights of Navratri, and its songs are the soundtrack of the festival. UNESCO added garba to its Intangible Cultural Heritage list in 2023.",
+    "learn": "Garba songs are made for dancing, with repeated lines and a strong beat, which makes them easy to memorise and sing.",
+    "tags": ["garba", "Navratri", "folk", "dance"],
+    "link": "https://en.wikipedia.org/wiki/Garba_(dance)"
+  },
+  {
+    "id": "falguni-pathak",
+    "title": "Falguni Pathak",
+    "titleGu": "ફાલ્ગુની પાઠક",
+    "type": "music",
+    "level": 1,
+    "about": "Known as the \"Dandiya Queen\", she is a hugely popular Navratri performer whose music draws on Gujarati folk forms. Most of her famous pop hits are in Hindi, but she has Gujarati albums such as Jode Rejo Raaj (2017) and Vasaldi (2022).",
+    "learn": "Check which language a track is in: her Gujarati albums and live garba sets are the ones to learn from.",
+    "tags": ["garba", "dandiya", "Navratri", "pop"],
+    "link": "https://en.wikipedia.org/wiki/Falguni_Pathak"
+  },
+  {
+    "id": "aditya-gadhvi",
+    "title": "Aditya Gadhvi",
+    "titleGu": "આદિત્ય ગઢવી",
+    "type": "music",
+    "level": 2,
+    "about": "A Gujarati folk and playback singer whose 2023 Coke Studio Bharat song \"Khalasi\", a Gujarati song about a sailor's life, went viral across India. His other hits include \"Sharato Lagu\" and \"Hellaro\".",
+    "learn": "Modern production makes folk-style Gujarati catchy, so it's a good bridge from simple songs to richer lyrics.",
+    "tags": ["folk", "Coke Studio", "film songs"],
+    "link": "https://en.wikipedia.org/wiki/Aditya_Gadhvi"
+  },
+  {
+    "id": "kirtidan-gadhvi",
+    "title": "Kirtidan Gadhvi",
+    "titleGu": "કીર્તિદાન ગઢવી",
+    "type": "music",
+    "level": 2,
+    "about": "A Gujarati lok gayak (folk singer) known for dayro (evenings of folk song and storytelling), folk songs and Navratri garba. His popular songs include \"Gori Radha Ne Kaalo Kaan\".",
+    "learn": "Start with his garba and folk songs; the spoken storytelling in a dayro is a great advanced listening challenge.",
+    "tags": ["folk", "dayro", "garba"],
+    "link": "https://en.wikipedia.org/wiki/Kirtidan_Gadhvi"
+  },
+  {
+    "id": "geeta-rabari",
+    "title": "Geeta Rabari",
+    "type": "music",
+    "level": 2,
+    "about": "A folk singer from Kutch, nicknamed the \"Kutchi Koel\", who started out singing bhajans and folk songs and is now a popular professional folk performer.",
+    "learn": "Energetic Gujarati folk music, a good change of pace from film songs.",
+    "tags": ["folk", "garba", "Kutch"],
+    "link": "https://www.thequint.com/neon/social-buzz/more-than-4-crore-rupees-showered-at-a-singer-in-gujarat-kutch-video-goes-viral"
+  },
+  {
+    "id": "sachin-jigar",
+    "title": "Sachin–Jigar",
+    "titleGu": "સચિન–જીગર",
+    "type": "music",
+    "level": 1,
+    "about": "A composer duo originally from Gujarat who work in Hindi and Gujarati films. Their Gujarati soundtracks include Bey Yaar, Love Ni Bhavai, Chaal Jeevi Laiye! and Kehvatlal Parivar.",
+    "learn": "Pair the songs with the films on this list: hearing a song in its scene helps the words stick.",
+    "tags": ["film songs", "composers", "pop"],
+    "link": "https://en.wikipedia.org/wiki/Sachin%E2%80%93Jigar"
+  },
+  {
+    "id": "avinash-vyas",
+    "title": "Avinash Vyas",
+    "titleGu": "અવિનાશ વ્યાસ",
+    "type": "music",
+    "level": 2,
+    "about": "A towering composer and lyricist of classic Gujarati film and non-film music (1912–1984), with music for more than 190 films. He received the Padma Shri in 1970.",
+    "learn": "His classic songs, like those from Mehndi Rang Lagyo, are still sung at family celebrations, so they are worth learning with relatives.",
+    "tags": ["classic", "film songs", "composer"],
+    "link": "https://en.wikipedia.org/wiki/Avinash_Vyas"
+  },
+  {
+    "id": "purushottam-upadhyay",
+    "title": "Purushottam Upadhyay",
+    "type": "music",
+    "level": 3,
+    "about": "A singer and composer (1934–2024) best known for Gujarati sugam sangeet, light classical settings of Gujarati poetry. He received the Padma Shri in 2017.",
+    "learn": "Sugam sangeet sets real Gujarati poetry to music, so it's a gentle way into literary vocabulary once the basics are solid.",
+    "tags": ["sugam sangeet", "classic", "poetry"],
+    "link": "https://en.wikipedia.org/wiki/Purushottam_Upadhyay"
+  },
+
+  {
+    "id": "sbs-gujarati",
+    "title": "SBS Gujarati",
+    "type": "podcast",
+    "level": 3,
+    "about": "The Gujarati service of Australia's public broadcaster SBS, with a podcast of news bulletins and stories for Gujarati speakers in Australia, plus news from India.",
+    "learn": "Many episodes are only a few minutes long, which makes formal news Gujarati manageable in small doses.",
+    "tags": ["news", "radio", "diaspora"],
+    "link": "https://www.sbs.com.au/language/gujarati/en/podcast/sbs-gujarati"
+  },
+  {
+    "id": "air-news-gujarati",
+    "title": "Akashvani (All India Radio) Gujarati news",
+    "type": "podcast",
+    "level": 3,
+    "about": "India's public radio service broadcasts regional and national Gujarati news bulletins several times a day from its Ahmedabad unit, and its news site keeps archives of regional-language bulletins.",
+    "learn": "Bulletins run five to ten minutes, a manageable dose of formal news Gujarati.",
+    "tags": ["news", "radio"],
+    "link": "https://www.newsonair.gov.in/regional-units/ahmedabad"
+  }
+]

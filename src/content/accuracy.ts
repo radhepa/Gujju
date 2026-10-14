@@ -1,6 +1,7 @@
 import { normGu, words } from '../lib/text';
 import { checkContent, type Issue } from './check';
 import { course } from './course';
+import { grammar } from './guides';
 import { builtInBooks, collections, courseWords, lexicon } from './practice';
 import type { LexEntry } from '../lib/types';
 
@@ -25,7 +26,7 @@ export interface Check {
 
 interface Text {
   where: string;
-  kind: 'letter' | 'word' | 'number' | 'course-sentence' | 'collection' | 'book';
+  kind: 'letter' | 'word' | 'number' | 'course-sentence' | 'collection' | 'book' | 'grammar';
   gu: string;
   tr?: string;
   en?: string;
@@ -62,8 +63,13 @@ const practiceTexts: Text[] = [
   ),
 ];
 
-const sentenceTexts = [...courseTexts.filter((t) => t.kind === 'course-sentence'), ...practiceTexts];
-const allTexts = [...courseTexts, ...practiceTexts];
+// Every example in the grammar guide gets the same sentence checks.
+const grammarTexts: Text[] = grammar.flatMap((t) =>
+  t.sections.flatMap((sec, i) => (sec.examples ?? []).map((e, j) => ({ where: `grammar/${t.id}/${i + 1}.${j + 1}`, kind: 'grammar' as const, gu: e.gu, tr: e.tr, en: e.en }))),
+);
+
+const sentenceTexts = [...courseTexts.filter((t) => t.kind === 'course-sentence'), ...practiceTexts, ...grammarTexts];
+const allTexts = [...courseTexts, ...practiceTexts, ...grammarTexts];
 
 // Every (Gujarati word, transliteration) pair the app shows, with where.
 interface WordPair {
@@ -162,12 +168,12 @@ const NUMBERS: Record<string, RegExp> = {
   બે: /\b(two|2|both|couple|twice)\b/i,
   ત્રણ: /\b(three|3|thrice)\b/i,
   ચાર: /\b(four|4)\b/i,
-  પાંચ: /\b(five|5)\b/i,
+  પાંચ: /\b(five|5|fifth)\b/i,
   છ: /\b(six|6)\b/i,
   સાત: /\b(seven|7)\b/i,
   આઠ: /\b(eight|8)\b/i,
   નવ: /\b(nine|9)\b/i,
-  દસ: /\b(ten|10)\b/i,
+  દસ: /\b(ten|10|tenth)\b/i,
   વીસ: /\b(twenty|20)\b/i,
   ત્રીસ: /\b(thirty|30)\b/i,
   ચાળીસ: /\b(forty|40)\b/i,
@@ -485,7 +491,8 @@ export const CHECKS: Check[] = [
         .filter((t) => {
           // "નહીં તો" is "otherwise" and a closing "કે નહીં?" is "…or not?": neither is a negative.
           const gu = t.gu.replace(/નહીં તો/g, '').replace(/કે નહીં\?$/, '?');
-          const neg = words(gu).map(normGu).some((w) => NEG_GU.has(w) || /^ન(થી|હીં|હોત)/.test(w));
+          // A sentence that starts "ના," is answering "no".
+          const neg = gu.startsWith('ના,') || words(gu).map(normGu).some((w) => NEG_GU.has(w) || /^ન(થી|હીં|હોત)/.test(w));
           return t.en && neg !== NEG_EN.test(t.en);
         })
         .map((t) => `${t.where}: ${t.gu} / ${t.en}`),
@@ -499,7 +506,7 @@ export const CHECKS: Check[] = [
     name: 'Future-tense verbs are future in English',
     run: () =>
       sentenceTexts
-        .filter((t) => t.en && simple(t) && /(શે|ીશ|ીશું|શો)$/.test(last(t)) && !/\b(will|'ll|shall|going to|gonna|tomorrow|next|could|can|would)\b|'ll/i.test(t.en))
+        .filter((t) => t.en && simple(t) && /(શે|ીશ|ીશું|શો)$/.test(last(t)) && !/\b(will|'ll|shall|going to|gonna|tomorrow|next|could|can|would|must)\b|'ll/i.test(t.en))
         .map((t) => `${t.where}: ${t.gu} / ${t.en}`),
   },
   {
@@ -562,7 +569,7 @@ export const CHECKS: Check[] = [
     name: 'Every word list entry is used somewhere',
     run: () => {
       const used = new Set<string>();
-      for (const t of practiceTexts) {
+      for (const t of sentenceTexts) {
         for (const w of tokens(t)) used.add(w);
         for (const w of t.wrong ?? []) used.add(normGu(w));
       }
@@ -614,6 +621,7 @@ export const EXCEPTIONS: Record<number, Record<string, string>> = {
       'ઓછું છે is "is too little"; "isn\'t enough" says the same thing in natural English.',
   },
   69: {
+    'grammar/compound-verbs/2.2: Go ahead and eat.': 'A friendly imperative (તમે ખાઈ લો); English drops "you".',
     'everyday/ev-093: Please sit here.': 'A polite imperative. તમે is said for politeness and English drops "you".',
     'out-and-about/oa-073: Please sit here.': 'A polite imperative. તમે is said for politeness and English drops "you".',
   },

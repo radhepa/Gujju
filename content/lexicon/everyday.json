@@ -15,6 +15,7 @@
   {"gu": "મારી", "tr": "maaree", "en": "my (feminine)", "pos": "pron", "base": "મારું"},
   {"gu": "મારો", "tr": "maaro", "en": "my (masculine)", "pos": "pron", "base": "મારું"},
   {"gu": "મારા", "tr": "maaraa", "en": "my (plural, respectful, or before a postposition)", "pos": "pron", "base": "મારું"},
+  {"gu": "મારાં", "tr": "maaraan", "en": "my (neuter plural, or respectful: મારાં બા)", "pos": "pron", "base": "મારું"},
   {"gu": "મારે", "tr": "maare", "en": "I have (relatives); to me", "pos": "pron", "base": "મારું"},
   {"gu": "તમારું", "tr": "tamaarun", "en": "your (polite, neuter)", "pos": "pron"},
   {"gu": "તમારી", "tr": "tamaaree", "en": "your (polite, feminine)", "pos": "pron", "base": "તમારું"},

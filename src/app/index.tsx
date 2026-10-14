@@ -3,7 +3,10 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { course } from '../content/course';
-import { isPracticeCard } from '../lib/cloze';
+import { grammarForUnit } from '../content/guides';
+import { isSentenceCard } from '../lib/cloze';
+import { isWriteCard } from '../lib/write';
+import { useLevel } from '../state/level';
 import { unitStatuses, type UnitStatus } from '../lib/progress';
 import { isDue } from '../lib/srs';
 import { useProgress } from '../state/progress';
@@ -16,7 +19,11 @@ import { colors, shadow } from '../ui/theme';
 export default function Home() {
   const { completed, streak, xpToday, dueIds, learnedIds, snapshot, cardRows } = useProgress();
   const now = new Date();
-  const sentencesDue = [...cardRows.values()].filter((c) => isPracticeCard(c.itemId) && isDue(c, now)).length;
+  const rows = [...cardRows.values()];
+  const sentencesDue = rows.filter((c) => isSentenceCard(c.itemId) && isDue(c, now)).length;
+  const writeDue = rows.filter((c) => isWriteCard(c.itemId) && isDue(c, now)).length;
+  const level = useLevel();
+  const goal = snapshot.settings.dailyGoal;
   const statuses = unitStatuses(course, completed);
   const best = new Map(snapshot.lessonProgress.map((p) => [p.lessonId, p.bestAccuracy]));
   const current = statuses.find((s) => s.open && !s.finished)?.unit.id;
@@ -34,13 +41,29 @@ export default function Home() {
           <Gu style={styles.brandGu}>ગુજરાતી શીખો</Gu>
         </View>
         <View style={styles.pills}>
-          <Pill icon="flame" color={streak.doneToday ? colors.primary : colors.locked} label={String(streak.days)} />
-          <Pill icon="flash" color={colors.teal} label={`${xpToday} XP`} />
+          <Pressable onPress={() => router.push('/stats')} style={styles.pills} accessibilityRole="button" accessibilityLabel="Your progress">
+            <Pill icon="flame" color={streak.doneToday ? colors.primary : colors.locked} label={String(streak.days)} />
+            <Pill icon="flash" color={colors.teal} label={`${xpToday} XP`} />
+          </Pressable>
           <Pressable onPress={() => router.push('/settings')} accessibilityLabel="Settings" hitSlop={8}>
             <Ionicons name="settings-sharp" size={22} color={colors.muted} />
           </Pressable>
         </View>
       </View>
+
+      <Pressable onPress={() => router.push('/stats')} style={styles.goal} accessibilityRole="button" accessibilityLabel="Your level and daily goal">
+        <View style={styles.level}>
+          <Text weight="black" style={styles.levelText}>
+            {level.reached}
+          </Text>
+        </View>
+        <View style={styles.goalTrack}>
+          <View style={[styles.goalFill, { width: `${Math.min(1, xpToday / goal) * 100}%` }]} />
+        </View>
+        <Text weight="bold" style={styles.goalText}>
+          {xpToday >= goal ? 'Daily goal done' : `${xpToday}/${goal} XP today`}
+        </Text>
+      </Pressable>
 
       <View style={[styles.review, shadow]}>
         <Kesar size={56} pose={dueIds.length ? 'read' : 'eat'} />
@@ -60,23 +83,14 @@ export default function Home() {
       </View>
 
       <View style={styles.tiles}>
-        <Tile
-          icon="chatbubbles"
-          label="Sentences"
-          sub={sentencesDue ? `${sentencesDue} due` : 'વાક્યો'}
-          color={colors.primary}
-          onPress={() => router.push('/practice')}
-        />
+        <Tile icon="chatbubbles" label="Sentences" sub={sentencesDue ? `${sentencesDue} due` : 'વાક્યો'} color={colors.primary} onPress={() => router.push('/practice')} />
+        <Tile icon="create" label="Write" sub={writeDue ? `${writeDue} due` : 'લખો'} color={colors.primaryDark} onPress={() => router.push('/write')} />
         <Tile icon="library" label="Library" sub="પુસ્તકો" color={colors.teal} onPress={() => router.push('/library')} />
-        <Tile icon="search" label="Dictionary" sub="શબ્દકોશ" color={colors.green} onPress={() => router.push('/dictionary')} />
-        <Tile
-          icon="stats-chart"
-          label="Progress"
-          sub={`${Math.min(xpToday, snapshot.settings.dailyGoal)}/${snapshot.settings.dailyGoal} XP`}
-          color={colors.primaryDark}
-          onPress={() => router.push('/stats')}
-          fill={Math.min(1, xpToday / snapshot.settings.dailyGoal)}
-        />
+      </View>
+      <View style={styles.tiles}>
+        <Tile icon="school" label="Grammar" sub="વ્યાકરણ" color={colors.green} onPress={() => router.push('/grammar')} />
+        <Tile icon="search" label="Dictionary" sub="શબ્દકોશ" color={colors.teal} onPress={() => router.push('/dictionary')} />
+        <Tile icon="film" label="Watch" sub="જુઓ" color={colors.redDark} onPress={() => router.push('/watch')} />
       </View>
 
       {statuses.map((s) => (
@@ -93,7 +107,7 @@ export default function Home() {
   );
 }
 
-type TileIcon = 'chatbubbles' | 'library' | 'search' | 'stats-chart';
+type TileIcon = 'chatbubbles' | 'library' | 'search' | 'create' | 'school' | 'film';
 
 function Tile({
   icon,
@@ -179,6 +193,23 @@ function UnitCard({
       {expanded && (
         <View style={styles.unitBody}>
           <Text style={styles.tip}>{unit.tip}</Text>
+          {grammarForUnit(unit.id).length > 0 && (
+            <View style={styles.grammarRow}>
+              {grammarForUnit(unit.id).map((t) => (
+                <Pressable
+                  key={t.id}
+                  onPress={() => router.push({ pathname: '/grammar/[id]', params: { id: t.id } })}
+                  style={styles.grammarChip}
+                  accessibilityRole="button"
+                >
+                  <Ionicons name="school-outline" size={14} color={colors.green} />
+                  <Text weight="bold" style={styles.grammarText}>
+                    {t.title}
+                  </Text>
+                </Pressable>
+              ))}
+            </View>
+          )}
           {lessons.map((l) => {
             const isDone = completed.has(l.id);
             const isNext = open && next?.id === l.id;
@@ -262,7 +293,24 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   reviewCount: { fontSize: 18 },
-  tiles: { flexDirection: 'row', gap: 8, marginBottom: 18 },
+  level: { backgroundColor: colors.tealSoft, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2 },
+  levelText: { color: colors.teal, fontSize: 13 },
+  goal: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 12, marginTop: -4 },
+  goalTrack: { flex: 1, height: 8, borderRadius: 4, backgroundColor: colors.line, overflow: 'hidden' },
+  goalFill: { height: '100%', backgroundColor: colors.primary, borderRadius: 4 },
+  goalText: { fontSize: 13, color: colors.muted },
+  grammarRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, paddingHorizontal: 4, paddingBottom: 8 },
+  grammarChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    borderRadius: 12,
+    backgroundColor: colors.greenSoft,
+    paddingHorizontal: 9,
+    paddingVertical: 4,
+  },
+  grammarText: { fontSize: 12, color: colors.greenDark },
+  tiles: { flexDirection: 'row', gap: 8, marginBottom: 8 },
   tile: {
     flex: 1,
     alignItems: 'center',

@@ -150,6 +150,10 @@ export interface DailyStatRow {
 // script or transliteration).
 export type ClozeMode = 'choice' | 'type';
 
+// How writing practice takes answers: letter tiles, or an on-screen
+// Gujarati keyboard.
+export type WriteMode = 'tiles' | 'keyboard';
+
 export interface Settings {
   retention: number;
   alwaysShowTranslit: boolean;
@@ -158,6 +162,9 @@ export interface Settings {
   clozeMode: ClozeMode;
   // Read words and sentences aloud when the device has a Gujarati voice.
   speak: boolean;
+  writeMode: WriteMode;
+  // Watch & Listen entries the learner has ticked off.
+  watched: string[];
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -166,6 +173,8 @@ export const DEFAULT_SETTINGS: Settings = {
   dailyGoal: 50,
   clozeMode: 'choice',
   speak: true,
+  writeMode: 'tiles',
+  watched: [],
 };
 
 export interface Snapshot {
@@ -233,4 +242,51 @@ export interface Book {
   builtIn: boolean;
   createdAt?: string;
   sentences: BookSentence[];
+}
+
+// The grammar guide (content/grammar.json).
+export interface GrammarExample {
+  gu: string;
+  tr: string;
+  en: string;
+}
+
+export interface GrammarSection {
+  heading: string;
+  body: string;
+  table?: string[][];
+  examples?: GrammarExample[];
+}
+
+export interface GrammarTopic {
+  id: string;
+  title: string;
+  titleGu: string;
+  level: 1 | 2 | 3;
+  units: string[];
+  summary: string;
+  sections: GrammarSection[];
+}
+
+// The Watch & Listen guide (content/media.json).
+export type MediaType = 'film' | 'series' | 'youtube' | 'music' | 'podcast';
+
+export interface MediaItem {
+  id: string;
+  type: MediaType;
+  title: string;
+  titleGu?: string;
+  year?: number;
+  level: 1 | 2 | 3;
+  about: string;
+  learn: string;
+  tags?: string[];
+  link?: string;
+}
+
+export interface MediaTips {
+  id: string;
+  type: 'tips';
+  title: string;
+  tips: string[];
 }

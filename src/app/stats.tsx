@@ -1,6 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import { addDays, dayKey } from '../lib/dates';
-import { isPracticeCard, MASTERED_STABILITY } from '../lib/cloze';
+import { Ionicons } from '@expo/vector-icons';
+import { isSentenceCard, MASTERED_STABILITY } from '../lib/cloze';
+import { isWriteCard } from '../lib/write';
+import { useLevel } from '../state/level';
 import { bestStreak } from '../lib/streak';
 import { Kesar } from '../mascot/Kesar';
 import { useProgress } from '../state/progress';
@@ -19,8 +22,10 @@ export default function Stats() {
   const goal = snapshot.settings.dailyGoal;
   const today = dayKey(new Date());
   const xpByDay = new Map(snapshot.dailyStats.map((s) => [s.date, s.xp]));
-  const practice = [...cardRows.values()].filter((c) => isPracticeCard(c.itemId));
+  const practice = [...cardRows.values()].filter((c) => isSentenceCard(c.itemId));
+  const written = [...cardRows.values()].filter((c) => isWriteCard(c.itemId));
   const mastered = practice.filter((c) => c.stability >= MASTERED_STABILITY).length;
+  const level = useLevel();
   const totalXp = snapshot.dailyStats.reduce((n, s) => n + s.xp, 0);
 
   // Weeks run Monday to Sunday, oldest on the left, this week on the right.
@@ -70,9 +75,42 @@ export default function Stats() {
         <Stat label="Streak" value={`${streak.days}`} sub={streak.days === 1 ? 'day' : 'days'} color={colors.primary} />
         <Stat label="Best streak" value={`${bestStreak(snapshot.dailyStats)}`} sub="days" color={colors.primaryDark} />
         <Stat label="Total XP" value={`${totalXp}`} sub="all time" color={colors.teal} />
-        <Stat label="Lessons" value={`${completed.size}`} sub="finished" color={colors.green} />
-        <Stat label="Words & letters" value={`${learnedIds.length}`} sub="in review" color={colors.green} />
+        <Stat label="Words & letters" value={`${learnedIds.length}`} sub={`${completed.size} lessons done`} color={colors.green} />
         <Stat label="Sentences" value={`${practice.length}`} sub={`${mastered} mastered`} color={colors.teal} />
+        <Stat label="Spelling" value={`${written.length}`} sub="words written" color={colors.primaryDark} />
+      </View>
+
+      <Text weight="black" style={styles.section}>
+        Your level
+      </Text>
+      <View style={[styles.card, shadow, { gap: 10 }]}>
+        <View style={styles.levelTop}>
+          <View style={styles.levelBadge}>
+            <Text weight="black" style={styles.levelCode}>
+              {level.reached}
+            </Text>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text weight="black" style={{ fontSize: 16 }}>
+              {level.next ? `On the way to ${level.next.code}, ${level.next.name}` : 'B1 reached'}
+            </Text>
+            <Text style={styles.muted}>A rough guide on the CEFR scale, from what you’ve finished here.</Text>
+          </View>
+        </View>
+        {level.stages.map((st) => (
+          <View key={st.code} style={styles.stage}>
+            <Text weight="black" style={styles.stageTitle}>
+              {st.code} · {st.name}
+            </Text>
+            <Text style={styles.small}>{st.canDo}</Text>
+            {st.milestones.map((m) => (
+              <View key={m.label} style={styles.milestone}>
+                <Ionicons name={m.done ? 'checkmark-circle' : 'ellipse-outline'} size={18} color={m.done ? colors.green : colors.locked} />
+                <Text style={[styles.milestoneText, m.done && { color: colors.muted }]}>{m.label}</Text>
+              </View>
+            ))}
+          </View>
+        ))}
       </View>
 
       <Text weight="black" style={styles.section}>
@@ -166,6 +204,13 @@ const styles = StyleSheet.create({
   statValue: { fontSize: 26 },
   section: { fontSize: 18, marginTop: 22, marginBottom: 10 },
   heat: { flexDirection: 'row', gap: 4, justifyContent: 'center' },
+  levelTop: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  levelBadge: { width: 58, height: 58, borderRadius: 29, backgroundColor: colors.tealSoft, alignItems: 'center', justifyContent: 'center' },
+  levelCode: { fontSize: 18, color: colors.teal },
+  stage: { borderTopWidth: 1, borderColor: colors.line, paddingTop: 10, gap: 4 },
+  stageTitle: { fontSize: 15 },
+  milestone: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  milestoneText: { fontSize: 14, flex: 1 },
   heatLabels: { gap: 4, marginRight: 2 },
   heatLabel: { fontSize: 10, color: colors.muted, height: 18, lineHeight: 18 },
   heatCol: { gap: 4 },

@@ -1,0 +1,923 @@
+[
+  {
+    "id": "script",
+    "title": "Reading the script",
+    "titleGu": "ગુજરાતી લિપિ",
+    "level": 1,
+    "units": ["u01", "u02", "u03", "u04", "u05"],
+    "summary": "How vowel signs attach to letters, when the built-in a is silent, how letters join, and what the dot on top does.",
+    "sections": [
+      {
+        "heading": "Vowel signs (matras)",
+        "body": "Every consonant carries a built-in short **a**: ક is ka. To give it a different vowel, you add a small sign called a matra. The sign replaces the built-in a.\n\nOne sign is written **before** the letter but said after it: કિ is ki, not ik.",
+        "table": [
+          ["ક", "ka", "built-in અ"],
+          ["કા", "kaa", "આ"],
+          ["કિ", "ki", "ઇ"],
+          ["કી", "kee", "ઈ"],
+          ["કુ", "ku", "ઉ"],
+          ["કૂ", "koo", "ઊ"],
+          ["કે", "ke", "એ"],
+          ["કૈ", "kai", "ઐ"],
+          ["કો", "ko", "ઓ"],
+          ["કૌ", "kau", "ઔ"]
+        ],
+        "examples": [
+          { "gu": "આ ઘર છે.", "tr": "aa ghar chhe.", "en": "This is a house." },
+          { "gu": "તમારું નામ શું છે?", "tr": "tamaarun naam shun chhe?", "en": "What is your name?" },
+          { "gu": "હું ગુજરાતી શીખું છું.", "tr": "hun gujaraatee sheekhun chhun.", "en": "I am learning Gujarati." }
+        ]
+      },
+      {
+        "heading": "When the built-in a goes silent",
+        "body": "At the end of a word the built-in a is usually not said: ઘર is ghar, not ghara. Inside longer words it often drops too: છોકરો is chhokro, and વાંચવું is vaanchvun.\n\nAfter a joined letter at the end of a word, the a is kept: મિત્ર is mitra. The transliteration in this app always shows what people actually say, so trust it over a letter-by-letter reading.",
+        "table": [
+          ["ઘર", "ghar", "house"],
+          ["નામ", "naam", "name"],
+          ["છોકરો", "chhokro", "boy"],
+          ["વાંચવું", "vaanchvun", "to read"],
+          ["મિત્ર", "mitra", "friend"]
+        ],
+        "examples": [
+          { "gu": "મારો મિત્ર ઘરે છે.", "tr": "maaro mitra ghare chhe.", "en": "My friend is at home." },
+          { "gu": "છોકરો વાંચે છે.", "tr": "chhokro vaanche chhe.", "en": "The boy is reading." }
+        ]
+      },
+      {
+        "heading": "Joined letters",
+        "body": "When two consonants come together with no vowel between them, the first one loses its a and the two are written as one joined shape, usually with half of the first letter: સ and ત make સ્ત in નમસ્તે. When letters can't join neatly, a small stroke under the first one (ક્) shows that it has no vowel.\n\nA few joins have their own shapes, so learn them as new letters: ક્ષ (ksh), જ્ઞ (gn), ત્ર (tr), શ્ર (shr).",
+        "table": [
+          ["સ્ત", "st", "નમસ્તે"],
+          ["મ્મ", "mm", "મમ્મી"],
+          ["પ્પ", "pp", "પપ્પા"],
+          ["ક્ય", "ky", "ક્યાં"],
+          ["ત્ર", "tr", "મિત્ર"],
+          ["ક્ષ", "ksh", "શિક્ષક"],
+          ["જ્ઞ", "gn", "જ્ઞાન"]
+        ],
+        "examples": [
+          { "gu": "નમસ્તે, મમ્મી!", "tr": "namaste, mammee!", "en": "Hello, Mom!" },
+          { "gu": "પપ્પા ક્યાં છે?", "tr": "pappaa kyaan chhe?", "en": "Where is Dad?" },
+          { "gu": "મારા પપ્પા શિક્ષક છે.", "tr": "maaraa pappaa shikshak chhe.", "en": "My dad is a teacher." }
+        ]
+      },
+      {
+        "heading": "The dot on top (anusvara)",
+        "body": "A dot above a letter, as in હું, is called the anusvara. It makes the vowel nasal, a little like the French word bon. Before another consonant it often sounds like n or m: મંદિર is mandir. This app always writes it as **n**.",
+        "table": [
+          ["હું", "hun", "I"],
+          ["છું", "chhun", "am"],
+          ["ક્યાં", "kyaan", "where"],
+          ["મંદિર", "mandir", "temple"],
+          ["સાંજ", "saanj", "evening"]
+        ],
+        "examples": [
+          { "gu": "હું ઘરે છું.", "tr": "hun ghare chhun.", "en": "I am at home." },
+          { "gu": "મંદિર ક્યાં છે?", "tr": "mandir kyaan chhe?", "en": "Where is the temple?" },
+          { "gu": "સાંજે હું વાંચું છું.", "tr": "saanje hun vaanchun chhun.", "en": "In the evening I read." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "to-be",
+    "title": "Am, is, are",
+    "titleGu": "છું, છે, છો",
+    "level": 1,
+    "units": ["u08", "u09"],
+    "summary": "The words for I, you, he, she, we and they, and the form of \"to be\" that goes with each.",
+    "sections": [
+      {
+        "heading": "I am, you are",
+        "body": "The verb goes at the end of a Gujarati sentence: \"I home-at am\". The word for am / is / are changes with the person.\n\nIn everyday speech તે is often said **એ**, and તેઓ is often **એ લોકો** (those people).",
+        "table": [
+          ["હું", "છું", "I am"],
+          ["તું", "છે", "you are (one close person)"],
+          ["તે", "છે", "he / she / it is"],
+          ["અમે", "છીએ", "we are (not you)"],
+          ["આપણે", "છીએ", "we are (you too)"],
+          ["તમે", "છો", "you are (polite, or more than one)"],
+          ["તેઓ", "છે", "they are"]
+        ],
+        "examples": [
+          { "gu": "હું ઘરે છું.", "tr": "hun ghare chhun.", "en": "I am at home." },
+          { "gu": "તમે ક્યાં છો?", "tr": "tame kyaan chho?", "en": "Where are you?" },
+          { "gu": "તે મારો ભાઈ છે.", "tr": "te maaro bhaai chhe.", "en": "He is my brother." },
+          { "gu": "તેઓ ભારતમાં છે.", "tr": "teo bhaaratmaan chhe.", "en": "They are in India." }
+        ]
+      },
+      {
+        "heading": "Two words for we",
+        "body": "**અમે** means \"we, but not you\": me and my family, say, without the person I'm talking to. **આપણે** means \"we, including you\". English has one word, so learners often mix them up, and getting it right sounds very natural.",
+        "examples": [
+          { "gu": "અમે અમેરિકામાં છીએ.", "tr": "ame amerikaamaan chhiye.", "en": "We are in America." },
+          { "gu": "આપણે મિત્રો છીએ.", "tr": "aapNe mitro chhiye.", "en": "We are friends." },
+          { "gu": "ચાલો, આપણે જઈએ.", "tr": "chaalo, aapNe jaiye.", "en": "Come on, let's go." }
+        ]
+      },
+      {
+        "heading": "Three ways to say you",
+        "body": "**તું** is for people very close to you: friends, younger brothers and sisters, children, and God in prayer. **તમે** is the safe choice for elders, strangers and anyone you respect, and it is also the plural \"you\". **આપ** is extra respectful, for speeches, signs and formal moments; it takes છો, like તમે.\n\nCalling an elder તું sounds rude, so when you're not sure, use તમે.",
+        "table": [
+          ["તું કેમ છે?", "How are you? (friendly)"],
+          ["તમે કેમ છો?", "How are you? (polite)"],
+          ["આપ કેમ છો?", "How are you? (very formal)"]
+        ],
+        "examples": [
+          { "gu": "તું મારો મિત્ર છે.", "tr": "tun maaro mitra chhe.", "en": "You are my friend." },
+          { "gu": "તમે મારા શિક્ષક છો.", "tr": "tame maaraa shikshak chho.", "en": "You are my teacher." },
+          { "gu": "આપ અમારા મહેમાન છો.", "tr": "aap amaaraa mahemaan chho.", "en": "You are our guest." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nouns",
+    "title": "Nouns: gender and plurals",
+    "titleGu": "જાતિ અને વચન",
+    "level": 1,
+    "units": ["u08", "u09", "u15"],
+    "summary": "Every Gujarati noun is masculine, feminine or neuter, and the ending often tells you which.",
+    "sections": [
+      {
+        "heading": "Three genders",
+        "body": "Gujarati has three genders: masculine, feminine and neuter (neither). Every noun has one, not just people: રોટલી (flatbread) is feminine and ઘર (house) is neuter. Many nouns show their gender in their last sound.\n\nNouns that end in a consonant or in -aa don't give it away: ઘર is neuter, દિવસ (day) is masculine, ચા (tea) is feminine. A few break the pattern, like પાણી (water), which ends in -ee but is neuter. Learn each noun with મારો, મારી or મારું in front of it.",
+        "table": [
+          ["masculine", "many end in -o", "છોકરો, દીકરો, કાગડો"],
+          ["feminine", "many end in -ee", "છોકરી, દીકરી, ચોપડી"],
+          ["neuter", "many end in -un", "છોકરું, કેળું, ખિસ્સું"]
+        ],
+        "examples": [
+          { "gu": "આ મારો દીકરો છે.", "tr": "aa maaro deekro chhe.", "en": "This is my son." },
+          { "gu": "આ મારી દીકરી છે.", "tr": "aa maaree deekree chhe.", "en": "This is my daughter." },
+          { "gu": "આ મારું ઘર છે.", "tr": "aa maarun ghar chhe.", "en": "This is my house." },
+          { "gu": "પાણી ઠંડું છે.", "tr": "paaNee ThanDun chhe.", "en": "The water is cold." }
+        ]
+      },
+      {
+        "heading": "Making plurals",
+        "body": "Each gender makes its plural its own way. Masculine -o becomes -aa, neuter -un becomes -aan, and feminine nouns add ઓ.\n\nMasculine and neuter nouns that end in a consonant usually stay the same, and a number or the verb shows there's more than one. You can also add ઓ to almost any plural to make it extra clear: છોકરાઓ (boys), ઘરો (houses).",
+        "table": [
+          ["છોકરો", "છોકરા", "boy, boys"],
+          ["છોકરી", "છોકરીઓ", "girl, girls"],
+          ["કેળું", "કેળાં", "banana, bananas"],
+          ["ઘર", "ઘર", "house, houses"]
+        ],
+        "examples": [
+          { "gu": "ઝાડ પર ચાર કાગડા છે.", "tr": "jhaaD par chaar kaagDaa chhe.", "en": "There are four crows on the tree." },
+          { "gu": "ઘરમાં બે છોકરીઓ છે.", "tr": "gharmaan be chhokreeo chhe.", "en": "There are two girls in the house." },
+          { "gu": "મને બે કેળાં આપો.", "tr": "mane be keLaan aapo.", "en": "Give me two bananas." },
+          { "gu": "છોકરાઓ બહાર રમે છે.", "tr": "chhokraao bahaar rame chhe.", "en": "The boys are playing outside." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adjectives",
+    "title": "Describing words",
+    "titleGu": "વિશેષણ",
+    "level": 1,
+    "units": ["u08", "u09", "u17"],
+    "summary": "Adjectives like સારું (good), whose dictionary form ends in -un, change to match their noun; the others never change.",
+    "sections": [
+      {
+        "heading": "Matching the noun",
+        "body": "An adjective like સારું (good) changes its ending to match the gender and number of its noun: -o for masculine, -ee for feminine, -un for neuter, and the plural endings too. The noun itself doesn't need that ending: સારી બહેન (a good sister), સારું ઘર (a good house).",
+        "table": [
+          ["સારો છોકરો", "a good boy"],
+          ["સારી છોકરી", "a good girl"],
+          ["સારું ઘર", "a good house"],
+          ["સારા છોકરા", "good boys"],
+          ["સારી છોકરીઓ", "good girls"],
+          ["સારાં ઘર", "good houses"]
+        ],
+        "examples": [
+          { "gu": "તે સારો છોકરો છે.", "tr": "te saaro chhokro chhe.", "en": "He is a good boy." },
+          { "gu": "આ મોટું ઘર છે.", "tr": "aa moTun ghar chhe.", "en": "This is a big house." },
+          { "gu": "મારી નાની બહેન ઘરે છે.", "tr": "maaree naanee bahen ghare chhe.", "en": "My younger sister is at home." }
+        ]
+      },
+      {
+        "heading": "After the noun, too",
+        "body": "The adjective still matches when it comes after the noun, just before છે.",
+        "examples": [
+          { "gu": "ઘર મોટું છે.", "tr": "ghar moTun chhe.", "en": "The house is big." },
+          { "gu": "છોકરી ઊંચી છે.", "tr": "chhokree oonchee chhe.", "en": "The girl is tall." },
+          { "gu": "કેળાં પાકાં છે.", "tr": "keLaan paakaan chhe.", "en": "The bananas are ripe." }
+        ]
+      },
+      {
+        "heading": "Words that never change",
+        "body": "All other adjectives stay the same with every noun: લાલ (red), ગરમ (hot), સુંદર (beautiful), હોશિયાર (clever). That includes ones that always end in -ee, like ગુલાબી (pink) and દુઃખી (sad): દુઃખી છોકરો, દુઃખી છોકરી.",
+        "examples": [
+          { "gu": "ચા ગરમ છે.", "tr": "chaa garam chhe.", "en": "The tea is hot." },
+          { "gu": "આ લાલ સાડી સુંદર છે.", "tr": "aa laal saaDee sundar chhe.", "en": "This red sari is beautiful." },
+          { "gu": "મારો ભાઈ હોશિયાર છે.", "tr": "maaro bhaai hoshiyaar chhe.", "en": "My brother is clever." }
+        ]
+      },
+      {
+        "heading": "Bigger, biggest",
+        "body": "To compare, put **કરતાં** (than) after the thing you're comparing with. For \"the most\", put **સૌથી** before the adjective. The adjective itself keeps its normal form.",
+        "examples": [
+          { "gu": "આ ઘર તે ઘર કરતાં મોટું છે.", "tr": "aa ghar te ghar kartaan moTun chhe.", "en": "This house is bigger than that house." },
+          { "gu": "મારો ભાઈ મારા કરતાં મોટો છે.", "tr": "maaro bhaai maaraa kartaan moTo chhe.", "en": "My brother is older than me." },
+          { "gu": "આ સૌથી મોટું ઘર છે.", "tr": "aa sauthee moTun ghar chhe.", "en": "This is the biggest house." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "present",
+    "title": "Present tense",
+    "titleGu": "વર્તમાનકાળ",
+    "level": 1,
+    "units": ["u09", "u10"],
+    "summary": "How to say what you do, usually or right now, with the verb ending that matches the person.",
+    "sections": [
+      {
+        "heading": "I speak, she eats",
+        "body": "Take the dictionary form, drop the **-vun** (બોલવું → બોલ) to get the stem, add the ending for the person, then the matching છું / છે / છો / છીએ. Stems that end in a vowel, like ખા (eat) and જા (go), slip in a y sound in some forms.\n\nThe same form means both \"I eat\" and \"I am eating\": હું ખાઉં છું can be either.",
+        "table": [
+          ["", "speak", "eat"],
+          ["હું", "બોલું છું", "ખાઉં છું"],
+          ["તું", "બોલે છે", "ખાય છે"],
+          ["તે", "બોલે છે", "ખાય છે"],
+          ["અમે / આપણે", "બોલીએ છીએ", "ખાઈએ છીએ"],
+          ["તમે", "બોલો છો", "ખાઓ છો"],
+          ["તેઓ", "બોલે છે", "ખાય છે"]
+        ],
+        "examples": [
+          { "gu": "હું ગુજરાતી બોલું છું.", "tr": "hun gujaraatee bolun chhun.", "en": "I speak Gujarati." },
+          { "gu": "મમ્મી ચા પીએ છે.", "tr": "mammee chaa piye chhe.", "en": "Mom drinks tea." },
+          { "gu": "અમે બજાર જઈએ છીએ.", "tr": "ame bajaar jaiye chhiye.", "en": "We are going to the market." },
+          { "gu": "તમે ક્યાં રહો છો?", "tr": "tame kyaan raho chho?", "en": "Where do you live?" },
+          { "gu": "તેઓ રોજ ચાલવા જાય છે.", "tr": "teo roj chaalvaa jaay chhe.", "en": "They go for a walk every day." }
+        ]
+      },
+      {
+        "heading": "Right now: ખાઈ રહ્યો છું",
+        "body": "To stress that something is happening at this very moment, use the verb's -ee form (બોલી, ખાઈ, કરી) with **રહ્યો** + છું / છે. રહ્યો matches the person doing it: રહ્યો for a man, **રહી** for a woman, **રહ્યા** for men or polite તમે.",
+        "table": [
+          ["હું ખાઈ રહ્યો છું.", "I'm eating (a man speaking)"],
+          ["હું ખાઈ રહી છું.", "I'm eating (a woman speaking)"],
+          ["તે વાંચી રહ્યો છે.", "He's reading."],
+          ["અમે આવી રહ્યા છીએ.", "We're on our way."]
+        ],
+        "examples": [
+          { "gu": "હું ખાઈ રહ્યો છું.", "tr": "hun khaai rahyo chhun.", "en": "I'm eating right now (a man speaking)." },
+          { "gu": "બહેન ફોન પર વાત કરી રહી છે.", "tr": "bahen phon par vaat karee rahee chhe.", "en": "My sister is talking on the phone." },
+          { "gu": "બસ આવી રહી છે.", "tr": "bas aavee rahee chhe.", "en": "The bus is coming." }
+        ]
+      },
+      {
+        "heading": "The -to form",
+        "body": "Verbs also have a form ending in **-to** (ખાતો, જતો, વાંચતો) that matches the person's gender. You need it for \"don't\" (હું નથી ખાતો, on the next page), for \"was doing\" (હું વાંચતો હતો), and with **હોઉં / હોય** for something going on at the time of something else.",
+        "table": [
+          ["ખાતો", "khaato", "a man"],
+          ["ખાતી", "khaatee", "a woman"],
+          ["ખાતું", "khaatun", "a neuter noun"],
+          ["ખાતા", "khaataa", "men, or polite તમે"]
+        ],
+        "examples": [
+          { "gu": "હું માંસ નથી ખાતો.", "tr": "hun maans nathee khaato.", "en": "I don't eat meat (a man speaking)." },
+          { "gu": "હું રસોઈ કરતી હોઉં ત્યારે બાળકો બહાર રમે છે.", "tr": "hun rasoi kartee houn tyaare baaLko bahaar rame chhe.", "en": "While I'm cooking, the children play outside (a woman speaking)." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "negatives",
+    "title": "Saying no and not",
+    "titleGu": "નથી, ન, નહીં",
+    "level": 1,
+    "units": ["u16", "u18"],
+    "summary": "Gujarati has three words for \"not\", and each goes with different verb forms.",
+    "sections": [
+      {
+        "heading": "નથી: am not, is not, are not",
+        "body": "**નથી** takes the place of છું, છે, છો and છીએ. It is the same for every person.",
+        "table": [
+          ["હું ઘરે છું.", "હું ઘરે નથી."],
+          ["તે અહીં છે.", "તે અહીં નથી."],
+          ["અમે તૈયાર છીએ.", "અમે તૈયાર નથી."]
+        ],
+        "examples": [
+          { "gu": "હું ઘરે નથી.", "tr": "hun ghare nathee.", "en": "I'm not at home." },
+          { "gu": "પપ્પા અહીં નથી.", "tr": "pappaa aheen nathee.", "en": "Dad isn't here." },
+          { "gu": "મને ખબર નથી.", "tr": "mane khabar nathee.", "en": "I don't know." }
+        ]
+      },
+      {
+        "heading": "Don't: નથી with the -to form",
+        "body": "For \"don't\" in the present, use **નથી** with the -to form of the verb (ખાતો, ખાતી, ખાતા), and drop છું / છે / છો completely. Never say નથી છું. નથી can go before or after the verb.",
+        "table": [
+          ["હું ખાઉં છું.", "હું નથી ખાતો / ખાતી."],
+          ["તે જાય છે.", "તે નથી જતો / જતી."],
+          ["અમે બોલીએ છીએ.", "અમે નથી બોલતા."]
+        ],
+        "examples": [
+          { "gu": "મારી બહેન ચા નથી પીતી.", "tr": "maaree bahen chaa nathee peetee.", "en": "My sister doesn't drink tea." },
+          { "gu": "અમે ઘરે અંગ્રેજી નથી બોલતા.", "tr": "ame ghare angrejee nathee boltaa.", "en": "We don't speak English at home." },
+          { "gu": "તેઓ અહીં રહેતા નથી.", "tr": "teo aheen rahetaa nathee.", "en": "They don't live here." }
+        ]
+      },
+      {
+        "heading": "ન and નહીં",
+        "body": "**ન** goes right before the verb in commands and in the past: ન જાઓ (don't go), ન આવ્યો (didn't come). In speech you'll also hear નહીં after a past verb: આવ્યો નહીં.\n\n**નહીં** is \"won't\". Put it before the short form of the verb, the one in \"shall I?\" questions (જાઉં, આવું, કરું): હું નહીં આવું. Or put it after the future: હું આવીશ નહીં. Plain **ના** is \"no\".",
+        "examples": [
+          { "gu": "ત્યાં ન જાઓ.", "tr": "tyaan na jaao.", "en": "Don't go there." },
+          { "gu": "તે કાલે ન આવ્યો.", "tr": "te kaale na aavyo.", "en": "He didn't come yesterday." },
+          { "gu": "હું કાલે નહીં આવું.", "tr": "hun kaale naheen aavun.", "en": "I won't come tomorrow." },
+          { "gu": "ના, આભાર.", "tr": "naa, aabhaar.", "en": "No, thank you." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "questions",
+    "title": "Asking questions",
+    "titleGu": "પ્રશ્નો",
+    "level": 1,
+    "units": ["u07", "u09", "u12", "u14"],
+    "summary": "Question words go where the answer would go, and yes/no questions just rise at the end.",
+    "sections": [
+      {
+        "heading": "Question words",
+        "body": "Gujarati doesn't move the question word to the front. Put it where the answer would go, usually just before the verb: \"You where are going?\"",
+        "table": [
+          ["શું", "shun", "what"],
+          ["ક્યાં", "kyaan", "where"],
+          ["કોણ", "koN", "who"],
+          ["કેમ", "kem", "why; how"],
+          ["ક્યારે", "kyaare", "when"],
+          ["કેટલું", "keTlun", "how much"],
+          ["કેટલા", "keTlaa", "how many"],
+          ["કયું", "kayun", "which"]
+        ],
+        "examples": [
+          { "gu": "તમે ક્યાં જાઓ છો?", "tr": "tame kyaan jaao chho?", "en": "Where are you going?" },
+          { "gu": "તે કોણ છે?", "tr": "te koN chhe?", "en": "Who is that?" },
+          { "gu": "તમે ક્યારે આવશો?", "tr": "tame kyaare aavsho?", "en": "When will you come?" },
+          { "gu": "તમે કેમ મોડા આવ્યા?", "tr": "tame kem moDaa aavyaa?", "en": "Why did you come late?" }
+        ]
+      },
+      {
+        "heading": "Which and how much match too",
+        "body": "**કયું** (which) and **કેટલું** (how much) change like adjectives: **કયો** with a masculine noun, **કઈ** with a feminine one, કયું with a neuter one, and કેટલો / કેટલી / કેટલું the same way.\n\n**કેમ** usually means \"why\", but in કેમ છો? it means \"how\".",
+        "examples": [
+          { "gu": "તમે કઈ ચોપડી વાંચો છો?", "tr": "tame kai chopDee vaancho chho?", "en": "Which book are you reading?" },
+          { "gu": "કયું ઘર તમારું છે?", "tr": "kayun ghar tamaarun chhe?", "en": "Which house is yours?" },
+          { "gu": "ચામાં કેટલી ખાંડ નાખું?", "tr": "chaamaan keTlee khaanD naakhun?", "en": "How much sugar should I put in the tea?" },
+          { "gu": "આ કેટલાનું છે?", "tr": "aa keTlaanun chhe?", "en": "How much is this?" }
+        ]
+      },
+      {
+        "heading": "Yes or no",
+        "body": "For a yes/no question, keep the normal sentence and let your voice rise at the end. You can also start with **શું**, which here simply marks a question. Add **ને?** at the end for \"right?\".",
+        "examples": [
+          { "gu": "તમે ગુજરાતી બોલો છો?", "tr": "tame gujaraatee bolo chho?", "en": "Do you speak Gujarati?" },
+          { "gu": "શું તમે થાકી ગયા છો?", "tr": "shun tame thaakee gayaa chho?", "en": "Are you tired?" },
+          { "gu": "તમે કાલે આવશો ને?", "tr": "tame kaale aavsho ne?", "en": "You'll come tomorrow, right?" },
+          { "gu": "હા, હું આવીશ.", "tr": "haa, hun aaveesh.", "en": "Yes, I'll come." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "past-intransitive",
+    "title": "Past tense: I went, I came",
+    "titleGu": "ભૂતકાળ: ગયો, આવ્યો",
+    "level": 2,
+    "units": ["u11"],
+    "summary": "Verbs like go, come and sit form the past by matching the subject's gender and number, and હતો means \"was\".",
+    "sections": [
+      {
+        "heading": "I went: matching the subject",
+        "body": "For verbs with no object (go, come, sit, sleep, get up), the past form matches the subject the way an adjective does. A man says હું ગયો; a woman says હું ગઈ. A group of girls or women also takes ગઈ: છોકરીઓ ગઈ.\n\nMost verbs make the past with **-yo**: આવવું → આવ્યો, આવી, આવ્યું, આવ્યા, આવ્યાં. A few are irregular: જવું → ગયો, બેસવું → બેઠો, સૂવું → સૂતો.",
+        "table": [
+          ["ગયો", "gayo", "one man or boy"],
+          ["ગઈ", "gai", "one woman or girl, or several"],
+          ["ગયું", "gayun", "a neuter noun"],
+          ["ગયા", "gayaa", "men, a man you respect, or polite તમે"],
+          ["ગયાં", "gayaan", "a mixed group, neuter plurals, or a woman you respect"]
+        ],
+        "examples": [
+          { "gu": "હું ગઈકાલે મંદિર ગયો.", "tr": "hun gaikaale mandir gayo.", "en": "I went to the temple yesterday (a man speaking)." },
+          { "gu": "તે સાંજે ઘરે આવી.", "tr": "te saanje ghare aavee.", "en": "She came home in the evening." },
+          { "gu": "તમે ક્યારે આવ્યા?", "tr": "tame kyaare aavyaa?", "en": "When did you come?" },
+          { "gu": "બા અને દાદા મુંબઈ ગયાં.", "tr": "baa ane daadaa mumbai gayaan.", "en": "Grandma and Grandpa went to Mumbai." }
+        ]
+      },
+      {
+        "heading": "Was and were: હતો",
+        "body": "**હતો** is the past of છે. It matches gender and number, not the person: હતો, હતી, હતું, હતા, હતાં. The \"not\" form is **નહોતો** (નહોતી, નહોતું, નહોતા).",
+        "examples": [
+          { "gu": "હું ગઈકાલે ઘરે હતો.", "tr": "hun gaikaale ghare hato.", "en": "I was at home yesterday (a man speaking)." },
+          { "gu": "મારી દીકરી બીમાર હતી.", "tr": "maaree deekree beemaar hatee.", "en": "My daughter was sick." },
+          { "gu": "અમે ભારતમાં હતા.", "tr": "ame bhaaratmaan hataa.", "en": "We were in India." },
+          { "gu": "તે ઘરે નહોતો.", "tr": "te ghare nahoto.", "en": "He wasn't at home." }
+        ]
+      },
+      {
+        "heading": "Was doing, used to do",
+        "body": "The -to form with હતો means \"was doing\" or \"used to do\". The rest of the sentence tells you which.",
+        "examples": [
+          { "gu": "હું ટીવી જોતો હતો.", "tr": "hun Teevee joto hato.", "en": "I was watching TV (a man speaking)." },
+          { "gu": "અમે ગામમાં રહેતા હતા.", "tr": "ame gaammaan rahetaa hataa.", "en": "We used to live in the village." },
+          { "gu": "બા રોજ વાર્તા કહેતાં હતાં.", "tr": "baa roj vaartaa kahetaan hataan.", "en": "Grandma used to tell a story every day." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "past-transitive",
+    "title": "Past tense: I ate, I saw",
+    "titleGu": "ભૂતકાળ: મેં ખાધું",
+    "level": 3,
+    "units": ["u11"],
+    "summary": "With verbs that act on something, \"I\" becomes મેં and the verb matches the thing, not the person.",
+    "sections": [
+      {
+        "heading": "મેં, તેં, તેણે",
+        "body": "With verbs that act on something (eat, drink, see, do, write, say), the past works differently. The person doing it takes a special form, and a noun adds **-e** (એ): મમ્મીએ, કાગડાએ.\n\nVerbs of movement never do this: it's always હું ગયો, never મેં ગયો. A few everyday verbs with an object skip it too, and match the person like ગયો: **લાવવું** (bring), **મળવું** (meet), **બોલવું** (speak), **ભૂલવું** (forget). So it's પપ્પા મીઠાઈ લાવ્યા and હું રવિને મળ્યો.",
+        "table": [
+          ["usual form", "doer in the past", "meaning"],
+          ["હું", "મેં", "I"],
+          ["તું", "તેં", "you (friendly)"],
+          ["તે", "તેણે", "he / she"],
+          ["અમે", "અમે", "we (not you)"],
+          ["આપણે", "આપણે", "we (you too)"],
+          ["તમે", "તમે", "you (polite)"],
+          ["તેઓ", "તેમણે", "they"]
+        ],
+        "examples": [
+          { "gu": "મેં ચા પીધી.", "tr": "men chaa peedhee.", "en": "I drank tea." },
+          { "gu": "તેણે પત્ર લખ્યો.", "tr": "teNe patra lakhyo.", "en": "He (or she) wrote a letter." },
+          { "gu": "મમ્મીએ શાક બનાવ્યું.", "tr": "mammiye shaak banaavyun.", "en": "Mom made the vegetable curry." }
+        ]
+      },
+      {
+        "heading": "The verb matches the object",
+        "body": "Here the verb doesn't care who did it. It matches the thing: ચા is feminine, so ચા પીધી; પત્ર is masculine, so પત્ર લખ્યો; શાક is neuter, so શાક બનાવ્યું. A man and a woman say exactly the same sentence.",
+        "table": [
+          ["મેં લાડુ ખાધો.", "I ate a laddoo. (masculine)"],
+          ["મેં રોટલી ખાધી.", "I ate a rotli. (feminine)"],
+          ["મેં કેળું ખાધું.", "I ate a banana. (neuter)"],
+          ["મેં કેળાં ખાધાં.", "I ate bananas. (neuter plural)"]
+        ],
+        "examples": [
+          { "gu": "અમે ફિલ્મ જોઈ.", "tr": "ame philm joi.", "en": "We watched a film." },
+          { "gu": "કાગડાએ પાણી પીધું.", "tr": "kaagDaae paaNee peedhun.", "en": "The crow drank the water." },
+          { "gu": "તમે શું કહ્યું?", "tr": "tame shun kahyun?", "en": "What did you say?" }
+        ]
+      },
+      {
+        "heading": "No object, or a person with ને",
+        "body": "With no object, or when the object is a whole sentence (\"he said that ...\"), use the neuter -un form: મેં ખાધું (I ate). For \"haven't\", add નથી: મેં ખાધું નથી.\n\nWhen the object is a person marked with **ને**, the verb still matches that person: ચોર (thief) is masculine, so ચોરને પકડ્યો. Polite તમને takes the plural, જોયા (to a woman, જોયાં).",
+        "examples": [
+          { "gu": "મેં ખાધું નથી.", "tr": "men khaadhun nathee.", "en": "I haven't eaten." },
+          { "gu": "પોલીસે ચોરને પકડ્યો.", "tr": "poleese chorne pakaDyo.", "en": "The police caught the thief." },
+          { "gu": "મેં તમને ત્યાં જોયા.", "tr": "men tamne tyaan joyaa.", "en": "I saw you there." },
+          { "gu": "તેણે કહ્યું કે તે આવશે.", "tr": "teNe kahyun ke te aavshe.", "en": "He said that he would come." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "future",
+    "title": "Future tense",
+    "titleGu": "ભવિષ્યકાળ",
+    "level": 2,
+    "units": ["u12"],
+    "summary": "How to say what will happen, and how to talk about plans with જવાનો છું.",
+    "sections": [
+      {
+        "heading": "I will go",
+        "body": "Add the future ending to the stem. In careful Gujarati, હું and તું share a form (જઈશ); in casual speech you'll also hear તું જશે.\n\nFor \"will be\", use હોઈશ, હશે, હોઈશું, હશો. **હશે** also means \"probably, must be\".",
+        "table": [
+          ["", "go", "do"],
+          ["હું", "જઈશ", "કરીશ"],
+          ["તું", "જઈશ", "કરીશ"],
+          ["તે", "જશે", "કરશે"],
+          ["અમે / આપણે", "જઈશું", "કરીશું"],
+          ["તમે", "જશો", "કરશો"],
+          ["તેઓ", "જશે", "કરશે"]
+        ],
+        "examples": [
+          { "gu": "હું કાલે મુંબઈ જઈશ.", "tr": "hun kaale mumbai jaish.", "en": "I will go to Mumbai tomorrow." },
+          { "gu": "તે સાંજે ફોન કરશે.", "tr": "te saanje phon karshe.", "en": "She will call in the evening." },
+          { "gu": "આપણે સાથે જમીશું.", "tr": "aapNe saathe jameeshun.", "en": "We will eat together." },
+          { "gu": "તે ઘરે હશે.", "tr": "te ghare hashe.", "en": "He must be at home." }
+        ]
+      },
+      {
+        "heading": "Plans: જવાનો છું",
+        "body": "For something already planned, use the dictionary form with **-aano** in place of -un, then છું / છે: જવાનો છું (I'm going to go). It matches the person: **જવાનો** for a man, **જવાની** for a woman, **જવાના** for men or polite તમે.",
+        "examples": [
+          { "gu": "હું આવતા અઠવાડિયે ભારત જવાનો છું.", "tr": "hun aavtaa aThvaaDiye bhaarat javaano chhun.", "en": "I'm going to India next week (a man speaking)." },
+          { "gu": "તે આજે રસોઈ કરવાની છે.", "tr": "te aaje rasoi karvaanee chhe.", "en": "She is going to cook today." },
+          { "gu": "અમે નવું ઘર લેવાના છીએ.", "tr": "ame navun ghar levaanaa chhiye.", "en": "We are going to buy a new house." }
+        ]
+      },
+      {
+        "heading": "Won't",
+        "body": "For \"won't\", put **નહીં** before the short form of the verb (જાઉં, આવું, કરું), or after the future form.",
+        "examples": [
+          { "gu": "હું આજે નહીં જાઉં.", "tr": "hun aaje naheen jaaun.", "en": "I won't go today." },
+          { "gu": "તે આ વાત ભૂલશે નહીં.", "tr": "te aa vaat bhoolshe naheen.", "en": "He won't forget this." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "postpositions",
+    "title": "In, on, to, from",
+    "titleGu": "માં, પર, ને, થી",
+    "level": 2,
+    "units": ["u13"],
+    "summary": "Gujarati puts little words like \"in\" and \"to\" after the noun, and some nouns change shape in front of them.",
+    "sections": [
+      {
+        "heading": "After the noun",
+        "body": "Where English says \"in the house\", Gujarati says \"house-in\": ઘરમાં. These words are called postpositions because they come after. માં, ને, થી and એ join onto the word; the others, even short પર, are written as separate words.",
+        "table": [
+          ["માં", "in", "ઘરમાં"],
+          ["ને", "to", "મમ્મીને"],
+          ["થી", "from; by", "મુંબઈથી"],
+          ["એ", "at", "ઘરે"],
+          ["પર", "on", "ટેબલ પર"],
+          ["સાથે", "with", "ભાઈ સાથે"],
+          ["માટે", "for", "તમારા માટે"],
+          ["પાસે", "near", "ઘર પાસે"]
+        ],
+        "examples": [
+          { "gu": "ચાવી ખિસ્સામાં છે.", "tr": "chaavee khissaamaan chhe.", "en": "The key is in the pocket." },
+          { "gu": "ચોપડી ટેબલ પર છે.", "tr": "chopDee Tebal par chhe.", "en": "The book is on the table." },
+          { "gu": "તે મુંબઈથી આવ્યો.", "tr": "te mumbaithee aavyo.", "en": "He came from Mumbai." },
+          { "gu": "આ ભેટ તમારા માટે છે.", "tr": "aa bheT tamaaraa maaTe chhe.", "en": "This gift is for you." }
+        ]
+      },
+      {
+        "heading": "The oblique form",
+        "body": "In front of a postposition, a masculine noun ending in -o changes it to -aa, and a neuter noun ending in -un changes it to -aa too. This changed shape is called the **oblique form**: the form a word takes before a postposition. Other nouns don't change.",
+        "table": [
+          ["છોકરો", "છોકરાને", "to the boy"],
+          ["કાગડો", "કાગડાએ", "by the crow"],
+          ["ઓરડો", "ઓરડામાં", "in the room"],
+          ["ખિસ્સું", "ખિસ્સામાં", "in the pocket"],
+          ["છોકરી", "છોકરીને", "to the girl"],
+          ["ઘર", "ઘરમાં", "in the house"]
+        ],
+        "examples": [
+          { "gu": "છોકરાને પાણી આપો.", "tr": "chhokraane paaNee aapo.", "en": "Give the boy some water." },
+          { "gu": "મમ્મી ઓરડામાં છે.", "tr": "mammee orDaamaan chhe.", "en": "Mom is in the room." },
+          { "gu": "કાગડાએ ઘડામાં પથ્થર નાખ્યા.", "tr": "kaagDaae ghaDaamaan paththar naakhyaa.", "en": "The crow dropped stones into the pot." }
+        ]
+      },
+      {
+        "heading": "Words in front change too",
+        "body": "Adjectives and words like મારું go oblique along with their noun: મોટું ઘર → મોટા ઘરમાં, મારો ભાઈ → મારા ભાઈ સાથે.\n\nLonger postpositions like **પાછળ** (behind) and **નીચે** (under) often take **ની** in between: ઘરની પાછળ.",
+        "examples": [
+          { "gu": "અમે મોટા ઘરમાં રહીએ છીએ.", "tr": "ame moTaa gharmaan rahiye chhiye.", "en": "We live in a big house." },
+          { "gu": "હું મારા ભાઈ સાથે રહું છું.", "tr": "hun maaraa bhaai saathe rahun chhun.", "en": "I live with my brother." },
+          { "gu": "બિલાડી ટેબલની નીચે છે.", "tr": "bilaaDee Tebalnee neeche chhe.", "en": "The cat is under the table." },
+          { "gu": "બગીચો ઘરની પાછળ છે.", "tr": "bageecho gharnee paachhaL chhe.", "en": "The garden is behind the house." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "possessives",
+    "title": "My, your, his",
+    "titleGu": "મારું, તમારું, તેનું",
+    "level": 1,
+    "units": ["u08", "u09", "u13"],
+    "summary": "The words for my, your and 's change their ending to match the thing owned, not the owner.",
+    "sections": [
+      {
+        "heading": "My, your, our",
+        "body": "Each of these words ends like an adjective, and it matches the thing owned: મારો ભાઈ (brother, masculine), મારી બહેન (sister, feminine), મારું ઘર (house, neuter). For more than one: મારા ભાઈઓ, મારી બહેનો, મારાં ઘર.",
+        "table": [
+          ["હું", "મારું", "my"],
+          ["તું", "તારું", "your (friendly)"],
+          ["તે", "તેનું", "his / her"],
+          ["અમે", "અમારું", "our (not yours)"],
+          ["આપણે", "આપણું", "our (yours too)"],
+          ["તમે", "તમારું", "your (polite)"],
+          ["તેઓ", "તેમનું", "their"]
+        ],
+        "examples": [
+          { "gu": "મારો ભાઈ શિક્ષક છે.", "tr": "maaro bhaai shikshak chhe.", "en": "My brother is a teacher." },
+          { "gu": "મારી બહેન અમેરિકામાં રહે છે.", "tr": "maaree bahen amerikaamaan rahe chhe.", "en": "My sister lives in America." },
+          { "gu": "આ તમારું ઘર છે?", "tr": "aa tamaarun ghar chhe?", "en": "Is this your house?" },
+          { "gu": "તેનું નામ શું છે?", "tr": "tenun naam shun chhe?", "en": "What is his name?" }
+        ]
+      },
+      {
+        "heading": "'s: નો, ની, નું",
+        "body": "For a noun owner, add **નો / ની / નું / ના / નાં** to it, matching the thing owned: સીતાનો ભાઈ, સીતાની બહેન, સીતાનું ઘર. An owner ending in -o takes its oblique form first: છોકરો → છોકરાનું નામ.",
+        "examples": [
+          { "gu": "સીતાનો ભાઈ લંડનમાં રહે છે.", "tr": "seetaano bhaai lanDanmaan rahe chhe.", "en": "Sita's brother lives in London." },
+          { "gu": "છોકરાનું નામ શું છે?", "tr": "chhokraanun naam shun chhe?", "en": "What is the boy's name?" },
+          { "gu": "આ પપ્પાની ગાડી છે.", "tr": "aa pappaanee gaaDee chhe.", "en": "This is Dad's car." },
+          { "gu": "ગુજરાતનું પાટનગર ગાંધીનગર છે.", "tr": "gujaraatnun paaTnagar gaandheenagar chhe.", "en": "The capital of Gujarat is Gandhinagar." }
+        ]
+      },
+      {
+        "heading": "Respect for elders",
+        "body": "Elders you respect are spoken of in the plural, so the possessive takes the plural ending: **મારા પપ્પા**, **મારા દાદા**, never મારો. For women, careful Gujarati uses **મારાં બા**, **મારાં મમ્મી**; in everyday talk you'll also hear મારી મમ્મી.",
+        "examples": [
+          { "gu": "મારા પપ્પા ઘરે છે.", "tr": "maaraa pappaa ghare chhe.", "en": "My dad is at home." },
+          { "gu": "મારાં બા ગામમાં રહે છે.", "tr": "maaraan baa gaammaan rahe chhe.", "en": "My grandmother lives in the village." },
+          { "gu": "તમારા દાદાનું નામ શું છે?", "tr": "tamaaraa daadaanun naam shun chhe?", "en": "What is your grandfather's name?" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "imperatives",
+    "title": "Asking and telling",
+    "titleGu": "આવ, આવો, આવજો",
+    "level": 2,
+    "units": ["u16"],
+    "summary": "How to tell or ask someone to do something, from friendly to very polite.",
+    "sections": [
+      {
+        "heading": "Three levels",
+        "body": "The bare stem is a friendly command for someone you call તું. Add **-o** for તમે. Add **-jo** for a gentle request, often about later; that's why goodbye is આવજો, \"do come (again)\". To someone you call તું, the gentle form ends in **-je**: આવજે.",
+        "table": [
+          ["verb", "friendly", "polite", "gently, later"],
+          ["આવવું", "આવ", "આવો", "આવજો"],
+          ["જવું", "જા", "જાઓ", "જજો"],
+          ["બેસવું", "બેસ", "બેસો", "બેસજો"],
+          ["ખાવું", "ખા", "ખાઓ", "ખાજો"],
+          ["કરવું", "કર", "કરો", "કરજો"]
+        ],
+        "examples": [
+          { "gu": "અહીં આવ.", "tr": "aheen aav.", "en": "Come here." },
+          { "gu": "અહીં બેસો.", "tr": "aheen beso.", "en": "Please sit here." },
+          { "gu": "કાલે ફોન કરજો.", "tr": "kaale phon karjo.", "en": "Do call tomorrow." },
+          { "gu": "આવજો!", "tr": "aavjo!", "en": "Goodbye!" }
+        ]
+      },
+      {
+        "heading": "Very polite: a question in the future",
+        "body": "To ask a favour politely, use the તમે future form as a question: આપશો? (would you give?). **જરા** (a little) softens any request, and **મહેરબાની કરીને** or **કૃપા કરીને** is a formal \"please\".\n\n**ચાલો** with the આપણે form means \"let's\".",
+        "examples": [
+          { "gu": "મને પાણી આપશો?", "tr": "mane paaNee aapsho?", "en": "Could you give me some water?" },
+          { "gu": "જરા ધીમે બોલશો?", "tr": "jaraa dheeme bolsho?", "en": "Could you speak a little more slowly?" },
+          { "gu": "કૃપા કરીને અહીં સહી કરો.", "tr": "krupaa kareene aheen sahee karo.", "en": "Please sign here." },
+          { "gu": "ચાલો, જમી લઈએ.", "tr": "chaalo, jamee laiye.", "en": "Come on, let's eat." }
+        ]
+      },
+      {
+        "heading": "Don't",
+        "body": "Put **ન** before the command: ન આવો (don't come). A softer \"please don't\" is the future form + **નહીં**: ગભરાશો નહીં.",
+        "examples": [
+          { "gu": "અંદર ન આવો.", "tr": "andar na aavo.", "en": "Don't come in." },
+          { "gu": "ચિંતા ન કરો.", "tr": "chintaa na karo.", "en": "Don't worry." },
+          { "gu": "ગભરાશો નહીં.", "tr": "gabhraasho naheen.", "en": "Please don't be afraid." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "to-me",
+    "title": "I like, I know, I need",
+    "titleGu": "મને ગમે છે",
+    "level": 2,
+    "units": ["u15", "u18"],
+    "summary": "Many feelings in Gujarati happen \"to\" you: the person takes the ને form and the verb goes with the thing.",
+    "sections": [
+      {
+        "heading": "મને: to me",
+        "body": "For \"I like tea\", Gujarati says \"to me, tea is pleasing\": મને ચા ગમે છે. The person takes the ને form, and the verb goes with the thing (the tea), not with you, so it's છે, not છું.",
+        "table": [
+          ["હું", "મને", "to me"],
+          ["તું", "તને", "to you (friendly)"],
+          ["તે", "તેને", "to him / her"],
+          ["અમે", "અમને", "to us (not you)"],
+          ["આપણે", "આપણને", "to us (you too)"],
+          ["તમે", "તમને", "to you (polite)"],
+          ["તેઓ", "તેમને", "to them"]
+        ],
+        "examples": [
+          { "gu": "મને ચા ગમે છે.", "tr": "mane chaa game chhe.", "en": "I like tea." },
+          { "gu": "તમને ખબર છે?", "tr": "tamne khabar chhe?", "en": "Do you know?" }
+        ]
+      },
+      {
+        "heading": "Like, know how, know, need",
+        "body": "**ગમવું** is to like. **આવડવું** is to know how to do something, like a skill or a language. **ખબર** is knowing a fact. **જોઈએ** is wanting or needing something.\n\nIn the past, ગમવું matches the thing you liked: મને ફિલ્મ ગમી (ફિલ્મ is feminine).",
+        "examples": [
+          { "gu": "તમને ગુજરાતી આવડે છે?", "tr": "tamne gujaraatee aavDe chhe?", "en": "Do you know Gujarati?" },
+          { "gu": "મને તરતાં આવડે છે.", "tr": "mane tartaan aavDe chhe.", "en": "I know how to swim." },
+          { "gu": "મને પાણી જોઈએ છે.", "tr": "mane paaNee joiye chhe.", "en": "I need some water." },
+          { "gu": "મને ફિલ્મ ગમી.", "tr": "mane philm gamee.", "en": "I liked the film." }
+        ]
+      },
+      {
+        "heading": "Hunger, cold and pain",
+        "body": "**લાગવું** is for feelings that come over you. For hunger and thirst Gujarati uses the past with છે: મને ભૂખ લાગી છે, \"hunger has struck me\", means I'm hungry now.\n\nમને લાગે છે કે ... means \"I think that ...\".",
+        "examples": [
+          { "gu": "મને ભૂખ લાગી છે.", "tr": "mane bhookh laagee chhe.", "en": "I'm hungry." },
+          { "gu": "મને ઠંડી લાગે છે.", "tr": "mane ThanDee laage chhe.", "en": "I feel cold." },
+          { "gu": "મને તાવ છે.", "tr": "mane taav chhe.", "en": "I have a fever." },
+          { "gu": "મારું માથું દુખે છે.", "tr": "maarun maathun dukhe chhe.", "en": "My head hurts." },
+          { "gu": "મને લાગે છે કે વરસાદ પડશે.", "tr": "mane laage chhe ke varsaad paDshe.", "en": "I think it will rain." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "can-must",
+    "title": "Can, must, want to",
+    "titleGu": "શકવું, પડવું",
+    "level": 3,
+    "units": ["u18"],
+    "summary": "How to say that you can, have to, want to or should do something.",
+    "sections": [
+      {
+        "heading": "Can: શકવું",
+        "body": "Put the main verb in its -ee form (બોલી, ખાઈ, જઈ, કરી) and add **શકવું** with the normal endings. Past: શક્યો, શકી, શક્યા.",
+        "table": [
+          ["હું બોલી શકું છું.", "I can speak."],
+          ["તમે બેસી શકો છો.", "You can sit."],
+          ["હું નહીં આવી શકું.", "I won't be able to come."],
+          ["હું ન આવી શક્યો.", "I couldn't come. (a man speaking)"]
+        ],
+        "examples": [
+          { "gu": "હું થોડું ગુજરાતી બોલી શકું છું.", "tr": "hun thoDun gujaraatee bolee shakun chhun.", "en": "I can speak a little Gujarati." },
+          { "gu": "શું હું અંદર આવી શકું?", "tr": "shun hun andar aavee shakun?", "en": "May I come in?" },
+          { "gu": "તે ગાડી ચલાવી શકે છે.", "tr": "te gaaDee chalaavee shake chhe.", "en": "She can drive." },
+          { "gu": "હું કાલે ન આવી શક્યો.", "tr": "hun kaale na aavee shakyo.", "en": "I couldn't come yesterday (a man speaking)." }
+        ]
+      },
+      {
+        "heading": "Have to: મારે જવું પડશે",
+        "body": "For \"have to\", the person takes the **-e** form (મારે, તારે, અમારે, આપણે, તમારે), then comes the dictionary form of the verb, then **પડે** (have to), **પડશે** (will have to) or **પડ્યું** (had to).",
+        "examples": [
+          { "gu": "મારે જવું પડશે.", "tr": "maare javun paDshe.", "en": "I'll have to go." },
+          { "gu": "મારે રોજ બસમાં જવું પડે છે.", "tr": "maare roj basmaan javun paDe chhe.", "en": "I have to go by bus every day." },
+          { "gu": "ગઈકાલે અમારે ચાલીને જવું પડ્યું.", "tr": "gaikaale amaare chaaleene javun paDyun.", "en": "Yesterday we had to walk." }
+        ]
+      },
+      {
+        "heading": "Want to and should",
+        "body": "**મારે** + the dictionary form + **છે** means \"I want to\": મારે ઘરે જવું છે. Use **જોઈએ** instead of છે for \"should\".\n\nIf the verb has an object, its ending matches the object: ચા is feminine, so ચા પીવી; આરામ (rest) is masculine, so આરામ કરવો. The same goes for \"have to\": મારે દવા લેવી પડી (I had to take medicine).",
+        "examples": [
+          { "gu": "મારે ઘરે જવું છે.", "tr": "maare ghare javun chhe.", "en": "I want to go home." },
+          { "gu": "મારે ચા પીવી છે.", "tr": "maare chaa peevee chhe.", "en": "I want to drink tea." },
+          { "gu": "તમારે આરામ કરવો જોઈએ.", "tr": "tamaare aaraam karvo joiye.", "en": "You should rest." },
+          { "gu": "આપણે વહેલા ઊઠવું જોઈએ.", "tr": "aapNe vahelaa ooThvun joiye.", "en": "We should get up early." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "compound-verbs",
+    "title": "Helper verbs",
+    "titleGu": "ખાઈ ગયો, લખી નાખ્યું",
+    "level": 3,
+    "units": ["u15"],
+    "summary": "Gujarati often adds a second verb like જવું or લેવું to add a shade of meaning, such as finishing or doing something for yourself.",
+    "sections": [
+      {
+        "heading": "How they're built",
+        "body": "Take the main verb's -ee form (ખાઈ, લખી, ભૂલી) and add a helper verb that carries all the endings. The helper loses its own meaning and adds a feeling of finishing, suddenness or direction. Without it the sentence is still correct, just plainer.",
+        "table": [
+          ["helper", "adds the feeling", "example"],
+          ["જવું", "it happened, it's done", "સૂઈ ગયો"],
+          ["નાખવું", "done completely", "લખી નાખ્યું"],
+          ["લેવું", "for yourself", "પી લીધી"],
+          ["દેવું", "for someone else", "આપી દીધા"]
+        ],
+        "examples": [
+          { "gu": "હું ભૂલી ગયો.", "tr": "hun bhoolee gayo.", "en": "I forgot (a man speaking)." },
+          { "gu": "બાળક સૂઈ ગયું.", "tr": "baaLak sooi gayun.", "en": "The baby fell asleep." },
+          { "gu": "બસ નીકળી ગઈ.", "tr": "bas neekLee gai.", "en": "The bus has left." }
+        ]
+      },
+      {
+        "heading": "લેવું and દેવું",
+        "body": "**લેવું** points the action back toward you: do it for yourself, get it done. **દેવું** points it away, toward someone else or out of your hands. Both are very common in requests: ખાઈ લો, કરી દો.",
+        "examples": [
+          { "gu": "મેં ચા પી લીધી.", "tr": "men chaa pee leedhee.", "en": "I've had my tea." },
+          { "gu": "તમે ખાઈ લો.", "tr": "tame khaai lo.", "en": "Go ahead and eat." },
+          { "gu": "બારી બંધ કરી દો.", "tr": "baaree bandh karee do.", "en": "Close the window." },
+          { "gu": "મેં તેને પૈસા આપી દીધા.", "tr": "men tene paisaa aapee deedhaa.", "en": "I gave him the money." }
+        ]
+      },
+      {
+        "heading": "The helper decides મેં or હું",
+        "body": "In the past, the helper decides whether the subject takes the -e form. With **જવું** it doesn't: તે બધું ખાઈ ગયો. With **નાખવું**, **લેવું** or **દેવું** it does, and the verb matches the object: તેણે બધું ખાઈ નાખ્યું.",
+        "examples": [
+          { "gu": "તે બધું ખાઈ ગયો.", "tr": "te badhun khaai gayo.", "en": "He ate it all up." },
+          { "gu": "તેણે બધું ખાઈ નાખ્યું.", "tr": "teNe badhun khaai naakhyun.", "en": "He finished off everything." },
+          { "gu": "મેં પત્ર લખી નાખ્યો.", "tr": "men patra lakhee naakhyo.", "en": "I finished writing the letter." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "joining",
+    "title": "And, but, because, if",
+    "titleGu": "અને, પણ, કારણ કે",
+    "level": 2,
+    "units": ["u15"],
+    "summary": "The words that join two ideas into one sentence.",
+    "sections": [
+      {
+        "heading": "And, but, because, so",
+        "body": "**પણ** means \"but\" between two sentences, and \"also, too\" right after a word: હું પણ આવીશ (I'll come too).",
+        "table": [
+          ["અને", "ane", "and"],
+          ["પણ", "paN", "but; also"],
+          ["કારણ કે", "kaaraN ke", "because"],
+          ["એટલે", "eTle", "so, that's why"]
+        ],
+        "examples": [
+          { "gu": "હું ચા પીઉં છું અને તે કૉફી પીએ છે.", "tr": "hun chaa peeun chhun ane te kophee piye chhe.", "en": "I drink tea and he drinks coffee." },
+          { "gu": "મને ભૂખ લાગી છે, પણ સમય નથી.", "tr": "mane bhookh laagee chhe, paN samay nathee.", "en": "I'm hungry, but there's no time." },
+          { "gu": "હું પણ આવીશ.", "tr": "hun paN aaveesh.", "en": "I'll come too." },
+          { "gu": "હું આજે ઘરે છું, કારણ કે મને તાવ છે.", "tr": "hun aaje ghare chhun, kaaraN ke mane taav chhe.", "en": "I'm at home today because I have a fever." },
+          { "gu": "વરસાદ પડતો હતો, એટલે અમે ઘરે રહ્યા.", "tr": "varsaad paDto hato, eTle ame ghare rahyaa.", "en": "It was raining, so we stayed home." }
+        ]
+      },
+      {
+        "heading": "If … then: જો … તો",
+        "body": "Start the \"if\" part with **જો** and the result with **તો**. Gujarati often uses the future in both halves, where English uses the present after \"if\". **હોય** is the usual form of \"is\" after જો.",
+        "examples": [
+          { "gu": "જો વરસાદ પડશે, તો અમે ઘરે રહીશું.", "tr": "jo varsaad paDshe, to ame ghare raheeshun.", "en": "If it rains, we'll stay home." },
+          { "gu": "જો તમે આવશો, તો મજા આવશે.", "tr": "jo tame aavsho, to majaa aavshe.", "en": "If you come, it will be fun." },
+          { "gu": "જો સમય હોય, તો ફોન કરજો.", "tr": "jo samay hoy, to phon karjo.", "en": "If you have time, give me a call." }
+        ]
+      },
+      {
+        "heading": "When … then: જ્યારે … ત્યારે",
+        "body": "**જ્યારે** (when) opens the first part and **ત્યારે** (then) opens the second. After verbs like say, think and know, **કે** means \"that\".",
+        "examples": [
+          { "gu": "જ્યારે હું નાનો હતો, ત્યારે અમે ગામમાં રહેતા હતા.", "tr": "jyaare hun naano hato, tyaare ame gaammaan rahetaa hataa.", "en": "When I was little, we lived in the village (a man speaking)." },
+          { "gu": "જ્યારે પપ્પા આવશે, ત્યારે આપણે જમીશું.", "tr": "jyaare pappaa aavshe, tyaare aapNe jameeshun.", "en": "When Dad comes, we'll eat." },
+          { "gu": "મને ખબર છે કે તમે વ્યસ્ત છો.", "tr": "mane khabar chhe ke tame vyast chho.", "en": "I know that you are busy." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "numbers-time",
+    "title": "Numbers, time and dates",
+    "titleGu": "સમય અને તારીખ",
+    "level": 2,
+    "units": ["u06", "u14"],
+    "summary": "Telling the time, the special words for quarters and halves, and saying the day and the date.",
+    "sections": [
+      {
+        "heading": "What time is it?",
+        "body": "Ask **કેટલા વાગ્યા?** (literally \"how many have struck?\"). Answer with the number and **વાગ્યા છે**; one o'clock is singular, **એક વાગ્યો છે**. For \"at\" a time, use **વાગ્યે**.",
+        "examples": [
+          { "gu": "કેટલા વાગ્યા?", "tr": "keTlaa vaagyaa?", "en": "What time is it?" },
+          { "gu": "ત્રણ વાગ્યા છે.", "tr": "traN vaagyaa chhe.", "en": "It's three o'clock." },
+          { "gu": "એક વાગ્યો છે.", "tr": "ek vaagyo chhe.", "en": "It's one o'clock." },
+          { "gu": "હું સાત વાગ્યે ઊઠું છું.", "tr": "hun saat vaagye ooThun chhun.", "en": "I get up at seven o'clock." }
+        ]
+      },
+      {
+        "heading": "Quarter past, half past, quarter to",
+        "body": "**સવા** adds a quarter, **સાડા** adds a half, and **પોણા** takes a quarter away. Half past one and half past two have their own words: **દોઢ** and **અઢી**.\n\nThe same words work for money and amounts: દોઢસો is 150, અઢીસો is 250, and સાડા ત્રણસો is 350.",
+        "table": [
+          ["સવા ત્રણ", "3:15", "quarter past three"],
+          ["સાડા ત્રણ", "3:30", "half past three"],
+          ["પોણા ત્રણ", "2:45", "quarter to three"],
+          ["દોઢ", "1:30", "half past one"],
+          ["અઢી", "2:30", "half past two"]
+        ],
+        "examples": [
+          { "gu": "સાડા પાંચ વાગ્યા છે.", "tr": "saaDaa paanch vaagyaa chhe.", "en": "It's half past five." },
+          { "gu": "ટ્રેન પોણા આઠ વાગ્યે આવશે.", "tr": "Tren poNaa aaTh vaagye aavshe.", "en": "The train will come at quarter to eight." },
+          { "gu": "અમે દોઢ વાગ્યે જમીશું.", "tr": "ame doDh vaagye jameeshun.", "en": "We'll eat at half past one." },
+          { "gu": "આ સાડી અઢી હજાર રૂપિયાની છે.", "tr": "aa saaDee aDhee hajaar roopiyaanee chhe.", "en": "This sari costs two thousand five hundred rupees." }
+        ]
+      },
+      {
+        "heading": "Days and dates",
+        "body": "The days of the week all end in **વાર**. For the date, say the number and **તારીખ**. Remember that **કાલે** means both yesterday and tomorrow; the verb tells you which.",
+        "table": [
+          ["સોમવાર", "Monday"],
+          ["મંગળવાર", "Tuesday"],
+          ["બુધવાર", "Wednesday"],
+          ["ગુરુવાર", "Thursday"],
+          ["શુક્રવાર", "Friday"],
+          ["શનિવાર", "Saturday"],
+          ["રવિવાર", "Sunday"]
+        ],
+        "examples": [
+          { "gu": "આજે સોમવાર છે.", "tr": "aaje somvaar chhe.", "en": "Today is Monday." },
+          { "gu": "આજે કઈ તારીખ છે?", "tr": "aaje kai taareekh chhe?", "en": "What's the date today?" },
+          { "gu": "આજે દસ તારીખ છે.", "tr": "aaje das taareekh chhe.", "en": "Today is the tenth." },
+          { "gu": "અમે શનિવારે મળીશું.", "tr": "ame shanivaare maLeeshun.", "en": "We'll meet on Saturday." }
+        ]
+      }
+    ]
+  }
+]

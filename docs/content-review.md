@@ -49,3 +49,22 @@ These are places where speakers genuinely differ. The app currently uses the fir
 
 **Small regional choices left as they are**
 18. વાદળો or વાદળાં (oa-045); મંદિર જવું or મંદિરે જવું (oa-095); રિયાના ઘરે or રિયાને ઘરે (nv-02); janmadivas or janmdivas; kesaree or kesree.
+
+## Units 11 to 18 and the grammar guide
+
+These were written next and reviewed the same way. The review caught real errors in the grammar guide: an adjective rule that would have taught wrong forms, "only લાવવું skips the મેં form" when મળવું, બોલવું and ભૂલવું do too, and a rule for which postpositions are joined. It also added the speaker's gender wherever a verb shows it, and many more accepted English answers in the units.
+
+Open questions, current choice first:
+
+19. ભાત as singular (મેં ભાત ખાધો) or plural (ભાત ખાધા).
+20. જરા ફરીથી બોલશો? or ફરી બોલશો? when asking someone to repeat.
+21. હું આજે નહીં આવી શકું or આવી નહીં શકું.
+22. બજાર પાસે or બજારની પાસે (x-temple-near-market).
+23. ડર or બીક as the main word for fear (the note mentions both).
+24. "મમ્મી, મને ચા આપ." with the friendly form to a mother, or આપો. Families vary.
+25. ગઈકાલે as one word and આવતી કાલે as two; both notes mention the other spelling.
+26. હોશિયાર (dictionary) or હોંશિયાર (common).
+27. Mixed groups and respected women: ગયાં (બા અને દાદા ગયાં, મારાં મમ્મી) or the everyday ગયા / મારી મમ્મી.
+28. "Don't": the guide teaches ન જાઓ; ના જાઓ and જશો નહીં are just as common in speech.
+29. ખાઈ રહ્યો છું for "I am eating", or just ખાઉં છું as many speakers say.
+30. દસ તારીખ or દસમી તારીખ for dates.

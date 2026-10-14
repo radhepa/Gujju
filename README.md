@@ -9,15 +9,15 @@ I'm a native speaker, and the course is built around that: which letters come fi
 Runs on iOS and the web from one Expo codebase, works offline, and keeps your progress on the device.
 
 <p>
-  <img src="docs/screens/home.png" width="200" alt="Home screen with the unit path">
-  <img src="docs/screens/intro.png" width="200" alt="A new letter being introduced">
-  <img src="docs/screens/pick.png" width="200" alt="Pick-the-sound exercise">
-  <img src="docs/screens/complete.png" width="200" alt="Lesson complete screen with Kesar cheering">
+  <img src="docs/screens/home.png" width="200" alt="Home screen with the daily goal, practice tiles and the unit path">
+  <img src="docs/screens/practice.png" width="200" alt="Sentence practice: the blank filled in, transliteration under each word, a grammar note">
+  <img src="docs/screens/reader.png" width="200" alt="Reading The thirsty crow with transliteration and English">
+  <img src="docs/screens/grammar.png" width="200" alt="Grammar guide page on the past tense with a table">
 </p>
 
 ## What's in it
 
-- **10 units, 43 lessons**: vowels, two consonant units, vowel signs, joined letters, numbers, then greetings, family, simple sentences and daily life
+- **18 units, 83 lessons**: the script (vowels, consonants, vowel signs, joined letters, numbers), then greetings, family, simple sentences and daily life, then the past and future, places, shopping and money, the body and feelings, asking nicely, describing things, and can / must / want. About 269 words
 - **Five exercise types**: pick the sound, pick the letter, match pairs, build the word from letter tiles, build the sentence from a word bank
 - **Short lessons**: 10 to 12 exercises, about five minutes. Anything you miss comes back at the end of the lesson until you get it
 - **No hearts**: a wrong answer costs you the retry and nothing else
@@ -27,10 +27,24 @@ Runs on iOS and the web from one Expo codebase, works offline, and keeps your pr
 - **Sentence practice**, in the style of Clozemaster: a Gujarati sentence with one word blanked, pick it from four or type it (in Gujarati or in English letters), then see the whole sentence with every word glossed. Three collections, about 460 sentences from beginner to everyday conversation, each sentence on its own FSRS schedule until it's mastered
 - **A library**: four short graded stories (Kesar at the market, the thirsty crow, Navratri night, a letter to Ba). Tap any word for its meaning, show the transliteration word by word, reveal the English a sentence at a time, then practise the story's sentences
 - **Your own books**: paste any Gujarati (a recipe, a bhajan, a letter from home) and it becomes a book you can read with glosses and practise as cloze. Add the English after a `|` on a line if you have it. Sentences saved during practice go into a "My sentences" book
+- **Writing practice**: see the meaning, write the word, either from letter tiles (with tempting lookalikes like ઘ and ધ) or on an on-screen Gujarati keyboard. Spelling gets its own review schedule, separate from recognising a word
+- **A grammar guide**: 18 short pages, from reading the script to joining sentences, with tables and tappable examples. Each unit links to the pages it uses
+- **Watch & listen**: 41 Gujarati films, shows, YouTube channels, music and radio, sorted by how easy they are to follow, each with a line on what it's good for learning. Tick off what you've watched
+- **Your level**: a rough CEFR estimate (A1, A2, B1) from what you've finished, with what's left for the next level
 - **A dictionary** of about 1,800 words and word forms, searchable in English, Gujarati or transliteration, with the dictionary form, notes and example sentences
 - **Read aloud** with the device's own Gujarati voice where there is one (most Android phones and Chrome). The speaker buttons stay hidden otherwise
 - **Progress**: a daily XP goal, best streak, a twelve-week activity grid and the reviews coming up this week
 - **Kesar** (કેસર), the mascot: a Gir lion in a saffron pagdi, named after saffron and the Gir Kesar mango
+
+## How far it takes you
+
+On the CEFR scale, finishing the course and the practice gets you to about **A2**, and into **B1** for reading:
+
+- **A1** (units 1 to 10, Everyday Gujarati): read the script, greet people, talk about family, food and home in the present tense.
+- **A2** (units 11 to 18, Out and about, the first stories): yesterday and tomorrow, shopping and prices, directions, how you feel, asking for things politely, can and must.
+- **Towards B1** (Real conversations, A letter to Ba, the grammar guide): follow family conversation and a letter from home, give reasons with કારણ કે and જો … તો.
+
+The progress page shows where you are. What an app can't give you is a lot of listening and talking, which is where Watch & listen and the people around you come in.
 
 ## Running it
 
@@ -51,6 +65,8 @@ content/            one JSON file per unit: lessons + items
 content/cloze/      sentence practice collections
 content/books/      the built-in stories
 content/lexicon/    the word list that glosses every sentence
+content/grammar.json  the grammar guide
+content/media.json  Watch & listen: films, shows, channels, music
 src/app/            screens (Expo Router)
 src/lib/            exercises, lesson session, scoring, FSRS, streak; no React
 src/storage/        one Store interface, SQLite on iOS, IndexedDB on web
@@ -122,6 +138,7 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 - [x] Library: four graded stories and your own books
 - [x] Dictionary, read-aloud, daily goal and progress page
 - [x] 100 automated accuracy checks over all the Gujarati
+- [x] Units 11 to 18 toward A2, a grammar guide, writing practice, Watch & listen, a level estimate
 - [ ] My own read-through of everything, starting with the open questions in docs/content-review.md
 - [ ] Sign-in and sync between devices (Supabase)
 - [ ] iOS build on a real phone, web deploy on Vercel
@@ -137,4 +154,4 @@ His face does a lot of the acting: brows lift, worry and squeeze into a wink, ey
 
 <img src="docs/kesar-poses.png" alt="All of Kesar's poses" width="560">
 
-`npm run kesar -- poses|gif|icons` renders him outside the app from the same rig, which is how the gif above and the app icon are made. His original sprite sheet is kept in `assets/mascot/source.jpg` as the design reference.
+`npm run kesar -- poses|gif|icons` renders him outside the app from the same rig, which is how the gif above and the app icon are made.
