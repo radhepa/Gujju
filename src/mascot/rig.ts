@@ -39,6 +39,7 @@ const GRADIENTS: Record<string, string> = {
   'k-turban': `<linearGradient id="k-turban" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#FF8A3E"/><stop offset=".55" stop-color="#F0601F"/><stop offset="1" stop-color="#C63E0E"/></linearGradient>`,
   'k-fold': `<linearGradient id="k-fold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFB774"/><stop offset="1" stop-color="#FF8A3E"/></linearGradient>`,
   'k-gold': `<linearGradient id="k-gold" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#FFF1B0"/><stop offset=".5" stop-color="#FFD36E"/><stop offset="1" stop-color="#D9971F"/></linearGradient>`,
+  'k-iris': `<linearGradient id="k-iris" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4A230C"/><stop offset=".55" stop-color="#A3601F"/><stop offset="1" stop-color="#E5A03E"/></linearGradient>`,
   'k-aura': `<radialGradient id="k-aura"><stop stop-color="#FFB347" stop-opacity=".26"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></radialGradient>`,
   'k-glow': `<radialGradient id="k-glow"><stop stop-color="#FFF3B0" stop-opacity=".85"/><stop offset="1" stop-color="#FFF3B0" stop-opacity="0"/></radialGradient>`,
 };
@@ -252,9 +253,8 @@ const faceCoat = `<g transform="translate(130 118) scale(.92 .96) translate(-130
   <path d="M72 92C72 62 98 46 130 46C162 46 188 62 188 92C190 100 197 104 195 112C200 116 196 124 192 127C194 133 189 139 184 140C176 160 156 170 130 170C104 170 84 160 76 140C71 139 66 133 68 127C64 124 60 116 65 112C63 104 70 100 72 92Z" fill="url(#k-coat)"/>
   ${stroke('M70 118C72 124 74 128 77 131M190 118C188 124 186 128 183 131', '#FFE6A0', 2, 'opacity=".55"')}</g>`;
 
-// Light fur under the eyes, a lion's tear lines, the puffy whisker pads.
+// The puffy whisker pads.
 const patches = `
-  ${stroke('M116 121.5Q118.5 128 121.5 133M144 121.5Q141.5 128 138.5 133', '#B5601E', 2, 'opacity=".45"')}
   <g transform="translate(130 145) scale(.9) translate(-130 -145)">
     <path d="M130 132C124 128 108 130 106 141C104 151 114 157 123 154C126 158 134 158 137 154C146 157 156 151 154 141C152 130 136 128 130 132Z" fill="url(#k-cream)"/>
     ${dots([[114, 142], [117, 146.5], [112, 147.5], [146, 142], [143, 146.5], [148, 147.5]], 1, '#D39552')}
@@ -267,14 +267,17 @@ const blushHot = `<g fill="#F09BB0" opacity=".5"><circle cx="92" cy="133" r="8.5
 const browL = `<path d="${taper([113.5, 95], [108, 91], [101.5, 91], [95, 96], 5.4, 1.8)}" fill="${BROW}"/>`;
 const browR = mirror(browL);
 
-// Round bead eyes with bright amber, highlight on the right, a lash flick.
+// Bead eyes: a dark rim, an amber iris that warms toward the bottom, a dark
+// pupil, two highlights, and an upper lid that thickens toward the outer corner.
+const LID = taper([-8.6, -6.4], [-4.2, -12.9], [5, -12.9], [11.6, -6.6], 2, 3.4);
 const bead = (x: number, outer: number) => `
   <g transform="translate(${x} 111)">
-    <ellipse rx="10.5" ry="11.5" fill="${EYE}"/>
-    <ellipse cy="4.5" rx="7" ry="5.6" fill="#C9812E"/>
-    <circle cx="3.6" cy="-4.2" r="3.4" fill="#fff"/>
-    <circle cx="-3.6" cy="4" r="1.5" fill="#FFE2B0"/>
-    ${stroke(`M${outer * 9.6} -5.5l${outer * 3.6} -2.6`, EYE, 2.4)}
+    <ellipse rx="10" ry="11.5" fill="${EYE}"/>
+    <ellipse cy="1.6" rx="7.4" ry="8.6" fill="url(#k-iris)"/>
+    <ellipse cy="1.4" rx="4" ry="5" fill="#1A0C04"/>
+    <circle cx="3.4" cy="-4.4" r="3.6" fill="#fff"/>
+    <circle cx="-3.4" cy="5.2" r="1.6" fill="#FFE6B8"/>
+    <path d="${LID}" fill="${EYE}" transform="scale(${outer} 1)"/>
   </g>`;
 
 const happyEyes =
