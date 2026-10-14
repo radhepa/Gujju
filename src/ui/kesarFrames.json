@@ -1,0 +1,22 @@
+{
+  "frameWidth": 203,
+  "frameHeight": 203,
+  "frames": [
+    "idle",
+    "side-right",
+    "walk-1",
+    "walk-2",
+    "side-left",
+    "back-walk",
+    "back",
+    "wave-1",
+    "wave-2",
+    "wave-3",
+    "wave-quiet",
+    "eat",
+    "read-1",
+    "read-2",
+    "cheer-1",
+    "cheer-2"
+  ]
+}

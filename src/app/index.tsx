@@ -6,6 +6,7 @@ import { course } from '../content/course';
 import { unitStatuses, type UnitStatus } from '../lib/progress';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
+import { Kesar } from '../ui/Kesar';
 import { Screen } from '../ui/Screen';
 import { Gu, Text } from '../ui/Text';
 import { colors, shadow } from '../ui/theme';
@@ -21,7 +22,8 @@ export default function Home() {
   return (
     <Screen>
       <View style={styles.header}>
-        <View>
+        <Kesar size={64} greetOnMount style={styles.mascot} />
+        <View style={{ flex: 1 }}>
           <Text weight="black" style={styles.brand}>
             Gujju
           </Text>
@@ -37,6 +39,7 @@ export default function Home() {
       </View>
 
       <View style={[styles.review, shadow]}>
+        <Kesar size={56} pose={dueIds.length ? 'read' : 'eat'} />
         <View style={{ flex: 1 }}>
           <Text weight="black" style={styles.reviewCount}>
             {dueIds.length ? `${dueIds.length} ${dueIds.length === 1 ? 'review' : 'reviews'} due` : 'No reviews due'}
@@ -183,7 +186,8 @@ function UnitCard({
 }
 
 const styles = StyleSheet.create({
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 16 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingVertical: 12 },
+  mascot: { marginLeft: -8 },
   brand: { fontSize: 28, color: colors.primaryDark, lineHeight: 32 },
   brandGu: { fontSize: 14, color: colors.muted, lineHeight: 22 },
   pills: { flexDirection: 'row', alignItems: 'center', gap: 14 },

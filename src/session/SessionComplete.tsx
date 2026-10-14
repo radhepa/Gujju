@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import type { Summary } from '../lib/session';
 import { Button } from '../ui/Button';
+import { Kesar, type Pose } from '../ui/Kesar';
 import { Screen } from '../ui/Screen';
 import { Text } from '../ui/Text';
 import { colors } from '../ui/theme';
@@ -11,16 +12,19 @@ export function SessionComplete({
   summary,
   streak,
   onContinue,
+  pose = 'cheer',
 }: {
   title: string;
   subtitle?: string;
   summary: Summary;
   streak: number;
   onContinue: () => void;
+  pose?: Pose;
 }) {
   return (
     <Screen scroll={false}>
       <View style={styles.wrap}>
+        <Kesar size={170} pose={pose} />
         <Text weight="black" style={styles.title}>
           {title}
         </Text>

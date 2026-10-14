@@ -48,6 +48,7 @@ export default function TestOutScreen() {
         summary={summary}
         streak={streak.days}
         onContinue={goBack}
+        pose={passed ? 'cheer' : 'read'}
       />
     );
   }

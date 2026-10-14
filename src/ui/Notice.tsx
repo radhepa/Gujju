@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { Button } from './Button';
+import { Kesar } from './Kesar';
 import { goBack } from './nav';
 import { Screen } from './Screen';
 import { Text } from './Text';
@@ -9,6 +10,7 @@ export function Notice({ title, body }: { title: string; body?: string }) {
   return (
     <Screen scroll={false}>
       <View style={styles.wrap}>
+        <Kesar size={140} />
         <Text weight="black" style={styles.title}>
           {title}
         </Text>
