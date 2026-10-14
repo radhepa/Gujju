@@ -165,6 +165,8 @@ export interface Settings {
   writeMode: WriteMode;
   // Watch & Listen entries the learner has ticked off.
   watched: string[];
+  // When a backup file was last saved on this device. Not synced.
+  lastBackup: string | null;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -175,6 +177,7 @@ export const DEFAULT_SETTINGS: Settings = {
   speak: true,
   writeMode: 'tiles',
   watched: [],
+  lastBackup: null,
 };
 
 export interface Snapshot {
@@ -241,6 +244,8 @@ export interface Book {
   blurb?: string;
   builtIn: boolean;
   createdAt?: string;
+  // Set on every save, so the newest copy wins when devices sync.
+  updatedAt?: string;
   sentences: BookSentence[];
 }
 

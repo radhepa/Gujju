@@ -6,7 +6,7 @@ A free app for learning to read and write Gujarati. It starts with the script, b
 
 I'm a native speaker, and the course is built around that: which letters come first, which ones learners mix up, and how words are actually said at home rather than how a word list spells them.
 
-Runs on iOS and the web from one Expo codebase, works offline, and keeps your progress on the device.
+Runs on iOS and the web from one Expo codebase. On a phone it installs from the browser to the home screen, works offline, and keeps your progress on the device, with optional sync and backup files.
 
 <p>
   <img src="docs/screens/home.png" width="200" alt="Home screen with the daily goal, practice tiles and the unit path">
@@ -34,6 +34,7 @@ Runs on iOS and the web from one Expo codebase, works offline, and keeps your pr
 - **A dictionary** of about 1,800 words and word forms, searchable in English, Gujarati or transliteration, with the dictionary form, notes and example sentences
 - **Read aloud** with the device's own Gujarati voice where there is one (most Android phones and Chrome). The speaker buttons stay hidden otherwise
 - **Progress**: a daily XP goal, best streak, a twelve-week activity grid and the reviews coming up this week
+- **Your data stays yours**: progress lives on the device. Sign in to sync between devices (each account can only ever read its own rows), or save a backup file to Files, iCloud Drive or Google Drive and restore it on a new phone
 - **Kesar** (કેસર), the mascot: a Gir lion in a saffron pagdi, named after saffron and the Gir Kesar mango
 
 ## How far it takes you
@@ -45,6 +46,10 @@ On the CEFR scale, finishing the course and the practice gets you to about **A2*
 - **Towards B1** (Real conversations, A letter to Ba, the grammar guide): follow family conversation and a letter from home, give reasons with કારણ કે and જો … તો.
 
 The progress page shows where you are. What an app can't give you is a lot of listening and talking, which is where Watch & listen and the people around you come in.
+
+## On your phone
+
+The web build is an installable app. Open it in Safari on an iPhone and choose Share, then Add to Home Screen. On Android, open it in Chrome and choose Install app. It then opens full screen, keeps working with no signal, and the phone treats its storage as an app's rather than a website's.
 
 ## Running it
 
@@ -77,13 +82,17 @@ src/state/          progress context, the only thing screens talk to
 scripts/            renders Kesar outside the app: pose sheet, README gif, app icons
 ```
 
-**Content is data, progress is a database.** Units, lessons and items live in JSON in the repo, so the course is version controlled and doesn't need a backend. Only progress is stored: `lesson_progress`, `card_state`, `review_log` and `daily_stats`, with column names that map straight onto Supabase tables for when sync is added.
+**Content is data, progress is a database.** Units, lessons and items live in JSON in the repo, so the course is version controlled and doesn't need a backend. Only progress is stored: `lesson_progress`, `card_state`, `review_log` and `daily_stats`, with column names that mirror the cloud copy.
 
 **Exercises are generated, not hand-written.** A lesson just lists its items. The generator builds the exercises from them and picks wrong answers from what you've already seen, starting with each item's `confusables` (ઇ/ઈ, ઘ/ધ, saat/saaTh). Hand-writing ~450 exercises with three distractors each would have been most of the work, and the mistakes would be the hard kind to spot. The confusables list is where a native speaker's judgement goes instead.
 
 **Why FSRS.** It's the scheduler Anki moved to, it's open source, and the [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) package is well tested, so there was no reason to write my own SM-2 variant. Ratings come from the answer: right first time is Good, right after one miss is Hard, missed twice or more is Again. Every answer goes into `review_log` so the parameters can be fitted to real data later. Short-term learning steps are turned off because this is a once-a-day app, so the shortest interval is a day. New items are capped at 20 a day so reviews never pile up.
 
 **Why local-first.** Lessons are played on a phone, often with bad signal. Everything is written to the device in one transaction when a session ends, and the UI never waits on the network. The streak is calculated from `daily_stats` every time instead of being stored, so it can't drift out of sync.
+
+**Sync.** Signing in is optional. The cloud copy is one Supabase table, `gujju_rows` (see `supabase/migrations`), holding one row per lesson, review card, day, book and the settings. Row-level security limits every row to the account that wrote it, and signed-out requests are refused outright. A few seconds after anything changes, and whenever the app comes back to the front, it fetches the cloud copy, merges and sends up what's missing. Merging is per record and gives the same answer in any order (`src/lib/sync.ts`): a card keeps the copy reviewed last, a lesson keeps its best score, a day keeps the higher counts, and a deleted book or a progress reset wins over anything older. So two devices always end up agreeing.
+
+**Privacy.** No analytics, no ads, no third-party scripts. The site sends a strict content security policy, so the page can't load or send anything except to itself and the sync server, and the service worker never caches anything from other sites.
 
 **Why IndexedDB on the web instead of SQLite.** `expo-sqlite` on the web is still alpha in SDK 57 and needs cross-origin isolation headers. For a few hundred rows that isn't worth it, so the web build uses IndexedDB behind the same interface.
 

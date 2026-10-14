@@ -98,6 +98,17 @@ export default function SettingsScreen() {
         />
       </View>
 
+      <Pressable onPress={() => router.push('/data')} style={[styles.card, styles.row]} accessibilityRole="button">
+        <Ionicons name="cloud-done" size={28} color={colors.teal} />
+        <View style={{ flex: 1 }}>
+          <Text weight="black" style={styles.label}>
+            Sync & backup
+          </Text>
+          <Text style={styles.help}>Sign in to sync between devices, or save a backup file.</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={20} color={colors.muted} />
+      </Pressable>
+
       <Pressable onPress={() => router.push('/kesar')} style={[styles.card, styles.row]} accessibilityRole="button">
         <Kesar size={64} tappable={false} />
         <View style={{ flex: 1 }}>
@@ -117,12 +128,12 @@ export default function SettingsScreen() {
           {learnedIds.length} of {Object.keys(course.items).length} items learned · {totalXp} XP total · up to{' '}
           {NEW_PER_DAY} new items a day
         </Text>
-        <Text style={styles.small}>Saved on this device. Sync between devices is coming.</Text>
+        <Text style={styles.small}>Saved on this device. Sync and backups are under Sync & backup.</Text>
         <Button
           label="Reset progress"
           variant="red"
           style={{ marginTop: 12 }}
-          onPress={() => confirm('This deletes all your lessons, reviews, sentence practice and streak on this device. Your books are kept.', resetProgress)}
+          onPress={() => confirm('This deletes all your lessons, reviews, sentence practice and streak on this device, and in your synced copy if you’re signed in. Your books are kept.', resetProgress)}
         />
       </View>
     </Screen>

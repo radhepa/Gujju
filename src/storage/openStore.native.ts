@@ -1,5 +1,7 @@
 import * as SQLite from 'expo-sqlite';
+import type { BackupData } from '../lib/backup';
 import { mergeStat, type Changes } from '../lib/progress';
+import type { Patch } from '../lib/sync';
 import {
   DEFAULT_SETTINGS,
   LOCAL_USER,
@@ -7,6 +9,7 @@ import {
   type CardRow,
   type DailyStatRow,
   type LessonProgressRow,
+  type ReviewLogRow,
   type Settings,
 } from '../lib/types';
 import type { Store } from './store';
@@ -91,11 +94,53 @@ const toStat = (r: Row): DailyStatRow => ({
   newItems: r.new_items as number,
 });
 
+type Db = SQLite.SQLiteDatabase;
+
+const putCard = (db: Db, c: CardRow) =>
+  db.runAsync(
+    `INSERT OR REPLACE INTO card_state (user_id, item_id, due, stability, difficulty, elapsed_days,
+     scheduled_days, learning_steps, reps, lapses, state, last_review)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    c.userId,
+    c.itemId,
+    c.due,
+    c.stability,
+    c.difficulty,
+    c.elapsedDays,
+    c.scheduledDays,
+    c.learningSteps,
+    c.reps,
+    c.lapses,
+    c.state,
+    c.lastReview,
+  );
+
+const addLog = (db: Db, l: ReviewLogRow) =>
+  db.runAsync(
+    'INSERT INTO review_log (user_id, item_id, rating, reviewed_at) VALUES (?, ?, ?, ?)',
+    l.userId,
+    l.itemId,
+    l.rating,
+    l.reviewedAt,
+  );
+
+const putStat = (db: Db, s: DailyStatRow) =>
+  db.runAsync(
+    `INSERT OR REPLACE INTO daily_stats (user_id, date, xp, lessons_done, reviews_done, new_items)
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    s.userId,
+    s.date,
+    s.xp,
+    s.lessonsDone,
+    s.reviewsDone,
+    s.newItems,
+  );
+
 export async function openStore(): Promise<Store> {
   const db = await SQLite.openDatabaseAsync('gujju.db');
   await db.execAsync(SCHEMA);
 
-  return {
+  const store: Store = {
     async load() {
       const lp = await db.getAllAsync<Row>('SELECT * FROM lesson_progress WHERE user_id = ?', LOCAL_USER);
       const cards = await db.getAllAsync<Row>('SELECT * FROM card_state WHERE user_id = ?', LOCAL_USER);
@@ -132,32 +177,10 @@ export async function openStore(): Promise<Store> {
           );
         }
         for (const c of ch.cards) {
-          await tx.runAsync(
-            `INSERT OR REPLACE INTO card_state (user_id, item_id, due, stability, difficulty, elapsed_days,
-             scheduled_days, learning_steps, reps, lapses, state, last_review)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-            c.userId,
-            c.itemId,
-            c.due,
-            c.stability,
-            c.difficulty,
-            c.elapsedDays,
-            c.scheduledDays,
-            c.learningSteps,
-            c.reps,
-            c.lapses,
-            c.state,
-            c.lastReview,
-          );
+          await putCard(tx, c);
         }
         for (const l of ch.logs) {
-          await tx.runAsync(
-            'INSERT INTO review_log (user_id, item_id, rating, reviewed_at) VALUES (?, ?, ?, ?)',
-            l.userId,
-            l.itemId,
-            l.rating,
-            l.reviewedAt,
-          );
+          await addLog(tx, l);
         }
         const prev = await tx.getFirstAsync<Row>(
           'SELECT * FROM daily_stats WHERE user_id = ? AND date = ?',
@@ -165,16 +188,7 @@ export async function openStore(): Promise<Store> {
           ch.date,
         );
         const s = mergeStat(prev ? toStat(prev) : undefined, ch.date, ch.stats);
-        await tx.runAsync(
-          `INSERT OR REPLACE INTO daily_stats (user_id, date, xp, lessons_done, reviews_done, new_items)
-           VALUES (?, ?, ?, ?, ?, ?)`,
-          s.userId,
-          s.date,
-          s.xp,
-          s.lessonsDone,
-          s.reviewsDone,
-          s.newItems,
-        );
+        await putStat(tx, s);
       });
     },
 
@@ -203,5 +217,79 @@ export async function openStore(): Promise<Store> {
         'DELETE FROM lesson_progress; DELETE FROM card_state; DELETE FROM review_log; DELETE FROM daily_stats;',
       );
     },
+
+    async dump(): Promise<BackupData> {
+      const snap = await store.load();
+      const logs = await db.getAllAsync<Row>('SELECT * FROM review_log WHERE user_id = ? ORDER BY id', LOCAL_USER);
+      return {
+        ...snap,
+        reviewLog: logs.map((r) => ({
+          userId: r.user_id as string,
+          itemId: r.item_id as string,
+          rating: r.rating as number,
+          reviewedAt: r.reviewed_at as string,
+        })),
+      };
+    },
+
+    async restore(data: BackupData) {
+      await db.withExclusiveTransactionAsync(async (tx) => {
+        await tx.execAsync(
+          'DELETE FROM lesson_progress; DELETE FROM card_state; DELETE FROM review_log; DELETE FROM daily_stats; DELETE FROM books;',
+        );
+        for (const p of data.lessonProgress) {
+          await tx.runAsync(
+            'INSERT INTO lesson_progress (user_id, lesson_id, completed_at, best_accuracy) VALUES (?, ?, ?, ?)',
+            p.userId,
+            p.lessonId,
+            p.completedAt,
+            p.bestAccuracy,
+          );
+        }
+        for (const c of data.cards) await putCard(tx, c);
+        for (const l of data.reviewLog) await addLog(tx, l);
+        for (const s of data.dailyStats) await putStat(tx, s);
+        for (const b of data.books) {
+          await tx.runAsync('INSERT INTO books (user_id, id, data) VALUES (?, ?, ?)', LOCAL_USER, b.id, JSON.stringify(b));
+        }
+        await tx.runAsync("INSERT OR REPLACE INTO settings (key, value) VALUES ('settings', ?)", JSON.stringify(data.settings));
+      });
+    },
+
+    async apply(p: Patch) {
+      await db.withExclusiveTransactionAsync(async (tx) => {
+        for (const id of p.drop.lesson) await tx.runAsync('DELETE FROM lesson_progress WHERE user_id = ? AND lesson_id = ?', LOCAL_USER, id);
+        for (const id of p.drop.card) await tx.runAsync('DELETE FROM card_state WHERE user_id = ? AND item_id = ?', LOCAL_USER, id);
+        for (const id of p.drop.day) await tx.runAsync('DELETE FROM daily_stats WHERE user_id = ? AND date = ?', LOCAL_USER, id);
+        for (const id of p.drop.book) await tx.runAsync('DELETE FROM books WHERE user_id = ? AND id = ?', LOCAL_USER, id);
+        for (const r of p.lessonProgress) {
+          await tx.runAsync(
+            'INSERT OR REPLACE INTO lesson_progress (user_id, lesson_id, completed_at, best_accuracy) VALUES (?, ?, ?, ?)',
+            r.userId,
+            r.lessonId,
+            r.completedAt,
+            r.bestAccuracy,
+          );
+        }
+        for (const c of p.cards) await putCard(tx, c);
+        for (const s of p.dailyStats) await putStat(tx, s);
+        for (const b of p.books) {
+          await tx.runAsync('INSERT OR REPLACE INTO books (user_id, id, data) VALUES (?, ?, ?)', LOCAL_USER, b.id, JSON.stringify(b));
+        }
+        if (p.settings) {
+          await tx.runAsync("INSERT OR REPLACE INTO settings (key, value) VALUES ('settings', ?)", JSON.stringify(p.settings));
+        }
+      });
+    },
+
+    async getMeta<T>(key: string) {
+      const r = await db.getFirstAsync<Row>('SELECT value FROM settings WHERE key = ?', `meta:${key}`);
+      return r ? (JSON.parse(r.value as string) as T) : null;
+    },
+
+    async setMeta(key: string, value: unknown) {
+      await db.runAsync('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)', `meta:${key}`, JSON.stringify(value));
+    },
   };
+  return store;
 }

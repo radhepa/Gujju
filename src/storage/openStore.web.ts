@@ -1,4 +1,6 @@
+import type { BackupData } from '../lib/backup';
 import { mergeStat, type Changes } from '../lib/progress';
+import type { Patch } from '../lib/sync';
 import { DEFAULT_SETTINGS, type Book, type Settings, type Snapshot } from '../lib/types';
 import { memoryStore } from './memory';
 import type { Store } from './store';
@@ -10,6 +12,9 @@ const DB_NAME = 'gujju';
 const VERSION = 2;
 // Cleared by a progress reset. Settings and books are kept.
 const PROGRESS = ['lesson_progress', 'card_state', 'review_log', 'daily_stats'] as const;
+const ALL = [...PROGRESS, 'settings', 'books'] as const;
+// Sync state shares the settings store under its own keys.
+const META = (key: string) => `meta:${key}`;
 
 function req<T>(r: IDBRequest<T>): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -51,6 +56,10 @@ function open(): Promise<IDBDatabase> {
 }
 
 export async function openStore(): Promise<Store> {
+  // Ask the browser not to clear Gujju's storage when the phone runs low on
+  // space. Installed home-screen apps usually get this straight away.
+  navigator.storage?.persist?.().catch(() => {});
+
   let db: IDBDatabase;
   try {
     db = await open();
@@ -116,6 +125,67 @@ export async function openStore(): Promise<Store> {
     async reset() {
       const tx = db.transaction([...PROGRESS], 'readwrite');
       for (const s of PROGRESS) tx.objectStore(s).clear();
+      await done(tx);
+    },
+
+    async dump(): Promise<BackupData> {
+      const tx = db.transaction([...ALL], 'readonly');
+      const [lessonProgress, cards, reviewLog, dailyStats, settings, books] = await Promise.all([
+        req(tx.objectStore('lesson_progress').getAll()),
+        req(tx.objectStore('card_state').getAll()),
+        req(tx.objectStore('review_log').getAll()),
+        req(tx.objectStore('daily_stats').getAll()),
+        req(tx.objectStore('settings').get('settings')),
+        req(tx.objectStore('books').getAll()),
+      ]);
+      return {
+        lessonProgress,
+        cards,
+        reviewLog,
+        dailyStats,
+        settings: { ...DEFAULT_SETTINGS, ...(settings ?? {}) },
+        books,
+      };
+    },
+
+    async restore(data: BackupData) {
+      const tx = db.transaction([...ALL], 'readwrite');
+      for (const s of [...PROGRESS, 'books'] as const) tx.objectStore(s).clear();
+      for (const r of data.lessonProgress) tx.objectStore('lesson_progress').put(r);
+      for (const r of data.cards) tx.objectStore('card_state').put(r);
+      for (const r of data.reviewLog) tx.objectStore('review_log').add(r);
+      for (const r of data.dailyStats) tx.objectStore('daily_stats').put(r);
+      for (const b of data.books) tx.objectStore('books').put(b);
+      tx.objectStore('settings').put(data.settings, 'settings');
+      await done(tx);
+    },
+
+    async apply(p: Patch) {
+      const tx = db.transaction(['lesson_progress', 'card_state', 'daily_stats', 'books', 'settings'], 'readwrite');
+      const lp = tx.objectStore('lesson_progress');
+      const cards = tx.objectStore('card_state');
+      const stats = tx.objectStore('daily_stats');
+      const books = tx.objectStore('books');
+      for (const id of p.drop.lesson) lp.delete(id);
+      for (const id of p.drop.card) cards.delete(id);
+      for (const id of p.drop.day) stats.delete(id);
+      for (const id of p.drop.book) books.delete(id);
+      for (const r of p.lessonProgress) lp.put(r);
+      for (const r of p.cards) cards.put(r);
+      for (const r of p.dailyStats) stats.put(r);
+      for (const b of p.books) books.put(b);
+      if (p.settings) tx.objectStore('settings').put(p.settings, 'settings');
+      await done(tx);
+    },
+
+    async getMeta<T>(key: string) {
+      const tx = db.transaction('settings', 'readonly');
+      return ((await req(tx.objectStore('settings').get(META(key)))) as T) ?? null;
+    },
+
+    async setMeta(key: string, value: unknown) {
+      const tx = db.transaction('settings', 'readwrite');
+      tx.objectStore('settings').put(value, META(key));
       await done(tx);
     },
   };
