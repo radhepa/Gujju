@@ -165,6 +165,8 @@ export interface RigNode {
   when?: { eyes?: Eyes[]; mouth?: Mouth[]; prop?: Prop; effect?: Effect; front?: string };
   // Move exactly like another node (same pivot and track).
   follow?: string;
+  // Resting opacity when a clip doesn't animate it (0 = hidden until a clip fades it in).
+  opacity?: number;
 }
 
 // How far a part slides with his gaze, which reads as the head turning.
@@ -246,22 +248,23 @@ const ear = `
 
 // His own face, drawn in Pip's manner: a broad lion head with soft cheek
 // fluff, round amber bead eyes, tufted brows, a two-lobed muzzle.
-const faceCoat = `
+const faceCoat = `<g transform="translate(130 118) scale(.92 .96) translate(-130 -118)">
   <path d="M72 92C72 62 98 46 130 46C162 46 188 62 188 92C190 100 197 104 195 112C200 116 196 124 192 127C194 133 189 139 184 140C176 160 156 170 130 170C104 170 84 160 76 140C71 139 66 133 68 127C64 124 60 116 65 112C63 104 70 100 72 92Z" fill="url(#k-coat)"/>
-  ${stroke('M70 118C72 124 74 128 77 131M190 118C188 124 186 128 183 131', '#FFE6A0', 2, 'opacity=".55"')}`;
+  ${stroke('M70 118C72 124 74 128 77 131M190 118C188 124 186 128 183 131', '#FFE6A0', 2, 'opacity=".55"')}</g>`;
 
 // Light fur under the eyes, a lion's tear lines, the puffy whisker pads.
 const patches = `
-  <path d="M86 119Q100 129 114 119Q112 132 100 134Q88 132 86 119ZM146 119Q160 129 174 119Q172 132 160 134Q148 132 146 119Z" fill="url(#k-cream)"/>
-  ${stroke('M110.5 121Q114 129 118.5 134M149.5 121Q146 129 141.5 134', '#B5601E', 2, 'opacity=".5"')}
-  <path d="M130 132C124 128 108 130 106 141C104 151 114 157 123 154C126 158 134 158 137 154C146 157 156 151 154 141C152 130 136 128 130 132Z" fill="url(#k-cream)"/>
-  ${dots([[114, 142], [117, 146.5], [112, 147.5], [146, 142], [143, 146.5], [148, 147.5]], 1, '#D39552')}`;
+  ${stroke('M116 121.5Q118.5 128 121.5 133M144 121.5Q141.5 128 138.5 133', '#B5601E', 2, 'opacity=".45"')}
+  <g transform="translate(130 145) scale(.9) translate(-130 -145)">
+    <path d="M130 132C124 128 108 130 106 141C104 151 114 157 123 154C126 158 134 158 137 154C146 157 156 151 154 141C152 130 136 128 130 132Z" fill="url(#k-cream)"/>
+    ${dots([[114, 142], [117, 146.5], [112, 147.5], [146, 142], [143, 146.5], [148, 147.5]], 1, '#D39552')}
+  </g>`;
 
-const blush = `<g fill="#F09BB0" opacity=".55"><circle cx="86" cy="134" r="6.5"/><circle cx="174" cy="134" r="6.5"/></g>`;
-const blushHot = `<g fill="#F09BB0" opacity=".5"><circle cx="86" cy="134" r="8"/><circle cx="174" cy="134" r="8"/></g>`;
+const blush = `<g fill="#F09BB0" opacity=".55"><circle cx="92" cy="133" r="6.5"/><circle cx="168" cy="133" r="6.5"/></g>`;
+const blushHot = `<g fill="#F09BB0" opacity=".5"><circle cx="92" cy="133" r="8.5"/><circle cx="168" cy="133" r="8.5"/></g>`;
 
 // Tufted brows: thick at the inner end, tapering out.
-const browL = `<path d="${taper([107.5, 95], [102, 91], [95.5, 91], [89, 96], 5.4, 1.8)}" fill="${BROW}"/>`;
+const browL = `<path d="${taper([113.5, 95], [108, 91], [101.5, 91], [95, 96], 5.4, 1.8)}" fill="${BROW}"/>`;
 const browR = mirror(browL);
 
 // Round bead eyes with bright amber, highlight on the right, a lash flick.
@@ -275,9 +278,11 @@ const bead = (x: number, outer: number) => `
   </g>`;
 
 const happyEyes =
-  stroke('M90 115Q100 102 110 115M150 115Q160 102 170 115', EYE, 4.4) + stroke('M90 115l-3.4-2.2M170 115l3.4-2.2', EYE, 2.2);
+  stroke('M96 115Q106 102 116 115M144 115Q154 102 164 115', EYE, 4.4) + stroke('M96 115l-3.4-2.2M164 115l3.4-2.2', EYE, 2.2);
 const closedEyes =
-  stroke('M91 112Q100 119 109 112M151 112Q160 119 169 112', EYE, 4) + stroke('M91 112l-3.2 1.4M169 112l3.2 1.4', EYE, 2);
+  stroke('M97 112Q106 119 115 112M145 112Q154 119 163 112', EYE, 4) + stroke('M97 112l-3.2 1.4M163 112l3.2 1.4', EYE, 2);
+// Squeezed shut with glee: > <
+const squeezeEyes = stroke('M99 104.5L111 111L99 117.5M161 104.5L149 111L161 117.5', EYE, 4.4);
 
 // A broad, rosy lion nose and a Y-shaped mouth; the grin shows two little fangs.
 const nose = `
@@ -416,30 +421,31 @@ export const RIG: RigNode = {
           children: [
             { id: 'maneBack', svg: maneBack },
             { id: 'mane', svg: maneFront },
-            { id: 'earL', pivot: [70, 94], svg: ear },
-            { id: 'earR', pivot: [190, 94], svg: mirror(ear) },
+            { id: 'earL', pivot: [74, 94], svg: `<g transform="translate(4 0)">${ear}</g>` },
+            { id: 'earR', pivot: [186, 94], svg: mirror(`<g transform="translate(4 0)">${ear}</g>`) },
             { id: 'face', svg: faceCoat },
             {
               id: 'features',
               children: [
                 { id: 'patches', svg: patches },
                 { id: 'blush', svg: blush },
-                { id: 'blushHot', svg: blushHot, when: { effect: 'hearts' } },
-                { id: 'browL', pivot: [98, 93], svg: browL },
-                { id: 'browR', pivot: [162, 93], svg: browR },
+                { id: 'blushHot', svg: blushHot, opacity: 0 },
+                { id: 'browL', pivot: [104, 93], svg: browL },
+                { id: 'browR', pivot: [156, 93], svg: browR },
                 {
                   id: 'gaze',
                   when: { eyes: ['open'] },
                   children: [
-                    { id: 'eyeL', pivot: [100, 111], svg: bead(100, -1) },
-                    { id: 'eyeR', pivot: [160, 111], svg: bead(160, 1) },
+                    { id: 'eyeL', pivot: [106, 111], svg: bead(106, -1) },
+                    { id: 'eyeR', pivot: [154, 111], svg: bead(154, 1) },
                   ],
                 },
                 { id: 'eyesHappy', svg: happyEyes, when: { eyes: ['happy'] } },
+                { id: 'eyesSqueeze', svg: squeezeEyes, when: { eyes: ['happy'] }, opacity: 0 },
                 { id: 'eyesClosed', svg: closedEyes, when: { eyes: ['closed'] } },
                 { id: 'nose', svg: nose },
                 { id: 'mouthSmile', svg: mouthSmile, when: { mouth: ['smile'] } },
-                { id: 'mouthOpen', pivot: [130, 151], svg: mouthOpen, when: { mouth: ['open'] } },
+                { id: 'mouthOpen', pivot: [130, 148], svg: mouthOpen, when: { mouth: ['open'] } },
                 { id: 'mouthO', pivot: [130, 151], svg: mouthO, when: { mouth: ['o'] } },
                 { id: 'mouthWavy', svg: mouthWavy, when: { mouth: ['wavy'] } },
               ],
@@ -583,6 +589,8 @@ const rise = (i: number, dist = 26, drift = 6): Track => ({
   sy: shift([0.4, 1, 1, 0.75, 0.4, 0.4], i * 2),
 });
 
+const CHEER_AT = [0, 0.08, 0.15, 0.28, 0.39, 0.49, 0.59, 0.66, 1];
+
 // Pip's idle: a curious head tilt that holds, a glance, a weight shift.
 const IDLE_AT = [0, 0.2, 0.29, 0.39, 0.48, 0.57, 0.66, 0.76, 1];
 
@@ -652,8 +660,14 @@ export const CLIPS: Record<Pose, Clip> = {
       head: { at: [0, 0.12, 0.28, 0.39, 0.49, 0.59, 0.7, 1], rotate: [0, 0, 6, -4, -6, 0, 0, 0], y: [0, 0, -2, 3, 0, 2, 0, 0] },
       legL: { at: [0, 0.15, 0.28, 0.4, 0.49, 0.66, 1], rotate: [0, 0, 18, 0, -10, 0, 0], y: [0, 0, -3, 0, 0, 0, 0] },
       legR: { at: [0, 0.15, 0.28, 0.4, 0.49, 0.66, 1], rotate: [0, 0, -18, 0, 10, 0, 0], y: [0, 0, -3, 0, 0, 0, 0] },
-      browL: { at: [0, 0.15, 0.28, 0.66, 1], y: [0, 0, -3, -3, 0] },
-      browR: { at: [0, 0.15, 0.28, 0.66, 1], y: [0, 0, -3, -3, 0] },
+      // The face acts the jump: squeezed shut on the crouch and each landing,
+      // eyes and grin wide open at the top, brows up, cheeks flushing.
+      eyesHappy: { at: CHEER_AT, opacity: [1, 1, 0, 1, 0, 1, 0, 1, 1] },
+      eyesSqueeze: { at: CHEER_AT, opacity: [0, 0, 1, 0, 1, 0, 1, 0, 0] },
+      mouthOpen: { at: CHEER_AT, sx: [1, 1, 0.8, 1.16, 0.9, 1.12, 0.9, 1, 1], sy: [1, 1, 0.55, 1.5, 0.8, 1.38, 0.8, 1, 1] },
+      blushHot: { at: CHEER_AT, opacity: [0, 0, 0.5, 1, 0.7, 1, 0.7, 0.3, 0] },
+      browL: { at: CHEER_AT, y: [0, 0, 2, -6, -1, -5, 0, 0, 0], rotate: [0, 0, -4, 8, 0, 6, 0, 0, 0] },
+      browR: { at: CHEER_AT, y: [0, 0, 2, -6, -1, -5, 0, 0, 0], rotate: [0, 0, 4, -8, 0, -6, 0, 0, 0] },
       tail: { rotate: [-8, 12, -8, 12, -8, 12, -8] },
       tuft: { rotate: [10, -12, 10, -12, 10, -12, 10] },
       ties: { rotate: [-6, 8, -6, 8, -6, 8, -6, 8, -6, 8, -6] },

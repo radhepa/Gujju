@@ -21,6 +21,7 @@ const require = createRequire(import.meta.url);
 const GU_FONT = require.resolve('@expo-google-fonts/noto-sans-gujarati/400Regular/NotoSansGujarati_400Regular.ttf');
 
 function transform(node, clip, t, ambient, gaze) {
+  const base = node.opacity;
   if (node.follow) node = { ...findNode(node.follow), id: node.follow };
   const tr = clip.tracks[node.id] ?? {};
   const at = tr.at;
@@ -41,7 +42,7 @@ function transform(node, clip, t, ambient, gaze) {
   const [px, py] = node.pivot ?? [0, 0];
   return {
     attr: `translate(${px + x} ${py + y}) rotate(${r}) scale(${sx} ${sy}) translate(${-px} ${-py})`,
-    opacity: sample(tr.opacity, t, 1, at),
+    opacity: sample(tr.opacity, t, base ?? 1, at),
   };
 }
 

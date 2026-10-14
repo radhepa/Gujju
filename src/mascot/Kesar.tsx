@@ -63,6 +63,7 @@ function curve(
 }
 
 function transformsFor(node: RigNode, clip: Clip, d: Drivers, k: number) {
+  const base = node.opacity;
   if (node.follow) node = { ...findNode(node.follow)!, id: node.follow };
   const tr = clip.tracks[node.id] ?? {};
   const t: Record<string, unknown>[] = [];
@@ -86,7 +87,7 @@ function transformsFor(node: RigNode, clip: Clip, d: Drivers, k: number) {
     t.push({ scaleY: curve(d.breath, BREATH_SY) });
   }
   if (node.id === 'eyeL' || node.id === 'eyeR') t.push({ scaleY: d.blink });
-  return { transform: t, opacity: tr.opacity ? curve(d.clock, tr.opacity, at) : undefined };
+  return { transform: t, opacity: tr.opacity ? curve(d.clock, tr.opacity, at) : base };
 }
 
 function Node({ node, clip, d, size }: { node: RigNode; clip: Clip; d: Drivers; size: number }) {
