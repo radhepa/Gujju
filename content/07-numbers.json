@@ -1,7 +1,8 @@
 {
   "id": "u06",
-  "order": 6,
+  "order": 7,
   "title": "Numbers",
+  "goal": "Read Gujarati digits, count to ten, and count in tens to a hundred.",
   "tip": "Gujarati has its own digits, though you will see 1 2 3 used just as often on signs and prices. Tens are built the same way as in English: ૨૦ is 2 and 0.",
   "lessons": [
     { "id": "u06-l1", "title": "૦ to ૫", "items": ["n-0", "n-1", "n-2", "n-3", "n-4", "n-5"] },

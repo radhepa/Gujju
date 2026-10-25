@@ -1,0 +1,42 @@
+{
+  "id": "s05",
+  "order": 5,
+  "title": "The last letters",
+  "goal": "Know every letter in the alphabet and read છાશ, ભાષા and ગાંઠિયા.",
+  "tip": "Gujarati has three s-letters: સ is s, and શ and ષ are both said sh. છ is the breathy ch you'll meet in છે (is). ઋ and its sign ૃ say ru, mostly in words from Sanskrit.",
+  "lessons": [
+    { "id": "s05-l1", "title": "ય and હ", "items": ["l-ya", "l-ha", "w-bhajiyaan", "w-gaanThiyaa", "w-haLdar"] },
+    { "id": "s05-l2", "title": "શ and ષ", "items": ["l-sha", "l-ssa", "w-desh", "w-sheero", "w-bhaashaa"] },
+    { "id": "s05-l3", "title": "છ and ઝ", "items": ["l-chha", "l-jha", "w-chhaash", "w-jhaaD", "w-chhokro", "w-chhokree"] },
+    { "id": "s05-l4", "title": "The rare ones", "items": ["l-ru", "l-ah", "l-nga", "l-nya", "w-rutu", "w-dukh", "w-sukh"] },
+    { "id": "s05-l5", "title": "The whole alphabet", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-ya", "type": "letter", "gujarati": "ય", "translit": "ya", "english": "", "notes": "Like the y in \"yes\"." },
+    { "id": "l-ha", "type": "letter", "gujarati": "હ", "translit": "ha", "english": "", "notes": "Like the h in \"hat\"." },
+    { "id": "w-bhajiyaan", "type": "word", "gujarati": "ભજિયાં", "translit": "bhajiyaan", "english": "bhajiya (fritters)", "notes": "The first thing anyone makes when it rains." },
+    { "id": "w-gaanThiyaa", "type": "word", "gujarati": "ગાંઠિયા", "translit": "gaanThiyaa", "english": "ganthiya (crunchy gram-flour sticks)" },
+    { "id": "w-haLdar", "type": "word", "gujarati": "હળદર", "translit": "haLdar", "english": "turmeric" },
+
+    { "id": "l-sha", "type": "letter", "gujarati": "શ", "translit": "sha", "english": "", "notes": "Like the sh in \"shoe\".", "confusables": ["l-ssa", "l-sa"] },
+    { "id": "l-ssa", "type": "letter", "gujarati": "ષ", "translit": "Sha", "english": "", "notes": "Said the same as શ in Gujarati. It shows up in words from Sanskrit, like ભાષા (language).", "confusables": ["l-sha"] },
+    { "id": "w-desh", "type": "word", "gujarati": "દેશ", "translit": "desh", "english": "country" },
+    { "id": "w-sheero", "type": "word", "gujarati": "શીરો", "translit": "sheero", "english": "sheera (semolina pudding)" },
+    { "id": "w-bhaashaa", "type": "word", "gujarati": "ભાષા", "translit": "bhaashaa", "english": "language" },
+
+    { "id": "l-chha", "type": "letter", "gujarati": "છ", "translit": "chha", "english": "", "notes": "ch with a puff of air. You will see it everywhere in છે (chhe, is).", "confusables": ["l-cha"] },
+    { "id": "l-jha", "type": "letter", "gujarati": "ઝ", "translit": "jha", "english": "", "notes": "j with a breath after it. In borrowed words it is often said like z.", "confusables": ["l-ja"] },
+    { "id": "w-chhaash", "type": "word", "gujarati": "છાશ", "translit": "chhaash", "english": "buttermilk (chhaas)", "notes": "The cool, salty drink after a Gujarati meal." },
+    { "id": "w-jhaaD", "type": "word", "gujarati": "ઝાડ", "translit": "jhaaD", "english": "tree" },
+    { "id": "w-chhokro", "type": "word", "gujarati": "છોકરો", "translit": "chhokro", "english": "boy", "notes": "The middle a goes silent in speech: chhokro, not chhokaro." },
+    { "id": "w-chhokree", "type": "word", "gujarati": "છોકરી", "translit": "chhokree", "english": "girl" },
+
+    { "id": "l-ru", "type": "letter", "gujarati": "ઋ", "translit": "ru", "english": "", "notes": "Said \"ru\". After a consonant it is the little hook ૃ, as in કૃષ્ણ (Krishna)." },
+    { "id": "l-ah", "type": "letter", "gujarati": "અઃ", "translit": "ah", "english": "", "notes": "The two dots (visarga) add a short breath of h. Rare outside Sanskrit words.", "confusables": ["l-am"] },
+    { "id": "l-nga", "type": "letter", "gujarati": "ઙ", "translit": "nga", "english": "", "notes": "The ng in \"sing\". You will almost never see it on its own.", "confusables": ["l-dda"] },
+    { "id": "l-nya", "type": "letter", "gujarati": "ઞ", "translit": "nya", "english": "", "notes": "Like the ny in \"canyon\". It only turns up inside joined letters." },
+    { "id": "w-rutu", "type": "word", "gujarati": "ઋતુ", "translit": "rutu", "english": "season" },
+    { "id": "w-dukh", "type": "word", "gujarati": "દુઃખ", "translit": "dukh", "english": "sorrow, pain", "notes": "The two dots add a little breath, but most people just say dukh." },
+    { "id": "w-sukh", "type": "word", "gujarati": "સુખ", "translit": "sukh", "english": "happiness", "notes": "સુખ દુઃખ = the ups and downs of life." }
+  ]
+}

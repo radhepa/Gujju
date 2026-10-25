@@ -4,7 +4,7 @@
     "title": "Reading the script",
     "titleGu": "ગુજરાતી લિપિ",
     "level": 1,
-    "units": ["u01", "u02", "u03", "u04", "u05"],
+    "units": ["s01", "s02", "s03", "s04", "s05", "u05"],
     "summary": "How vowel signs attach to letters, when the built-in a is silent, how letters join, and what the dot on top does.",
     "sections": [
       {
@@ -136,7 +136,7 @@
     "title": "Nouns: gender and plurals",
     "titleGu": "જાતિ અને વચન",
     "level": 1,
-    "units": ["u08", "u09", "u15"],
+    "units": ["u08", "u09", "u21", "u15"],
     "summary": "Every Gujarati noun is masculine, feminine or neuter, and the ending often tells you which.",
     "sections": [
       {
@@ -231,7 +231,7 @@
     "title": "Present tense",
     "titleGu": "વર્તમાનકાળ",
     "level": 1,
-    "units": ["u09", "u10"],
+    "units": ["u09", "u10", "u26"],
     "summary": "How to say what you do, usually or right now, with the verb ending that matches the person.",
     "sections": [
       {
@@ -290,7 +290,7 @@
     "title": "Saying no and not",
     "titleGu": "નથી, ન, નહીં",
     "level": 1,
-    "units": ["u16", "u18"],
+    "units": ["u19", "u16", "u18"],
     "summary": "Gujarati has three words for \"not\", and each goes with different verb forms.",
     "sections": [
       {
@@ -338,7 +338,7 @@
     "title": "Asking questions",
     "titleGu": "પ્રશ્નો",
     "level": 1,
-    "units": ["u07", "u09", "u12", "u14"],
+    "units": ["u07", "u09", "u19", "u12", "u14"],
     "summary": "Question words go where the answer would go, and yes/no questions just rise at the end.",
     "sections": [
       {
@@ -388,7 +388,7 @@
     "title": "Past tense: I went, I came",
     "titleGu": "ભૂતકાળ: ગયો, આવ્યો",
     "level": 2,
-    "units": ["u11"],
+    "units": ["u11", "u26", "u27"],
     "summary": "Verbs like go, come and sit form the past by matching the subject's gender and number, and હતો means \"was\".",
     "sections": [
       {
@@ -434,7 +434,7 @@
     "title": "Past tense: I ate, I saw",
     "titleGu": "ભૂતકાળ: મેં ખાધું",
     "level": 3,
-    "units": ["u11"],
+    "units": ["u11", "u26"],
     "summary": "With verbs that act on something, \"I\" becomes મેં and the verb matches the thing, not the person.",
     "sections": [
       {
@@ -534,7 +534,7 @@
     "title": "In, on, to, from",
     "titleGu": "માં, પર, ને, થી",
     "level": 2,
-    "units": ["u13"],
+    "units": ["u13", "u20"],
     "summary": "Gujarati puts little words like \"in\" and \"to\" after the noun, and some nouns change shape in front of them.",
     "sections": [
       {
@@ -591,7 +591,7 @@
     "title": "My, your, his",
     "titleGu": "મારું, તમારું, તેનું",
     "level": 1,
-    "units": ["u08", "u09", "u13"],
+    "units": ["u08", "u09", "u21", "u13", "u24"],
     "summary": "The words for my, your and 's change their ending to match the thing owned, not the owner.",
     "sections": [
       {
@@ -639,7 +639,7 @@
     "title": "Asking and telling",
     "titleGu": "આવ, આવો, આવજો",
     "level": 2,
-    "units": ["u16"],
+    "units": ["u16", "u25"],
     "summary": "How to tell or ask someone to do something, from friendly to very polite.",
     "sections": [
       {
@@ -779,7 +779,7 @@
     "title": "Helper verbs",
     "titleGu": "ખાઈ ગયો, લખી નાખ્યું",
     "level": 3,
-    "units": ["u15"],
+    "units": ["u15", "u28"],
     "summary": "Gujarati often adds a second verb like જવું or લેવું to add a shade of meaning, such as finishing or doing something for yourself.",
     "sections": [
       {
@@ -824,7 +824,7 @@
     "title": "And, but, because, if",
     "titleGu": "અને, પણ, કારણ કે",
     "level": 2,
-    "units": ["u15"],
+    "units": ["u15", "u29"],
     "summary": "The words that join two ideas into one sentence.",
     "sections": [
       {
@@ -869,7 +869,7 @@
     "title": "Numbers, time and dates",
     "titleGu": "સમય અને તારીખ",
     "level": 2,
-    "units": ["u06", "u14"],
+    "units": ["u06", "u22", "u14", "u23"],
     "summary": "Telling the time, the special words for quarters and halves, and saying the day and the date.",
     "sections": [
       {

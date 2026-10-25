@@ -1,0 +1,44 @@
+{
+  "id": "s02",
+  "order": 2,
+  "title": "Signs for i, ee and e",
+  "goal": "Read words like રાત, કેરી, કેસર and દિવસ.",
+  "tip": "After a consonant, a vowel is a small sign instead of its full letter. ી (ee) goes after the letter. િ (i) is written before the letter but said after it. ે (e) sits on top. ઈ, ઇ and એ are the same vowels at the start of a word.",
+  "lessons": [
+    { "id": "s02-l1", "title": "ી and ઈ", "items": ["l-ee", "s-kee", "l-ta", "l-da", "w-nadee", "w-raat"] },
+    { "id": "s02-l2", "title": "િ and ઇ", "items": ["l-i", "s-ki", "l-pa", "w-dil", "w-pitaa", "w-paalak"] },
+    { "id": "s02-l3", "title": "ે and એ", "items": ["l-e", "s-ke", "l-va", "w-keree", "w-kesar", "w-sev", "w-tel"] },
+    { "id": "s02-l4", "title": "ચ and જ", "items": ["l-cha", "l-ja", "w-chaavee", "w-majaa", "w-vaat", "w-divas"] },
+    { "id": "s02-l5", "title": "Read them all", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-ee", "type": "letter", "gujarati": "ઈ", "translit": "ee", "english": "", "notes": "Like the ee in \"see\". In everyday speech ઇ and ઈ sound almost the same; spelling is where they differ.", "confusables": ["l-i"] },
+    { "id": "s-kee", "type": "letter", "gujarati": "કી", "translit": "kee", "english": "", "notes": "ી is the sign for ઈ. It comes after the letter, where you'd expect.", "confusables": ["s-ki", "s-kaa"] },
+    { "id": "l-ta", "type": "letter", "gujarati": "ત", "translit": "ta", "english": "", "notes": "A soft t, with the tongue touching the back of your top teeth.", "confusables": ["l-tha", "l-tta"] },
+    { "id": "l-da", "type": "letter", "gujarati": "દ", "translit": "da", "english": "", "notes": "A soft d, with the tongue on the teeth.", "confusables": ["l-dha", "l-dda"] },
+    { "id": "w-nadee", "type": "word", "gujarati": "નદી", "translit": "nadee", "english": "river" },
+    { "id": "w-raat", "type": "word", "gujarati": "રાત", "translit": "raat", "english": "night" },
+
+    { "id": "l-i", "type": "letter", "gujarati": "ઇ", "translit": "i", "english": "", "notes": "Like the i in \"sit\".", "confusables": ["l-ee"] },
+    { "id": "s-ki", "type": "letter", "gujarati": "કિ", "translit": "ki", "english": "", "notes": "િ is written before the letter but said after it: કિ is ki.", "confusables": ["s-kee"] },
+    { "id": "l-pa", "type": "letter", "gujarati": "પ", "translit": "pa", "english": "", "notes": "Like the p in \"spin\", no puff.", "confusables": ["l-pha"] },
+    { "id": "w-dil", "type": "word", "gujarati": "દિલ", "translit": "dil", "english": "heart" },
+    { "id": "w-pitaa", "type": "word", "gujarati": "પિતા", "translit": "pitaa", "english": "father", "notes": "The formal word, for writing and speeches. At home it's પપ્પા." },
+    { "id": "w-paalak", "type": "word", "gujarati": "પાલક", "translit": "paalak", "english": "spinach" },
+
+    { "id": "l-e", "type": "letter", "gujarati": "એ", "translit": "e", "english": "", "notes": "Like the ay in \"say\".", "confusables": ["l-ai"] },
+    { "id": "s-ke", "type": "letter", "gujarati": "કે", "translit": "ke", "english": "", "notes": "One stroke on top for e: ક + ે = કે.", "confusables": ["s-kai", "s-kee"] },
+    { "id": "l-va", "type": "letter", "gujarati": "વ", "translit": "va", "english": "", "notes": "Somewhere between v and w." },
+    { "id": "w-keree", "type": "word", "gujarati": "કેરી", "translit": "keree", "english": "mango", "notes": "Two signs in one word: ે on ક, ી after ર." },
+    { "id": "w-kesar", "type": "word", "gujarati": "કેસર", "translit": "kesar", "english": "saffron", "notes": "Also the Kesar mango from Gir, and Kesar the lion, who you'll see around the app." },
+    { "id": "w-sev", "type": "word", "gujarati": "સેવ", "translit": "sev", "english": "sev (crunchy noodles)", "notes": "Thin fried gram-flour noodles, eaten as a snack or sprinkled on top." },
+    { "id": "w-tel", "type": "word", "gujarati": "તેલ", "translit": "tel", "english": "oil" },
+
+    { "id": "l-cha", "type": "letter", "gujarati": "ચ", "translit": "cha", "english": "", "notes": "Like the ch in \"chair\", no puff.", "confusables": ["l-chha"] },
+    { "id": "l-ja", "type": "letter", "gujarati": "જ", "translit": "ja", "english": "", "notes": "Like the j in \"jam\".", "confusables": ["l-jha"] },
+    { "id": "w-chaavee", "type": "word", "gujarati": "ચાવી", "translit": "chaavee", "english": "key" },
+    { "id": "w-majaa", "type": "word", "gujarati": "મજા", "translit": "majaa", "english": "fun", "notes": "As in મજા આવી! (that was fun!) and મજામાં (doing well)." },
+    { "id": "w-vaat", "type": "word", "gujarati": "વાત", "translit": "vaat", "english": "talk, a matter", "notes": "શું વાત છે? = what's the matter? Said with delight, શું વાત છે! means \"how wonderful!\"" },
+    { "id": "w-divas", "type": "word", "gujarati": "દિવસ", "translit": "divas", "english": "day" }
+  ]
+}

@@ -1,7 +1,8 @@
 {
   "id": "u15",
-  "order": 15,
+  "order": 22,
   "title": "Body and feelings",
+  "goal": "Say you are hungry, cold, tired or ill, and where it hurts.",
   "tip": "Feelings happen to you in Gujarati: the person takes ને and the feeling is the subject. મને ભૂખ લાગી છે is literally \"to me hunger has struck\": I'm hungry.",
   "lessons": [
     { "id": "u15-l1", "title": "The body", "items": ["w-maathun", "w-peT", "w-haath", "w-pag", "w-aankh", "w-daant", "x-hands-cold"], "translit": "hint" },

@@ -74,4 +74,22 @@ describe('content', () => {
       }
     }
   });
+
+  it('script lessons only use letters and signs already taught', () => {
+    // Each word in units s01 to s05 must be readable with what came before it.
+    const taught = new Set<string>();
+    for (const l of course.lessons.filter((x) => x.unitId.startsWith('s'))) {
+      for (const id of l.items) if (course.items[id].type === 'letter') for (const ch of course.items[id].gujarati) taught.add(ch);
+      for (const id of l.items) {
+        const it = course.items[id];
+        if (it.type !== 'word') continue;
+        const missing = [...it.gujarati].filter((ch) => !taught.has(ch));
+        expect({ lesson: l.id, word: it.gujarati, missing }).toEqual({ lesson: l.id, word: it.gujarati, missing: [] });
+      }
+    }
+  });
+
+  it('every unit says what the learner will be able to do', () => {
+    for (const u of course.units) expect({ unit: u.id, goal: !!u.goal }).toEqual({ unit: u.id, goal: true });
+  });
 });

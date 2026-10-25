@@ -47,6 +47,27 @@ export function unitStatuses(course: Course, completed: Set<string>): UnitStatus
   });
 }
 
+// The script used to be four units in alphabet order (u01 to u04). It is now
+// five units in order of use (s01 to s05), with new lesson ids. Anyone who
+// finished the old script has met every letter, so it counts as done.
+const OLD_SCRIPT = [
+  ...['u01-l1', 'u01-l2', 'u01-l3', 'u01-l4'],
+  ...[1, 2, 3, 4, 5].flatMap((n) => [`u02-l${n}`, `u03-l${n}`, `u04-l${n}`]),
+];
+const NEW_SCRIPT = ['s01', 's02', 's03', 's04', 's05'];
+
+// Finished lessons as the path sees them: stored rows for lessons that still
+// exist, plus the new script for anyone who finished the old one.
+export function completedLessons(course: Course, lessonIds: string[]): Set<string> {
+  const stored = new Set(lessonIds);
+  const known = new Set(course.lessons.map((l) => l.id));
+  const done = new Set(lessonIds.filter((id) => known.has(id)));
+  if (OLD_SCRIPT.every((id) => stored.has(id))) {
+    for (const l of course.lessons) if (NEW_SCRIPT.includes(l.unitId)) done.add(l.id);
+  }
+  return done;
+}
+
 export function isLessonOpen(course: Course, completed: Set<string>, lessonId: string): boolean {
   const lesson = course.lessons.find((l) => l.id === lessonId);
   if (!lesson) return false;

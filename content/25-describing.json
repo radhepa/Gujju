@@ -1,7 +1,8 @@
 {
   "id": "u17",
-  "order": 17,
+  "order": 25,
   "title": "Describing things",
+  "goal": "Describe food, colours and the weather, and compare things.",
   "tip": "Adjectives ending in ો, ી, ું or ા agree with the noun: સારો મિત્ર, સારી ચા, સારું ઘર, સારા મિત્રો. Others, like લાલ and ખુશ, never change.",
   "lessons": [
     { "id": "u17-l1", "title": "Good, in every form", "items": ["w-saaro", "w-saaree", "w-saaraa", "w-kevun", "x-ravi-good-friend", "x-tea-is-good", "x-how-is-the-food"], "translit": "hint" },

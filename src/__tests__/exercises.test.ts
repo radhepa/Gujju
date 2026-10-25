@@ -25,12 +25,12 @@ describe('buildLesson', () => {
   });
 
   it('is the same every time for the same seed', () => {
-    expect(buildLesson(course, 'u01-l1', { seed: 7 })).toEqual(buildLesson(course, 'u01-l1', { seed: 7 }));
+    expect(buildLesson(course, 's01-l1', { seed: 7 })).toEqual(buildLesson(course, 's01-l1', { seed: 7 }));
   });
 
   it('introduces each new letter before testing it', () => {
-    const ex = buildLesson(course, 'u01-l1');
-    for (const id of ['l-a', 'l-aa', 'l-i', 'l-ee']) {
+    const ex = buildLesson(course, 's01-l1');
+    for (const id of ['l-a', 'l-aa', 'l-ka', 'l-ma']) {
       const introAt = ex.findIndex((e) => e.kind === 'intro' && e.itemIds[0] === id);
       const firstTest = ex.findIndex((e) => e.kind !== 'intro' && e.itemIds.includes(id));
       expect(introAt).toBeGreaterThanOrEqual(0);
@@ -51,16 +51,16 @@ describe('buildLesson', () => {
   });
 
   it('prefers confusable letters as wrong answers', () => {
-    // ઇ and ઈ are both in lesson 1, so ઈ should always tempt you on ઇ
+    // અ and આ are both in lesson 1, so આ should always tempt you on અ
     for (let seed = 0; seed < 20; seed++) {
-      const ex = buildLesson(course, 'u01-l1', { seed });
-      const q = ex.find((e) => e.kind === 'pick-sound' && e.itemIds[0] === 'l-i') as PickExercise;
-      expect(q.options).toContain('ee');
+      const ex = buildLesson(course, 's01-l1', { seed });
+      const q = ex.find((e) => e.kind === 'pick-sound' && e.itemIds[0] === 'l-a') as PickExercise;
+      expect(q.options).toContain('aa');
     }
   });
 
   it('build-word tiles contain the answer', () => {
-    const ex = buildLesson(course, 'u03-l5').filter((e) => e.kind === 'build-word') as BuildExercise[];
+    const ex = buildLesson(course, 's04-l1').filter((e) => e.kind === 'build-word') as BuildExercise[];
     expect(ex.length).toBeGreaterThan(0);
     for (const b of ex) {
       const tiles = b.tiles.slice();

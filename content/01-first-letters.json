@@ -1,0 +1,33 @@
+{
+  "id": "s01",
+  "order": 1,
+  "title": "First letters",
+  "goal": "Read your first real words: મા, નામ, રસ, મસાલા.",
+  "tip": "Every consonant carries a built-in a: ક is ka, મ is ma. Add the sign ા and the a becomes long: કા is kaa. Gujarati has no capital letters and no line along the top like Hindi.",
+  "lessons": [
+    { "id": "s01-l1", "title": "ક, મ and ા", "items": ["l-a", "l-aa", "l-ka", "l-ma", "s-kaa", "w-maa"] },
+    { "id": "s01-l2", "title": "ન and ર", "items": ["l-na", "l-ra", "w-naam", "w-naak", "w-kaan"] },
+    { "id": "s01-l3", "title": "લ and સ", "items": ["l-la", "l-sa", "w-ras", "w-saras", "w-masaalaa"] },
+    { "id": "s01-l4", "title": "Read them all", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-a", "type": "letter", "gujarati": "અ", "translit": "a", "english": "", "notes": "Short a, like the u in \"but\". Every consonant has this sound built in.", "confusables": ["l-aa"] },
+    { "id": "l-aa", "type": "letter", "gujarati": "આ", "translit": "aa", "english": "", "notes": "Long a, like the a in \"father\". It is અ with a bar added.", "confusables": ["l-a"] },
+    { "id": "l-ka", "type": "letter", "gujarati": "ક", "translit": "ka", "english": "", "notes": "Like the k in \"skin\", with no puff of air.", "confusables": ["l-kha"] },
+    { "id": "l-ma", "type": "letter", "gujarati": "મ", "translit": "ma", "english": "", "notes": "Like the m in \"mat\".", "confusables": ["l-bha"] },
+    { "id": "s-kaa", "type": "letter", "gujarati": "કા", "translit": "kaa", "english": "", "notes": "ા is the sign for આ (aa). It goes after the letter: ક + ા = કા.", "confusables": ["l-ka", "s-ko"] },
+    { "id": "w-maa", "type": "word", "gujarati": "મા", "translit": "maa", "english": "mother", "notes": "Your first word: મ + ા. At home most people say મમ્મી, and in many families બા." },
+
+    { "id": "l-na", "type": "letter", "gujarati": "ન", "translit": "na", "english": "", "notes": "The everyday n.", "confusables": ["l-nna"] },
+    { "id": "l-ra", "type": "letter", "gujarati": "ર", "translit": "ra", "english": "", "notes": "A light tap of the tongue, like the tt in American \"butter\"." },
+    { "id": "w-naam", "type": "word", "gujarati": "નામ", "translit": "naam", "english": "name", "notes": "ન + ા + મ. The last letter's built-in a goes silent: naam, not naama. That's true of almost every word." },
+    { "id": "w-naak", "type": "word", "gujarati": "નાક", "translit": "naak", "english": "nose" },
+    { "id": "w-kaan", "type": "word", "gujarati": "કાન", "translit": "kaan", "english": "ear" },
+
+    { "id": "l-la", "type": "letter", "gujarati": "લ", "translit": "la", "english": "", "notes": "Like the l in \"let\".", "confusables": ["l-lla"] },
+    { "id": "l-sa", "type": "letter", "gujarati": "સ", "translit": "sa", "english": "", "notes": "Like the s in \"sun\".", "confusables": ["l-sha"] },
+    { "id": "w-ras", "type": "word", "gujarati": "રસ", "translit": "ras", "english": "juice", "notes": "As in કેરીનો રસ, the thick mango juice of every Gujarati summer." },
+    { "id": "w-saras", "type": "word", "gujarati": "સરસ", "translit": "saras", "english": "lovely, great", "notes": "You'll hear it all the time: સરસ! means \"lovely!\" or \"well done!\"" },
+    { "id": "w-masaalaa", "type": "word", "gujarati": "મસાલા", "translit": "masaalaa", "english": "spices" }
+  ]
+}

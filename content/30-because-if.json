@@ -1,0 +1,45 @@
+{
+  "id": "u29",
+  "order": 30,
+  "title": "Because and if",
+  "goal": "Give reasons, make plans that depend on something, and say what you think.",
+  "tip": "કારણ કે (because) and એટલે (so) join two sentences, just as in English. For \"if\", Gujarati says જો … તો: જો વરસાદ પડશે, તો અમે ઘરે રહીશું. Both halves are often in the future. To give an opinion, start with મને લાગે છે કે, \"I think that\".",
+  "lessons": [
+    { "id": "u29-l1", "title": "Because", "items": ["w-kaaraN-ke", "w-kem", "w-rajaa", "x-why-arent-you-coming", "x-wont-come-fever", "x-happy-holiday"], "translit": "hint" },
+    { "id": "u29-l2", "title": "So, and too", "items": ["w-eTle", "w-paN", "x-raining-so-home", "x-hungry-so-ate", "x-ill-come-too"], "translit": "hide" },
+    { "id": "u29-l3", "title": "If … then", "items": ["w-jo", "w-to", "w-aapNe", "x-if-rain-stay-home", "x-if-you-come-eat", "x-call-if-time"], "translit": "hide" },
+    { "id": "u29-l4", "title": "I think that…", "items": ["w-ke", "x-think-film-good", "x-think-ba-tired", "x-what-do-you-think", "x-he-said-tomorrow"], "translit": "hide" },
+    { "id": "u29-l5", "title": "Putting it together", "items": ["x-if-hungry-eat", "x-learning-to-talk-to-ba", "x-late-so-going"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-kaaraN-ke", "type": "word", "gujarati": "કારણ કે", "translit": "kaaraN ke", "english": "because", "notes": "કારણ means reason: \"the reason is that\"." },
+    { "id": "w-kem", "type": "word", "gujarati": "કેમ", "translit": "kem", "english": "why", "notes": "Also \"how\", as in કેમ છો?" },
+    { "id": "w-rajaa", "type": "word", "gujarati": "રજા", "translit": "rajaa", "english": "holiday, day off", "notes": "Also permission: રજા આપો, may I go?" },
+    { "id": "x-why-arent-you-coming", "type": "sentence", "gujarati": "તમે કેમ નથી આવતા?", "translit": "tame kem nathee aavtaa?", "english": "Why aren't you coming?", "alts": ["Why are you not coming", "Why don't you come"] },
+    { "id": "x-wont-come-fever", "type": "sentence", "gujarati": "હું નહીં આવું, કારણ કે મને તાવ છે.", "translit": "hun naheen aavun, kaaraN ke mane taav chhe.", "english": "I won't come, because I have a fever.", "alts": ["I won't come because I have a fever", "I will not come, because I have a fever"] },
+    { "id": "x-happy-holiday", "type": "sentence", "gujarati": "હું ખુશ છું, કારણ કે આજે રજા છે.", "translit": "hun khush chhun, kaaraN ke aaje rajaa chhe.", "english": "I'm happy, because today is a holiday.", "alts": ["I am happy because today is a holiday", "I'm happy because it's a holiday today"] },
+
+    { "id": "w-eTle", "type": "word", "gujarati": "એટલે", "translit": "eTle", "english": "so, that's why", "notes": "It also means \"that is\" when explaining: રોટલી એટલે flatbread." },
+    { "id": "w-paN", "type": "word", "gujarati": "પણ", "translit": "paN", "english": "but; too", "notes": "Between two sentences it means but. After a word it means too: હું પણ, me too." },
+    { "id": "x-raining-so-home", "type": "sentence", "gujarati": "વરસાદ પડે છે, એટલે અમે ઘરે છીએ.", "translit": "varsaad paDe chhe, eTle ame ghare chhiye.", "english": "It's raining, so we're at home.", "alts": ["It is raining, so we are at home", "It's raining so we're home"] },
+    { "id": "x-hungry-so-ate", "type": "sentence", "gujarati": "મને ભૂખ લાગી હતી, એટલે મેં ખાઈ લીધું.", "translit": "mane bhookh laagee hatee, eTle men khaai leedhun.", "english": "I was hungry, so I ate.", "alts": ["I was hungry so I ate", "I was hungry, so I had something to eat"] },
+    { "id": "x-ill-come-too", "type": "sentence", "gujarati": "હું પણ આવીશ.", "translit": "hun paN aaveesh.", "english": "I'll come too.", "alts": ["I will come too", "I will also come", "I'll also come"] },
+
+    { "id": "w-jo", "type": "word", "gujarati": "જો", "translit": "jo", "english": "if" },
+    { "id": "w-to", "type": "word", "gujarati": "તો", "translit": "to", "english": "then", "notes": "It starts the second half after જો. On its own it adds weight: હું તો આવીશ, I for one will come." },
+    { "id": "w-aapNe", "type": "word", "gujarati": "આપણે", "translit": "aapNe", "english": "we (you included)", "notes": "અમે leaves the listener out; આપણે takes them in. ચાલો, આપણે જઈએ, let's go, you and me." },
+    { "id": "x-if-rain-stay-home", "type": "sentence", "gujarati": "જો વરસાદ પડશે, તો અમે ઘરે રહીશું.", "translit": "jo varsaad paDshe, to ame ghare raheeshun.", "english": "If it rains, we'll stay at home.", "alts": ["If it rains, we will stay at home", "If it rains we'll stay home"], "notes": "Gujarati often puts both halves in the future, \"if it will rain\". જો વરસાદ પડે, તો … is just as common." },
+    { "id": "x-if-you-come-eat", "type": "sentence", "gujarati": "જો તમે આવશો, તો આપણે સાથે જમીશું.", "translit": "jo tame aavsho, to aapNe saathe jameeshun.", "english": "If you come, we'll eat together.", "alts": ["If you come, we will eat together", "If you come we'll eat together"] },
+    { "id": "x-call-if-time", "type": "sentence", "gujarati": "સમય હોય તો ફોન કરજો.", "translit": "samay hoy to phon karjo.", "english": "Call if you have time.", "alts": ["If you have time, call", "If you have time, please call", "Call me if you have time"], "notes": "જો is often left out: the તો is enough." },
+
+    { "id": "w-ke", "type": "word", "gujarati": "કે", "translit": "ke", "english": "that; or", "notes": "તેણે કહ્યું કે …, he said that …. ચા કે કૉફી? tea or coffee?" },
+    { "id": "x-think-film-good", "type": "sentence", "gujarati": "મને લાગે છે કે આ ફિલ્મ સારી છે.", "translit": "mane laage chhe ke aa philm saaree chhe.", "english": "I think this film is good.", "alts": ["I think that this film is good", "I think this movie is good"], "notes": "Literally \"it seems to me that\"." },
+    { "id": "x-think-ba-tired", "type": "sentence", "gujarati": "મને લાગે છે કે બા થાકી ગયાં છે.", "translit": "mane laage chhe ke baa thaakee gayaan chhe.", "english": "I think Ba is tired.", "alts": ["I think that Ba is tired", "I think Grandma is tired"] },
+    { "id": "x-what-do-you-think", "type": "sentence", "gujarati": "તમને શું લાગે છે?", "translit": "tamne shun laage chhe?", "english": "What do you think?" },
+    { "id": "x-he-said-tomorrow", "type": "sentence", "gujarati": "તેણે કહ્યું કે તે કાલે આવશે.", "translit": "teNe kahyun ke te kaale aavshe.", "english": "He said that he will come tomorrow.", "alts": ["He said he will come tomorrow", "He said he would come tomorrow", "She said she will come tomorrow"], "notes": "Gujarati keeps the words as they were said: \"he will come\"." },
+
+    { "id": "x-if-hungry-eat", "type": "sentence", "gujarati": "જો તમને ભૂખ લાગી હોય, તો ખાઈ લો.", "translit": "jo tamne bhookh laagee hoy, to khaai lo.", "english": "If you're hungry, go ahead and eat.", "alts": ["If you are hungry, go ahead and eat", "If you're hungry, eat"] },
+    { "id": "x-learning-to-talk-to-ba", "type": "sentence", "gujarati": "હું ગુજરાતી શીખું છું, કારણ કે મારે બા સાથે વાત કરવી છે.", "translit": "hun gujaraatee sheekhun chhun, kaaraN ke maare baa saathe vaat karvee chhe.", "english": "I'm learning Gujarati because I want to talk with Ba.", "alts": ["I am learning Gujarati because I want to talk with Ba", "I'm learning Gujarati because I want to talk to Ba"], "notes": "મારે … કરવી છે, I want to do: કરવી agrees with વાત, which is feminine." },
+    { "id": "x-late-so-going", "type": "sentence", "gujarati": "મોડું થઈ ગયું છે, એટલે હું જાઉં છું.", "translit": "moDun thai gayun chhe, eTle hun jaaun chhun.", "english": "It's late, so I'm going.", "alts": ["It is late, so I am going", "It's got late, so I'm going"] }
+  ]
+}

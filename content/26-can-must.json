@@ -1,11 +1,12 @@
 {
   "id": "u18",
-  "order": 18,
+  "order": 26,
   "title": "Can, must, want",
+  "goal": "Say what you can do, have to do, want and like.",
   "tip": "Wanting, liking and having to put the person in the ને or એ form: મને ચા ગમે છે (I like tea), મારે પાણી જોઈએ છે (I want water), મારે જવું પડશે (I'll have to go).",
   "lessons": [
     { "id": "u18-l1", "title": "I can", "items": ["w-shakvun", "w-tarvun", "w-gaavun", "w-ramvun", "x-i-can-swim", "x-meera-can-sing", "x-can-you-come-tomorrow"], "translit": "hint" },
-    { "id": "u18-l2", "title": "I have to", "items": ["w-paDvun", "w-maare", "w-tamaare", "w-kaam", "w-roj", "x-i-have-to-go", "x-work-every-day"], "translit": "hide" },
+    { "id": "u18-l2", "title": "I have to", "items": ["w-paDvun", "w-aaraam", "w-amaare", "x-i-have-to-go", "x-work-every-day", "x-you-must-rest", "x-we-must-go-now"], "translit": "hide" },
     { "id": "u18-l3", "title": "I want, I need", "items": ["w-joiye", "w-madad", "w-samay", "w-navun", "x-i-want-water", "x-what-do-you-want", "x-i-need-help"], "translit": "hide" },
     { "id": "u18-l4", "title": "I like, I know", "items": ["w-gamvun", "w-aavaDvun", "w-khabar", "w-tamne", "x-i-like-tea", "x-i-know-gujarati", "x-i-dont-know"], "translit": "hide" },
     { "id": "u18-l5", "title": "Putting it together", "items": ["x-take-the-medicine", "x-dont-like-spicy", "x-do-you-know-swim", "x-want-to-learn-gujarati", "x-cant-come-today", "x-need-a-little-time"], "translit": "hide" }
@@ -20,12 +21,12 @@
     { "id": "x-can-you-come-tomorrow", "type": "sentence", "gujarati": "તમે કાલે આવી શકશો?", "translit": "tame kaale aavee shaksho?", "english": "Can you come tomorrow?", "alts": ["Will you be able to come tomorrow", "Could you come tomorrow"], "notes": "શકશો is the future, \"will you be able to\". It's a softer way to ask." },
 
     { "id": "w-paDvun", "type": "word", "gujarati": "પડવું", "translit": "paDvun", "english": "to fall; to have to", "notes": "After a -વું verb it means \"have to\", and the person takes એ: મારે જવું પડશે, I'll have to go. Rain uses it too: વરસાદ પડે છે." },
-    { "id": "w-maare", "type": "word", "gujarati": "મારે", "translit": "maare", "english": "for me (I have to, I want to)", "notes": "The એ form of હું, used for \"have to\", \"want to\" and \"need\"." },
-    { "id": "w-tamaare", "type": "word", "gujarati": "તમારે", "translit": "tamaare", "english": "for you (you have to, you want to)", "notes": "The એ form of તમે: તમારે જવું પડશે, you'll have to go." },
-    { "id": "w-kaam", "type": "word", "gujarati": "કામ", "translit": "kaam", "english": "work, job", "notes": "Neuter. To work is કામ કરવું." },
-    { "id": "w-roj", "type": "word", "gujarati": "રોજ", "translit": "roj", "english": "every day" },
+    { "id": "w-aaraam", "type": "word", "gujarati": "આરામ", "translit": "aaraam", "english": "rest", "notes": "Masculine: આરામ કરવો, to rest." },
+    { "id": "w-amaare", "type": "word", "gujarati": "અમારે", "translit": "amaare", "english": "for us (we have to, we want to)", "notes": "The એ form of અમે, like મારે and તમારે." },
     { "id": "x-i-have-to-go", "type": "sentence", "gujarati": "મારે જવું પડશે.", "translit": "maare javun paDshe.", "english": "I will have to go.", "alts": ["I'll have to go", "I have to go", "I must go"] },
     { "id": "x-work-every-day", "type": "sentence", "gujarati": "મારે રોજ કામ કરવું પડે છે.", "translit": "maare roj kaam karvun paDe chhe.", "english": "I have to work every day.", "alts": ["Every day I have to work"], "notes": "પડે છે is the present: something you always have to do." },
+    { "id": "x-you-must-rest", "type": "sentence", "gujarati": "તમારે આરામ કરવો પડશે.", "translit": "tamaare aaraam karvo paDshe.", "english": "You will have to rest.", "alts": ["You'll have to rest", "You must rest"], "notes": "કરવો, not કરવું: with \"have to\" the verb agrees with its object, and આરામ is masculine. In casual speech many people just say કરવું." },
+    { "id": "x-we-must-go-now", "type": "sentence", "gujarati": "અમારે હવે જવું પડશે.", "translit": "amaare have javun paDshe.", "english": "We will have to go now.", "alts": ["We'll have to go now", "We have to go now", "We must go now"] },
 
     { "id": "w-joiye", "type": "word", "gujarati": "જોઈએ", "translit": "joiye", "english": "is needed, is wanted", "notes": "The thing you want is the subject and the person takes એ: મારે પાણી જોઈએ છે, I want water (literally \"for me water is needed\"). મને works too: મને પાણી જોઈએ છે." },
     { "id": "w-madad", "type": "word", "gujarati": "મદદ", "translit": "madad", "english": "help", "notes": "Feminine." },

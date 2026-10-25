@@ -1,31 +1,48 @@
 import type { Course, Item, Lesson, TranslitMode, Unit } from '../lib/types';
 
-import u01 from '../../content/01-vowels.json';
-import u02 from '../../content/02-consonants-1.json';
-import u03 from '../../content/03-consonants-2.json';
-import u04 from '../../content/04-matras.json';
-import u05 from '../../content/05-conjuncts.json';
-import u06 from '../../content/06-numbers.json';
-import u07 from '../../content/07-greetings.json';
-import u08 from '../../content/08-family.json';
-import u09 from '../../content/09-sentences.json';
-import u10 from '../../content/10-daily-life.json';
-import u11 from '../../content/11-past.json';
-import u12 from '../../content/12-future.json';
-import u13 from '../../content/13-places.json';
-import u14 from '../../content/14-shopping.json';
-import u15 from '../../content/15-health.json';
-import u16 from '../../content/16-requests.json';
-import u17 from '../../content/17-describing.json';
-import u18 from '../../content/18-can-must.json';
+import s01 from '../../content/01-first-letters.json';
+import s02 from '../../content/02-signs-i-e.json';
+import s03 from '../../content/03-signs-u-o.json';
+import s04 from '../../content/04-curled-letters.json';
+import s05 from '../../content/05-last-letters.json';
+import u05 from '../../content/06-conjuncts.json';
+import u06 from '../../content/07-numbers.json';
+import u07 from '../../content/08-greetings.json';
+import u08 from '../../content/09-family.json';
+import u09 from '../../content/10-sentences.json';
+import u10 from '../../content/11-daily-life.json';
+import u19 from '../../content/12-not-and-no.json';
+import u20 from '../../content/13-about-me.json';
+import u21 from '../../content/14-one-and-many.json';
+import u22 from '../../content/15-days.json';
+import u11 from '../../content/16-past.json';
+import u12 from '../../content/17-future.json';
+import u13 from '../../content/18-places.json';
+import u24 from '../../content/19-whole-family.json';
+import u14 from '../../content/20-shopping.json';
+import u23 from '../../content/21-bigger-numbers.json';
+import u15 from '../../content/22-health.json';
+import u16 from '../../content/23-requests.json';
+import u25 from '../../content/24-kitchen.json';
+import u17 from '../../content/25-describing.json';
+import u18 from '../../content/26-can-must.json';
+import u26 from '../../content/27-right-now.json';
+import u27 from '../../content/28-used-to.json';
+import u28 from '../../content/29-helper-verbs.json';
+import u29 from '../../content/30-because-if.json';
+import u30 from '../../content/31-on-the-phone.json';
+import u31 from '../../content/32-festivals.json';
 
 // One JSON file per unit, so a unit can be checked and edited on its own.
-// Units, lessons and items are flattened into separate tables here.
+// Units, lessons and items are flattened into separate tables here. Unit and
+// lesson ids are permanent (progress is keyed by lesson id), so they don't
+// follow the order: u19 sits at position 12. `order` decides the path.
 
 interface UnitFile {
   id: string;
   order: number;
   title: string;
+  goal?: string;
   tip: string;
   lessons: {
     id: string;
@@ -37,7 +54,7 @@ interface UnitFile {
   items: (Omit<Item, 'audioFile' | 'type'> & { type: string; audioFile?: string | null })[];
 }
 
-export const unitFiles: UnitFile[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18];
+export const unitFiles: UnitFile[] = [s01, s02, s03, s04, s05, u05, u06, u07, u08, u09, u10, u19, u20, u21, u22, u11, u12, u13, u24, u14, u23, u15, u16, u25, u17, u18, u26, u27, u28, u29, u30, u31];
 
 export function buildCourse(files: UnitFile[]): Course {
   const units: Unit[] = [];
@@ -45,7 +62,7 @@ export function buildCourse(files: UnitFile[]): Course {
   const items: Record<string, Item> = {};
 
   for (const f of [...files].sort((a, b) => a.order - b.order)) {
-    units.push({ id: f.id, order: f.order, title: f.title, tip: f.tip });
+    units.push({ id: f.id, order: f.order, title: f.title, goal: f.goal, tip: f.tip });
     f.lessons.forEach((l, i) =>
       lessons.push({
         id: l.id,
@@ -65,6 +82,20 @@ export function buildCourse(files: UnitFile[]): Course {
 }
 
 export const course = buildCourse(unitFiles);
+
+// The path in four stretches, each starting at its first unit.
+export interface Section {
+  first: string;
+  title: string;
+  level: string;
+}
+
+export const SECTIONS: Section[] = [
+  { first: 's01', title: 'Read Gujarati', level: 'Script' },
+  { first: 'u07', title: 'Everyday Gujarati', level: 'A1' },
+  { first: 'u11', title: 'Out and about', level: 'A2' },
+  { first: 'u26', title: 'Real conversations', level: 'B1' },
+];
 
 export function lessonsInUnit(c: Course, unitId: string): Lesson[] {
   return c.lessons.filter((l) => l.unitId === unitId);

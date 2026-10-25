@@ -1,7 +1,8 @@
 {
   "id": "u09",
-  "order": 9,
+  "order": 10,
   "title": "Simple sentences",
+  "goal": "Say where you are, what things are and what you do: હું ગુજરાતી શીખું છું.",
   "tip": "The verb goes last: \"I home at am\" (હું ઘરે છું). \"Am / is / are\" changes with the person: હું છું, તું છે, અમે છીએ, તમે છો.",
   "lessons": [
     { "id": "u09-l1", "title": "I am, we are", "items": ["w-chhun", "w-chhiye", "w-chho", "w-ghare", "x-i-am-home", "x-we-are-home", "x-where-are-you"], "translit": "hint" },

@@ -1,6 +1,6 @@
 import { Rating } from 'ts-fsrs';
 import { course } from '../content/course';
-import { applyChanges, applySession, isLessonOpen, NEW_PER_DAY, unitStatuses } from '../lib/progress';
+import { applyChanges, applySession, completedLessons, isLessonOpen, NEW_PER_DAY, unitStatuses } from '../lib/progress';
 import type { Summary } from '../lib/session';
 import { dueCards, review, scheduler } from '../lib/srs';
 import { DEFAULT_SETTINGS, type Snapshot } from '../lib/types';
@@ -21,11 +21,11 @@ describe('unit unlocking', () => {
     const s = unitStatuses(course, new Set());
     expect(s[0].open).toBe(true);
     expect(s.slice(1).every((u) => !u.open)).toBe(true);
-    expect(s[0].next?.id).toBe('u01-l1');
+    expect(s[0].next?.id).toBe('s01-l1');
   });
 
   it('opens the next unit once a unit is finished', () => {
-    const done = new Set(course.lessons.filter((l) => l.unitId === 'u01').map((l) => l.id));
+    const done = new Set(course.lessons.filter((l) => l.unitId === 's01').map((l) => l.id));
     const s = unitStatuses(course, done);
     expect(s[0].finished).toBe(true);
     expect(s[1].open).toBe(true);
@@ -33,11 +33,34 @@ describe('unit unlocking', () => {
   });
 
   it('plays lessons in order but allows replays', () => {
-    const done = new Set(['u01-l1']);
-    expect(isLessonOpen(course, done, 'u01-l1')).toBe(true);
-    expect(isLessonOpen(course, done, 'u01-l2')).toBe(true);
-    expect(isLessonOpen(course, done, 'u01-l3')).toBe(false);
-    expect(isLessonOpen(course, done, 'u02-l1')).toBe(false);
+    const done = new Set(['s01-l1']);
+    expect(isLessonOpen(course, done, 's01-l1')).toBe(true);
+    expect(isLessonOpen(course, done, 's01-l2')).toBe(true);
+    expect(isLessonOpen(course, done, 's01-l3')).toBe(false);
+    expect(isLessonOpen(course, done, 's02-l1')).toBe(false);
+  });
+});
+
+describe('completed lessons', () => {
+  const oldScript = [
+    'u01-l1', 'u01-l2', 'u01-l3', 'u01-l4',
+    ...[1, 2, 3, 4, 5].flatMap((n) => [`u02-l${n}`, `u03-l${n}`, `u04-l${n}`]),
+  ];
+  const script = course.lessons.filter((l) => l.unitId.startsWith('s')).map((l) => l.id);
+
+  it('counts the new script as done for anyone who finished the old one', () => {
+    const done = completedLessons(course, [...oldScript, 'u05-l1']);
+    for (const id of script) expect(done.has(id)).toBe(true);
+    expect(done.has('u05-l1')).toBe(true);
+    // Old ids that no longer exist are dropped.
+    expect(done.has('u01-l1')).toBe(false);
+    const s = unitStatuses(course, done);
+    expect(s.find((u) => u.unit.id === 'u05')?.open).toBe(true);
+  });
+
+  it('leaves the new script to do after only part of the old one', () => {
+    const done = completedLessons(course, oldScript.slice(0, 8));
+    expect(script.some((id) => done.has(id))).toBe(false);
   });
 });
 
@@ -45,12 +68,12 @@ describe('applySession', () => {
   it('schedules new items and records the lesson', () => {
     const ch = applySession(empty, summary({ 'l-a': Rating.Good, 'l-aa': Rating.Hard }), {
       kind: 'lesson',
-      lessonIds: ['u01-l1'],
+      lessonIds: ['s01-l1'],
       now,
     });
     expect(ch.cards).toHaveLength(2);
     expect(ch.logs).toHaveLength(2);
-    expect(ch.lessonProgress[0]).toMatchObject({ lessonId: 'u01-l1', bestAccuracy: 1 });
+    expect(ch.lessonProgress[0]).toMatchObject({ lessonId: 's01-l1', bestAccuracy: 1 });
     expect(ch.stats).toEqual({ xp: 100, lessonsDone: 1, reviewsDone: 0, newItems: 2 });
     // Nothing is due again the same day: short-term steps are off.
     expect(dueCards(ch.cards, now)).toHaveLength(0);
@@ -102,14 +125,14 @@ describe('applySession', () => {
   it('keeps the best accuracy for a replayed lesson', () => {
     const snap: Snapshot = {
       ...empty,
-      lessonProgress: [{ userId: 'local', lessonId: 'u01-l1', completedAt: '', bestAccuracy: 0.9 }],
+      lessonProgress: [{ userId: 'local', lessonId: 's01-l1', completedAt: '', bestAccuracy: 0.9 }],
     };
-    const ch = applySession(snap, summary({}, 0.5), { kind: 'lesson', lessonIds: ['u01-l1'], now });
+    const ch = applySession(snap, summary({}, 0.5), { kind: 'lesson', lessonIds: ['s01-l1'], now });
     expect(ch.lessonProgress[0].bestAccuracy).toBe(0.9);
   });
 
   it('merges changes into a snapshot', () => {
-    const ch = applySession(empty, summary({ 'l-a': Rating.Good }), { kind: 'lesson', lessonIds: ['u01-l1'], now });
+    const ch = applySession(empty, summary({ 'l-a': Rating.Good }), { kind: 'lesson', lessonIds: ['s01-l1'], now });
     const once = applyChanges(empty, ch);
     const twice = applyChanges(once, ch);
     expect(twice.cards).toHaveLength(1);

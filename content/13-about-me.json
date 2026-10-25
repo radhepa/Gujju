@@ -1,0 +1,53 @@
+{
+  "id": "u20",
+  "order": 13,
+  "title": "About me",
+  "goal": "Introduce yourself: where you're from, where you live, what you do and how old you are.",
+  "tip": "Where you're from takes નો, ની or ના, like 's: હું સુરતનો છું (a man), હું સુરતની છું (a woman), અમે સુરતના છીએ. Where you live takes માં, in: હું લંડનમાં રહું છું.",
+  "lessons": [
+    { "id": "u20-l1", "title": "Where are you from?", "items": ["w-kyaannaa", "w-amdaavaad", "w-surat", "x-where-from", "x-from-ahmedabad", "x-from-surat", "x-which-village"], "translit": "hint" },
+    { "id": "u20-l2", "title": "Where do you live?", "items": ["w-rahevun", "w-rahun", "w-lanDan", "w-amerikaa", "x-live-london", "x-where-live", "x-live-america"], "translit": "hide" },
+    { "id": "u20-l3", "title": "What do you do?", "items": ["w-kaam", "w-nokree", "w-bhaNvun", "x-what-work", "x-i-am-teacher", "x-i-study", "x-mom-job"], "translit": "hide" },
+    { "id": "u20-l4", "title": "How old are you?", "items": ["w-varsh", "w-unmar", "w-keTlee", "x-how-old", "x-age-twenty", "x-age-thirty", "x-ba-eighty"], "translit": "hide" },
+    { "id": "u20-l5", "title": "Putting it together", "items": ["x-intro-priya", "x-speak-a-little", "x-and-you", "x-dad-from-vadodara", "x-nice-to-meet"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-kyaannaa", "type": "word", "gujarati": "ક્યાંના", "translit": "kyaannaa", "english": "from where (polite)", "notes": "ક્યાં (where) + ના. To a friend: તું ક્યાંનો છે? (a boy), ક્યાંની છે? (a girl)." },
+    { "id": "w-amdaavaad", "type": "word", "gujarati": "અમદાવાદ", "translit": "amdaavaad", "english": "Ahmedabad" },
+    { "id": "w-surat", "type": "word", "gujarati": "સુરત", "translit": "surat", "english": "Surat" },
+    { "id": "x-where-from", "type": "sentence", "gujarati": "તમે ક્યાંના છો?", "translit": "tame kyaannaa chho?", "english": "Where are you from?", "notes": "One of the first things Gujaratis ask each other, and they usually mean which town or village your family comes from." },
+    { "id": "x-from-ahmedabad", "type": "sentence", "gujarati": "હું અમદાવાદનો છું.", "translit": "hun amdaavaadno chhun.", "english": "I am from Ahmedabad (a man speaking).", "alts": ["I am from Ahmedabad", "I'm from Ahmedabad"], "notes": "A woman says હું અમદાવાદની છું." },
+    { "id": "x-from-surat", "type": "sentence", "gujarati": "હું સુરતની છું.", "translit": "hun suratnee chhun.", "english": "I am from Surat (a woman speaking).", "alts": ["I am from Surat", "I'm from Surat"], "notes": "A man says હું સુરતનો છું." },
+    { "id": "x-which-village", "type": "sentence", "gujarati": "તમારું ગામ કયું છે?", "translit": "tamaarun gaam kayun chhe?", "english": "Which is your village?", "alts": ["What is your village", "Which is your hometown", "What is your hometown"], "notes": "કયું (which) agrees with ગામ, which is neuter." },
+
+    { "id": "w-rahevun", "type": "word", "gujarati": "રહેવું", "translit": "rahevun", "english": "to live, to stay" },
+    { "id": "w-rahun", "type": "word", "gujarati": "રહું", "translit": "rahun", "english": "(I) live", "notes": "હું રહું છું, તમે રહો છો, અમે રહીએ છીએ, તે રહે છે." },
+    { "id": "w-lanDan", "type": "word", "gujarati": "લંડન", "translit": "lanDan", "english": "London" },
+    { "id": "w-amerikaa", "type": "word", "gujarati": "અમેરિકા", "translit": "amerikaa", "english": "America" },
+    { "id": "x-live-london", "type": "sentence", "gujarati": "હું લંડનમાં રહું છું.", "translit": "hun lanDanmaan rahun chhun.", "english": "I live in London.", "notes": "માં (in) is joined to the place: લંડનમાં." },
+    { "id": "x-where-live", "type": "sentence", "gujarati": "તમે ક્યાં રહો છો?", "translit": "tame kyaan raho chho?", "english": "Where do you live?" },
+    { "id": "x-live-america", "type": "sentence", "gujarati": "અમે અમેરિકામાં રહીએ છીએ.", "translit": "ame amerikaamaan rahiye chhiye.", "english": "We live in America." },
+
+    { "id": "w-kaam", "type": "word", "gujarati": "કામ", "translit": "kaam", "english": "work, job", "notes": "કામ કરવું = to work. કામ also means a task or errand: મારે એક કામ છે (I have something to do)." },
+    { "id": "w-nokree", "type": "word", "gujarati": "નોકરી", "translit": "nokree", "english": "job (employment)", "notes": "નોકરી કરવી = to have a job, to work for someone." },
+    { "id": "w-bhaNvun", "type": "word", "gujarati": "ભણવું", "translit": "bhaNvun", "english": "to study", "notes": "For school and college. શીખવું is to learn a skill, like Gujarati." },
+    { "id": "x-what-work", "type": "sentence", "gujarati": "તમે શું કામ કરો છો?", "translit": "tame shun kaam karo chho?", "english": "What work do you do?", "alts": ["What do you do", "What is your job", "What do you do for work"], "notes": "Many people just ask તમે શું કરો છો? Careful: શું કામ on its own can also mean \"why?\"" },
+    { "id": "x-i-am-teacher", "type": "sentence", "gujarati": "હું શિક્ષક છું.", "translit": "hun shikshak chhun.", "english": "I am a teacher.", "alts": ["I'm a teacher"] },
+    { "id": "x-i-study", "type": "sentence", "gujarati": "હું સ્કૂલમાં ભણું છું.", "translit": "hun skoolmaan bhaNun chhun.", "english": "I study at school.", "alts": ["I go to school", "I study in school"] },
+    { "id": "x-mom-job", "type": "sentence", "gujarati": "મમ્મી નોકરી કરે છે.", "translit": "mammee nokree kare chhe.", "english": "Mom has a job.", "alts": ["Mom works", "Mum has a job", "Mom is working"] },
+
+    { "id": "w-varsh", "type": "word", "gujarati": "વર્ષ", "translit": "varsh", "english": "year", "notes": "The same for one year and many: એક વર્ષ, દસ વર્ષ." },
+    { "id": "w-unmar", "type": "word", "gujarati": "ઉંમર", "translit": "unmar", "english": "age" },
+    { "id": "w-keTlee", "type": "word", "gujarati": "કેટલી", "translit": "keTlee", "english": "how much, how many (feminine)", "notes": "It agrees with the noun: ઉંમર is feminine, so ઉંમર કેટલી?" },
+    { "id": "x-how-old", "type": "sentence", "gujarati": "તમારી ઉંમર કેટલી છે?", "translit": "tamaaree unmar keTlee chhe?", "english": "How old are you?", "notes": "Literally \"how much is your age?\"" },
+    { "id": "x-age-twenty", "type": "sentence", "gujarati": "હું વીસ વર્ષનો છું.", "translit": "hun vees varshno chhun.", "english": "I am twenty (a man speaking).", "alts": ["I am twenty years old", "I'm twenty", "I'm twenty years old", "I am twenty"], "notes": "A woman says હું વીસ વર્ષની છું." },
+    { "id": "x-age-thirty", "type": "sentence", "gujarati": "હું ત્રીસ વર્ષની છું.", "translit": "hun trees varshnee chhun.", "english": "I am thirty (a woman speaking).", "alts": ["I am thirty years old", "I'm thirty", "I'm thirty years old", "I am thirty"] },
+    { "id": "x-ba-eighty", "type": "sentence", "gujarati": "બા એંશી વર્ષનાં છે.", "translit": "baa enshee varshnaan chhe.", "english": "Ba is eighty.", "alts": ["Ba is eighty years old", "Grandma is eighty", "Grandma is eighty years old"], "notes": "Respected women elders take the ાં ending: વર્ષનાં. Many people just say વર્ષના." },
+
+    { "id": "x-intro-priya", "type": "sentence", "gujarati": "મારું નામ પ્રિયા છે અને હું લંડનમાં રહું છું.", "translit": "maarun naam priyaa chhe ane hun lanDanmaan rahun chhun.", "english": "My name is Priya and I live in London.", "alts": ["My name is Priya, and I live in London"] },
+    { "id": "x-speak-a-little", "type": "sentence", "gujarati": "હું થોડું ગુજરાતી બોલું છું.", "translit": "hun thoDun gujaraatee bolun chhun.", "english": "I speak a little Gujarati.", "alts": ["I speak some Gujarati"] },
+    { "id": "x-and-you", "type": "sentence", "gujarati": "અને તમે?", "translit": "ane tame?", "english": "And you?", "alts": ["What about you"] },
+    { "id": "x-dad-from-vadodara", "type": "sentence", "gujarati": "મારા પપ્પા વડોદરાના છે.", "translit": "maaraa pappaa vaDodaraanaa chhe.", "english": "My dad is from Vadodara.", "alts": ["My father is from Vadodara", "My dad is from Baroda", "My father is from Baroda"], "notes": "વડોદરાના, with the respectful plural for dad. Many people still call the city Baroda." },
+    { "id": "x-nice-to-meet", "type": "sentence", "gujarati": "તમને મળીને આનંદ થયો.", "translit": "tamne maLeene aanand thayo.", "english": "Nice to meet you.", "alts": ["It was nice to meet you", "Pleased to meet you", "I am glad to meet you"], "notes": "Literally \"meeting you, joy happened\". Learn it as a whole phrase." }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "s03",
+  "order": 3,
+  "title": "Signs for u, oo and o",
+  "goal": "Read ગુજરાત, ઘી, દૂધ and ફોન, and tell ઘ from ધ.",
+  "tip": "ુ (u) and ૂ (oo) hang under the letter, and ો (o) is ા with a stroke on top. Many letters come in pairs, plain and breathy: ગ ga and ઘ gha, બ ba and ભ bha. The breathy one has an h after it in the transliteration.",
+  "lessons": [
+    { "id": "s03-l1", "title": "ુ and ઉ", "items": ["l-u", "s-ku", "l-ga", "l-ba", "w-gujaraat", "w-gulaab", "w-bas"] },
+    { "id": "s03-l2", "title": "ૂ and ઊ", "items": ["l-oo", "s-koo", "l-kha", "l-gha", "w-khoob", "w-ghee", "w-ghar"] },
+    { "id": "s03-l3", "title": "ો and ઓ", "items": ["l-o", "s-ko", "l-dha", "l-tha", "w-doodh", "w-loko", "w-methee"] },
+    { "id": "s03-l4", "title": "ભ and ફ", "items": ["l-bha", "l-pha", "w-bhaakhree", "w-phool", "w-phon", "w-kheer"] },
+    { "id": "s03-l5", "title": "Lookalikes", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-u", "type": "letter", "gujarati": "ઉ", "translit": "u", "english": "", "notes": "Like the u in \"put\".", "confusables": ["l-oo"] },
+    { "id": "s-ku", "type": "letter", "gujarati": "કુ", "translit": "ku", "english": "", "notes": "ુ hangs under the letter.", "confusables": ["s-koo", "s-ki"] },
+    { "id": "l-ga", "type": "letter", "gujarati": "ગ", "translit": "ga", "english": "", "notes": "Like the g in \"go\".", "confusables": ["l-gha"] },
+    { "id": "l-ba", "type": "letter", "gujarati": "બ", "translit": "ba", "english": "", "notes": "Like the b in \"bat\".", "confusables": ["l-bha"] },
+    { "id": "w-gujaraat", "type": "word", "gujarati": "ગુજરાત", "translit": "gujaraat", "english": "Gujarat" },
+    { "id": "w-gulaab", "type": "word", "gujarati": "ગુલાબ", "translit": "gulaab", "english": "rose" },
+    { "id": "w-bas", "type": "word", "gujarati": "બસ", "translit": "bas", "english": "bus", "notes": "Also means \"that's enough\": બસ, બસ!" },
+
+    { "id": "l-oo", "type": "letter", "gujarati": "ઊ", "translit": "oo", "english": "", "notes": "Like the oo in \"moon\".", "confusables": ["l-u"] },
+    { "id": "s-koo", "type": "letter", "gujarati": "કૂ", "translit": "koo", "english": "", "notes": "The long sign ૂ has its tail turned the other way.", "confusables": ["s-ku"] },
+    { "id": "l-kha", "type": "letter", "gujarati": "ખ", "translit": "kha", "english": "", "notes": "k with a puff of air, like the k in \"kite\" said firmly.", "confusables": ["l-ka"] },
+    { "id": "l-gha", "type": "letter", "gujarati": "ઘ", "translit": "gha", "english": "", "notes": "g with a breath after it. Watch out: ઘ and ધ (dha) look alike.", "confusables": ["l-ga", "l-dha"] },
+    { "id": "w-khoob", "type": "word", "gujarati": "ખૂબ", "translit": "khoob", "english": "very much", "notes": "ખૂબ સરસ! = really lovely!" },
+    { "id": "w-ghee", "type": "word", "gujarati": "ઘી", "translit": "ghee", "english": "ghee (clarified butter)" },
+    { "id": "w-ghar", "type": "word", "gujarati": "ઘર", "translit": "ghar", "english": "house" },
+
+    { "id": "l-o", "type": "letter", "gujarati": "ઓ", "translit": "o", "english": "", "notes": "Like the o in \"go\". Built from આ with a stroke on top.", "confusables": ["l-au", "l-aa"] },
+    { "id": "s-ko", "type": "letter", "gujarati": "કો", "translit": "ko", "english": "", "notes": "ા plus one stroke on top makes o.", "confusables": ["s-kau", "s-kaa"] },
+    { "id": "l-dha", "type": "letter", "gujarati": "ધ", "translit": "dha", "english": "", "notes": "Soft d with a breath. Looks a lot like ઘ (gha): ધ has a loop on the left.", "confusables": ["l-da", "l-gha"] },
+    { "id": "l-tha", "type": "letter", "gujarati": "થ", "translit": "tha", "english": "", "notes": "Soft t with a puff of air. Not the th in \"the\".", "confusables": ["l-ta"] },
+    { "id": "w-doodh", "type": "word", "gujarati": "દૂધ", "translit": "doodh", "english": "milk" },
+    { "id": "w-loko", "type": "word", "gujarati": "લોકો", "translit": "loko", "english": "people" },
+    { "id": "w-methee", "type": "word", "gujarati": "મેથી", "translit": "methee", "english": "fenugreek (methi)", "notes": "As in મેથીનાં થેપલાં, the flatbread every Gujarati takes on a trip." },
+
+    { "id": "l-bha", "type": "letter", "gujarati": "ભ", "translit": "bha", "english": "", "notes": "b with a breath, as in ભાઈ (bhaai, brother).", "confusables": ["l-ba", "l-ma"] },
+    { "id": "l-pha", "type": "letter", "gujarati": "ફ", "translit": "pha", "english": "", "notes": "p with a puff. Many speakers say it like f, but the transliteration keeps ph.", "confusables": ["l-pa"] },
+    { "id": "w-bhaakhree", "type": "word", "gujarati": "ભાખરી", "translit": "bhaakhree", "english": "bhakhri (crisp flatbread)" },
+    { "id": "w-phool", "type": "word", "gujarati": "ફૂલ", "translit": "phool", "english": "flower" },
+    { "id": "w-phon", "type": "word", "gujarati": "ફોન", "translit": "phon", "english": "phone" },
+    { "id": "w-kheer", "type": "word", "gujarati": "ખીર", "translit": "kheer", "english": "rice pudding" }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "u26",
+  "order": 27,
+  "title": "Right now, and already",
+  "goal": "Say what's happening right now and what has already happened: she's cooking, he has gone out, have you ever been to Gujarat?",
+  "tip": "For \"is doing right now\", take the stem, add ઈ and then રહ્યો, રહી or રહ્યા + છે: હું ખાઈ રહ્યો છું. In everyday speech the plain present (હું ખાઉં છું) often does the same job. For \"has done\", put છે after the past: તે ગયો છે (he has gone), મેં ખાધું છે (I have eaten).",
+  "lessons": [
+    { "id": "u26-l1", "title": "I am doing", "items": ["w-rahyo", "w-rahee", "w-rahyaa", "x-i-am-eating", "x-mom-is-cooking", "x-what-are-you-doing"], "translit": "hint" },
+    { "id": "u26-l2", "title": "It's raining", "items": ["w-jovun", "w-raah", "x-raining-now", "x-children-playing", "x-watching-tv", "x-waiting-for-you"], "translit": "hide" },
+    { "id": "u26-l3", "title": "Has gone, has come", "items": ["w-bhaarat", "x-dad-has-gone-out", "x-guests-have-come", "x-mama-gone-to-india", "x-has-meera-come"], "translit": "hide" },
+    { "id": "u26-l4", "title": "Have you ever…?", "items": ["w-philm", "x-seen-this-film", "x-ever-been-to-gujarat", "x-have-you-eaten", "x-not-eaten-yet"], "translit": "hide" },
+    { "id": "u26-l5", "title": "Putting it together", "items": ["x-ba-gone-to-temple", "x-what-is-happening", "x-sister-on-phone", "x-london-many-years"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-rahyo", "type": "word", "gujarati": "રહ્યો", "translit": "rahyo", "english": "-ing (a man or boy)", "notes": "After a verb stem: હું વાંચી રહ્યો છું, I am reading." },
+    { "id": "w-rahee", "type": "word", "gujarati": "રહી", "translit": "rahee", "english": "-ing (a woman or girl)", "notes": "તે ગાઈ રહી છે, she is singing." },
+    { "id": "w-rahyaa", "type": "word", "gujarati": "રહ્યા", "translit": "rahyaa", "english": "-ing (plural, polite)", "notes": "With અમે, તમે, તેઓ and elders. For a mixed group or neuter plural, રહ્યાં." },
+    { "id": "x-i-am-eating", "type": "sentence", "gujarati": "હું ખાઈ રહ્યો છું.", "translit": "hun khaai rahyo chhun.", "english": "I am eating (a man speaking).", "alts": ["I am eating", "I'm eating"], "notes": "A woman says હું ખાઈ રહી છું." },
+    { "id": "x-mom-is-cooking", "type": "sentence", "gujarati": "મમ્મી ખાવાનું બનાવી રહી છે.", "translit": "mammee khaavaanun banaavee rahee chhe.", "english": "Mom is cooking.", "alts": ["Mom is making food", "Mom is making the food", "Mum is cooking"] },
+    { "id": "x-what-are-you-doing", "type": "sentence", "gujarati": "તમે શું કરી રહ્યા છો?", "translit": "tame shun karee rahyaa chho?", "english": "What are you doing?" },
+
+    { "id": "w-jovun", "type": "word", "gujarati": "જોવું", "translit": "jovun", "english": "to see, to watch" },
+    { "id": "w-raah", "type": "word", "gujarati": "રાહ", "translit": "raah", "english": "waiting", "notes": "રાહ જોવી, literally \"to watch the way\", is to wait for someone: તમારી રાહ જોઉં છું." },
+    { "id": "x-raining-now", "type": "sentence", "gujarati": "હમણાં વરસાદ પડી રહ્યો છે.", "translit": "hamNaan varsaad paDee rahyo chhe.", "english": "It is raining right now.", "alts": ["It's raining right now", "It is raining now", "It's raining now"] },
+    { "id": "x-children-playing", "type": "sentence", "gujarati": "બાળકો બહાર રમી રહ્યાં છે.", "translit": "baaLko bahaar ramee rahyaan chhe.", "english": "The children are playing outside.", "alts": ["Children are playing outside", "The kids are playing outside"], "notes": "રહ્યાં, because બાળકો is neuter plural." },
+    { "id": "x-watching-tv", "type": "sentence", "gujarati": "હું ટીવી જોઈ રહી છું.", "translit": "hun Teevee joi rahee chhun.", "english": "I am watching TV (a woman speaking).", "alts": ["I am watching TV", "I'm watching TV", "I am watching television"] },
+    { "id": "x-waiting-for-you", "type": "sentence", "gujarati": "હું તમારી રાહ જોઉં છું.", "translit": "hun tamaaree raah joun chhun.", "english": "I am waiting for you.", "alts": ["I'm waiting for you"], "notes": "Here the plain present means \"right now\", as it often does." },
+
+    { "id": "w-bhaarat", "type": "word", "gujarati": "ભારત", "translit": "bhaarat", "english": "India", "notes": "In the diaspora people often say દેશ, \"the country\", for India: દેશ જવું, to go back home." },
+    { "id": "x-dad-has-gone-out", "type": "sentence", "gujarati": "પપ્પા બહાર ગયા છે.", "translit": "pappaa bahaar gayaa chhe.", "english": "Dad has gone out.", "alts": ["Dad is out", "Dad went out"] },
+    { "id": "x-guests-have-come", "type": "sentence", "gujarati": "મહેમાન આવ્યા છે.", "translit": "mahemaan aavyaa chhe.", "english": "The guests have arrived.", "alts": ["The guests have come", "Guests have come", "Guests have arrived"] },
+    { "id": "x-mama-gone-to-india", "type": "sentence", "gujarati": "મામા ભારત ગયા છે.", "translit": "maamaa bhaarat gayaa chhe.", "english": "My uncle has gone to India.", "alts": ["Uncle has gone to India", "Mama has gone to India", "My uncle is in India"] },
+    { "id": "x-has-meera-come", "type": "sentence", "gujarati": "મીરા આવી છે?", "translit": "meeraa aavee chhe?", "english": "Has Meera come?", "alts": ["Has Meera arrived", "Is Meera here"] },
+
+    { "id": "w-philm", "type": "word", "gujarati": "ફિલ્મ", "translit": "philm", "english": "film, movie", "notes": "Feminine: સારી ફિલ્મ." },
+    { "id": "x-seen-this-film", "type": "sentence", "gujarati": "મેં આ ફિલ્મ જોઈ છે.", "translit": "men aa philm joi chhe.", "english": "I have seen this film.", "alts": ["I have seen this movie", "I've seen this film", "I've seen this movie"], "notes": "જોઈ agrees with ફિલ્મ, which is feminine." },
+    { "id": "x-ever-been-to-gujarat", "type": "sentence", "gujarati": "તમે ક્યારેય ગુજરાત ગયા છો?", "translit": "tame kyaarey gujaraat gayaa chho?", "english": "Have you ever been to Gujarat?", "alts": ["Have you ever gone to Gujarat"] },
+    { "id": "x-have-you-eaten", "type": "sentence", "gujarati": "તમે જમ્યા?", "translit": "tame jamyaa?", "english": "Have you eaten?", "alts": ["Did you eat", "Have you had your meal", "Did you have your meal"], "notes": "Asked as often as \"how are you?\", and meant just as kindly." },
+    { "id": "x-not-eaten-yet", "type": "sentence", "gujarati": "ના, હજી નથી જમ્યો.", "translit": "naa, hajee nathee jamyo.", "english": "No, I haven't eaten yet (a man speaking).", "alts": ["No, I haven't eaten yet", "No, I have not eaten yet", "No, not yet"], "notes": "The answer to તમે જમ્યા? A woman says ના, હજી નથી જમી. \"Haven't done\" is નથી + the past." },
+
+    { "id": "x-ba-gone-to-temple", "type": "sentence", "gujarati": "બા મંદિર ગયાં છે, હમણાં આવશે.", "translit": "baa mandir gayaan chhe, hamNaan aavshe.", "english": "Ba has gone to the temple, she'll be back soon.", "alts": ["Ba has gone to the temple and will be back soon", "Grandma has gone to the temple, she will come soon"] },
+    { "id": "x-what-is-happening", "type": "sentence", "gujarati": "શું થઈ રહ્યું છે?", "translit": "shun thai rahyun chhe?", "english": "What is happening?", "alts": ["What's happening", "What's going on", "What is going on"] },
+    { "id": "x-sister-on-phone", "type": "sentence", "gujarati": "મારી બહેન ફોન પર વાત કરી રહી છે.", "translit": "maaree bahen phon par vaat karee rahee chhe.", "english": "My sister is talking on the phone.", "alts": ["My sister is on the phone"] },
+    { "id": "x-london-many-years", "type": "sentence", "gujarati": "અમે ઘણાં વર્ષોથી લંડનમાં રહીએ છીએ.", "translit": "ame ghaNaan varshothee lanDanmaan rahiye chhiye.", "english": "We have lived in London for many years.", "alts": ["We have been living in London for many years"], "notes": "For something still going on, Gujarati uses the present + થી (since): \"we live in London since many years\"." }
+  ]
+}

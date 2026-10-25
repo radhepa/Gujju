@@ -1,0 +1,47 @@
+{
+  "id": "u28",
+  "order": 29,
+  "title": "Helper verbs",
+  "goal": "Sound natural with helper verbs: થઈ ગયું, ભૂલી ગયો, ખાઈ લો, આપી દો.",
+  "tip": "Gujarati often adds a second verb to say how something happens. જવું (go) means it's done, or it happened by itself: થઈ ગયું (it's done), ભૂલી ગયો (I forgot). લેવું (take) means for yourself: ખાઈ લો (go ahead and eat). દેવું (give) means for someone else, or all the way: આપી દો (give it to them), મૂકી દો (put it down).",
+  "lessons": [
+    { "id": "u28-l1", "title": "It got done", "items": ["w-bhoolvun", "w-moDun", "x-tea-is-ready", "x-food-gone-cold", "x-its-got-late", "x-i-forgot"], "translit": "hint" },
+    { "id": "u28-l2", "title": "Gone off, fallen asleep", "items": ["w-ooThvun", "x-bus-has-left", "x-ba-fell-asleep", "x-guests-have-left", "x-sit-down", "x-get-up-its-seven"], "translit": "hide" },
+    { "id": "u28-l3", "title": "For yourself: લેવું", "items": ["w-mookvun", "x-go-ahead-and-eat", "x-take-this", "x-ive-eaten", "x-ill-manage"], "translit": "hide" },
+    { "id": "u28-l4", "title": "For someone else: દેવું", "items": ["w-bandh", "w-chaalu", "x-give-it-to-him", "x-put-it-down", "x-just-tell-me", "x-switch-off-light"], "translit": "hide" },
+    { "id": "u28-l5", "title": "Putting it together", "items": ["x-lets-go-to-sleep", "x-lost-my-phone", "x-eat-it-all-up", "x-started-raining"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-bhoolvun", "type": "word", "gujarati": "ભૂલવું", "translit": "bhoolvun", "english": "to forget", "notes": "Almost always with જવું: હું ભૂલી ગયો, I forgot." },
+    { "id": "w-moDun", "type": "word", "gujarati": "મોડું", "translit": "moDun", "english": "late" },
+    { "id": "x-tea-is-ready", "type": "sentence", "gujarati": "ચા થઈ ગઈ.", "translit": "chaa thai gai.", "english": "The tea is ready.", "alts": ["Tea is ready", "The tea is done"], "notes": "Literally \"the tea has become\": done, ready to drink." },
+    { "id": "x-food-gone-cold", "type": "sentence", "gujarati": "ખાવાનું ઠંડું થઈ ગયું.", "translit": "khaavaanun ThanDun thai gayun.", "english": "The food has gone cold.", "alts": ["The food got cold", "The food has become cold"] },
+    { "id": "x-its-got-late", "type": "sentence", "gujarati": "મોડું થઈ ગયું.", "translit": "moDun thai gayun.", "english": "It's got late.", "alts": ["It has got late", "It's late", "It is late", "We're late"] },
+    { "id": "x-i-forgot", "type": "sentence", "gujarati": "હું ભૂલી ગયો.", "translit": "hun bhoolee gayo.", "english": "I forgot (a man speaking).", "alts": ["I forgot", "I have forgotten"], "notes": "A woman says હું ભૂલી ગઈ." },
+
+    { "id": "w-ooThvun", "type": "word", "gujarati": "ઊઠવું", "translit": "ooThvun", "english": "to get up" },
+    { "id": "x-bus-has-left", "type": "sentence", "gujarati": "બસ જતી રહી.", "translit": "bas jatee rahee.", "english": "The bus has left.", "alts": ["The bus left", "The bus has gone"], "notes": "જતું રહેવું, to go off: the -તું form + રહેવું." },
+    { "id": "x-ba-fell-asleep", "type": "sentence", "gujarati": "બા સૂઈ ગયાં.", "translit": "baa sooi gayaan.", "english": "Ba has fallen asleep.", "alts": ["Ba fell asleep", "Grandma has fallen asleep", "Grandma fell asleep"] },
+    { "id": "x-guests-have-left", "type": "sentence", "gujarati": "મહેમાન જતા રહ્યા.", "translit": "mahemaan jataa rahyaa.", "english": "The guests have left.", "alts": ["The guests left", "The guests have gone"] },
+    { "id": "x-sit-down", "type": "sentence", "gujarati": "બેસી જાઓ.", "translit": "besee jaao.", "english": "Sit down.", "alts": ["Please sit down", "Do sit down"] },
+    { "id": "x-get-up-its-seven", "type": "sentence", "gujarati": "ઊઠો, સાત વાગી ગયા!", "translit": "ooTho, saat vaagee gayaa!", "english": "Get up, it's seven already!", "alts": ["Get up, it's already seven", "Get up, it is seven already"] },
+
+    { "id": "w-mookvun", "type": "word", "gujarati": "મૂકવું", "translit": "mookvun", "english": "to put, to place" },
+    { "id": "x-go-ahead-and-eat", "type": "sentence", "gujarati": "ખાઈ લો.", "translit": "khaai lo.", "english": "Go ahead and eat.", "alts": ["Please eat", "Do eat", "Eat"] },
+    { "id": "x-take-this", "type": "sentence", "gujarati": "આ લઈ લો.", "translit": "aa lai lo.", "english": "Take this.", "alts": ["Have this", "Please take this"] },
+    { "id": "x-ive-eaten", "type": "sentence", "gujarati": "મેં ખાઈ લીધું.", "translit": "men khaai leedhun.", "english": "I've eaten.", "alts": ["I have eaten", "I ate", "I've already eaten"], "notes": "For a meal, people answer તમે જમ્યા? with the same verb: હા, જમી લીધું." },
+    { "id": "x-ill-manage", "type": "sentence", "gujarati": "હું કરી લઈશ.", "translit": "hun karee laish.", "english": "I'll manage it myself.", "alts": ["I'll do it myself", "I will do it myself", "I will manage", "I'll manage"] },
+
+    { "id": "w-bandh", "type": "word", "gujarati": "બંધ", "translit": "bandh", "english": "off, closed", "notes": "બંધ કરવું, to switch off or close. દુકાન બંધ છે, the shop is closed." },
+    { "id": "w-chaalu", "type": "word", "gujarati": "ચાલુ", "translit": "chaalu", "english": "on, running", "notes": "ચાલુ કરવું, to switch on." },
+    { "id": "x-give-it-to-him", "type": "sentence", "gujarati": "તેને આપી દો.", "translit": "tene aapee do.", "english": "Give it to him.", "alts": ["Give it to her", "Just give it to him", "Just give it to her"] },
+    { "id": "x-put-it-down", "type": "sentence", "gujarati": "નીચે મૂકી દો.", "translit": "neeche mookee do.", "english": "Put it down.", "alts": ["Put it down there", "Just put it down"] },
+    { "id": "x-just-tell-me", "type": "sentence", "gujarati": "મને કહી દો.", "translit": "mane kahee do.", "english": "Just tell me.", "alts": ["Tell me", "Tell me now"] },
+    { "id": "x-switch-off-light", "type": "sentence", "gujarati": "બત્તી બંધ કરી દો.", "translit": "battee bandh karee do.", "english": "Switch off the light.", "alts": ["Turn off the light", "Switch the light off", "Turn the light off"] },
+
+    { "id": "x-lets-go-to-sleep", "type": "sentence", "gujarati": "ચાલો, હવે સૂઈ જઈએ.", "translit": "chaalo, have sooi jaiye.", "english": "Come on, let's go to sleep now.", "alts": ["Come on, let's sleep now", "Okay, let's go to sleep now"] },
+    { "id": "x-lost-my-phone", "type": "sentence", "gujarati": "મારો ફોન ખોવાઈ ગયો.", "translit": "maaro phon khovaai gayo.", "english": "I've lost my phone.", "alts": ["My phone got lost", "I lost my phone", "My phone is lost"], "notes": "Gujarati says the phone got lost, not that you lost it." },
+    { "id": "x-eat-it-all-up", "type": "sentence", "gujarati": "બધું ખાઈ જા!", "translit": "badhun khaai jaa!", "english": "Eat it all up!", "alts": ["Eat everything!", "Finish it all!"] },
+    { "id": "x-started-raining", "type": "sentence", "gujarati": "વરસાદ શરૂ થઈ ગયો.", "translit": "varsaad sharoo thai gayo.", "english": "It has started raining.", "alts": ["It started raining", "The rain has started", "It's started raining"] }
+  ]
+}

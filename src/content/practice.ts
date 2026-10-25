@@ -14,13 +14,14 @@ import lOutAndAbout from '../../content/lexicon/out-and-about.json';
 import lConversations from '../../content/lexicon/conversations.json';
 import lBooks from '../../content/lexicon/books.json';
 import lBaseForms from '../../content/lexicon/base-forms.json';
+import lCourse from '../../content/lexicon/course.json';
 
 // Sentence practice collections, the built-in books and the word list that
 // glosses them. Each content file can be checked and edited on its own.
 
 export const collections = [cEveryday, cOutAndAbout, cConversations] as Collection[];
 export const builtInBooks = [bKesarMarket, bThirstyCrow, bNavratri, bLetterToBa] as Book[];
-export const lexicon = [...lEveryday, ...lOutAndAbout, ...lConversations, ...lBooks, ...lBaseForms] as LexEntry[];
+export const lexicon = [...lEveryday, ...lOutAndAbout, ...lConversations, ...lBooks, ...lBaseForms, ...lCourse] as LexEntry[];
 
 // Course words as dictionary entries, so a word taught in a lesson is
 // glossed everywhere else too.

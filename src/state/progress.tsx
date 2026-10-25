@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { course } from '../content/course';
 import { dayKey } from '../lib/dates';
-import { applyChanges, applySession, type SessionKind } from '../lib/progress';
+import { applyChanges, applySession, completedLessons, type SessionKind } from '../lib/progress';
 import type { Summary } from '../lib/session';
 import { dueCards } from '../lib/srs';
 import { computeStreak, type Streak } from '../lib/streak';
@@ -144,7 +144,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     return {
       ready,
       snapshot,
-      completed: new Set(snapshot.lessonProgress.map((p) => p.lessonId)),
+      completed: completedLessons(course, snapshot.lessonProgress.map((p) => p.lessonId)),
       streak: computeStreak(snapshot.dailyStats, today),
       xpToday: snapshot.dailyStats.find((s) => s.date === today)?.xp ?? 0,
       dueIds: dueCards(cards, now).map((c) => c.itemId),

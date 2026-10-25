@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { course } from '../content/course';
+import { course, SECTIONS } from '../content/course';
 import { grammarForUnit } from '../content/guides';
 import { isSentenceCard } from '../lib/cloze';
 import { isWriteCard } from '../lib/write';
@@ -13,6 +13,7 @@ import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
 import { Kesar } from '../mascot/Kesar';
 import { Screen } from '../ui/Screen';
+import { Rich } from '../ui/Rich';
 import { Gu, Text } from '../ui/Text';
 import { colors, shadow } from '../ui/theme';
 
@@ -94,16 +95,36 @@ export default function Home() {
       </View>
 
       {statuses.map((s) => (
-        <UnitCard
-          key={s.unit.id}
-          status={s}
-          expanded={isOpen(s)}
-          best={best}
-          completed={completed}
-          onToggle={() => setExpanded((e) => ({ ...e, [s.unit.id]: !isOpen(s) }))}
-        />
+        <View key={s.unit.id}>
+          <SectionHead unitId={s.unit.id} />
+          <UnitCard
+            status={s}
+            expanded={isOpen(s)}
+            best={best}
+            completed={completed}
+            onToggle={() => setExpanded((e) => ({ ...e, [s.unit.id]: !isOpen(s) }))}
+          />
+        </View>
       ))}
     </Screen>
+  );
+}
+
+// A heading where each stretch of the path begins.
+function SectionHead({ unitId }: { unitId: string }) {
+  const section = SECTIONS.find((x) => x.first === unitId);
+  if (!section) return null;
+  return (
+    <View style={styles.section}>
+      <View style={styles.sectionLevel}>
+        <Text weight="black" style={styles.sectionLevelText}>
+          {section.level}
+        </Text>
+      </View>
+      <Text weight="black" style={styles.sectionTitle}>
+        {section.title}
+      </Text>
+    </View>
   );
 }
 
@@ -195,6 +216,12 @@ function UnitCard({
 
       {expanded && (
         <View style={styles.unitBody}>
+          {unit.goal ? (
+            <View style={styles.goalRow}>
+              <Ionicons name="flag" size={15} color={colors.primaryDark} style={styles.goalIcon} />
+              <Rich text={unit.goal} style={styles.goalLine} />
+            </View>
+          ) : null}
           <Text style={styles.tip}>{unit.tip}</Text>
           {grammarForUnit(unit.id).length > 0 && (
             <View style={styles.grammarRow}>
@@ -344,6 +371,13 @@ const styles = StyleSheet.create({
   unitTitle: { color: '#fff', fontSize: 20 },
   unitCount: { color: '#fff', fontSize: 16 },
   unitBody: { padding: 12, gap: 4 },
+  section: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10, marginBottom: 10 },
+  sectionLevel: { backgroundColor: colors.primarySoft, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 2 },
+  sectionLevelText: { color: colors.primaryDark, fontSize: 13 },
+  sectionTitle: { fontSize: 18, color: colors.ink },
+  goalRow: { flexDirection: 'row', gap: 6, paddingHorizontal: 4, paddingBottom: 6 },
+  goalIcon: { marginTop: 3 },
+  goalLine: { flex: 1, fontSize: 15, color: colors.ink, lineHeight: 22 },
   tip: { fontSize: 14, color: colors.muted, lineHeight: 20, paddingHorizontal: 4, paddingBottom: 8 },
   lesson: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 8, borderRadius: 12 },
   lessonNext: { backgroundColor: colors.primarySoft },

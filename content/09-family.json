@@ -1,20 +1,22 @@
 {
   "id": "u08",
-  "order": 8,
+  "order": 9,
   "title": "People and family",
+  "goal": "Introduce your family and say who is older and who is younger.",
   "tip": "Gujarati has a separate word for almost every relative, depending on which side of the family they're on. Elders get the respectful plural: મારા દાદા, not મારો દાદા.",
   "lessons": [
-    { "id": "u08-l1", "title": "Parents and siblings", "items": ["w-mammee", "w-pappaa", "w-bhaai", "w-bahen", "w-parivaar"], "translit": "show" },
+    { "id": "u08-l1", "title": "Parents and siblings", "items": ["w-bhaai", "w-bahen", "w-baa", "w-parivaar", "x-this-my-mom", "x-dads-name"], "translit": "show" },
     { "id": "u08-l2", "title": "Grandparents", "items": ["w-daadaa", "w-daadee", "w-naanaa", "w-naanee", "x-my-grandfather"], "translit": "hint" },
     { "id": "u08-l3", "title": "Aunts, uncles, children", "items": ["w-kaakaa", "w-maamaa", "w-maasee", "w-phoee", "w-deekaro", "w-deekaree"], "translit": "hint" },
     { "id": "u08-l4", "title": "I, you, big, small", "items": ["w-hun", "w-tun", "w-tame", "w-te", "w-ame", "w-moTo", "w-naano", "x-brother-older", "x-sister-younger"], "translit": "hint" }
   ],
   "items": [
-    { "id": "w-mammee", "type": "word", "gujarati": "મમ્મી", "translit": "mammee", "english": "mom", "notes": "The more traditional word is મા (maa)." },
-    { "id": "w-pappaa", "type": "word", "gujarati": "પપ્પા", "translit": "pappaa", "english": "dad" },
     { "id": "w-bhaai", "type": "word", "gujarati": "ભાઈ", "translit": "bhaai", "english": "brother", "notes": "Also added after a man's name as a friendly title: રમેશભાઈ." },
     { "id": "w-bahen", "type": "word", "gujarati": "બહેન", "translit": "bahen", "english": "sister", "notes": "In speech it is usually said \"ben\". Also added after a woman's name: મીરાબહેન." },
     { "id": "w-parivaar", "type": "word", "gujarati": "પરિવાર", "translit": "parivaar", "english": "family" },
+    { "id": "w-baa", "type": "word", "gujarati": "બા", "translit": "baa", "english": "Ba (grandma, or mom in some families)", "notes": "In most families બા is grandma; in some it is what you call your mother." },
+    { "id": "x-this-my-mom", "type": "sentence", "gujarati": "આ મારી મમ્મી છે.", "translit": "aa maaree mammee chhe.", "english": "This is my mom.", "alts": ["This is my mother", "This is my mum"] },
+    { "id": "x-dads-name", "type": "sentence", "gujarati": "મારા પપ્પાનું નામ રમેશ છે.", "translit": "maaraa pappaanun naam ramesh chhe.", "english": "My dad's name is Ramesh.", "alts": ["My father's name is Ramesh"], "notes": "પપ્પા + નું = પપ્પાનું (dad's). It is મારા પપ્પા, not મારો, because elders take the respectful plural." },
 
     { "id": "w-daadaa", "type": "word", "gujarati": "દાદા", "translit": "daadaa", "english": "grandfather (dad's side)" },
     { "id": "w-daadee", "type": "word", "gujarati": "દાદી", "translit": "daadee", "english": "grandmother (dad's side)" },

@@ -1,0 +1,49 @@
+{
+  "id": "u19",
+  "order": 12,
+  "title": "Not and no",
+  "goal": "Say what isn't so, answer yes-or-no questions, and say what you don't do.",
+  "tip": "To say \"not\", put નથી where છે, છું, છો or છીએ would go. It is the same word for everyone: હું ઘરે નથી, તે ઘરે નથી, અમે ઘરે નથી. With other verbs, use the -તો form before or after નથી: હું ચા નથી પીતો (a man), હું ચા નથી પીતી (a woman).",
+  "lessons": [
+    { "id": "u19-l1", "title": "Is not", "items": ["w-nathee", "x-not-at-home", "x-not-my-house", "x-tea-not-hot", "x-dad-not-home"], "translit": "hint" },
+    { "id": "u19-l2", "title": "Yes or no?", "items": ["x-are-you-home", "x-yes-at-home", "x-no-not-home", "x-do-you-speak", "x-a-little"], "translit": "hide" },
+    { "id": "u19-l3", "title": "I don't…", "items": ["w-maans", "w-khaato", "w-peetee", "x-no-meat", "x-no-tea", "x-not-coming-today", "x-we-dont-go-there"], "translit": "hide" },
+    { "id": "u19-l4", "title": "Not yet, not now", "items": ["w-hajee", "w-hamNaan", "w-naheen", "x-never-mind", "x-not-yet", "x-not-now", "x-food-not-ready"], "translit": "hide" },
+    { "id": "u19-l5", "title": "Putting it together", "items": ["x-not-tea-water", "x-grandpa-no-tea", "x-dont-you-speak", "x-shop-not-big", "x-not-going-market"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-nathee", "type": "word", "gujarati": "નથી", "translit": "nathee", "english": "is not, am not, are not", "notes": "One word for every person: હું નથી, તમે નથી, અમે નથી. It replaces છે, so never say \"નથી છે\"." },
+    { "id": "x-not-at-home", "type": "sentence", "gujarati": "હું ઘરે નથી.", "translit": "hun ghare nathee.", "english": "I am not at home.", "alts": ["I'm not at home", "I am not home", "I'm not home"] },
+    { "id": "x-not-my-house", "type": "sentence", "gujarati": "આ મારું ઘર નથી.", "translit": "aa maarun ghar nathee.", "english": "This is not my house.", "alts": ["This isn't my house"] },
+    { "id": "x-tea-not-hot", "type": "sentence", "gujarati": "ચા ગરમ નથી.", "translit": "chaa garam nathee.", "english": "The tea is not hot.", "alts": ["The tea isn't hot", "Tea is not hot"] },
+    { "id": "x-dad-not-home", "type": "sentence", "gujarati": "પપ્પા ઘરે નથી.", "translit": "pappaa ghare nathee.", "english": "Dad is not at home.", "alts": ["Dad isn't at home", "Dad is not home", "Dad isn't home"] },
+
+    { "id": "x-are-you-home", "type": "sentence", "gujarati": "તમે ઘરે છો?", "translit": "tame ghare chho?", "english": "Are you at home?", "alts": ["Are you home"], "notes": "A yes-or-no question can be the plain sentence with a question in your voice." },
+    { "id": "x-yes-at-home", "type": "sentence", "gujarati": "હા, હું ઘરે છું.", "translit": "haa, hun ghare chhun.", "english": "Yes, I am at home.", "alts": ["Yes, I'm at home", "Yes, I am home", "Yes, I'm home"] },
+    { "id": "x-no-not-home", "type": "sentence", "gujarati": "ના, હું ઘરે નથી.", "translit": "naa, hun ghare nathee.", "english": "No, I am not at home.", "alts": ["No, I'm not at home", "No, I am not home", "No, I'm not home"] },
+    { "id": "x-do-you-speak", "type": "sentence", "gujarati": "શું તમે ગુજરાતી બોલો છો?", "translit": "shun tame gujaraatee bolo chho?", "english": "Do you speak Gujarati?", "notes": "At the start of a question, શું doesn't mean \"what\". It just says a yes-or-no question is coming." },
+    { "id": "x-a-little", "type": "sentence", "gujarati": "હા, થોડું થોડું.", "translit": "haa, thoDun thoDun.", "english": "Yes, a little.", "alts": ["Yes, a bit", "Yes, just a little"], "notes": "Saying થોડું twice softens it: \"a little bit\"." },
+
+    { "id": "w-maans", "type": "word", "gujarati": "માંસ", "translit": "maans", "english": "meat", "notes": "Many Gujarati families are vegetarian. In everyday talk people often say નોન-વેજ instead: હું નોન-વેજ નથી ખાતો." },
+    { "id": "w-khaato", "type": "word", "gujarati": "ખાતો", "translit": "khaato", "english": "eat (with નથી, a man)", "notes": "The -તો form: drop વું from ખાવું and add તો for a man, તી for a woman, તા for elders and groups." },
+    { "id": "w-peetee", "type": "word", "gujarati": "પીતી", "translit": "peetee", "english": "drink (with નથી, a woman)", "notes": "પીવું → પી + તી. A man says પીતો." },
+    { "id": "x-no-meat", "type": "sentence", "gujarati": "હું માંસ નથી ખાતો.", "translit": "hun maans nathee khaato.", "english": "I don't eat meat (a man speaking).", "alts": ["I don't eat meat", "I do not eat meat"], "notes": "A woman says હું માંસ નથી ખાતી." },
+    { "id": "x-no-tea", "type": "sentence", "gujarati": "હું ચા નથી પીતી.", "translit": "hun chaa nathee peetee.", "english": "I don't drink tea (a woman speaking).", "alts": ["I don't drink tea", "I do not drink tea"], "notes": "A man says હું ચા નથી પીતો." },
+    { "id": "x-not-coming-today", "type": "sentence", "gujarati": "તે આજે નથી આવતો.", "translit": "te aaje nathee aavto.", "english": "He isn't coming today.", "alts": ["He is not coming today", "He does not come today"] },
+    { "id": "x-we-dont-go-there", "type": "sentence", "gujarati": "અમે ત્યાં નથી જતા.", "translit": "ame tyaan nathee jataa.", "english": "We don't go there.", "alts": ["We do not go there", "We aren't going there", "We are not going there"] },
+
+    { "id": "w-hajee", "type": "word", "gujarati": "હજી", "translit": "hajee", "english": "still, yet", "notes": "Many people say and write હજુ. Both are fine." },
+    { "id": "w-hamNaan", "type": "word", "gujarati": "હમણાં", "translit": "hamNaan", "english": "right now, just now; soon", "notes": "હમણાં આવશે = will be here soon." },
+    { "id": "w-naheen", "type": "word", "gujarati": "નહીં", "translit": "naheen", "english": "not, no", "notes": "નહીં stands on its own (હજી નહીં, not yet) and is used with the future. નથી goes with is, am and are." },
+    { "id": "x-never-mind", "type": "sentence", "gujarati": "કંઈ નહીં.", "translit": "kain naheen.", "english": "Never mind.", "alts": ["It is nothing", "No problem"], "notes": "What you say when someone apologises: \"no problem, it's nothing\"." },
+    { "id": "x-not-yet", "type": "sentence", "gujarati": "હજી નહીં.", "translit": "hajee naheen.", "english": "Not yet." },
+    { "id": "x-not-now", "type": "sentence", "gujarati": "હમણાં નહીં.", "translit": "hamNaan naheen.", "english": "Not now.", "alts": ["Not right now"] },
+    { "id": "x-food-not-ready", "type": "sentence", "gujarati": "ખાવાનું હજી તૈયાર નથી.", "translit": "khaavaanun hajee taiyaar nathee.", "english": "The food isn't ready yet.", "alts": ["The food is not ready yet", "Food isn't ready yet"] },
+
+    { "id": "x-not-tea-water", "type": "sentence", "gujarati": "ના, આ ચા નથી, આ પાણી છે.", "translit": "naa, aa chaa nathee, aa paaNee chhe.", "english": "No, this isn't tea, it's water.", "alts": ["No this is not tea this is water", "No, this isn't tea, this is water"] },
+    { "id": "x-grandpa-no-tea", "type": "sentence", "gujarati": "દાદા ચા નથી પીતા.", "translit": "daadaa chaa nathee peetaa.", "english": "Grandpa doesn't drink tea.", "alts": ["Grandpa does not drink tea", "Grandfather doesn't drink tea"], "notes": "પીતા, not પીતો: elders take the respectful plural." },
+    { "id": "x-dont-you-speak", "type": "sentence", "gujarati": "તમે ગુજરાતી નથી બોલતા?", "translit": "tame gujaraatee nathee boltaa?", "english": "Don't you speak Gujarati?", "alts": ["You don't speak Gujarati"] },
+    { "id": "x-shop-not-big", "type": "sentence", "gujarati": "આ દુકાન મોટી નથી.", "translit": "aa dukaan moTee nathee.", "english": "This shop isn't big.", "alts": ["This shop is not big", "The shop isn't big"], "notes": "મોટી, because દુકાન is feminine." },
+    { "id": "x-not-going-market", "type": "sentence", "gujarati": "આજે હું બજાર નથી જતી.", "translit": "aaje hun bajaar nathee jatee.", "english": "I'm not going to the market today (a woman speaking).", "alts": ["I am not going to the market today", "Today I am not going to the market", "I'm not going to the market today"] }
+  ]
+}

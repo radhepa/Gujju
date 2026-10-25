@@ -1,12 +1,13 @@
 {
   "id": "u07",
-  "order": 7,
+  "order": 8,
   "title": "Greetings",
+  "goal": "Greet people, say thank you and sorry, and ask someone's name.",
   "tip": "From here on every word is in Gujarati script. The transliteration starts out visible and slowly fades, so lean on your reading.",
   "lessons": [
     { "id": "u07-l1", "title": "Hello and goodbye", "items": ["w-namaste", "w-kem-chho", "w-majaamaan", "w-aavjo", "w-jay-shree-krishna"], "translit": "show" },
     { "id": "u07-l2", "title": "Yes, no, thanks", "items": ["w-aabhaar", "w-haa", "w-naa", "w-maaf-karjo", "w-saarun", "w-chaalo"], "translit": "show" },
-    { "id": "u07-l3", "title": "What's your name?", "items": ["w-naam", "w-shun", "w-maarun", "w-tamaarun", "w-chhe", "x-your-name", "x-my-name"], "translit": "show" },
+    { "id": "u07-l3", "title": "What's your name?", "items": ["w-shun", "w-maarun", "w-tamaarun", "w-chhe", "x-your-name", "x-my-name"], "translit": "show" },
     { "id": "u07-l4", "title": "A first conversation", "items": ["x-how-are-you", "x-i-am-fine", "x-thanks-bye", "x-yes-okay"], "translit": "hint" }
   ],
   "items": [
@@ -23,7 +24,6 @@
     { "id": "w-saarun", "type": "word", "gujarati": "સારું", "translit": "saarun", "english": "okay, good" },
     { "id": "w-chaalo", "type": "word", "gujarati": "ચાલો", "translit": "chaalo", "english": "let's go", "notes": "Also used to wrap up a chat: ચાલો, આવજો! (okay then, bye!)" },
 
-    { "id": "w-naam", "type": "word", "gujarati": "નામ", "translit": "naam", "english": "name" },
     { "id": "w-shun", "type": "word", "gujarati": "શું", "translit": "shun", "english": "what" },
     { "id": "w-maarun", "type": "word", "gujarati": "મારું", "translit": "maarun", "english": "my" },
     { "id": "w-tamaarun", "type": "word", "gujarati": "તમારું", "translit": "tamaarun", "english": "your (polite)" },

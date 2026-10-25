@@ -1,5 +1,6 @@
 import { Rating } from 'ts-fsrs';
 import { splitAksharas } from '../lib/aksharas';
+import { course } from '../content/course';
 import { currentLevel, stages } from '../lib/level';
 import { makeRng } from '../lib/rng';
 import { review, scheduler } from '../lib/srs';
@@ -53,21 +54,21 @@ describe('writing practice', () => {
 });
 
 describe('level', () => {
-  const units = (n: number) => new Set(Array.from({ length: n }, (_, i) => `u${String(i + 1).padStart(2, '0')}`));
+  const units = (n: number) => new Set(course.units.slice(0, n).map((u) => u.id));
 
   it('is Pre-A1 with nothing done', () => {
     expect(currentLevel({ unitsDone: new Set(), practiceSeen: new Map(), watched: 0 }).reached).toBe('Pre-A1');
   });
 
-  it('reaches A1 after units 1 to 10 and half of Everyday', () => {
-    const r = currentLevel({ unitsDone: units(10), practiceSeen: new Map([['everyday', 0.6]]), watched: 0 });
+  it('reaches A1 after units 1 to 15 and half of Everyday', () => {
+    const r = currentLevel({ unitsDone: units(15), practiceSeen: new Map([['everyday', 0.6]]), watched: 0 });
     expect(r.reached).toBe('A1');
     expect(r.next?.code).toBe('A2');
   });
 
   it('needs every stage in order', () => {
     // A2 work done but A1's collection skipped: still Pre-A1.
-    const r = currentLevel({ unitsDone: units(18), practiceSeen: new Map([['out-and-about', 1]]), watched: 5 });
+    const r = currentLevel({ unitsDone: units(26), practiceSeen: new Map([['out-and-about', 1]]), watched: 5 });
     expect(r.reached).toBe('Pre-A1');
   });
 
@@ -80,7 +81,7 @@ describe('level', () => {
       ['book:thirsty-crow', 1],
       ['book:letter-to-ba', 1],
     ]);
-    expect(currentLevel({ unitsDone: units(18), practiceSeen: seen, watched: 3 }).reached).toBe('B1');
-    expect(stages({ unitsDone: units(18), practiceSeen: seen, watched: 3 }).every((s) => s.milestones.every((m) => m.done))).toBe(true);
+    expect(currentLevel({ unitsDone: units(course.units.length), practiceSeen: seen, watched: 3 }).reached).toBe('B1');
+    expect(stages({ unitsDone: units(course.units.length), practiceSeen: seen, watched: 3 }).every((s) => s.milestones.every((m) => m.done))).toBe(true);
   });
 });

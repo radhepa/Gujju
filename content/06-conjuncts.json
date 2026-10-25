@@ -1,12 +1,14 @@
 {
   "id": "u05",
-  "order": 5,
+  "order": 6,
   "title": "Joined letters",
+  "goal": "Read joined letters like ક્યાં, શ્રી, પરીક્ષા and લસ્સી.",
   "tip": "The halant (્) removes a consonant's built-in a, so it can join onto the next letter. ક્ + ય = ક્ય (kya). Some joins get their own shape, like ક્ષ and જ્ઞ.",
   "lessons": [
     { "id": "u05-l1", "title": "The halant", "items": ["s-k-halant", "w-kyaan", "w-tyaan", "w-kyaare", "w-skool"] },
-    { "id": "u05-l2", "title": "ક્ષ and જ્ઞ", "items": ["l-ksha", "l-gna", "w-kshamaa", "w-shikshak", "w-gnaan"] },
-    { "id": "u05-l3", "title": "Common joins", "items": ["w-mitra", "w-prem", "w-shree", "w-dharm", "w-rasto", "w-angrejee"] }
+    { "id": "u05-l2", "title": "ક્ષ and જ્ઞ", "items": ["l-ksha", "l-gna", "w-pareekshaa", "w-shikshak", "w-gnaan"] },
+    { "id": "u05-l3", "title": "Common joins", "items": ["w-mitra", "w-prem", "w-shree", "w-dharm", "w-rasto", "w-angrejee"] },
+    { "id": "u05-l4", "title": "Double letters", "items": ["w-lassee", "w-kachchh", "w-gusso", "w-gappaan", "w-pappaa", "w-mammee"] }
   ],
   "items": [
     { "id": "s-k-halant", "type": "letter", "gujarati": "ક્", "translit": "k", "english": "", "notes": "With the halant underneath, ક is just k, no vowel.", "confusables": ["l-ka"] },
@@ -17,7 +19,7 @@
 
     { "id": "l-ksha", "type": "letter", "gujarati": "ક્ષ", "translit": "ksha", "english": "", "notes": "ક્ + ષ, but written as its own shape.", "confusables": ["l-gna"] },
     { "id": "l-gna", "type": "letter", "gujarati": "જ્ઞ", "translit": "gna", "english": "", "notes": "Built from જ્ + ઞ, but Gujarati speakers say it \"gna\".", "confusables": ["l-ksha"] },
-    { "id": "w-kshamaa", "type": "word", "gujarati": "ક્ષમા", "translit": "kshamaa", "english": "forgiveness" },
+    { "id": "w-pareekshaa", "type": "word", "gujarati": "પરીક્ષા", "translit": "pareekshaa", "english": "exam" },
     { "id": "w-shikshak", "type": "word", "gujarati": "શિક્ષક", "translit": "shikshak", "english": "teacher" },
     { "id": "w-gnaan", "type": "word", "gujarati": "જ્ઞાન", "translit": "gnaan", "english": "knowledge" },
 
@@ -26,6 +28,13 @@
     { "id": "w-shree", "type": "word", "gujarati": "શ્રી", "translit": "shree", "english": "Mr. (respectful title)", "notes": "શ્ર is શ + ર and has its own shape." },
     { "id": "w-dharm", "type": "word", "gujarati": "ધર્મ", "translit": "dharm", "english": "religion, duty", "notes": "A ર before another consonant becomes the little hook on top of it." },
     { "id": "w-rasto", "type": "word", "gujarati": "રસ્તો", "translit": "rasto", "english": "road" },
-    { "id": "w-angrejee", "type": "word", "gujarati": "અંગ્રેજી", "translit": "angrejee", "english": "English (language)" }
+    { "id": "w-angrejee", "type": "word", "gujarati": "અંગ્રેજી", "translit": "angrejee", "english": "English (language)" },
+
+    { "id": "w-lassee", "type": "word", "gujarati": "લસ્સી", "translit": "lassee", "english": "lassi", "notes": "સ્ + સ: a doubled letter is held a little longer, lassee, not lasee." },
+    { "id": "w-kachchh", "type": "word", "gujarati": "કચ્છ", "translit": "kachchh", "english": "Kutch", "notes": "The region of salt flats in the north-west of Gujarat. ચ્ + છ join the plain and the breathy ch." },
+    { "id": "w-gusso", "type": "word", "gujarati": "ગુસ્સો", "translit": "gusso", "english": "anger" },
+    { "id": "w-gappaan", "type": "word", "gujarati": "ગપ્પાં", "translit": "gappaan", "english": "chit-chat", "notes": "ગપ્પાં મારવાં = to chat, to gossip, or to spin tall tales." },
+    { "id": "w-mammee", "type": "word", "gujarati": "મમ્મી", "translit": "mammee", "english": "mom", "notes": "મ્ + મ, held long: mammee. The more traditional word is મા." },
+    { "id": "w-pappaa", "type": "word", "gujarati": "પપ્પા", "translit": "pappaa", "english": "dad", "notes": "પ્ + પ: pappaa." }
   ]
 }

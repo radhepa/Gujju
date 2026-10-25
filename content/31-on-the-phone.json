@@ -1,0 +1,47 @@
+{
+  "id": "u30",
+  "order": 31,
+  "title": "On the phone with home",
+  "goal": "Hold a phone call with family: say who's calling, ask after everyone, share news and say goodbye.",
+  "tip": "Calls home run on set phrases. Say who's calling with બોલું છું (હું પ્રિયા બોલું છું), and wind up with ચાલો, મૂકું? (shall I hang up?). The gentle -જો commands are everywhere: ફોન કરજો, ધ્યાન રાખજો. To a friend or a younger person the -જે form is warmer: ધ્યાન રાખજે.",
+  "lessons": [
+    { "id": "u30-l1", "title": "Hello, who's this?", "items": ["w-halo", "w-avaaj", "x-who-is-speaking", "x-priya-speaking", "x-can-you-hear-me", "x-cant-hear-you"], "translit": "hint" },
+    { "id": "u30-l2", "title": "How is everyone?", "items": ["w-tabiyat", "x-hows-your-health", "x-whats-new", "x-all-well-here", "x-grandpa-better"], "translit": "hide" },
+    { "id": "u30-l3", "title": "Any news?", "items": ["w-samaachaar", "w-maLvun", "x-good-news", "x-got-a-job", "x-coming-in-december", "x-is-it-hot-there"], "translit": "hide" },
+    { "id": "u30-l4", "title": "Take care", "items": ["w-dhyaan", "w-saachavvun", "x-take-care", "x-look-after-yourself", "x-call-again", "x-jsk-to-everyone"], "translit": "hide" },
+    { "id": "u30-l5", "title": "Shall I hang up?", "items": ["x-shall-i-hang-up", "x-talk-later", "x-miss-you-ba", "x-when-are-you-coming"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-halo", "type": "word", "gujarati": "હલો", "translit": "halo", "english": "hello (on the phone)" },
+    { "id": "w-avaaj", "type": "word", "gujarati": "અવાજ", "translit": "avaaj", "english": "voice, sound" },
+    { "id": "x-who-is-speaking", "type": "sentence", "gujarati": "કોણ બોલો છો?", "translit": "koN bolo chho?", "english": "Who is speaking?", "alts": ["Who's speaking", "Who is this", "Who's this"], "notes": "The polite way to ask who's calling." },
+    { "id": "x-priya-speaking", "type": "sentence", "gujarati": "હું પ્રિયા બોલું છું.", "translit": "hun priyaa bolun chhun.", "english": "It's me, Priya.", "alts": ["This is Priya speaking", "It's Priya", "This is Priya", "It's Priya speaking"], "notes": "Literally \"I, Priya, am speaking\"." },
+    { "id": "x-can-you-hear-me", "type": "sentence", "gujarati": "સંભળાય છે?", "translit": "sambhLaay chhe?", "english": "Can you hear me?", "alts": ["Can you hear", "Can you hear me okay"], "notes": "Literally \"is it heard?\"" },
+    { "id": "x-cant-hear-you", "type": "sentence", "gujarati": "અવાજ નથી આવતો.", "translit": "avaaj nathee aavto.", "english": "I can't hear you.", "alts": ["I cannot hear you", "I can't hear anything"], "notes": "Literally \"the voice isn't coming\"." },
+
+    { "id": "w-tabiyat", "type": "word", "gujarati": "તબિયત", "translit": "tabiyat", "english": "health", "notes": "Feminine: તબિયત સારી છે." },
+    { "id": "x-hows-your-health", "type": "sentence", "gujarati": "તબિયત કેવી છે?", "translit": "tabiyat kevee chhe?", "english": "How is your health?", "alts": ["How's your health", "How are you keeping"], "notes": "The question for any elder, every call." },
+    { "id": "x-whats-new", "type": "sentence", "gujarati": "શું ચાલે છે?", "translit": "shun chaale chhe?", "english": "What's going on?", "alts": ["What's new", "What is going on", "How are things"] },
+    { "id": "x-all-well-here", "type": "sentence", "gujarati": "અહીં બધા મજામાં છે.", "translit": "aheen badhaa majaamaan chhe.", "english": "Everyone's well here.", "alts": ["Everyone is well here", "Everyone is fine here", "Everybody is fine here"] },
+    { "id": "x-grandpa-better", "type": "sentence", "gujarati": "દાદાની તબિયત હવે સારી છે.", "translit": "daadaanee tabiyat have saaree chhe.", "english": "Grandpa's health is better now.", "alts": ["Grandpa is better now", "Grandfather's health is better now"] },
+
+    { "id": "w-samaachaar", "type": "word", "gujarati": "સમાચાર", "translit": "samaachaar", "english": "news", "notes": "Treated as plural: સારા સમાચાર, good news." },
+    { "id": "w-maLvun", "type": "word", "gujarati": "મળવું", "translit": "maLvun", "english": "to meet; to get", "notes": "To get something, the person takes ને: મને નોકરી મળી, I got a job." },
+    { "id": "x-good-news", "type": "sentence", "gujarati": "એક સારા સમાચાર છે!", "translit": "ek saaraa samaachaar chhe!", "english": "I have some good news!", "alts": ["There is some good news!", "There's good news!"] },
+    { "id": "x-got-a-job", "type": "sentence", "gujarati": "મને નોકરી મળી ગઈ.", "translit": "mane nokree maLee gai.", "english": "I got a job.", "alts": ["I have got a job", "I've got a job", "I found a job"] },
+    { "id": "x-coming-in-december", "type": "sentence", "gujarati": "અમે ડિસેમ્બરમાં ભારત આવીએ છીએ.", "translit": "ame Disembarmaan bhaarat aaviye chhiye.", "english": "We're coming to India in December.", "alts": ["We are coming to India in December"], "notes": "A plan that's fixed can go in the present, as in English." },
+    { "id": "x-is-it-hot-there", "type": "sentence", "gujarati": "ત્યાં ગરમી છે?", "translit": "tyaan garmee chhe?", "english": "Is it hot there?", "alts": ["Is it hot over there"] },
+
+    { "id": "w-dhyaan", "type": "word", "gujarati": "ધ્યાન", "translit": "dhyaan", "english": "care, attention", "notes": "ધ્યાન રાખવું, to take care of. ધ્યાન આપવું, to pay attention." },
+    { "id": "w-saachavvun", "type": "word", "gujarati": "સાચવવું", "translit": "saachavvun", "english": "to look after, to keep safe" },
+    { "id": "x-take-care", "type": "sentence", "gujarati": "ધ્યાન રાખજો.", "translit": "dhyaan raakhjo.", "english": "Take care.", "alts": ["Take care of yourself", "Look after yourself"] },
+    { "id": "x-look-after-yourself", "type": "sentence", "gujarati": "તબિયત સાચવજે.", "translit": "tabiyat saachavje.", "english": "Look after your health.", "alts": ["Take care of your health", "Look after yourself"], "notes": "The -જે form, for someone you call તું." },
+    { "id": "x-call-again", "type": "sentence", "gujarati": "ફરી ફોન કરજો.", "translit": "pharee phon karjo.", "english": "Call again.", "alts": ["Do call again", "Please call again"] },
+    { "id": "x-jsk-to-everyone", "type": "sentence", "gujarati": "બધાંને જય શ્રી કૃષ્ણ કહેજો.", "translit": "badhaanne jay shree krushNa kahejo.", "english": "Say Jay Shree Krishna to everyone.", "alts": ["Say Jai Shree Krishna to everyone", "Give everyone my Jay Shree Krishna"] },
+
+    { "id": "x-shall-i-hang-up", "type": "sentence", "gujarati": "ચાલો, મૂકું?", "translit": "chaalo, mookun?", "english": "Okay, shall I hang up?", "alts": ["Okay, shall I put the phone down", "Right, shall I hang up"], "notes": "The classic Gujarati end to a call. મૂકું, shall I put (the phone) down?" },
+    { "id": "x-talk-later", "type": "sentence", "gujarati": "હા, પછી વાત કરીએ.", "translit": "haa, pachhee vaat kariye.", "english": "Yes, let's talk later.", "alts": ["Yes, we'll talk later", "Yes, talk to you later"] },
+    { "id": "x-miss-you-ba", "type": "sentence", "gujarati": "બા, મને તમારી બહુ યાદ આવે છે.", "translit": "baa, mane tamaaree bahu yaad aave chhe.", "english": "Ba, I miss you a lot.", "alts": ["Ba, I miss you so much", "Grandma, I miss you a lot"], "notes": "Literally \"your memory comes to me a lot\"." },
+    { "id": "x-when-are-you-coming", "type": "sentence", "gujarati": "તમે ક્યારે આવો છો?", "translit": "tame kyaare aavo chho?", "english": "When are you coming?", "alts": ["When are you coming here"] }
+  ]
+}

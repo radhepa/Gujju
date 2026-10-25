@@ -1,0 +1,48 @@
+{
+  "id": "u31",
+  "order": 32,
+  "title": "Festivals and visits",
+  "goal": "Greet people at Diwali, the New Year, Uttarayan and Navratri, and handle a family visit gracefully.",
+  "tip": "The Gujarati New Year is બેસતું વર્ષ, the day after Diwali, and the greeting is સાલ મુબારક or, more formally, નૂતન વર્ષાભિનંદન. When you visit, you touch elders' feet (પગે લાગવું) and they bless you. Sweets come with the line મોં મીઠું કરો, \"sweeten your mouth\".",
+  "lessons": [
+    { "id": "u31-l1", "title": "Diwali and the New Year", "items": ["w-divaaLee", "w-besatun-varsh", "w-saal-mubaarak", "w-nootan-varshaabhinandan", "x-happy-diwali", "x-new-year-tomorrow"], "translit": "hint" },
+    { "id": "u31-l2", "title": "Kites and garba", "items": ["w-uttaraayaN", "w-patang", "w-garbaa", "w-navraatri", "x-kite-cut", "x-lets-go-for-garba"], "translit": "hide" },
+    { "id": "u31-l3", "title": "Blessings", "items": ["w-aasheervaad", "w-page-laagvun", "x-ba-i-touch-your-feet", "x-be-happy", "x-live-to-a-hundred"], "translit": "hide" },
+    { "id": "u31-l4", "title": "Sweets and gifts", "items": ["w-bheT", "w-prasaad", "w-jaroor", "x-have-a-sweet", "x-gift-for-you", "x-take-prasad", "x-you-shouldnt-have"], "translit": "hide" },
+    { "id": "u31-l5", "title": "Putting it together", "items": ["x-diwali-lamps-rangoli", "x-navratri-nine-nights", "x-uttarayan-rooftops", "x-be-sure-to-come-again"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-divaaLee", "type": "word", "gujarati": "દિવાળી", "translit": "divaaLee", "english": "Diwali" },
+    { "id": "w-besatun-varsh", "type": "word", "gujarati": "બેસતું વર્ષ", "translit": "bestun varsh", "english": "New Year's Day (after Diwali)", "notes": "Literally \"the year that sets in\", as in ચોમાસું બેઠું (the monsoon has set in): the first day of the Gujarati year." },
+    { "id": "w-saal-mubaarak", "type": "word", "gujarati": "સાલ મુબારક", "translit": "saal mubaarak", "english": "Happy New Year", "notes": "The everyday New Year greeting, said all through the first days after Diwali." },
+    { "id": "w-nootan-varshaabhinandan", "type": "word", "gujarati": "નૂતન વર્ષાભિનંદન", "translit": "nootan varshaabhinandan", "english": "New Year greetings (formal)", "notes": "The formal version, for cards and messages." },
+    { "id": "x-happy-diwali", "type": "sentence", "gujarati": "દિવાળીની શુભેચ્છા!", "translit": "divaaLeenee shubhechchhaa!", "english": "Happy Diwali!", "alts": ["Diwali greetings!", "Best wishes for Diwali!"], "notes": "Literally \"Diwali's good wishes\"." },
+    { "id": "x-new-year-tomorrow", "type": "sentence", "gujarati": "કાલે બેસતું વર્ષ છે.", "translit": "kaale bestun varsh chhe.", "english": "Tomorrow is New Year's Day.", "alts": ["Tomorrow is the New Year", "New Year is tomorrow"] },
+
+    { "id": "w-uttaraayaN", "type": "word", "gujarati": "ઉત્તરાયણ", "translit": "uttaraayaN", "english": "Uttarayan (kite festival)", "notes": "Every January 14th, when the whole of Gujarat goes up on the roof to fly kites." },
+    { "id": "w-patang", "type": "word", "gujarati": "પતંગ", "translit": "patang", "english": "kite" },
+    { "id": "w-garbaa", "type": "word", "gujarati": "ગરબા", "translit": "garbaa", "english": "garba (circle dance)" },
+    { "id": "w-navraatri", "type": "word", "gujarati": "નવરાત્રિ", "translit": "navraatri", "english": "Navratri", "notes": "Nine nights of garba in honour of the goddess." },
+    { "id": "x-kite-cut", "type": "sentence", "gujarati": "કાપ્યો છે!", "translit": "kaapyo chhe!", "english": "I've cut it!", "alts": ["Cut it!", "I cut it!", "Got it!"], "notes": "The shout from the roof when your kite cuts someone else's string. It gave the film Kai Po Che! its name." },
+    { "id": "x-lets-go-for-garba", "type": "sentence", "gujarati": "ચાલો, ગરબા રમવા જઈએ!", "translit": "chaalo, garbaa ramvaa jaiye!", "english": "Come on, let's go and dance garba!", "alts": ["Come on, let's go for garba!", "Let's go and play garba!"] },
+
+    { "id": "w-aasheervaad", "type": "word", "gujarati": "આશીર્વાદ", "translit": "aasheervaad", "english": "blessing(s)" },
+    { "id": "w-page-laagvun", "type": "word", "gujarati": "પગે લાગવું", "translit": "page laagvun", "english": "to touch an elder's feet", "notes": "The respectful greeting to grandparents and elders, especially at festivals." },
+    { "id": "x-ba-i-touch-your-feet", "type": "sentence", "gujarati": "બા, પગે લાગું.", "translit": "baa, page laagun.", "english": "Ba, I touch your feet.", "alts": ["Ba, I bow to you", "Grandma, I touch your feet"], "notes": "What you say as you bend down. Ba will usually answer with a blessing." },
+    { "id": "x-be-happy", "type": "sentence", "gujarati": "સુખી રહો.", "translit": "sukhee raho.", "english": "Be happy.", "alts": ["Stay happy", "May you be happy"], "notes": "A blessing from an elder." },
+    { "id": "x-live-to-a-hundred", "type": "sentence", "gujarati": "સો વર્ષના થાઓ!", "translit": "so varshnaa thaao!", "english": "May you live to be a hundred!", "alts": ["May you live a hundred years!", "Live to be a hundred!"], "notes": "The classic birthday blessing." },
+
+    { "id": "w-bheT", "type": "word", "gujarati": "ભેટ", "translit": "bheT", "english": "gift, present" },
+    { "id": "w-prasaad", "type": "word", "gujarati": "પ્રસાદ", "translit": "prasaad", "english": "prasad (blessed food)" },
+    { "id": "w-jaroor", "type": "word", "gujarati": "જરૂર", "translit": "jaroor", "english": "need; definitely", "notes": "શું જરૂર છે? what's the need? But જરૂર આવજો means do come, definitely." },
+    { "id": "x-have-a-sweet", "type": "sentence", "gujarati": "મોં મીઠું કરો.", "translit": "mon meeThun karo.", "english": "Have a sweet.", "alts": ["Sweeten your mouth", "Have something sweet"], "notes": "Literally \"sweeten your mouth\", said when sharing sweets for good news or a festival." },
+    { "id": "x-gift-for-you", "type": "sentence", "gujarati": "આ ભેટ તમારા માટે છે.", "translit": "aa bheT tamaaraa maaTe chhe.", "english": "This gift is for you.", "alts": ["This present is for you"] },
+    { "id": "x-take-prasad", "type": "sentence", "gujarati": "પ્રસાદ લો.", "translit": "prasaad lo.", "english": "Take some prasad.", "alts": ["Have some prasad", "Please take prasad"] },
+    { "id": "x-you-shouldnt-have", "type": "sentence", "gujarati": "આની શું જરૂર હતી?", "translit": "aanee shun jaroor hatee?", "english": "What was the need for this?", "alts": ["Why did you bother", "Why did you go to the trouble"], "notes": "What everyone says on being handed a gift, the way English says \"you shouldn't have!\"" },
+
+    { "id": "x-diwali-lamps-rangoli", "type": "sentence", "gujarati": "દિવાળીમાં અમે દીવા કરીએ છીએ અને રંગોળી પૂરીએ છીએ.", "translit": "divaaLeemaan ame deevaa kariye chhiye ane rangoLee pooriye chhiye.", "english": "At Diwali we light lamps and make rangoli.", "alts": ["At Diwali we light lamps and draw rangoli"], "notes": "દીવા કરવા, to light lamps. રંગોળી પૂરવી, to fill in a rangoli with coloured powder." },
+    { "id": "x-navratri-nine-nights", "type": "sentence", "gujarati": "નવરાત્રિમાં નવ રાત ગરબા થાય છે.", "translit": "navraatrimaan nav raat garbaa thaay chhe.", "english": "In Navratri there is garba for nine nights.", "alts": ["During Navratri there is garba for nine nights", "At Navratri there is garba for nine nights"] },
+    { "id": "x-uttarayan-rooftops", "type": "sentence", "gujarati": "ઉત્તરાયણમાં બધા ધાબા પર પતંગ ચગાવે છે.", "translit": "uttaraayaNmaan badhaa dhaabaa par patang chagaave chhe.", "english": "At Uttarayan everyone flies kites on the rooftops.", "alts": ["At Uttarayan everyone flies kites from the roofs", "On Uttarayan everyone flies kites on the roof"] },
+    { "id": "x-be-sure-to-come-again", "type": "sentence", "gujarati": "આવજો, ફરી જરૂર આવજો!", "translit": "aavjo, pharee jaroor aavjo!", "english": "Goodbye, do come again!", "alts": ["Bye, please come again!", "Goodbye, be sure to come again!"], "notes": "How every host sees guests off." }
+  ]
+}

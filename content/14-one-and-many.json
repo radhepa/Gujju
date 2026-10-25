@@ -1,0 +1,48 @@
+{
+  "id": "u21",
+  "order": 14,
+  "title": "One and many",
+  "goal": "Talk about more than one, count people and things, and say who's in your family: મારે બે ભાઈ છે.",
+  "tip": "Plurals depend on the ending. ો becomes ા: છોકરો → છોકરા. ું becomes ાં: કેળું → કેળાં. Other words can add ઓ: છોકરી → છોકરીઓ, બાળક → બાળકો. After a number the ઓ is usually left off: બે ભાઈ, ત્રણ દીકરી.",
+  "lessons": [
+    { "id": "u21-l1", "title": "Boys, girls, children", "items": ["w-chhokraa", "w-chhokreeo", "w-baaLak", "w-baaLko", "x-boys-at-home", "x-girls-at-school"], "translit": "hint" },
+    { "id": "u21-l2", "title": "Bananas and clothes", "items": ["w-keLun", "w-keLaan", "w-kapDaan", "w-ghaNaa", "x-bananas-lovely", "x-three-children"], "translit": "hide" },
+    { "id": "u21-l3", "title": "I have two brothers", "items": ["w-maare", "w-tamaare", "w-keTlaan", "x-two-brothers", "x-one-sister", "x-how-many-children"], "translit": "hide" },
+    { "id": "u21-l4", "title": "Everyone", "items": ["w-badhaa", "w-badhaan", "x-everyone-well", "x-is-everyone-well", "x-many-people-temple", "x-hello-everyone"], "translit": "hide" },
+    { "id": "u21-l5", "title": "Putting it together", "items": ["x-four-siblings", "x-all-children-school", "x-girls-learn-gujarati", "x-son-and-daughters"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-chhokraa", "type": "word", "gujarati": "છોકરા", "translit": "chhokraa", "english": "boys", "notes": "છોકરો → છોકરા: a masculine ો becomes ા." },
+    { "id": "w-chhokreeo", "type": "word", "gujarati": "છોકરીઓ", "translit": "chhokreeo", "english": "girls", "notes": "છોકરી + ઓ." },
+    { "id": "w-baaLak", "type": "word", "gujarati": "બાળક", "translit": "baaLak", "english": "child", "notes": "Neuter: એક બાળક." },
+    { "id": "w-baaLko", "type": "word", "gujarati": "બાળકો", "translit": "baaLko", "english": "children", "notes": "બાળક + ઓ. The middle a goes silent: baaLko." },
+    { "id": "x-boys-at-home", "type": "sentence", "gujarati": "છોકરા ઘરે છે.", "translit": "chhokraa ghare chhe.", "english": "The boys are at home.", "alts": ["The boys are home", "Boys are at home"], "notes": "છે also means \"are\" for they and for more than one thing." },
+    { "id": "x-girls-at-school", "type": "sentence", "gujarati": "છોકરીઓ સ્કૂલમાં છે.", "translit": "chhokreeo skoolmaan chhe.", "english": "The girls are at school.", "alts": ["The girls are in school", "Girls are at school"] },
+
+    { "id": "w-keLun", "type": "word", "gujarati": "કેળું", "translit": "keLun", "english": "banana" },
+    { "id": "w-keLaan", "type": "word", "gujarati": "કેળાં", "translit": "keLaan", "english": "bananas", "notes": "કેળું → કેળાં: a neuter ું becomes ાં." },
+    { "id": "w-kapDaan", "type": "word", "gujarati": "કપડાં", "translit": "kapDaan", "english": "clothes", "notes": "Nearly always plural, like \"clothes\" in English." },
+    { "id": "w-ghaNaa", "type": "word", "gujarati": "ઘણા", "translit": "ghaNaa", "english": "many, a lot of", "notes": "It agrees like an adjective: ઘણા લોકો, ઘણી છોકરીઓ." },
+    { "id": "x-bananas-lovely", "type": "sentence", "gujarati": "આ કેળાં સરસ છે.", "translit": "aa keLaan saras chhe.", "english": "These bananas are lovely.", "alts": ["These bananas are great", "These bananas are nice"], "notes": "આ means \"these\" as well as \"this\"." },
+    { "id": "x-three-children", "type": "sentence", "gujarati": "ઘરમાં ત્રણ બાળકો છે.", "translit": "gharmaan traN baaLko chhe.", "english": "There are three children in the house.", "alts": ["There are three children at home", "Three children are in the house"] },
+
+    { "id": "w-maare", "type": "word", "gujarati": "મારે", "translit": "maare", "english": "I have (family); for me", "notes": "For family, Gujarati says \"for me there are…\": મારે બે ભાઈ છે. For things you own, say મારી પાસે. Later on, મારે also means \"I have to\": મારે જવું પડશે." },
+    { "id": "w-tamaare", "type": "word", "gujarati": "તમારે", "translit": "tamaare", "english": "you have (family); for you", "notes": "The polite you. To a friend: તારે." },
+    { "id": "w-keTlaan", "type": "word", "gujarati": "કેટલાં", "translit": "keTlaan", "english": "how many (neuter plural)", "notes": "It agrees with the noun: કેટલાં બાળકો, કેટલા ભાઈ, કેટલી બહેન." },
+    { "id": "x-two-brothers", "type": "sentence", "gujarati": "મારે બે ભાઈ છે.", "translit": "maare be bhaai chhe.", "english": "I have two brothers.", "notes": "After a number, no plural ending: બે ભાઈ." },
+    { "id": "x-one-sister", "type": "sentence", "gujarati": "મારે એક બહેન છે.", "translit": "maare ek bahen chhe.", "english": "I have one sister.", "alts": ["I have a sister"] },
+    { "id": "x-how-many-children", "type": "sentence", "gujarati": "તમારે કેટલાં બાળકો છે?", "translit": "tamaare keTlaan baaLko chhe?", "english": "How many children do you have?" },
+
+    { "id": "w-badhaa", "type": "word", "gujarati": "બધા", "translit": "badhaa", "english": "all of them, everybody", "notes": "For people. In careful Gujarati a mixed group, or neuter things, takes બધાં; in everyday talk બધા covers any group." },
+    { "id": "w-badhaan", "type": "word", "gujarati": "બધાં", "translit": "badhaan", "english": "all (mixed group, neuter)", "notes": "બધાં બાળકો, all the children." },
+    { "id": "x-everyone-well", "type": "sentence", "gujarati": "બધા મજામાં છે.", "translit": "badhaa majaamaan chhe.", "english": "Everyone is well.", "alts": ["Everyone is fine", "Everybody is well", "Everybody is fine", "All are well"] },
+    { "id": "x-is-everyone-well", "type": "sentence", "gujarati": "બધા મજામાં છે?", "translit": "badhaa majaamaan chhe?", "english": "Is everyone well?", "alts": ["Is everyone fine", "Is everybody well", "Is everybody fine"], "notes": "The question every phone call home starts with." },
+    { "id": "x-many-people-temple", "type": "sentence", "gujarati": "મંદિરમાં ઘણા લોકો છે.", "translit": "mandirmaan ghaNaa loko chhe.", "english": "There are a lot of people in the temple.", "alts": ["There are many people in the temple", "There are lots of people in the temple", "Many people are in the temple"] },
+    { "id": "x-hello-everyone", "type": "sentence", "gujarati": "સૌને નમસ્તે!", "translit": "saune namaste!", "english": "Hello, everyone!", "alts": ["Hello everybody"] },
+
+    { "id": "x-four-siblings", "type": "sentence", "gujarati": "અમે ચાર ભાઈ બહેન છીએ.", "translit": "ame chaar bhaai bahen chhiye.", "english": "We are four brothers and sisters.", "alts": ["We are four siblings", "There are four of us brothers and sisters"] },
+    { "id": "x-all-children-school", "type": "sentence", "gujarati": "બધાં બાળકો સ્કૂલમાં છે.", "translit": "badhaan baaLko skoolmaan chhe.", "english": "All the children are at school.", "alts": ["All the children are in school", "All children are at school"] },
+    { "id": "x-girls-learn-gujarati", "type": "sentence", "gujarati": "છોકરીઓ ગુજરાતી શીખે છે.", "translit": "chhokreeo gujaraatee sheekhe chhe.", "english": "The girls are learning Gujarati.", "alts": ["The girls learn Gujarati", "Girls are learning Gujarati"] },
+    { "id": "x-son-and-daughters", "type": "sentence", "gujarati": "મારે એક દીકરો અને બે દીકરી છે.", "translit": "maare ek deekro ane be deekree chhe.", "english": "I have one son and two daughters.", "alts": ["I have a son and two daughters"] }
+  ]
+}

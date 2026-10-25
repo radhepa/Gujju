@@ -1,7 +1,8 @@
 {
   "id": "u10",
-  "order": 10,
+  "order": 11,
   "title": "Daily life",
+  "goal": "Talk about food, places and your day in the present tense.",
   "tip": "Verbs in the dictionary end in વું: ખાવું (to eat). Drop વું and add the ending for the person: હું ખાઉં છું, તે ખાય છે.",
   "lessons": [
     { "id": "u10-l1", "title": "Food", "items": ["w-roTlee", "w-daaL", "w-bhaat", "w-shaak", "w-khaavaanun", "x-food-ready"], "translit": "hint" },

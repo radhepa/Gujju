@@ -1,13 +1,14 @@
 {
   "id": "u16",
-  "order": 16,
+  "order": 23,
   "title": "Asking nicely",
+  "goal": "Invite, offer and ask politely, and turn down a second helping.",
   "tip": "Commands have three levels. With તું use the bare stem: આવ (come). With તમે add ઓ: આવો. Add જો to make it gentle, or to mean later: આવજો (do come).",
   "lessons": [
     { "id": "u16-l1", "title": "Come in, sit down", "items": ["w-aav", "w-aavo", "w-bes", "w-beso", "w-aheen", "x-ravi-come-here", "x-come-in-come-in"], "translit": "hint" },
     { "id": "u16-l2", "title": "Give and take", "items": ["w-aapvun", "w-levun", "w-lo", "w-pharee", "x-give-me-water", "x-have-some-tea", "x-do-come-again"], "translit": "hide" },
     { "id": "u16-l3", "title": "Please", "items": ["w-jaraa", "w-maherbaanee-kareene", "w-dheeme", "w-bolo", "x-could-you-give-water", "x-please-speak-slowly", "x-could-you-say-again"], "translit": "hide" },
-    { "id": "u16-l4", "title": "No, thank you", "items": ["w-mahemaan", "w-naa-aabhaar", "w-have", "w-naheen", "w-jamvun", "x-will-you-have-tea", "x-enough-no-more"], "translit": "hide" },
+    { "id": "u16-l4", "title": "No, thank you", "items": ["w-mahemaan", "w-naa-aabhaar", "w-have", "w-jamvun", "x-will-you-have-tea", "x-enough-no-more"], "translit": "hide" },
     { "id": "u16-l5", "title": "Putting it together", "items": ["x-come-in-sit-down", "x-mom-give-me-tea", "x-grandpa-sit-here", "x-tea-or-water", "x-have-some-dal", "x-eat-before-you-go"], "translit": "hide" }
   ],
   "items": [
@@ -38,7 +39,6 @@
     { "id": "w-mahemaan", "type": "word", "gujarati": "મહેમાન", "translit": "mahemaan", "english": "guest", "notes": "A guest always gets the polite forms: આવો, બેસો, ચા લેશો?" },
     { "id": "w-naa-aabhaar", "type": "word", "gujarati": "ના, આભાર", "translit": "naa, aabhaar", "english": "no, thank you", "notes": "Polite, but a host will often offer again. Saying no twice is normal." },
     { "id": "w-have", "type": "word", "gujarati": "હવે", "translit": "have", "english": "now" },
-    { "id": "w-naheen", "type": "word", "gujarati": "નહીં", "translit": "naheen", "english": "not, no more", "notes": "Used for refusing and for the future: હવે નહીં, not any more. For \"is not\" Gujarati uses નથી." },
     { "id": "w-jamvun", "type": "word", "gujarati": "જમવું", "translit": "jamvun", "english": "to eat (a meal)", "notes": "A nicer word than ખાવું for having a meal. જમીને means \"after eating\"." },
     { "id": "x-will-you-have-tea", "type": "sentence", "gujarati": "ચા લેશો?", "translit": "chaa lesho?", "english": "Will you have some tea?", "alts": ["Would you like some tea", "Will you have tea", "Would you like tea"] },
     { "id": "x-enough-no-more", "type": "sentence", "gujarati": "બસ, હવે નહીં.", "translit": "bas, have naheen.", "english": "That's enough, no more.", "alts": ["Enough no more", "That is enough no more"], "notes": "બસ also means \"enough\". It's what you say when the host keeps filling your plate." },

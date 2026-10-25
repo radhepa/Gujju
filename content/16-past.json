@@ -1,7 +1,8 @@
 {
   "id": "u11",
-  "order": 11,
+  "order": 16,
   "title": "Yesterday",
+  "goal": "Say where you went and what you ate and drank yesterday.",
   "tip": "Verbs like જવું agree with whoever went: હું ગયો (a man), હું ગઈ (a woman). Verbs that take an object, like ખાવું and પીવું, turn હું into મેં and agree with the thing instead: મેં ચા પીધી, મેં શાક ખાધું.",
   "lessons": [
     { "id": "u11-l1", "title": "I went", "items": ["w-gayo", "w-gai", "w-gayaa", "w-gaikaale", "x-i-went-market-yesterday", "x-i-went-temple-morning", "x-we-went-village"], "translit": "hint" },

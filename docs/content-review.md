@@ -64,7 +64,26 @@ Open questions, current choice first:
 24. "મમ્મી, મને ચા આપ." with the friendly form to a mother, or આપો. Families vary.
 25. ગઈકાલે as one word and આવતી કાલે as two; both notes mention the other spelling.
 26. હોશિયાર (dictionary) or હોંશિયાર (common).
-27. Mixed groups and respected women: ગયાં (બા અને દાદા ગયાં, મારાં મમ્મી) or the everyday ગયા / મારી મમ્મી.
+27. Mixed groups and respected women: ગયાં (બા અને દાદા ગયાં, મારાં કાકી) or the everyday ગયા / મારી કાકી. The app uses ાં for grandmothers, aunts and in-laws but talks about mom familiarly (મારી મમ્મી, મમ્મી સૂતી હતી), as many families do; see 7.
 28. "Don't": the guide teaches ન જાઓ; ના જાઓ and જશો નહીં are just as common in speech.
 29. ખાઈ રહ્યો છું for "I am eating", or just ખાઉં છું as many speakers say.
 30. દસ તારીખ or દસમી તારીખ for dates.
+
+## The curriculum revamp
+
+The rebuilt script (units 1 to 5) and the 13 new units (see [curriculum.md](curriculum.md)) passed the same 100 checks and a separate read-through. That read caught a wrong agreement (મેથીનાં થેપલાં), a false note about શાક, a wrong gloss for નહીં, an English alternative that meant something else, and a stiff answer to તમે જમ્યા?, now ના, હજી નથી જમ્યો. It also softened several notes that overstated a rule.
+
+Open questions, current choice first:
+
+31. હજી or હજુ for "still, yet" (the note mentions both).
+32. કંઈ નહીં transliterated kain naheen.
+33. ફુઆ or ફૂવા for phoi's husband; બનેવી or જીજાજી for a sister's husband (the note mentions જીજાજી).
+34. પૌત્ર / પૌત્રી as the taught words, with the everyday પોતરો / પોતરી in the note.
+35. આદુ or આદું for ginger.
+36. ઓગણચાળીસ and પિસ્તાળીસ follow the ચાળીસ choice in 2.
+37. તમે ક્યાંના છો? for "where are you from?", rather than the Hindi-shaped ક્યાંથી છો?
+38. સોમવારે હું સ્કૂલ જાઉં છું, or સ્કૂલે જાઉં છું.
+39. અવાજ નથી આવતો for "I can't hear you", or સંભળાતું નથી.
+40. માંસ as the taught word, with નોન-વેજ in the note.
+41. આજે કઈ તારીખ છે? or આજે કેટલી તારીખ છે? (the note mentions both).
+42. ઉપર કોથમીર નાખો, or the more recipe-like ઉપરથી કોથમીર ભભરાવો.

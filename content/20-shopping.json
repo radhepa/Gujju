@@ -1,7 +1,8 @@
 {
   "id": "u14",
-  "order": 14,
+  "order": 20,
   "title": "Shopping and money",
+  "goal": "Ask the price, bargain a little, and tell the time.",
   "tip": "A price goes with the thing's gender: ચા બાર રૂપિયાની છે (ચા is feminine), આ કેટલાનું છે? (neuter). For the time, ask કેટલા વાગ્યા છે? and answer બે વાગ્યા છે or સાડા ત્રણ વાગ્યા છે.",
   "lessons": [
     { "id": "u14-l1", "title": "Eleven to fifteen", "items": ["w-agiyaar", "w-baar", "w-ter", "w-chaud", "w-pandar", "w-roopiyaa", "x-tea-twelve-rupees"], "translit": "hint" },

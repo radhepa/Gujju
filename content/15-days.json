@@ -1,0 +1,49 @@
+{
+  "id": "u22",
+  "order": 15,
+  "title": "Days and weeks",
+  "goal": "Name the days of the week, say what you do on which day, and how often.",
+  "tip": "Every day of the week ends in વાર: સોમવાર, મંગળવાર. Add એ for \"on\": સોમવારે = on Monday. How-often words like રોજ (every day) and ક્યારેક (sometimes) go near the start: હું રોજ ચા પીઉં છું.",
+  "lessons": [
+    { "id": "u22-l1", "title": "Monday to Thursday", "items": ["w-vaar", "w-somvaar", "w-mangaLvaar", "w-budhvaar", "w-guruvaar", "x-what-day-today"], "translit": "hint" },
+    { "id": "u22-l2", "title": "Friday to Sunday", "items": ["w-shukravaar", "w-shanivaar", "w-ravivaar", "x-today-sunday", "x-monday-school", "x-saturday-temple"], "translit": "hide" },
+    { "id": "u22-l3", "title": "Week, month, date", "items": ["w-aThvaaDiyun", "w-mahino", "w-taareekh", "x-what-date", "x-today-tenth", "x-week-seven-days"], "translit": "hide" },
+    { "id": "u22-l4", "title": "How often?", "items": ["w-roj", "w-kyaarek", "w-hammeshaan", "w-kyaarey", "x-sometimes-temple", "x-grandpa-always-tea", "x-never-meat"], "translit": "hide" },
+    { "id": "u22-l5", "title": "Putting it together", "items": ["x-sunday-family-home", "x-learn-every-day", "x-friday-evening-market", "x-mom-never-tea"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-vaar", "type": "word", "gujarati": "વાર", "translit": "vaar", "english": "day of the week", "notes": "Also means \"time\" as in once or twice: બે વાર, twice." },
+    { "id": "w-somvaar", "type": "word", "gujarati": "સોમવાર", "translit": "somvaar", "english": "Monday", "notes": "Each day is named after a heavenly body: સોમ is the moon." },
+    { "id": "w-mangaLvaar", "type": "word", "gujarati": "મંગળવાર", "translit": "mangaLvaar", "english": "Tuesday", "notes": "મંગળ is Mars." },
+    { "id": "w-budhvaar", "type": "word", "gujarati": "બુધવાર", "translit": "budhvaar", "english": "Wednesday", "notes": "બુધ is Mercury." },
+    { "id": "w-guruvaar", "type": "word", "gujarati": "ગુરુવાર", "translit": "guruvaar", "english": "Thursday", "notes": "ગુરુ is Jupiter." },
+    { "id": "x-what-day-today", "type": "sentence", "gujarati": "આજે કયો વાર છે?", "translit": "aaje kayo vaar chhe?", "english": "What day is it today?", "alts": ["Which day is it today", "What day is today"], "notes": "વાર is masculine, so કયો, not કયું." },
+
+    { "id": "w-shukravaar", "type": "word", "gujarati": "શુક્રવાર", "translit": "shukravaar", "english": "Friday", "notes": "શુક્ર is Venus." },
+    { "id": "w-shanivaar", "type": "word", "gujarati": "શનિવાર", "translit": "shanivaar", "english": "Saturday", "notes": "શનિ is Saturn." },
+    { "id": "w-ravivaar", "type": "word", "gujarati": "રવિવાર", "translit": "ravivaar", "english": "Sunday", "notes": "રવિ is the sun, which is also why રવિ is a boy's name." },
+    { "id": "x-today-sunday", "type": "sentence", "gujarati": "આજે રવિવાર છે.", "translit": "aaje ravivaar chhe.", "english": "Today is Sunday.", "alts": ["It is Sunday today", "It's Sunday today"] },
+    { "id": "x-monday-school", "type": "sentence", "gujarati": "સોમવારે હું સ્કૂલ જાઉં છું.", "translit": "somvaare hun skool jaaun chhun.", "english": "On Monday I go to school.", "alts": ["I go to school on Monday", "On Mondays I go to school", "I go to school on Mondays"] },
+    { "id": "x-saturday-temple", "type": "sentence", "gujarati": "શનિવારે અમે મંદિર જઈએ છીએ.", "translit": "shanivaare ame mandir jaiye chhiye.", "english": "On Saturdays we go to the temple.", "alts": ["We go to the temple on Saturdays", "On Saturday we go to the temple", "We go to the temple on Saturday"] },
+
+    { "id": "w-aThvaaDiyun", "type": "word", "gujarati": "અઠવાડિયું", "translit": "aThvaaDiyun", "english": "week" },
+    { "id": "w-mahino", "type": "word", "gujarati": "મહિનો", "translit": "mahino", "english": "month", "notes": "In everyday talk people use the English names of the months: જાન્યુઆરી, ફેબ્રુઆરી, માર્ચ." },
+    { "id": "w-taareekh", "type": "word", "gujarati": "તારીખ", "translit": "taareekh", "english": "date (of the month)", "notes": "Feminine: કઈ તારીખ? which date?" },
+    { "id": "x-what-date", "type": "sentence", "gujarati": "આજે કઈ તારીખ છે?", "translit": "aaje kai taareekh chhe?", "english": "What is the date today?", "alts": ["What's the date today", "What date is it today", "Which date is it today"], "notes": "You'll hear આજે કેટલી તારીખ છે? (how many-th?) just as often." },
+    { "id": "x-today-tenth", "type": "sentence", "gujarati": "આજે દસ તારીખ છે.", "translit": "aaje das taareekh chhe.", "english": "Today is the tenth.", "alts": ["It is the tenth today", "Today is the 10th"], "notes": "Just the number and તારીખ. You'll also hear દસમી તારીખ, the tenth date." },
+    { "id": "x-week-seven-days", "type": "sentence", "gujarati": "અઠવાડિયામાં સાત દિવસ હોય છે.", "translit": "aThvaaDiyaamaan saat divas hoy chhe.", "english": "There are seven days in a week.", "alts": ["A week has seven days"], "notes": "હોય છે is \"is\" for things that are always true. Before માં, અઠવાડિયું changes to અઠવાડિયા." },
+
+    { "id": "w-roj", "type": "word", "gujarati": "રોજ", "translit": "roj", "english": "every day" },
+    { "id": "w-kyaarek", "type": "word", "gujarati": "ક્યારેક", "translit": "kyaarek", "english": "sometimes" },
+    { "id": "w-hammeshaan", "type": "word", "gujarati": "હંમેશાં", "translit": "hammeshaan", "english": "always" },
+    { "id": "w-kyaarey", "type": "word", "gujarati": "ક્યારેય", "translit": "kyaarey", "english": "ever (never, with નથી)", "notes": "ક્યારેય નથી or ક્યારેય નહીં = never." },
+    { "id": "x-sometimes-temple", "type": "sentence", "gujarati": "હું ક્યારેક મંદિર જાઉં છું.", "translit": "hun kyaarek mandir jaaun chhun.", "english": "I sometimes go to the temple.", "alts": ["Sometimes I go to the temple"] },
+    { "id": "x-grandpa-always-tea", "type": "sentence", "gujarati": "દાદા હંમેશાં સવારે ચા પીએ છે.", "translit": "daadaa hammeshaan savaare chaa piye chhe.", "english": "Grandpa always drinks tea in the morning.", "alts": ["Grandpa always has tea in the morning", "Grandfather always drinks tea in the morning"] },
+    { "id": "x-never-meat", "type": "sentence", "gujarati": "હું ક્યારેય માંસ નથી ખાતો.", "translit": "hun kyaarey maans nathee khaato.", "english": "I never eat meat (a man speaking).", "alts": ["I never eat meat", "I do not ever eat meat"], "notes": "A woman says હું ક્યારેય માંસ નથી ખાતી." },
+
+    { "id": "x-sunday-family-home", "type": "sentence", "gujarati": "રવિવારે આખો પરિવાર ઘરે હોય છે.", "translit": "ravivaare aakho parivaar ghare hoy chhe.", "english": "On Sundays the whole family is at home.", "alts": ["The whole family is at home on Sundays", "On Sunday the whole family is at home"], "notes": "આખો (whole) agrees with પરિવાર, which is masculine." },
+    { "id": "x-learn-every-day", "type": "sentence", "gujarati": "હું રોજ ગુજરાતી શીખું છું.", "translit": "hun roj gujaraatee sheekhun chhun.", "english": "I learn Gujarati every day.", "alts": ["Every day I learn Gujarati", "I am learning Gujarati every day"] },
+    { "id": "x-friday-evening-market", "type": "sentence", "gujarati": "શુક્રવારે સાંજે અમે બજાર જઈએ છીએ.", "translit": "shukravaare saanje ame bajaar jaiye chhiye.", "english": "On Friday evenings we go to the market.", "alts": ["We go to the market on Friday evenings", "On Friday evening we go to the market"] },
+    { "id": "x-mom-never-tea", "type": "sentence", "gujarati": "મમ્મી ક્યારેય ચા નથી પીતી.", "translit": "mammee kyaarey chaa nathee peetee.", "english": "Mom never drinks tea.", "alts": ["Mum never drinks tea", "Mom doesn't ever drink tea"] }
+  ]
+}

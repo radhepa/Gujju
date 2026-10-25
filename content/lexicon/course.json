@@ -1,0 +1,10 @@
+[
+  {"gu": "ખેતર", "tr": "khetar", "en": "field, farm", "pos": "noun"},
+  {"gu": "પીતા", "tr": "peetaa", "en": "drinking (respectful or plural)", "pos": "verb", "base": "પીવું"},
+  {"gu": "કંઈ", "tr": "kain", "en": "anything, something (કંઈ નહીં = never mind)", "pos": "pron"},
+  {"gu": "વર્ષનાં", "tr": "varshnaan", "en": "years old (a respected woman)", "pos": "noun", "base": "વર્ષ"},
+  {"gu": "ભાઈનાં", "tr": "bhaainaan", "en": "brother's (with a neuter plural like લગ્ન)", "pos": "noun", "base": "ભાઈ"},
+  {"gu": "ઘણાં", "tr": "ghaNaan", "en": "many (neuter plural)", "pos": "adj", "base": "ઘણું"},
+  {"gu": "કરતા", "tr": "kartaa", "en": "doing, used to do (plural, polite)", "pos": "verb", "base": "કરવું"},
+  {"gu": "રહ્યાં", "tr": "rahyaan", "en": "(with છે) are doing (neuter plural, mixed group)", "pos": "verb", "base": "રહેવું"}
+]

@@ -17,13 +17,18 @@ Runs on iOS and the web from one Expo codebase. On a phone it installs from the 
 
 ## What's in it
 
-- **18 units, 83 lessons**: the script (vowels, consonants, vowel signs, joined letters, numbers), then greetings, family, simple sentences and daily life, then the past and future, places, shopping and money, the body and feelings, asking nicely, describing things, and can / must / want. About 269 words
+- **32 units, 156 lessons** in four stretches, each unit opening with what you'll be able to do by the end:
+  - **Read Gujarati** (units 1 to 7): the letters in order of how often you'll meet them, not dictionary order, so you read real words from the first lesson: મા, નામ, રસ, then કેરી, ઘી, ઢોકળાં, છાશ. Then joined and doubled letters, and the digits
+  - **Everyday Gujarati, A1** (8 to 15): greetings, family, simple sentences, daily life, saying no, introducing yourself, plurals and "I have two brothers", the days of the week
+  - **Out and about, A2** (16 to 26): yesterday and tomorrow, directions, the whole family with the in-laws, shopping, numbers up to 99 with દોઢ and અઢી, the body and feelings, asking nicely, cooking with Ba, describing, can and must
+  - **Real conversations, B1** (27 to 32): what's happening now and what already has, childhood and "used to", helper verbs, because and if, phone calls home, festivals and family visits
+  - About 440 words and 360 sentences. [docs/curriculum.md](docs/curriculum.md) explains the order
 - **Five exercise types**: pick the sound, pick the letter, match pairs, build the word from letter tiles, build the sentence from a word bank
 - **Short lessons**: 10 to 12 exercises, about five minutes. Anything you miss comes back at the end of the lesson until you get it
 - **No hearts**: a wrong answer costs you the retry and nothing else
 - **Spaced repetition** with FSRS. Every letter, word and sentence has its own schedule, and the home screen shows how many are due today
 - **XP and a daily streak**, plus a test-out quiz to skip a unit you already know
-- **Transliteration fades out** across units 7 to 10 (shown, then tap-to-reveal, then gone) so you end up actually reading the script
+- **Transliteration fades out** across units 8 to 10 (shown, then tap-to-reveal, then gone) so you end up actually reading the script
 - **Sentence practice**, in the style of Clozemaster: a Gujarati sentence with one word blanked, pick it from four or type it (in Gujarati or in English letters), then see the whole sentence with every word glossed. Three collections, about 460 sentences from beginner to everyday conversation, each sentence on its own FSRS schedule until it's mastered
 - **A library**: four short graded stories (Kesar at the market, the thirsty crow, Navratri night, a letter to Ba). Tap any word for its meaning, show the transliteration word by word, reveal the English a sentence at a time, then practise the story's sentences
 - **Your own books**: paste any Gujarati (a recipe, a bhajan, a letter from home) and it becomes a book you can read with glosses and practise as cloze. Add the English after a `|` on a line if you have it. Sentences saved during practice go into a "My sentences" book
@@ -39,11 +44,11 @@ Runs on iOS and the web from one Expo codebase. On a phone it installs from the 
 
 ## How far it takes you
 
-On the CEFR scale, finishing the course and the practice gets you to about **A2**, and into **B1** for reading:
+On the CEFR scale, finishing the course and the practice gets you to about **B1** for reading and family conversation:
 
-- **A1** (units 1 to 10, Everyday Gujarati): read the script, greet people, talk about family, food and home in the present tense.
-- **A2** (units 11 to 18, Out and about, the first stories): yesterday and tomorrow, shopping and prices, directions, how you feel, asking for things politely, can and must.
-- **Towards B1** (Real conversations, A letter to Ba, the grammar guide): follow family conversation and a letter from home, give reasons with કારણ કે and જો … તો.
+- **A1** (units 1 to 15, Everyday Gujarati): read the script, introduce yourself, talk about family, food, home and your week, say what isn't so.
+- **A2** (units 16 to 26, Out and about, the first stories): yesterday and tomorrow, the whole family, shopping and prices, directions, cooking, how you feel, asking for things politely, can and must.
+- **B1** (units 27 to 32, Real conversations, A letter to Ba): what's going on and what used to happen, helper verbs, reasons and conditions with કારણ કે and જો … તો, opinions, a phone call home, festivals and visits.
 
 The progress page shows where you are. What an app can't give you is a lot of listening and talking, which is where Watch & listen and the people around you come in.
 
@@ -66,7 +71,7 @@ On the web, number keys pick an answer, Enter checks and continues, and Backspac
 ## How it's built
 
 ```
-content/            one JSON file per unit: lessons + items
+content/            one JSON file per unit: lessons + items, files numbered by place on the path
 content/cloze/      sentence practice collections
 content/books/      the built-in stories
 content/lexicon/    the word list that glosses every sentence
@@ -83,6 +88,8 @@ scripts/            renders Kesar outside the app: pose sheet, README gif, app i
 ```
 
 **Content is data, progress is a database.** Units, lessons and items live in JSON in the repo, so the course is version controlled and doesn't need a backend. Only progress is stored: `lesson_progress`, `card_state`, `review_log` and `daily_stats`, with column names that mirror the cloud copy.
+
+**Ids are forever, order is not.** Progress is keyed by lesson and item id, so ids never change once shipped. A unit's place on the path comes from its `order` field, which is why unit 12 has the id `u19`. Moving a word to another unit keeps its review schedule. When the script was rebuilt in order of use, it got new lesson ids, and `completedLessons` carries anyone who finished the old script across.
 
 **Exercises are generated, not hand-written.** A lesson just lists its items. The generator builds the exercises from them and picks wrong answers from what you've already seen, starting with each item's `confusables` (ઇ/ઈ, ઘ/ધ, saat/saaTh). Hand-writing ~450 exercises with three distractors each would have been most of the work, and the mistakes would be the hard kind to spot. The confusables list is where a native speaker's judgement goes instead.
 
@@ -108,7 +115,7 @@ Each unit is one file in `content/`. An item looks like this:
   "confusables": ["l-ga", "l-dha"] }
 ```
 
-`npm test` checks the content too: unique ids, lessons only pointing at real items, Gujarati fields actually in Gujarati script, no two items sharing an answer, and every lesson producing 10 to 12 exercises.
+`npm test` checks the content too: unique ids, lessons only pointing at real items, Gujarati fields actually in Gujarati script, no two items sharing an answer, every lesson producing 10 to 12 exercises, every unit stating its goal, and no word in the script units using a letter that hasn't been taught yet.
 
 ### Sentences, books and the word list
 
@@ -148,6 +155,7 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 - [x] Dictionary, read-aloud, daily goal and progress page
 - [x] 100 automated accuracy checks over all the Gujarati
 - [x] Units 11 to 18 toward A2, a grammar guide, writing practice, Watch & listen, a level estimate
+- [x] Curriculum revamp ([docs/curriculum.md](docs/curriculum.md)): the script rebuilt in order of use, 13 new units from "not" and plurals to phone calls and festivals, can-do goals on every unit
 - [ ] My own read-through of everything, starting with the open questions in docs/content-review.md
 - [ ] Sign-in and sync between devices (Supabase)
 - [ ] iOS build on a real phone, web deploy on Vercel

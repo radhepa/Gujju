@@ -1,0 +1,49 @@
+{
+  "id": "u25",
+  "order": 24,
+  "title": "In the kitchen",
+  "goal": "Cook from Ba's instructions: name the ingredients, follow the steps, and say how it tastes.",
+  "tip": "Recipes are given as polite commands: drop વું and add ઓ, so કાપવું becomes કાપો (cut) and નાખવું becomes નાખો (put in). To join two steps, add ઈને to the first: કાપીને નાખો, cut it and put it in.",
+  "lessons": [
+    { "id": "u25-l1", "title": "Onions and tomatoes", "items": ["w-DungLee", "w-TaameTaan", "w-marchun", "w-aadu", "w-lasaN", "x-bring-onions-tomatoes"], "translit": "hint" },
+    { "id": "u25-l2", "title": "The spice box", "items": ["w-jeerun", "w-raai", "w-hing", "w-vaghaar", "x-first-mustard-cumin", "x-less-salt"], "translit": "hide" },
+    { "id": "u25-l3", "title": "Cut, add, stir", "items": ["w-banaavvun", "w-kaapvun", "w-naakhvun", "w-halaavvun", "w-chaakhvun", "x-cut-the-onion", "x-keep-stirring"], "translit": "hide" },
+    { "id": "u25-l4", "title": "First this, then that", "items": ["w-shaakbhaajee", "w-kothmeer", "x-heat-the-oil", "x-cut-and-add", "x-taste-and-see", "x-coriander-on-top"], "translit": "hide" },
+    { "id": "u25-l5", "title": "Putting it together", "items": ["x-ba-how-make", "x-jaggery-in-dal", "x-turned-out-well", "x-too-much-chilli"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-DungLee", "type": "word", "gujarati": "ડુંગળી", "translit": "DungLee", "english": "onion", "notes": "Many Jain and some Vaishnav families cook without onion and garlic." },
+    { "id": "w-TaameTaan", "type": "word", "gujarati": "ટામેટાં", "translit": "TaameTaan", "english": "tomatoes", "notes": "One tomato is ટામેટું." },
+    { "id": "w-marchun", "type": "word", "gujarati": "મરચું", "translit": "marchun", "english": "chilli", "notes": "લીલું મરચું is a green chilli. Plain મરચું often means chilli powder." },
+    { "id": "w-aadu", "type": "word", "gujarati": "આદુ", "translit": "aadu", "english": "ginger", "notes": "As in આદુવાળી ચા, ginger tea." },
+    { "id": "w-lasaN", "type": "word", "gujarati": "લસણ", "translit": "lasaN", "english": "garlic" },
+    { "id": "x-bring-onions-tomatoes", "type": "sentence", "gujarati": "ડુંગળી અને ટામેટાં લાવો.", "translit": "DungLee ane TaameTaan laavo.", "english": "Bring onions and tomatoes.", "alts": ["Bring the onions and tomatoes", "Bring onion and tomatoes"], "notes": "લાવો, from લાવવું (to bring)." },
+
+    { "id": "w-jeerun", "type": "word", "gujarati": "જીરું", "translit": "jeerun", "english": "cumin" },
+    { "id": "w-raai", "type": "word", "gujarati": "રાઈ", "translit": "raai", "english": "mustard seeds" },
+    { "id": "w-hing", "type": "word", "gujarati": "હિંગ", "translit": "hing", "english": "asafoetida (hing)", "notes": "Just a pinch, in hot oil, for almost every dal and shaak." },
+    { "id": "w-vaghaar", "type": "word", "gujarati": "વઘાર", "translit": "vaghaar", "english": "tempering (spices fried in oil)", "notes": "વઘાર કરવો, to temper: the sizzle of mustard seeds and cumin that starts most dishes." },
+    { "id": "x-first-mustard-cumin", "type": "sentence", "gujarati": "પહેલાં તેલમાં રાઈ અને જીરું નાખો.", "translit": "pahelaan telmaan raai ane jeerun naakho.", "english": "First put mustard seeds and cumin in the oil.", "alts": ["First add mustard seeds and cumin to the oil", "First put the mustard seeds and cumin in the oil"] },
+    { "id": "x-less-salt", "type": "sentence", "gujarati": "મીઠું થોડું ઓછું નાખજો.", "translit": "meeThun thoDun ochhun naakhjo.", "english": "Put in a little less salt.", "alts": ["Add a little less salt", "Use a little less salt"], "notes": "As a noun મીઠું is salt. As an adjective it means sweet: ચા મીઠી છે. નાખજો is the gentle -જો command." },
+
+    { "id": "w-banaavvun", "type": "word", "gujarati": "બનાવવું", "translit": "banaavvun", "english": "to make, to cook" },
+    { "id": "w-kaapvun", "type": "word", "gujarati": "કાપવું", "translit": "kaapvun", "english": "to cut, to chop" },
+    { "id": "w-naakhvun", "type": "word", "gujarati": "નાખવું", "translit": "naakhvun", "english": "to put in, to add" },
+    { "id": "w-halaavvun", "type": "word", "gujarati": "હલાવવું", "translit": "halaavvun", "english": "to stir" },
+    { "id": "w-chaakhvun", "type": "word", "gujarati": "ચાખવું", "translit": "chaakhvun", "english": "to taste" },
+    { "id": "x-cut-the-onion", "type": "sentence", "gujarati": "ડુંગળી કાપો.", "translit": "DungLee kaapo.", "english": "Cut the onion.", "alts": ["Chop the onion", "Cut the onions", "Chop the onions"] },
+    { "id": "x-keep-stirring", "type": "sentence", "gujarati": "શાક હલાવતાં રહો.", "translit": "shaak halaavtaan raho.", "english": "Keep stirring the curry.", "alts": ["Keep stirring the vegetables", "Keep stirring the shaak"], "notes": "The -તાં form + રહો means \"keep doing\"." },
+
+    { "id": "w-shaakbhaajee", "type": "word", "gujarati": "શાકભાજી", "translit": "shaakbhaajee", "english": "vegetables", "notes": "Vegetables in general. શાક is used both for the vegetables you buy and for the cooked dish." },
+    { "id": "w-kothmeer", "type": "word", "gujarati": "કોથમીર", "translit": "kothmeer", "english": "coriander (cilantro)" },
+    { "id": "x-heat-the-oil", "type": "sentence", "gujarati": "પહેલાં તેલ ગરમ કરો.", "translit": "pahelaan tel garam karo.", "english": "First heat the oil.", "alts": ["Heat the oil first"] },
+    { "id": "x-cut-and-add", "type": "sentence", "gujarati": "ડુંગળી કાપીને તેલમાં નાખો.", "translit": "DungLee kaapeene telmaan naakho.", "english": "Cut the onion and put it in the oil.", "alts": ["Chop the onion and put it in the oil", "Cut the onion and add it to the oil"], "notes": "કાપીને, having cut: one step leads into the next." },
+    { "id": "x-taste-and-see", "type": "sentence", "gujarati": "ચાખીને જુઓ.", "translit": "chaakheene juo.", "english": "Taste it and see.", "alts": ["Taste and see", "Have a taste"] },
+    { "id": "x-coriander-on-top", "type": "sentence", "gujarati": "ઉપર કોથમીર નાખો.", "translit": "upar kothmeer naakho.", "english": "Put coriander on top.", "alts": ["Add coriander on top", "Sprinkle coriander on top"] },
+
+    { "id": "x-ba-how-make", "type": "sentence", "gujarati": "બા, આ શાક કેવી રીતે બનાવો છો?", "translit": "baa, aa shaak kevee reete banaavo chho?", "english": "Ba, how do you make this curry?", "alts": ["Ba, how do you make this shaak", "Grandma, how do you make this curry"], "notes": "કેવી રીતે, in what way: the \"how\" for asking how something is done." },
+    { "id": "x-jaggery-in-dal", "type": "sentence", "gujarati": "દાળમાં થોડો ગોળ નાખો.", "translit": "daaLmaan thoDo goL naakho.", "english": "Put a little jaggery in the dal.", "alts": ["Add a little jaggery to the dal"], "notes": "થોડો, because ગોળ is masculine." },
+    { "id": "x-turned-out-well", "type": "sentence", "gujarati": "ખાવાનું ખૂબ સરસ બન્યું છે!", "translit": "khaavaanun khoob saras banyun chhe!", "english": "The food has turned out really well!", "alts": ["The food is really good", "The food has turned out very well"], "notes": "The compliment every cook wants to hear." },
+    { "id": "x-too-much-chilli", "type": "sentence", "gujarati": "શાકમાં મરચું વધારે છે.", "translit": "shaakmaan marchun vadhaare chhe.", "english": "There is too much chilli in the curry.", "alts": ["There's too much chilli in the curry", "The curry has too much chilli"] }
+  ]
+}

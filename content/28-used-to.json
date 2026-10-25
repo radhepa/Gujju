@@ -1,0 +1,45 @@
+{
+  "id": "u27",
+  "order": 28,
+  "title": "When I was little",
+  "goal": "Talk about childhood and the old days: where you lived, what you did, what Ba used to say.",
+  "tip": "For what used to happen, use the -તો form on its own. It agrees like an adjective: હું રમતો (a boy), હું રમતી (a girl), અમે રમતા. Add હતો, હતી or હતા for \"was doing\": હું વાંચતો હતો. જ્યારે … ત્યારે joins \"when … then\".",
+  "lessons": [
+    { "id": "u27-l1", "title": "We used to live", "items": ["w-rahetaa", "w-ramto", "w-ramtee", "x-lived-in-village", "x-played-cricket", "x-she-danced-garba"], "translit": "hint" },
+    { "id": "u27-l2", "title": "Ba used to say", "items": ["w-vaartaa", "w-kahevun", "w-amne", "x-ba-told-stories", "x-grandpa-temple-mornings"], "translit": "hide" },
+    { "id": "u27-l3", "title": "When I was little", "items": ["w-jyaare", "w-tyaare", "w-nahotaa", "x-when-i-was-little", "x-little-played-a-lot", "x-no-phones-then"], "translit": "hide" },
+    { "id": "u27-l4", "title": "Was doing", "items": ["x-i-was-reading", "x-what-were-you-doing", "x-mom-was-sleeping", "x-eating-when-you-called"], "translit": "hide" },
+    { "id": "u27-l5", "title": "Putting it together", "items": ["x-walked-to-school", "x-diwali-firecrackers", "x-didnt-like-milk", "x-grandpa-worked-fields"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-rahetaa", "type": "word", "gujarati": "રહેતા", "translit": "rahetaa", "english": "used to live (plural, polite)", "notes": "રહેવું → રહે + તા. A man alone says રહેતો, a woman રહેતી." },
+    { "id": "w-ramto", "type": "word", "gujarati": "રમતો", "translit": "ramto", "english": "used to play (a boy)" },
+    { "id": "w-ramtee", "type": "word", "gujarati": "રમતી", "translit": "ramtee", "english": "used to play (a girl)" },
+    { "id": "x-lived-in-village", "type": "sentence", "gujarati": "અમે ગામમાં રહેતા.", "translit": "ame gaammaan rahetaa.", "english": "We used to live in the village.", "alts": ["We lived in the village", "We used to live in a village"] },
+    { "id": "x-played-cricket", "type": "sentence", "gujarati": "હું રોજ ક્રિકેટ રમતો.", "translit": "hun roj krikeT ramto.", "english": "I used to play cricket every day (a boy speaking).", "alts": ["I used to play cricket every day", "I played cricket every day"] },
+    { "id": "x-she-danced-garba", "type": "sentence", "gujarati": "તે ગરબા રમતી.", "translit": "te garbaa ramtee.", "english": "She used to dance garba.", "alts": ["She used to play garba", "She danced garba"], "notes": "Garba is \"played\" in Gujarati: ગરબા રમવા." },
+
+    { "id": "w-vaartaa", "type": "word", "gujarati": "વાર્તા", "translit": "vaartaa", "english": "story" },
+    { "id": "w-kahevun", "type": "word", "gujarati": "કહેવું", "translit": "kahevun", "english": "to say, to tell" },
+    { "id": "w-amne", "type": "word", "gujarati": "અમને", "translit": "amne", "english": "to us, us" },
+    { "id": "x-ba-told-stories", "type": "sentence", "gujarati": "બા અમને વાર્તા કહેતાં.", "translit": "baa amne vaartaa kahetaan.", "english": "Ba used to tell us stories.", "alts": ["Grandma used to tell us stories", "Ba told us stories"], "notes": "કહેતાં with the ાં ending, out of respect for Ba." },
+    { "id": "x-grandpa-temple-mornings", "type": "sentence", "gujarati": "દાદા રોજ સવારે મંદિર જતા.", "translit": "daadaa roj savaare mandir jataa.", "english": "Grandpa used to go to the temple every morning.", "alts": ["Grandpa went to the temple every morning", "Grandfather used to go to the temple every morning"] },
+
+    { "id": "w-jyaare", "type": "word", "gujarati": "જ્યારે", "translit": "jyaare", "english": "when (not a question)", "notes": "ક્યારે? asks when. જ્યારે … ત્યારે says when something happened." },
+    { "id": "w-tyaare", "type": "word", "gujarati": "ત્યારે", "translit": "tyaare", "english": "then, at that time" },
+    { "id": "w-nahotaa", "type": "word", "gujarati": "નહોતા", "translit": "nahotaa", "english": "were not (plural, polite)", "notes": "The past of નથી, and it agrees: નહોતો, નહોતી, નહોતું, નહોતા." },
+    { "id": "x-when-i-was-little", "type": "sentence", "gujarati": "જ્યારે હું નાનો હતો, ત્યારે અમે ગામમાં રહેતા.", "translit": "jyaare hun naano hato, tyaare ame gaammaan rahetaa.", "english": "When I was little, we lived in the village (a man speaking).", "alts": ["When I was little, we lived in the village", "When I was small, we used to live in the village", "When I was little we used to live in the village"] },
+    { "id": "x-little-played-a-lot", "type": "sentence", "gujarati": "હું નાની હતી ત્યારે બહુ રમતી.", "translit": "hun naanee hatee tyaare bahu ramtee.", "english": "When I was little I played a lot (a woman speaking).", "alts": ["When I was little I used to play a lot", "When I was small I played a lot"], "notes": "જ્યારે is often left out: the ત્યારે is enough." },
+    { "id": "x-no-phones-then", "type": "sentence", "gujarati": "ત્યારે ફોન નહોતા.", "translit": "tyaare phon nahotaa.", "english": "Back then there were no phones.", "alts": ["There were no phones then", "At that time there were no phones"] },
+
+    { "id": "x-i-was-reading", "type": "sentence", "gujarati": "હું વાંચતો હતો.", "translit": "hun vaanchto hato.", "english": "I was reading (a man speaking).", "alts": ["I was reading"] },
+    { "id": "x-what-were-you-doing", "type": "sentence", "gujarati": "તમે શું કરતા હતા?", "translit": "tame shun kartaa hataa?", "english": "What were you doing?" },
+    { "id": "x-mom-was-sleeping", "type": "sentence", "gujarati": "મમ્મી સૂતી હતી.", "translit": "mammee sootee hatee.", "english": "Mom was sleeping.", "alts": ["Mom was asleep", "Mum was sleeping"] },
+    { "id": "x-eating-when-you-called", "type": "sentence", "gujarati": "તમારો ફોન આવ્યો ત્યારે હું જમતો હતો.", "translit": "tamaaro phon aavyo tyaare hun jamto hato.", "english": "When you called, I was eating (a man speaking).", "alts": ["When you called, I was eating", "I was eating when you called"] },
+
+    { "id": "x-walked-to-school", "type": "sentence", "gujarati": "પહેલાં લોકો ચાલીને સ્કૂલ જતા.", "translit": "pahelaan loko chaaleene skool jataa.", "english": "People used to walk to school before.", "alts": ["In the old days people walked to school", "Before, people used to walk to school"] },
+    { "id": "x-diwali-firecrackers", "type": "sentence", "gujarati": "દિવાળીમાં અમે આખી રાત ફટાકડા ફોડતા.", "translit": "divaaLeemaan ame aakhee raat phaTaakDaa phoDtaa.", "english": "At Diwali we used to set off firecrackers all night.", "alts": ["At Diwali we set off firecrackers all night", "We used to set off firecrackers all night at Diwali"] },
+    { "id": "x-didnt-like-milk", "type": "sentence", "gujarati": "નાનપણમાં મને દૂધ નહોતું ભાવતું.", "translit": "naanpaNmaan mane doodh nahotun bhaavtun.", "english": "As a child I didn't like milk.", "alts": ["When I was a child I did not like milk", "As a child I did not like milk"], "notes": "ભાવવું is \"to like\" for food: મને દૂધ ભાવે છે, I like milk." },
+    { "id": "x-grandpa-worked-fields", "type": "sentence", "gujarati": "દાદા ખેતરમાં કામ કરતા.", "translit": "daadaa khetarmaan kaam kartaa.", "english": "Grandpa used to work in the fields.", "alts": ["Grandpa worked in the fields", "Grandfather used to work in the fields"] }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "u24",
+  "order": 19,
+  "title": "The whole family",
+  "goal": "Name every relative, in-laws and cousins included, and talk about family news.",
+  "tip": "Aunts take their name from the uncle they married: કાકા's wife is કાકી, મામા's wife is મામી. It works the other way too: માસી's husband is માસા and ફોઈ's husband is ફુઆ. Respected women take the ાં ending: મારાં કાકી, મારાં સાસુ.",
+  "lessons": [
+    { "id": "u24-l1", "title": "Aunts and uncles", "items": ["w-kaakee", "w-maamee", "w-maasaa", "w-phuaa", "x-this-is-my-kaki", "x-mama-mami-came"], "translit": "hint" },
+    { "id": "u24-l2", "title": "Husband, wife, bhabhi", "items": ["w-pati", "w-patnee", "w-bhaabhee", "w-banevee", "x-husband-doctor", "x-bhabhi-cooking"], "translit": "hide" },
+    { "id": "u24-l3", "title": "In-laws", "items": ["w-saasu", "w-sasraa", "w-vahu", "w-jamaai", "x-mother-in-law-with-us", "x-son-in-law-today"], "translit": "hide" },
+    { "id": "u24-l4", "title": "Nephews, nieces, grandchildren", "items": ["w-bhatreejo", "w-bhaaNej", "w-pautra", "w-pautree", "x-cousin-brother", "x-nephew-three"], "translit": "hide" },
+    { "id": "u24-l5", "title": "Putting it together", "items": ["x-diwali-together", "x-phoi-ahmedabad", "x-bhabhi-called", "x-brothers-wedding"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "w-kaakee", "type": "word", "gujarati": "કાકી", "translit": "kaakee", "english": "aunt (kaka's wife)", "notes": "Your dad's brother is કાકા, and his wife is કાકી." },
+    { "id": "w-maamee", "type": "word", "gujarati": "મામી", "translit": "maamee", "english": "aunt (mama's wife)", "notes": "Your mom's brother is મામા, and his wife is મામી." },
+    { "id": "w-maasaa", "type": "word", "gujarati": "માસા", "translit": "maasaa", "english": "uncle (masi's husband)" },
+    { "id": "w-phuaa", "type": "word", "gujarati": "ફુઆ", "translit": "phuaa", "english": "uncle (phoi's husband)" },
+    { "id": "x-this-is-my-kaki", "type": "sentence", "gujarati": "આ મારાં કાકી છે.", "translit": "aa maaraan kaakee chhe.", "english": "This is my aunt.", "alts": ["This is my kaki"], "notes": "મારાં, the respectful form for a woman elder. In casual talk many people say મારી કાકી." },
+    { "id": "x-mama-mami-came", "type": "sentence", "gujarati": "મામા અને મામી આવ્યાં.", "translit": "maamaa ane maamee aavyaan.", "english": "My uncle and aunt came.", "alts": ["Uncle and aunt came", "Mama and mami came", "Uncle and aunt have come"], "notes": "A man and a woman together take the ાં ending: આવ્યાં." },
+
+    { "id": "w-pati", "type": "word", "gujarati": "પતિ", "translit": "pati", "english": "husband" },
+    { "id": "w-patnee", "type": "word", "gujarati": "પત્ની", "translit": "patnee", "english": "wife" },
+    { "id": "w-bhaabhee", "type": "word", "gujarati": "ભાભી", "translit": "bhaabhee", "english": "sister-in-law (brother's wife)", "notes": "Also what you call any older friend's wife, with real warmth." },
+    { "id": "w-banevee", "type": "word", "gujarati": "બનેવી", "translit": "banevee", "english": "brother-in-law (sister's husband)", "notes": "Many families say જીજાજી instead." },
+    { "id": "x-husband-doctor", "type": "sentence", "gujarati": "મારા પતિ ડૉક્ટર છે.", "translit": "maaraa pati DokTar chhe.", "english": "My husband is a doctor.", "notes": "મારા, not મારો: a husband traditionally takes the respectful plural." },
+    { "id": "x-bhabhi-cooking", "type": "sentence", "gujarati": "ભાભી ખાવાનું બનાવે છે.", "translit": "bhaabhee khaavaanun banaave chhe.", "english": "Bhabhi is making the food.", "alts": ["My sister-in-law is cooking", "Bhabhi is cooking", "My sister-in-law is making the food", "Bhabhi makes the food"] },
+
+    { "id": "w-saasu", "type": "word", "gujarati": "સાસુ", "translit": "saasu", "english": "mother-in-law" },
+    { "id": "w-sasraa", "type": "word", "gujarati": "સસરા", "translit": "sasraa", "english": "father-in-law" },
+    { "id": "w-vahu", "type": "word", "gujarati": "વહુ", "translit": "vahu", "english": "daughter-in-law" },
+    { "id": "w-jamaai", "type": "word", "gujarati": "જમાઈ", "translit": "jamaai", "english": "son-in-law", "notes": "Treated like a king when he visits, hence the joke જમાઈરાજ, King Son-in-law." },
+    { "id": "x-mother-in-law-with-us", "type": "sentence", "gujarati": "મારાં સાસુ અમારી સાથે રહે છે.", "translit": "maaraan saasu amaaree saathe rahe chhe.", "english": "My mother-in-law lives with us." },
+    { "id": "x-son-in-law-today", "type": "sentence", "gujarati": "જમાઈ આજે આવશે.", "translit": "jamaai aaje aavshe.", "english": "The son-in-law will come today.", "alts": ["Our son-in-law will come today", "The son-in-law is coming today"] },
+
+    { "id": "w-bhatreejo", "type": "word", "gujarati": "ભત્રીજો", "translit": "bhatreejo", "english": "nephew (brother's son)", "notes": "A brother's daughter is ભત્રીજી." },
+    { "id": "w-bhaaNej", "type": "word", "gujarati": "ભાણેજ", "translit": "bhaaNej", "english": "sister's child", "notes": "A sister's son is also called ભાણો, and her daughter ભાણી." },
+    { "id": "w-pautra", "type": "word", "gujarati": "પૌત્ર", "translit": "pautra", "english": "grandson (son's son)", "notes": "The formal word. At home a son's children are પોતરો and પોતરી, and a daughter's are દોહિત્રો and દોહિત્રી." },
+    { "id": "w-pautree", "type": "word", "gujarati": "પૌત્રી", "translit": "pautree", "english": "granddaughter (son's daughter)" },
+    { "id": "x-cousin-brother", "type": "sentence", "gujarati": "કાકાનો દીકરો મારો ભાઈ છે.", "translit": "kaakaano deekro maaro bhaai chhe.", "english": "My uncle's son is my brother.", "alts": ["My uncle's son is my cousin", "Kaka's son is my brother"], "notes": "Gujarati calls cousins brother and sister. To be exact, say કાકાનો દીકરો (kaka's son) or મામાની દીકરી (mama's daughter)." },
+    { "id": "x-nephew-three", "type": "sentence", "gujarati": "મારો ભત્રીજો ત્રણ વર્ષનો છે.", "translit": "maaro bhatreejo traN varshno chhe.", "english": "My nephew is three years old.", "alts": ["My nephew is three"] },
+
+    { "id": "x-diwali-together", "type": "sentence", "gujarati": "દિવાળીમાં બધાં ભેગાં થાય છે.", "translit": "divaaLeemaan badhaan bhegaan thaay chhe.", "english": "At Diwali everyone gets together.", "alts": ["Everyone gets together at Diwali", "At Diwali everybody gets together"], "notes": "ભેગા થવું, to gather. બધાં and ભેગાં take ાં because the group is mixed." },
+    { "id": "x-phoi-ahmedabad", "type": "sentence", "gujarati": "મારાં ફોઈ અમદાવાદમાં રહે છે.", "translit": "maaraan phoi amdaavaadmaan rahe chhe.", "english": "My aunt lives in Ahmedabad.", "alts": ["My phoi lives in Ahmedabad"] },
+    { "id": "x-bhabhi-called", "type": "sentence", "gujarati": "ગઈકાલે ભાભીનો ફોન આવ્યો.", "translit": "gaikaale bhaabheeno phon aavyo.", "english": "Yesterday my sister-in-law called.", "alts": ["My sister-in-law called yesterday", "Yesterday Bhabhi called", "Bhabhi called yesterday"], "notes": "Literally \"Bhabhi's phone came\": that's how Gujarati says someone called you." },
+    { "id": "x-brothers-wedding", "type": "sentence", "gujarati": "આવતા મહિને મારા ભાઈનાં લગ્ન છે.", "translit": "aavtaa mahine maaraa bhaainaan lagna chhe.", "english": "My brother's wedding is next month.", "alts": ["Next month is my brother's wedding", "My brother is getting married next month"], "notes": "લગ્ન is treated as plural, so it takes નાં: ભાઈનાં લગ્ન." }
+  ]
+}

@@ -38,6 +38,8 @@ export interface Unit {
   id: string;
   order: number;
   title: string;
+  // What the learner can do by the end, CEFR style.
+  goal?: string;
   tip: string;
 }
 

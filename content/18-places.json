@@ -1,7 +1,8 @@
 {
   "id": "u13",
-  "order": 13,
+  "order": 18,
   "title": "Where things are",
+  "goal": "Say where things are, give simple directions, and say whose something is.",
   "tip": "Gujarati puts \"in, on, from, of\" after the word: ઘરમાં (in the house), ટેબલ પર (on the table), રવિનું ઘર (Ravi's house). Before them a word ending in ો or ું usually changes to ા: રસ્તો → રસ્તામાં, મારું → મારા માટે.",
   "lessons": [
     { "id": "u13-l1", "title": "In, on, from", "items": ["w-maan", "w-par", "w-thee", "w-Tebal", "x-book-on-table", "x-bus-on-the-way", "x-comes-from-city"], "translit": "hint" },

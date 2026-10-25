@@ -202,8 +202,8 @@ const FAMILY: Record<string, RegExp> = {
   દાદા: /\b(grandpa|grandfather|dada)\b/i,
   દાદી: /\b(grandma|grandmother|dadi)\b/i,
   બહેન: /\bsisters?\b/i,
-  દીકરો: /\bson\b/i,
-  દીકરી: /\bdaughter\b/i,
+  દીકરો: /\bsons?\b/i,
+  દીકરી: /\bdaughters?\b/i,
   કાકા: /\buncle\b/i,
   મામા: /\buncle\b/i,
   માસી: /\baunt\b/i,
@@ -214,7 +214,7 @@ const TIME: Record<string, RegExp> = {
   આજે: /\btoday|tonight|this (morning|evening|afternoon)\b/i,
   કાલે: /\b(yesterday|tomorrow|last night)\b/i,
   સવારે: /\bmorning|breakfast|a\.m\.|am\b/i,
-  સાંજે: /\bevening\b/i,
+  સાંજે: /\bevenings?\b/i,
   રાત્રે: /\bnight|tonight\b/i,
   બપોરે: /\b(afternoon|noon|lunch|midday)\b/i,
 };
@@ -610,10 +610,6 @@ export const CHECKS: Check[] = [
 // Violations a person has checked and judged correct, with why. Keyed by
 // check id, then by the violation string the check produces.
 export const EXCEPTIONS: Record<number, Record<string, string>> = {
-  50: {
-    'conversations/cv-081: ક્યારેય vs ક્યારે, ક્યાં, કેમ':
-      'ક્યારેય ("ever") is an adverb, but the question words that look like it are the tempting wrong answers; that is the point of the blank.',
-  },
   65: {
     'conversations/cv-020: તમે પણ અમારી સાથે આવો ને, મજા આવશે. / Why don\'t you come with us too, it\'ll be fun.':
       'ને here is the coaxing particle ("do come"), and "why don\'t you" is the natural English for it.',

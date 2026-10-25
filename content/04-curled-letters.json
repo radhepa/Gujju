@@ -1,0 +1,46 @@
+{
+  "id": "s04",
+  "order": 4,
+  "title": "Curled-back letters and the dot",
+  "goal": "Read a farsan shop's board: ઢોકળાં, ખમણ, થેપલાં, પાપડ, લાડુ.",
+  "tip": "ટ ઠ ડ ઢ ણ ળ are said with the tongue curled back to the roof of the mouth, and get capitals in the transliteration: Ta, Da, Na, La. The dot on top (ં) makes the vowel nasal, said partly through the nose. An n after a vowel in the transliteration means that dot.",
+  "lessons": [
+    { "id": "s04-l1", "title": "ટ and ડ", "items": ["l-tta", "l-dda", "w-paapaD", "w-laaDu", "w-baTaakaa"] },
+    { "id": "s04-l2", "title": "ઠ and ઢ", "items": ["l-ttha", "l-ddha", "w-Dhol", "w-Theek", "w-meeThaai"] },
+    { "id": "s04-l3", "title": "ણ and ળ", "items": ["l-nna", "l-lla", "w-phal", "w-goL", "w-khamaN"] },
+    { "id": "s04-l4", "title": "The dot: ં", "items": ["l-am", "w-DhokLaan", "w-theplaan", "w-sangeet"] },
+    { "id": "s04-l5", "title": "ૈ and ૌ", "items": ["l-ai", "s-kai", "l-au", "s-kau", "w-paisaa", "w-sau"] },
+    { "id": "s04-l6", "title": "Straight or curled?", "items": [], "review": true }
+  ],
+  "items": [
+    { "id": "l-tta", "type": "letter", "gujarati": "ટ", "translit": "Ta", "english": "", "notes": "A t with the tongue curled back. Closer to the English t than ત is.", "confusables": ["l-ttha", "l-ta"] },
+    { "id": "l-dda", "type": "letter", "gujarati": "ડ", "translit": "Da", "english": "", "notes": "A d with the tongue curled back, like the English d.", "confusables": ["l-ddha", "l-da"] },
+    { "id": "w-paapaD", "type": "word", "gujarati": "પાપડ", "translit": "paapaD", "english": "papad (crisp wafer)" },
+    { "id": "w-laaDu", "type": "word", "gujarati": "લાડુ", "translit": "laaDu", "english": "laddoo (sweet ball)" },
+    { "id": "w-baTaakaa", "type": "word", "gujarati": "બટાકા", "translit": "baTaakaa", "english": "potatoes", "notes": "As in બટાકાનું શાક, potato curry." },
+
+    { "id": "l-ttha", "type": "letter", "gujarati": "ઠ", "translit": "Tha", "english": "", "notes": "Curled-back t with a puff of air.", "confusables": ["l-tta", "l-ddha"] },
+    { "id": "l-ddha", "type": "letter", "gujarati": "ઢ", "translit": "Dha", "english": "", "notes": "Curled-back d with a breath.", "confusables": ["l-dda", "l-ttha"] },
+    { "id": "w-Dhol", "type": "word", "gujarati": "ઢોલ", "translit": "Dhol", "english": "drum", "notes": "The big drum that sets the beat for garba." },
+    { "id": "w-Theek", "type": "word", "gujarati": "ઠીક", "translit": "Theek", "english": "fine, all right", "notes": "ઠીક છે = it's fine, okay." },
+    { "id": "w-meeThaai", "type": "word", "gujarati": "મીઠાઈ", "translit": "meeThaai", "english": "sweets", "notes": "ઈ after another vowel is a plain i: meeThaai." },
+
+    { "id": "l-nna", "type": "letter", "gujarati": "ણ", "translit": "Na", "english": "", "notes": "An n with the tongue curled back. Never starts a word.", "confusables": ["l-na"] },
+    { "id": "l-lla", "type": "letter", "gujarati": "ળ", "translit": "La", "english": "", "notes": "An l with the tongue curled back. English has nothing like it, and Hindi doesn't either.", "confusables": ["l-la"] },
+    { "id": "w-phal", "type": "word", "gujarati": "ફળ", "translit": "phaL", "english": "fruit" },
+    { "id": "w-goL", "type": "word", "gujarati": "ગોળ", "translit": "goL", "english": "jaggery", "notes": "Gujarati dal often has a little ગોળ in it. The same word also means round." },
+    { "id": "w-khamaN", "type": "word", "gujarati": "ખમણ", "translit": "khamaN", "english": "khaman (steamed gram-flour cake)" },
+
+    { "id": "l-am", "type": "letter", "gujarati": "અં", "translit": "am", "english": "", "notes": "The dot (anusvara) makes the vowel nasal, said partly through the nose.", "confusables": ["l-ah", "l-a"] },
+    { "id": "w-DhokLaan", "type": "word", "gujarati": "ઢોકળાં", "translit": "DhokLaan", "english": "dhokla", "notes": "The dot on the last letter makes its aa nasal: -aan." },
+    { "id": "w-theplaan", "type": "word", "gujarati": "થેપલાં", "translit": "theplaan", "english": "thepla (spiced flatbreads)" },
+    { "id": "w-sangeet", "type": "word", "gujarati": "સંગીત", "translit": "sangeet", "english": "music", "notes": "Before a consonant the dot is said as n or m, whichever fits: sangeet." },
+
+    { "id": "l-ai", "type": "letter", "gujarati": "ઐ", "translit": "ai", "english": "", "notes": "Like the ai in \"aisle\". It is એ with a second stroke on top.", "confusables": ["l-e"] },
+    { "id": "s-kai", "type": "letter", "gujarati": "કૈ", "translit": "kai", "english": "", "notes": "Two strokes on top for ai.", "confusables": ["s-ke"] },
+    { "id": "l-au", "type": "letter", "gujarati": "ઔ", "translit": "au", "english": "", "notes": "Like the ow in \"cow\".", "confusables": ["l-o"] },
+    { "id": "s-kau", "type": "letter", "gujarati": "કૌ", "translit": "kau", "english": "", "notes": "ા with two strokes on top makes au.", "confusables": ["s-ko"] },
+    { "id": "w-paisaa", "type": "word", "gujarati": "પૈસા", "translit": "paisaa", "english": "money" },
+    { "id": "w-sau", "type": "word", "gujarati": "સૌ", "translit": "sau", "english": "everyone", "notes": "As in સૌને જય શ્રી કૃષ્ણ, a greeting to everyone in the room." }
+  ]
+}

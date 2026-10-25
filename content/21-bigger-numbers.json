@@ -1,0 +1,51 @@
+{
+  "id": "u23",
+  "order": 21,
+  "title": "Bigger numbers",
+  "goal": "Follow prices, ages and times up to a hundred and beyond, plus દોઢ and અઢી.",
+  "tip": "From 21 to 99 each number has its own word, but there are patterns. 21 to 28 end in -વીસ: એકવીસ, બાવીસ, ત્રેવીસ. A number ending in 9 is \"one short\" of the next ten: ઓગણત્રીસ (29), ઓગણચાળીસ (39). Gujarati also has its own words for fractions: દોઢ is 1½ and અઢી is 2½.",
+  "lessons": [
+    { "id": "u23-l1", "title": "21 to 24", "items": ["n-21", "n-22", "n-23", "n-24", "x-twenty-two-rupees"], "translit": "hint" },
+    { "id": "u23-l2", "title": "26 to 29", "items": ["n-26", "n-27", "n-28", "n-29", "x-twenty-eight-years"], "translit": "hide" },
+    { "id": "u23-l3", "title": "One short of the ten", "items": ["n-39", "n-49", "n-59", "n-99"], "translit": "hide" },
+    { "id": "u23-l4", "title": "The fives", "items": ["n-35", "n-45", "n-55", "n-75"], "translit": "hide" },
+    { "id": "u23-l5", "title": "Halves and thousands", "items": ["w-doDh", "w-aDhee", "w-savaa", "w-poNaa", "w-hajaar", "w-laakh"], "translit": "hide" },
+    { "id": "u23-l6", "title": "Putting it together", "items": ["x-half-past-two", "x-quarter-past-five", "x-quarter-to-seven", "x-kilo-and-a-half", "x-sari-five-thousand"], "translit": "hide" }
+  ],
+  "items": [
+    { "id": "n-21", "type": "number", "gujarati": "૨૧", "translit": "ekvees", "english": "21", "notes": "Written out: એકવીસ. એક (one) + વીસ (twenty).", "confusables": ["n-22"] },
+    { "id": "n-22", "type": "number", "gujarati": "૨૨", "translit": "baavees", "english": "22", "notes": "Written out: બાવીસ.", "confusables": ["n-23"] },
+    { "id": "n-23", "type": "number", "gujarati": "૨૩", "translit": "trevees", "english": "23", "notes": "Written out: ત્રેવીસ.", "confusables": ["n-22", "n-24"] },
+    { "id": "n-24", "type": "number", "gujarati": "૨૪", "translit": "chovees", "english": "24", "notes": "Written out: ચોવીસ.", "confusables": ["n-23"] },
+    { "id": "x-twenty-two-rupees", "type": "sentence", "gujarati": "ચા બાવીસ રૂપિયાની છે.", "translit": "chaa baavees roopiyaanee chhe.", "english": "The tea is twenty-two rupees.", "alts": ["Tea is twenty-two rupees", "The tea costs twenty-two rupees"] },
+
+    { "id": "n-26", "type": "number", "gujarati": "૨૬", "translit": "chhavvees", "english": "26", "notes": "Written out: છવ્વીસ.", "confusables": ["n-27"] },
+    { "id": "n-27", "type": "number", "gujarati": "૨૭", "translit": "sattaavees", "english": "27", "notes": "Written out: સત્તાવીસ.", "confusables": ["n-26", "n-28"] },
+    { "id": "n-28", "type": "number", "gujarati": "૨૮", "translit": "aTThaavees", "english": "28", "notes": "Written out: અઠ્ઠાવીસ.", "confusables": ["n-27"] },
+    { "id": "n-29", "type": "number", "gujarati": "૨૯", "translit": "ogaNtrees", "english": "29", "notes": "Written out: ઓગણત્રીસ, \"one short of thirty\". Like ઓગણીસ (19), one short of twenty.", "confusables": ["n-39"] },
+    { "id": "x-twenty-eight-years", "type": "sentence", "gujarati": "મારી બહેન અઠ્ઠાવીસ વર્ષની છે.", "translit": "maaree bahen aTThaavees varshnee chhe.", "english": "My sister is twenty-eight.", "alts": ["My sister is twenty-eight years old"] },
+
+    { "id": "n-39", "type": "number", "gujarati": "૩૯", "translit": "ogaNchaaLees", "english": "39", "notes": "Written out: ઓગણચાળીસ, one short of ચાળીસ (40).", "confusables": ["n-49"] },
+    { "id": "n-49", "type": "number", "gujarati": "૪૯", "translit": "ogaNpachaas", "english": "49", "notes": "Written out: ઓગણપચાસ, one short of પચાસ (50).", "confusables": ["n-59"] },
+    { "id": "n-59", "type": "number", "gujarati": "૫૯", "translit": "ogaNsaaTh", "english": "59", "notes": "Written out: ઓગણસાઠ, one short of સાઠ (60).", "confusables": ["n-49"] },
+    { "id": "n-99", "type": "number", "gujarati": "૯૯", "translit": "navvaaNun", "english": "99", "notes": "Written out: નવ્વાણું. Not every 9 follows the ઓગણ- pattern, and 99 has a word all its own." },
+
+    { "id": "n-35", "type": "number", "gujarati": "૩૫", "translit": "paantrees", "english": "35", "notes": "Written out: પાંત્રીસ. પાં- for five, then ત્રીસ.", "confusables": ["n-45"] },
+    { "id": "n-45", "type": "number", "gujarati": "૪૫", "translit": "pistaaLees", "english": "45", "notes": "Written out: પિસ્તાળીસ.", "confusables": ["n-35", "n-55"] },
+    { "id": "n-55", "type": "number", "gujarati": "૫૫", "translit": "panchaavan", "english": "55", "notes": "Written out: પંચાવન.", "confusables": ["n-45", "n-75"] },
+    { "id": "n-75", "type": "number", "gujarati": "૭૫", "translit": "panchoter", "english": "75", "notes": "Written out: પંચોતેર. Compare સિત્તેર (70).", "confusables": ["n-55"] },
+
+    { "id": "w-doDh", "type": "word", "gujarati": "દોઢ", "translit": "doDh", "english": "one and a half", "notes": "દોઢ કિલો = 1½ kilos. દોઢ વાગ્યો છે = it's half past one." },
+    { "id": "w-aDhee", "type": "word", "gujarati": "અઢી", "translit": "aDhee", "english": "two and a half", "notes": "અઢી વાગ્યા છે = it's half past two. From three on, use સાડા: સાડા ત્રણ." },
+    { "id": "w-savaa", "type": "word", "gujarati": "સવા", "translit": "savaa", "english": "and a quarter, quarter past", "notes": "સવા બે = 2¼, or quarter past two." },
+    { "id": "w-poNaa", "type": "word", "gujarati": "પોણા", "translit": "poNaa", "english": "less a quarter, quarter to", "notes": "પોણા ત્રણ = 2¾, or quarter to three. It counts down from the number you say." },
+    { "id": "w-hajaar", "type": "word", "gujarati": "હજાર", "translit": "hajaar", "english": "thousand" },
+    { "id": "w-laakh", "type": "word", "gujarati": "લાખ", "translit": "laakh", "english": "lakh (one hundred thousand)", "notes": "Big numbers go in lakhs and crores: દસ લાખ is a million." },
+
+    { "id": "x-half-past-two", "type": "sentence", "gujarati": "અઢી વાગ્યા છે.", "translit": "aDhee vaagyaa chhe.", "english": "It is half past two.", "alts": ["It's half past two", "It is two thirty", "It's two thirty"] },
+    { "id": "x-quarter-past-five", "type": "sentence", "gujarati": "સવા પાંચ વાગ્યા છે.", "translit": "savaa paanch vaagyaa chhe.", "english": "It is quarter past five.", "alts": ["It's quarter past five", "It is a quarter past five", "It is five fifteen", "It's five fifteen"] },
+    { "id": "x-quarter-to-seven", "type": "sentence", "gujarati": "પોણા સાત વાગ્યા છે.", "translit": "poNaa saat vaagyaa chhe.", "english": "It is quarter to seven.", "alts": ["It's quarter to seven", "It is a quarter to seven", "It is six forty-five", "It's six forty-five"] },
+    { "id": "x-kilo-and-a-half", "type": "sentence", "gujarati": "દોઢ કિલો ખાંડ આપો.", "translit": "doDh kilo khaanD aapo.", "english": "Give me one and a half kilos of sugar.", "alts": ["One and a half kilos of sugar, please", "Give one and a half kilos of sugar"] },
+    { "id": "x-sari-five-thousand", "type": "sentence", "gujarati": "આ સાડી પાંચ હજાર રૂપિયાની છે.", "translit": "aa saaDee paanch hajaar roopiyaanee chhe.", "english": "This sari is five thousand rupees.", "alts": ["This sari costs five thousand rupees", "This saree is five thousand rupees"] }
+  ]
+}

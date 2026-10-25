@@ -1,3 +1,5 @@
+import { course } from '../content/course';
+
 // A rough CEFR estimate from what the learner has finished. CEFR describes
 // what you can do (A1: introduce yourself and handle very simple exchanges;
 // A2: everyday errands and routines; B1: get by in most situations and
@@ -25,7 +27,9 @@ export interface LevelStage {
   milestones: Milestone[];
 }
 
-const units = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => `u${String(from + i).padStart(2, '0')}`);
+// Units by their place on the path (unit ids are permanent progress keys and
+// don't follow the order).
+const units = (from: number, to: number) => course.units.filter((u) => u.order >= from && u.order <= to).map((u) => u.id);
 
 export function stages(input: LevelInput): LevelStage[] {
   const all = (ids: string[]) => ids.every((id) => input.unitsDone.has(id));
@@ -34,20 +38,20 @@ export function stages(input: LevelInput): LevelStage[] {
     {
       code: 'A1',
       name: 'Beginner',
-      canDo: 'Read the script, greet people, talk about family, food and home in simple present-tense sentences.',
+      canDo: 'Read the script, introduce yourself, talk about family, food, home and your week in the present tense.',
       milestones: [
-        { label: 'Units 1 to 6: the script and numbers', done: all(units(1, 6)) },
-        { label: 'Units 7 to 10: first words and sentences', done: all(units(7, 10)) },
+        { label: 'Units 1 to 7: the script and numbers', done: all(units(1, 7)) },
+        { label: 'Units 8 to 15: greetings, family, saying no, about me, days', done: all(units(8, 15)) },
         { label: 'Half of Everyday Gujarati', done: seen('everyday', 0.5) },
       ],
     },
     {
       code: 'A2',
       name: 'Elementary',
-      canDo: 'Talk about yesterday and tomorrow, shop, ask the way, say how you feel, ask for things politely.',
+      canDo: 'Talk about yesterday and tomorrow and the whole family, shop, ask the way, cook, say how you feel, ask for things politely.',
       milestones: [
-        { label: 'Units 11 to 14: past, future, places, shopping', done: all(units(11, 14)) },
-        { label: 'Units 15 to 18: feelings, requests, describing, can and must', done: all(units(15, 18)) },
+        { label: 'Units 16 to 21: past, future, places, family, shopping, numbers', done: all(units(16, 21)) },
+        { label: 'Units 22 to 26: feelings, requests, cooking, describing, can and must', done: all(units(22, 26)) },
         { label: 'Half of Out and about', done: seen('out-and-about', 0.5) },
         { label: 'Practise two stories', done: ['book:kesar-market', 'book:thirsty-crow', 'book:navratri'].filter((b) => seen(b, 0.5)).length >= 2 },
       ],
@@ -55,8 +59,9 @@ export function stages(input: LevelInput): LevelStage[] {
     {
       code: 'B1',
       name: 'Intermediate',
-      canDo: 'Follow family conversations and simple films, give reasons and opinions, read a letter from home.',
+      canDo: 'Follow family conversations and simple films, talk about the past, give reasons and opinions, phone home, read a letter from home.',
       milestones: [
+        { label: 'Units 27 to 32: ongoing and past habits, helper verbs, reasons, phone calls, festivals', done: all(units(27, 32)) },
         { label: 'Half of Real conversations', done: seen('conversations', 0.5) },
         { label: 'All of Out and about', done: seen('out-and-about', 0.9) },
         { label: 'Practise A letter to Ba', done: seen('book:letter-to-ba', 0.5) },

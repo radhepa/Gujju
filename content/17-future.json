@@ -1,7 +1,8 @@
 {
   "id": "u12",
-  "order": 12,
+  "order": 17,
   "title": "Tomorrow",
+  "goal": "Talk about plans: what you will do tomorrow and next week.",
   "tip": "The future tense has a શ in it: હું જઈશ, અમે જઈશું, તમે જશો, તે જશે. For a plan, use the verb's stem + વાનો + છે: હું કાલે જવાનો છું (a man), હું કાલે જવાની છું (a woman).",
   "lessons": [
     { "id": "u12-l1", "title": "I will go", "items": ["w-jaish", "w-jashe", "w-jaishun", "w-jasho", "x-i-will-go-market", "x-we-will-go-temple", "x-where-will-you-go"], "translit": "hint" },
