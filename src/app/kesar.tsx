@@ -42,7 +42,7 @@ export default function KesarScreen() {
         <Kesar key={`${pose}-${bump}`} pose={pose} size={240} />
       </View>
       <Text style={styles.about}>
-        A Gir lion, from the forest where Gujarat's lions live. He's named after kesar: saffron, the colour of his pagdi,
+        A Gir lion, from the forest where Gujarat's lions live. He's named after kesar: saffron, the colour of his mane,
         and the Gir Kesar mango that grows in the same forest. Tap him to say hello.
       </Text>
 

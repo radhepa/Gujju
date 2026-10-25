@@ -7,7 +7,7 @@
   "builtIn": true,
   "sentences": [
     {"id": "km-01", "gu": "કેસર ગીરનો એક નાનો સિંહ છે.", "tr": "kesar geerno ek naano sinh chhe.", "en": "Kesar is a young lion from Gir.", "cloze": "સિંહ", "wrong": ["વાઘ", "હાથી", "કાગડો"]},
-    {"id": "km-02", "gu": "તે કેસરી પાઘડી પહેરે છે.", "tr": "te kesaree paaghDee pahere chhe.", "en": "He wears a saffron pagdi.", "cloze": "પાઘડી", "wrong": ["ટોપી", "સાડી", "બંગડી"]},
+    {"id": "km-02", "gu": "તે લાલ બાંધણી પહેરે છે.", "tr": "te laal baandhNee pahere chhe.", "en": "He wears a red bandhani scarf.", "cloze": "બાંધણી", "wrong": ["ટોપી", "સાડી", "બંગડી"]},
     {"id": "km-03", "gu": "કેસરને ઢોકળાં બહુ ભાવે છે.", "tr": "kesarne DhokLaan bahu bhaave chhe.", "en": "Kesar loves dhokla.", "cloze": "ઢોકળાં", "wrong": ["થેપલાં", "ભજિયાં", "પાતરાં"]},
     {"id": "km-04", "gu": "આજે કેસર બજાર જાય છે.", "tr": "aaje kesar bajaar jaay chhe.", "en": "Today Kesar is going to the market.", "cloze": "બજાર", "wrong": ["મંદિર", "સ્કૂલ", "ખેતર"]},
     {"id": "km-05", "gu": "કેસર પાસે એક યાદી છે.", "tr": "kesar paase ek yaadee chhe.", "en": "Kesar has a list.", "cloze": "યાદી", "wrong": ["થેલી", "ચોપડી", "છત્રી"]},

@@ -40,7 +40,7 @@ Runs on iOS and the web from one Expo codebase. On a phone it installs from the 
 - **Read aloud** with the device's own Gujarati voice where there is one (most Android phones and Chrome). The speaker buttons stay hidden otherwise
 - **Progress**: a daily XP goal, best streak, a twelve-week activity grid and the reviews coming up this week
 - **Your data stays yours**: progress lives on the device. Sign in to sync between devices (each account can only ever read its own rows), or save a backup file to Files, iCloud Drive or Google Drive and restore it on a new phone
-- **Kesar** (કેસર), the mascot: a Gir lion in a saffron pagdi, named after saffron and the Gir Kesar mango
+- **Kesar** (કેસર), the mascot: a Gir lion cub with a saffron mane and a red bandhani scarf, named after saffron and the Gir Kesar mango
 
 ## How far it takes you
 
@@ -163,9 +163,9 @@ Transliteration: a capital letter means a retroflex sound (Ta, Da, Na, La), and 
 
 ## Mascot
 
-Kesar is drawn in the same style as Pip, the panda from my fitness app [FitPip](https://github.com/radhepa/FitPip): no outlines, soft two-tone shading, bead eyes with two highlights, brows that do the acting, a band with fluttering ties, and the same idle timing. His face is his own (a broad lion head, rosy nose, little fangs when he grins), but the two should look like they came from the same hand.
+Kesar is a lion cub drawn chibi: a big round head in a puffy two-tone mane, round ears poking out of it and a curl on top, a small body with stubby arms and bean feet, and a red bandhani neckerchief. No outlines, just soft gradient shapes, big glossy eyes, a cat's w of a mouth and rosy cheeks.
 
-He's a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the fan on his pagdi). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
+He's a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the curl on top of his mane). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
 
 His face does a lot of the acting: brows lift, worry and squeeze into a wink, eyes widen or glance around, the blush deepens. On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
 

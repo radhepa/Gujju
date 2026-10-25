@@ -2,55 +2,45 @@
 // them. Plain data with no React, so the app (Kesar.tsx) and the preview
 // renderer (scripts/render-kesar.mjs) draw from exactly the same source.
 //
-// He's drawn in the same style as Pip, the panda in FitPip: no outlines,
-// soft gradient shapes with a darker second colour for ears, paws and feet,
-// bead eyes with two highlights, brows that act, a band with fluttering ties,
-// and the same idle timing. His face is his own. A few body shapes borrowed
-// from Pip are kept in Pip's coordinates and shifted into place with `pip()`.
+// He's a Gir lion cub, drawn chibi: a big round head in a puffy saffron mane,
+// a small round body, stubby arms and bean feet, and a red bandhani
+// neckerchief. No outlines, just soft gradient shapes, big glossy eyes and
+// little brows that act.
 //
 // Coordinates are a 260 x 260 design box; the ground line is y = 234.
 
 export const VIEW = 260;
-// The drawing box, with headroom above the crest for jumps.
+// The drawing box, with headroom above the mane for jumps.
 export const BOX = { x: -10, y: -26, w: 280, h: 280 };
 
 type P = [number, number];
 
 // Palette ----------------------------------------------------------------------
 
-const EYE = '#2A1407';
-const BROW = '#8A4410';
-const MOUTH = '#5A2A0E';
-const BLUSH = '#E89BBD';
-const GOLD = '#FFD36E';
-const GOLD_DEEP = '#E2A532';
-const BAND = '#FFE7A6';
+const EYE = '#2B1609';
+const BROW = '#B4561E';
+const MOUTH = '#6B2E14';
+const TOE = '#D08938';
 
 const GRADIENTS: Record<string, string> = {
-  'k-coat': `<linearGradient id="k-coat" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFDB7C"/><stop offset=".45" stop-color="#F6B443"/><stop offset="1" stop-color="#DB8A22"/></linearGradient>`,
-  'k-dark': `<linearGradient id="k-dark" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#AE5A1C"/><stop offset="1" stop-color="#5E2A0A"/></linearGradient>`,
-  'k-cream': `<linearGradient id="k-cream" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFAEE"/><stop offset="1" stop-color="#F6DCAE"/></linearGradient>`,
-  'k-mane-back': `<linearGradient id="k-mane-back" gradientUnits="userSpaceOnUse" x1="0" y1="62" x2="0" y2="188"><stop stop-color="#AE5E1E"/><stop offset="1" stop-color="#66300E"/></linearGradient>`,
-  'k-mane': `<linearGradient id="k-mane" gradientUnits="userSpaceOnUse" x1="0" y1="74" x2="0" y2="182"><stop stop-color="#D88D38"/><stop offset="1" stop-color="#9C531B"/></linearGradient>`,
-  'k-kurta': `<linearGradient id="k-kurta" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#EE5C1E"/><stop offset="1" stop-color="#B2370C"/></linearGradient>`,
-  'k-panel': `<linearGradient id="k-panel" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFA556"/><stop offset=".5" stop-color="#FB7E33"/><stop offset="1" stop-color="#E55F1E"/></linearGradient>`,
-  'k-sleeve': `<linearGradient id="k-sleeve" gradientUnits="userSpaceOnUse" x1="78" y1="160" x2="104" y2="200"><stop stop-color="#FFA556"/><stop offset=".55" stop-color="#F7782C"/><stop offset="1" stop-color="#DC5A1A"/></linearGradient>`,
-  'k-paw': `<linearGradient id="k-paw" gradientUnits="userSpaceOnUse" x1="75" y1="195" x2="91" y2="214"><stop stop-color="#AE5A1C"/><stop offset="1" stop-color="#5E2A0A"/></linearGradient>`,
-  'k-turban': `<linearGradient id="k-turban" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#FF8A3E"/><stop offset=".55" stop-color="#F0601F"/><stop offset="1" stop-color="#C63E0E"/></linearGradient>`,
-  'k-band': `<linearGradient id="k-band" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF4D2"/><stop offset="1" stop-color="#F8D78E"/></linearGradient>`,
-  'k-plume': `<linearGradient id="k-plume" x1="0" y1="1" x2=".35" y2="0"><stop stop-color="#FFC15A"/><stop offset=".45" stop-color="#F58A2A"/><stop offset="1" stop-color="#D9481A"/></linearGradient>`,
-  'k-gold': `<linearGradient id="k-gold" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#FFF1B0"/><stop offset=".5" stop-color="#FFD36E"/><stop offset="1" stop-color="#D9971F"/></linearGradient>`,
-  'k-iris': `<linearGradient id="k-iris" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4A230C"/><stop offset=".55" stop-color="#A3601F"/><stop offset="1" stop-color="#E5A03E"/></linearGradient>`,
+  'k-coat': `<linearGradient id="k-coat" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#FFEAB2"/><stop offset=".5" stop-color="#FFD47E"/><stop offset="1" stop-color="#F3B256"/></linearGradient>`,
+  'k-limb': `<linearGradient id="k-limb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE6A6"/><stop offset="1" stop-color="#F2B055"/></linearGradient>`,
+  'k-foot': `<linearGradient id="k-foot" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FAC872"/><stop offset="1" stop-color="#E29A42"/></linearGradient>`,
+  'k-cream': `<linearGradient id="k-cream" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFDF6"/><stop offset="1" stop-color="#FCE6C2"/></linearGradient>`,
+  'k-mane-back': `<linearGradient id="k-mane-back" gradientUnits="userSpaceOnUse" x1="0" y1="30" x2="0" y2="182"><stop stop-color="#F28A36"/><stop offset="1" stop-color="#BC521D"/></linearGradient>`,
+  'k-mane': `<linearGradient id="k-mane" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="172"><stop stop-color="#FFBA58"/><stop offset="1" stop-color="#F2802E"/></linearGradient>`,
+  'k-tuft': `<linearGradient id="k-tuft" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#FFBE5C"/><stop offset="1" stop-color="#E8702A"/></linearGradient>`,
+  'k-ear': `<linearGradient id="k-ear" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#FFDC90"/><stop offset="1" stop-color="#F0A64A"/></linearGradient>`,
+  'k-scarf': `<linearGradient id="k-scarf" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#F2506A"/><stop offset="1" stop-color="#C52842"/></linearGradient>`,
   'k-aura': `<radialGradient id="k-aura"><stop stop-color="#FFB347" stop-opacity=".26"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></radialGradient>`,
   'k-glow': `<radialGradient id="k-glow"><stop stop-color="#FFD36B" stop-opacity=".55"/><stop offset="1" stop-color="#FFD36B" stop-opacity="0"/></radialGradient>`,
   'k-page': `<linearGradient id="k-page" gradientUnits="userSpaceOnUse" x1="131" y1="0" x2="161" y2="0"><stop stop-color="#E6CB98"/><stop offset=".45" stop-color="#FAEDCF"/><stop offset="1" stop-color="#FFFBF0"/></linearGradient>`,
 };
 
-const DOME = 'M67 84C57 58 88 36 130 36C172 36 203 58 193 84Q130 56 67 84Z';
-const PANEL = 'M107 156c-9 12-11 34-3 45 7 10 41 10 49 0 7-11 5-33-4-45Z';
+// The neckerchief: a triangle whose top edge tucks under the mane.
+const SCARF = 'M103 168Q130 180 157 168L134.5 202Q130 208 125.5 202Z';
 const CLIP_DEFS: Record<string, string> = {
-  'k-dome': `<clipPath id="k-dome"><path d="${DOME}"/></clipPath>`,
-  'k-panel-clip': `<clipPath id="k-panel-clip"><path d="${PANEL}"/></clipPath>`,
+  'k-scarf-clip': `<clipPath id="k-scarf-clip"><path d="${SCARF}"/></clipPath>`,
 };
 
 // Wrap a part's markup with just the gradients and clip paths it refers to.
@@ -66,8 +56,6 @@ const f = (n: number) => +n.toFixed(2);
 const pt = (p: P) => `${f(p[0])} ${f(p[1])}`;
 const mirrorX = (x: number) => 260 - x;
 const mirror = (svg: string) => `<g transform="translate(260 0) scale(-1 1)">${svg}</g>`;
-// Shapes shared with Pip, drawn in his coordinates (he stands at x = 135).
-const pip = (svg: string) => `<g transform="translate(-5 0)">${svg}</g>`;
 
 // A capsule that tapers from radius ra at a to rb at b.
 function limb(a: P, ra: number, b: P, rb: number): string {
@@ -116,43 +104,17 @@ function taper(p0: P, p1: P, p2: P, p3: P, w0: number, w1: number, n = 24): stri
   );
 }
 
-// Soft mane locks round an ellipse: each one swells out on its upper side
-// and sweeps down to a rounded point. Built down the right side from the top
-// and mirrored, so both sides of the mane fall the same way.
-function tufts(c: P, inner: P, outer: P, n: number, lean: number, swell = 0.62): string {
-  const on = (r: P, ang: number): P => [c[0] + r[0] * Math.cos(ang), c[1] + r[1] * Math.sin(ang)];
-  const mid = (k: number): P => [inner[0] + (outer[0] - inner[0]) * k, inner[1] + (outer[1] - inner[1]) * k];
-  const m = (p: P): P => [2 * c[0] - p[0], p[1]];
-  const step = Math.PI / n;
-  const lobes: P[][] = [];
-  for (let i = 0; i < n; i++) {
-    const a0 = -Math.PI / 2 + i * step;
-    const a1 = a0 + step;
-    lobes.push([
-      on(mid(swell + 0.12), a0 + lean * 0.35),
-      on(outer, a0 + step / 2 + lean),
-      on(mid(swell - 0.12), a1 + lean * 0.75),
-      on(inner, a1),
-    ]);
-  }
-  let d = `M${pt(on(inner, -Math.PI / 2))}`;
-  for (const [c1, tip, c2, end] of lobes) d += `Q${pt(c1)} ${pt(tip)}Q${pt(c2)} ${pt(end)}`;
-  for (let i = n - 1; i >= 0; i--) {
-    const [c1, tip, c2] = lobes[i];
-    const start = i ? lobes[i - 1][3] : on(inner, -Math.PI / 2);
-    d += `Q${pt(m(c2))} ${pt(m(tip))}Q${pt(m(c1))} ${pt(m(start))}`;
-  }
+// A puffy ring, like a cloud: n points round a circle joined by arcs that
+// bulge outward. `turn` (in lobes) puts a lobe at the top instead of a dip.
+function puffs(c: P, r: number, n: number, turn = 0, bulge = 1): string {
+  const at = (i: number): P => {
+    const a = -Math.PI / 2 + ((i + turn) * 2 * Math.PI) / n;
+    return [c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)];
+  };
+  const R = f(r * Math.sin(Math.PI / n) * bulge);
+  let d = `M${pt(at(0))}`;
+  for (let i = 1; i <= n; i++) d += `A${R} ${R} 0 0 1 ${pt(at(i))}`;
   return d + 'Z';
-}
-
-function quadPts(a: P, c: P, b: P, n: number, inset = 0.5): P[] {
-  return Array.from({ length: n }, (_, i) => {
-    const t = (i + inset) / n;
-    return [
-      (1 - t) ** 2 * a[0] + 2 * (1 - t) * t * c[0] + t ** 2 * b[0],
-      (1 - t) ** 2 * a[1] + 2 * (1 - t) * t * c[1] + t ** 2 * b[1],
-    ];
-  });
 }
 
 const dots = (pts: P[], r: number, fill: string, extra = '') =>
@@ -193,241 +155,130 @@ export interface RigNode {
 export const PARALLAX: Record<string, P> = {
   gaze: [1, 0.9],
   features: [0.4, 0.28],
-  turban: [0.2, 0.1],
   crest: [0.24, 0.1],
   maneBack: [-0.2, -0.1],
 };
 
 const ground = `
-  <ellipse cx="128" cy="232" rx="79" ry="17" fill="url(#k-aura)"/>
-  <ellipse cx="130" cy="234" rx="48" ry="8" fill="#3A1A06" opacity=".2"/>`;
+  <ellipse cx="130" cy="232" rx="76" ry="16" fill="url(#k-aura)"/>
+  <ellipse cx="130" cy="234" rx="44" ry="7.5" fill="#3A1A06" opacity=".18"/>`;
 
-const TAIL_CURVE: [P, P, P, P] = [[110, 205], [80, 218], [48, 206], [52, 174]];
-const tail = `
-  <path d="${taper(...TAIL_CURVE, 12, 8.5)}" fill="#9C4E12"/>
-  <path d="${taper(...TAIL_CURVE, 8.5, 5)}" fill="url(#k-coat)"/>
-  ${stroke('M96 214C80 218 64 214 58 202', '#FFE8A8', 1.8, 'opacity=".6"')}`;
-const tuft = `
-  <path d="M52 182C40 182 34 172 38 162C40 168 44 168 46 166C42 158 46 148 54 146C52 154 56 156 58 156C58 150 64 146 70 148C64 154 68 162 66 170C64 178 58 182 52 182Z" fill="url(#k-dark)"/>
-  ${stroke('M52 177C50 170 50 162 54 155M57 177C59 170 61 164 64 158', '#D58A44', 1.4, 'opacity=".6"')}`;
+// A thin tail curling up behind him, ending in a puff of mane.
+const TAIL_CURVE: [P, P, P, P] = [[108, 218], [82, 231], [55, 221], [59, 193]];
+const tail = `<path d="${taper(...TAIL_CURVE, 9, 6)}" fill="url(#k-foot)"/>`;
+const tuft = `<path d="${puffs([59, 188], 6.5, 7, 0.5)}" fill="url(#k-tuft)"/>`;
 
-// Pip's feet, in the darker colour.
-const footL = pip(`<path d="M100 217c-12 1-19 9-17 17 7 6 25 7 38 1l-1-15Z" fill="url(#k-dark)"/>`) +
-  stroke('M87 231l5 1M95 230l5 1', '#E6A15A', 2.4);
+// Bean feet poking out under his tummy, three toe lines each.
+export const FOOT_L: P = [113, 222];
+export const FOOT_R: P = [mirrorX(FOOT_L[0]), FOOT_L[1]];
+const footL = `
+  <ellipse cx="113" cy="227" rx="14.5" ry="8.5" fill="url(#k-foot)"/>
+  ${stroke('M107.5 229.5v3M113 230v3.2M118.5 229.5v3', TOE, 1.5, 'opacity=".75"')}`;
 const footR = mirror(footL);
 
-// Body: Pip's silhouette as a kurta, a lighter bandhani front panel (tie-dye
-// dots, the most Gujarati of textiles) and his chest chevron as the neckline.
+// Body: a little round tummy, mostly hidden under the mane, with a cream
+// belly and the bandhani neckerchief (tie-dye dots, the most Gujarati of
+// textiles) peeking out under his chin.
 function bandhani(): string {
   const out: string[] = [];
-  for (let row = 0; row < 6; row++) {
-    for (let col = 0; col < 6; col++) {
-      const x = 104 + col * 9.5 + (row % 2) * 4.75;
-      const y = 162 + row * 8;
-      out.push(dots([[x, y - 1.3], [x - 1.3, y + 0.9], [x + 1.3, y + 0.9]], 0.85, '#FFE6BC'));
+  for (let row = 0; row < 5; row++) {
+    for (let col = 0; col < 8; col++) {
+      const x = 99 + col * 9 + (row % 2) * 4.5;
+      const y = 177 + row * 7;
+      out.push(dots([[x, y - 1.2], [x - 1.2, y + 0.8], [x + 1.2, y + 0.8]], 0.8, '#FFF1DC'));
     }
   }
-  return `<g clip-path="url(#k-panel-clip)" opacity=".8">${out.join('')}</g>`;
+  return `<g clip-path="url(#k-scarf-clip)" opacity=".9">${out.join('')}</g>`;
 }
 
 const body = `
-  ${pip(`<path d="M103 150c-16 17-19 47-11 67 6 14 25 17 44 17s39-3 44-17c8-22 3-49-14-67Z" fill="url(#k-kurta)"/>`)}
-  <path d="${PANEL}" fill="url(#k-panel)"/>
-  ${bandhani()}
-  ${pip(`<path d="m123 166 11 7 12-7-4 17h-14Z" fill="${BAND}" opacity=".95"/>`)}
-  ${dots([[130, 190], [130, 199]], 1.8, 'url(#k-gold)')}
-  ${pip(stroke('M102 213q33 9 67 0', GOLD, 2, 'stroke-dasharray=".1 5" opacity=".9"'))}`;
+  <path d="M130 160C152 160 166 176 170 198C174 220 158 231 130 231C102 231 86 220 90 198C94 176 108 160 130 160Z" fill="url(#k-coat)"/>
+  <ellipse cx="130" cy="212" rx="23" ry="15" fill="url(#k-cream)"/>
+  <path d="${SCARF}" fill="url(#k-scarf)"/>
+  ${bandhani()}`;
 
-// Arms: puffy sleeves on a shoulder and an elbow, Pip's dark paws. The
-// shoulder sits under the mane's edge, so the joint never shows; the arm is
-// long enough (like Pip's) that a raised paw clears the mane.
-export const SHOULDER: P = [97, 166];
-export const ELBOW: P = [87, 185];
-export const PAW: P = [83.5, 204];
-const along = (a: P, b: P, t: number): P => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
-// Unit vectors down the upper arm and across it (pointing away from the body).
+// Arms: short and chubby, a shoulder and an elbow, a round mitten of a paw.
+// A soft shadow under each part keeps the arm apart from the tummy.
+export const SHOULDER: P = [102, 184];
+export const ELBOW: P = [94, 200];
+export const PAW: P = [90, 214];
+// Unit vector down the upper arm (the forearm slides along it to stretch).
 const UP_LEN = Math.hypot(ELBOW[0] - SHOULDER[0], ELBOW[1] - SHOULDER[1]);
 const UP_DIR: P = [(ELBOW[0] - SHOULDER[0]) / UP_LEN, (ELBOW[1] - SHOULDER[1]) / UP_LEN];
-const UP_OUT: P = [-UP_DIR[1], UP_DIR[0]];
-const off = (p: P, n: P, d: number): P => [p[0] + n[0] * d, p[1] + n[1] * d];
-const upperArm = `
-  <path d="${limb(SHOULDER, 8.4, ELBOW, 9.2)}" fill="url(#k-sleeve)"/>
-  ${stroke(`M${pt(off(along(SHOULDER, ELBOW, 0.3), UP_OUT, 3.4))}Q${pt(off(along(SHOULDER, ELBOW, 0.6), UP_OUT, 5))} ${pt(off(along(SHOULDER, ELBOW, 0.9), UP_OUT, 4.6))}`, '#FFC98C', 1.8, 'opacity=".7"')}`;
-// A band across a limb from a to b, its edges bowed toward b like the rim
-// of a cylinder seen from a little above.
-function band(a: P, b: P, ra: number, rb: number, sag: number): string {
-  const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
-  const d: P = [(b[0] - a[0]) / len, (b[1] - a[1]) / len];
-  const n: P = [-d[1], d[0]];
-  const edge = (c: P, r: number) => `${pt(off(c, n, r))}Q${pt(off(c, d, sag * 2))} ${pt(off(c, n, -r))}`;
-  return `M${edge(a, ra)}L${edge(b, -rb)}Z`;
-}
-// The forearm ends in a cream cuff with a gold seam; the paw, a soft mitten
-// with a thumb on the body side, three toe lines and a lighter pad, comes out
-// from inside the cuff.
-const FORE_LEN = Math.hypot(PAW[0] - ELBOW[0], PAW[1] - ELBOW[1]);
-const FORE_DIR: P = [(PAW[0] - ELBOW[0]) / FORE_LEN, (PAW[1] - ELBOW[1]) / FORE_LEN];
-const CUFF_A = along(ELBOW, PAW, 0.36);
-const CUFF_B = along(ELBOW, PAW, 0.54);
+const shaded = (d: string) => `<path d="${d}" fill="#D9862F" opacity=".3" transform="translate(1.6 1.4)"/><path d="${d}" fill="url(#k-limb)"/>`;
+const upperArm = shaded(limb(SHOULDER, 9, ELBOW, 8.5));
 const forearm = `
-  <path d="${limb(ELBOW, 9.2, along(ELBOW, PAW, 0.4), 8.6)}" fill="url(#k-sleeve)"/>
-  <g transform="rotate(10 ${PAW[0]} ${PAW[1]})">
-    <ellipse cx="${PAW[0] + 6.2}" cy="${PAW[1] - 1.8}" rx="3.6" ry="4.6" fill="url(#k-paw)"/>
-    <ellipse cx="${PAW[0]}" cy="${PAW[1]}" rx="8.2" ry="9" fill="url(#k-paw)"/>
-    ${stroke(`M${PAW[0] - 4.2} ${PAW[1] + 4.4}l.3 2.8M${PAW[0] - 0.3} ${PAW[1] + 5.6}v3M${PAW[0] + 3.6} ${PAW[1] + 4.6}l-.3 2.8`, '#E6A15A', 1.5)}
-    <ellipse cx="${PAW[0] - 2.4}" cy="${PAW[1] - 2.6}" rx="2.8" ry="1.8" fill="#D9874A" opacity=".55"/>
-  </g>
-  <path d="${band(CUFF_A, CUFF_B, 8.9, 8.4, 1.6)}" fill="${BAND}"/>
-  ${stroke(`M${pt(off(CUFF_A, [-FORE_DIR[1], FORE_DIR[0]], 8))}Q${pt(off(CUFF_A, FORE_DIR, 3.2))} ${pt(off(CUFF_A, [-FORE_DIR[1], FORE_DIR[0]], -8))}`, GOLD_DEEP, 1.3, 'stroke-dasharray=".1 3.2" opacity=".9"')}`;
+  ${shaded(limb(ELBOW, 8.5, PAW, 8.6))}
+  <circle cx="${PAW[0]}" cy="${PAW[1]}" r="9.2" fill="url(#k-limb)"/>
+  ${stroke(`M${PAW[0] - 4} ${PAW[1] + 4.6}l.4 2.6M${PAW[0]} ${PAW[1] + 5.6}v2.8M${PAW[0] + 4} ${PAW[1] + 4.6}l-.4 2.6`, TOE, 1.4, 'opacity=".75"')}`;
 
-// Head: a two-layer mane of soft locks behind Pip's face shape, round Gir
-// lion ears peeking out from under the pagdi.
-const maneBack = `<path d="${tufts([130, 118], [60, 53], [83, 67], 9, 0.24, 0.56)}" fill="url(#k-mane-back)"/>`;
-const maneFront = `<path d="${tufts([130, 121], [56, 47], [71, 58], 10, 0.28, 0.56)}" fill="url(#k-mane)"/>`;
+// Head: two puffy rings of mane, round ears poking out between them, a curl
+// on top, and a broad soft face with cheek tufts and a little forelock.
+const MANE_C: P = [130, 106];
+const maneBack = `<path d="${puffs(MANE_C, 60, 13, 0.5)}" fill="url(#k-mane-back)"/>`;
+const maneFront = `<path d="${puffs([130, 107], 52, 13)}" fill="url(#k-mane)"/>`;
 
-const ear = `<g transform="translate(62 97) rotate(-24)">
-  <ellipse rx="12.5" ry="14" fill="url(#k-dark)"/>
-  <ellipse cx="1.8" cy="1.8" rx="6.6" ry="8.2" fill="#F4C08A"/>
-  <ellipse cx="-4.6" cy="-6.4" rx="2.6" ry="1.7" fill="#FFE3B0" opacity=".7"/></g>`;
+const ear = `<g transform="translate(85 56) rotate(-40)">
+  <ellipse rx="15" ry="14" fill="url(#k-ear)"/>
+  <ellipse cy="-1.5" rx="8.4" ry="7.6" fill="#FFB9A6"/></g>`;
 
-// His own face, drawn in Pip's manner: a broad lion head with a soft tuft
-// of cheek fluff each side, round amber bead eyes, tufted brows, a muzzle.
-const FACE = 'M72 92C72 62 98 46 130 46C162 46 188 62 188 92C189 104 194 112 199 120C195 121 192.5 123 191 125C194 130 196 135 195 139C191 139 187.5 140 184.5 141C176 160 156 170 130 170C104 170 84 160 75.5 141C72.5 140 69 139 65 139C64 135 66 130 69 125C67.5 123 65 121 61 120C66 112 71 104 72 92Z';
-const faceCoat = `<g transform="translate(130 118) scale(.92 .96) translate(-130 -118)">
+const crest = `<path d="M123 50C117 36 123 22 140 19C134 24 133.5 29.5 136.5 34.5C139 39.5 138 46 135 50Z" fill="url(#k-tuft)"/>`;
+
+const FACE =
+  'M130 68C160 68 180 86 180 110C180 120 178.5 128 175 135L182 140L171 143C163 153 148 158 130 158C112 158 97 153 89 143L78 140L85 135C81.5 128 80 120 80 110C80 86 100 68 130 68Z';
+const FORELOCK = 'M113 71Q119 72 121.5 81Q125 74 130 84Q135 74 138.5 81Q141 72 147 71Q130 64 113 71Z';
+const face = `
   <path d="${FACE}" fill="url(#k-coat)"/>
-</g>`;
+  <path d="${FORELOCK}" fill="url(#k-mane)"/>`;
 
-// The puffy whisker pads.
+// The puffy muzzle, with whisker dots.
 const patches = `
-  <g transform="translate(130 145) scale(.9) translate(-130 -145)">
-    <path d="M130 132C124 128 108 130 106 141C104 151 114 157 123 154C126 158 134 158 137 154C146 157 156 151 154 141C152 130 136 128 130 132Z" fill="url(#k-cream)"/>
-    ${dots([[114, 142], [117, 146.5], [112, 147.5], [146, 142], [143, 146.5], [148, 147.5]], 1, '#D39552')}
-  </g>`;
+  <ellipse cx="122.5" cy="140.5" rx="10" ry="8.5" fill="url(#k-cream)"/>
+  <ellipse cx="137.5" cy="140.5" rx="10" ry="8.5" fill="url(#k-cream)"/>
+  ${dots([[117, 138.5], [120, 143], [115, 143.5], [143, 138.5], [140, 143], [145, 143.5]], 0.9, '#E2A564')}`;
 
-const blush = `<g fill="#F09BB0" opacity=".55"><circle cx="90" cy="136" r="6.5"/><circle cx="170" cy="136" r="6.5"/></g>`;
-const blushHot = `<g fill="#F09BB0" opacity=".5"><circle cx="90" cy="136" r="8.5"/><circle cx="170" cy="136" r="8.5"/></g>`;
+const blush = `<g fill="#FF8FA6" opacity=".5"><ellipse cx="94" cy="134" rx="8.5" ry="5.5"/><ellipse cx="166" cy="134" rx="8.5" ry="5.5"/></g>`;
+const blushHot = `<g fill="#FF8FA6" opacity=".5"><ellipse cx="94" cy="134" rx="11" ry="7"/><ellipse cx="166" cy="134" rx="11" ry="7"/></g>`;
 
-// Tufted brows: thick at the inner end, tapering out, sitting level so he looks
-// friendly at rest; the clips tilt them for every other mood.
-const browL = `<path d="M94.2 91.7C98.5 88.7 105.5 87.7 110.8 91.2A3.4 3.4 0 0 1 110.8 98C106 95.1 99.5 95.9 94.2 91.7Z" fill="${BROW}" transform="rotate(-9 102.5 93)"/>`;
+// Little round brows, level at rest; the clips tilt them for every mood.
+const BROW_L: P = [108, 96];
+const browL = `<path d="${limb([103, 96.2], 2.2, [113, 96.6], 2.2)}" fill="${BROW}"/>`;
 const browR = mirror(browL);
 
-// Bead eyes: a dark rim, an amber iris that warms toward the bottom, a dark
-// pupil, two highlights, and an upper lid that thickens toward the outer corner.
-const LID = taper([-8.6, -6.4], [-4.2, -12.9], [5, -12.9], [11.6, -6.6], 2, 3.4);
+// Big glossy eyes: dark, warming toward the bottom, one big highlight and
+// one small, both lit from the upper left.
 const EYE_Y = 116;
-const bead = (x: number, outer: number) => `
-  <g transform="translate(${x} ${EYE_Y}) scale(1.25)">
-    <ellipse rx="10" ry="11.5" fill="${EYE}"/>
-    <ellipse cy="1.6" rx="7.4" ry="8.6" fill="url(#k-iris)"/>
-    <ellipse cy="1.4" rx="4" ry="5" fill="#1A0C04"/>
-    <circle cx="3.4" cy="-4.4" r="3.6" fill="#fff"/>
-    <circle cx="-3.4" cy="5.2" r="1.6" fill="#FFE6B8"/>
-    <path d="${LID}" fill="${EYE}" transform="scale(${outer} 1)"/>
+const EYE_L = 108;
+const bead = (x: number) => `
+  <g transform="translate(${x} ${EYE_Y})">
+    <ellipse rx="11.5" ry="13.5" fill="${EYE}"/>
+    <ellipse cy="6.2" rx="7.6" ry="5.2" fill="#8E4E1E" opacity=".8"/>
+    <circle cx="-3.8" cy="-5.2" r="4.9" fill="#fff"/>
+    <circle cx="4.4" cy="4.8" r="2" fill="#fff" opacity=".9"/>
   </g>`;
 
-const happyEyes =
-  stroke('M92 120Q105 103 118 120M142 120Q155 103 168 120', EYE, 5) + stroke('M92 120l-3.6-2.4M168 120l3.6-2.4', EYE, 2.4);
-const closedEyes =
-  stroke('M93 116Q105 125 117 116M143 116Q155 125 167 116', EYE, 4.6) + stroke('M93 116l-3.4 1.6M167 116l3.4 1.6', EYE, 2.2);
+const happyEyes = stroke('M97.5 119Q108 106 118.5 119M141.5 119Q152 106 162.5 119', EYE, 4.6);
+const closedEyes = stroke('M98 116Q108 123.5 118 116M142 116Q152 123.5 162 116', EYE, 4.2);
 // Squeezed shut with glee: > <
-const squeezeEyes = stroke('M98 107.5L113 116L98 124.5M162 107.5L147 116L162 124.5', EYE, 5);
+const squeezeEyes = stroke('M101 108L115 116L101 124M159 108L145 116L159 124', EYE, 4.6);
 // A happy arc for the winking eye.
-const winkR = stroke('M143 119Q155 105 167 119', EYE, 5) + stroke('M167 119l3.6-2.4', EYE, 2.4);
+const winkR = stroke('M141.5 119Q152 106 162.5 119', EYE, 4.6);
 
-// A broad, rosy lion nose and a Y-shaped mouth; the grin shows two little fangs.
+// A small rosy nose and a cat's w of a mouth.
 const nose = `
-  <path d="M121 133C121 129 139 129 139 133C139 137 134 141 130 142C126 141 121 137 121 133Z" fill="#9A4A3C"/>
-  <path d="M123 133C123 130.5 137 130.5 137 133C135 134 125 134 123 133Z" fill="#C46B5C"/>
-  <ellipse cx="126.5" cy="132.4" rx="2.6" ry="1.2" fill="#fff" opacity=".55"/>
-  ${stroke('M130 142V146', MOUTH, 2.2)}`;
-const mouthSmile = stroke('M130 146Q125 151.5 119 148.5M130 146Q135 151.5 141 148.5', MOUTH, 2.4);
+  <path d="M123 129.5C123 126 137 126 137 129.5C137 133 133.5 136 130 137C126.5 136 123 133 123 129.5Z" fill="#9B4A3A"/>
+  <ellipse cx="127" cy="129" rx="2.4" ry="1.1" fill="#fff" opacity=".6"/>
+  ${stroke('M130 137V140', MOUTH, 2)}`;
+const mouthSmile = stroke('M130 140Q127 144.5 122.5 142.5M130 140Q133 144.5 137.5 142.5', MOUTH, 2.2);
 const mouthOpen = `
-  <path d="M118 147Q130 151 142 147Q140 163 130 163Q120 163 118 147Z" fill="#2E1206"/>
-  <path d="M123.5 157.5Q130 153 136.5 157.5Q134.5 162.5 130 162.5Q125.5 162.5 123.5 157.5Z" fill="#F1A8BD"/>
-  <path d="M121.4 148.2L125.6 149L123.6 153.2ZM138.6 148.2L134.4 149L136.4 153.2Z" fill="#FFFBF2"/>`;
-const mouthO = `<ellipse cx="130" cy="151" rx="4" ry="4.6" fill="#4A200A"/>`;
-const mouthWavy = stroke('M119 151q2.75-3 5.5 0t5.5 0t5.5 0t5.5 0', MOUTH, 2.4);
-
-// The pagdi: a low wrapped dome above Pip's band. The cloth crosses at the
-// front in nested folds, each with a lit rolled edge and a soft shadow under
-// it; the sarpech jewel pins the crossing.
-function folds(): string {
-  // Wraps run diagonally up to the right, bowing round the dome. Each one is
-  // a lit rolled edge with the soft shadow of the next layer just under it.
-  const wraps = [
-    'M56 80Q120 82 204 46',
-    'M58 64Q112 64 188 33',
-    'M68 49Q106 46 158 30',
-  ]
-    .map((d) => stroke(d, '#B4370B', 3.4, 'transform="translate(0 2.8)" opacity=".3"') + stroke(d, '#FFB57E', 2.4, 'opacity=".9"'))
-    .join('');
-  return `<g clip-path="url(#k-dome)">${wraps}</g>`;
-}
-
-const turban = `
-  <path d="${DOME}" fill="url(#k-turban)"/>
-  ${folds()}
-  <path d="M68 81q62-25 124 0l1 13q-63-23-126 0Z" fill="url(#k-band)"/>
-  ${stroke('M69 83q61-24 122 0', '#FFFBEA', 1.8)}
-  ${dots(quadPts([68.5, 88], [130, 64], [191.5, 88], 15), 1.1, GOLD_DEEP)}
-  <path d="M130 65.5l8 9.75-8 9.75-8-9.75Z" fill="url(#k-gold)"/>
-  <path d="M130 70.5l4.1 4.75-4.1 4.75-4.1-4.75Z" fill="#D7263D"/>
-  <path d="M128.7 72.4l1.8-2.2" stroke="#FF9AAE" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M130 87.5C128.4 89.6 128.4 91.4 130 92.4C131.6 91.4 131.6 89.6 130 87.5Z" fill="#FFFBEF"/>`;
-
-// The kalgi: a saffron plume pinned to the sarpech, curling over the top.
-// Warm and edged in a deeper orange so it reads as part of the pagdi, not a
-// pale shape that melts into a cream background.
-const PLUME = 'M130 66C121 55 119.5 37 132 25Q139 19.5 147 21Q141.5 24 140.5 30C139.5 44 136 56 130 66Z';
-const crest = `
-  <path d="${PLUME}" fill="#B8461A" transform="translate(130 44) scale(1.08) translate(-130 -44)"/>
-  <path d="${PLUME}" fill="url(#k-plume)"/>
-  ${stroke('M130 64C127.5 51 129 37 140 26', '#FFE1A6', 1.3, 'opacity=".8"')}
-  <circle cx="130" cy="66" r="3.2" fill="url(#k-gold)"/>`;
-
-// A cloth tail along a cubic, tapering from w0 to w1, with a swallowtail
-// notch cut into the end; the last fifth is the gold zari border.
-function ribbon(p: [P, P, P, P], w0: number, w1: number, fill: string): string {
-  const [a, b, c, d] = p;
-  const bez = (t: number): P => {
-    const u = 1 - t;
-    return [
-      u * u * u * a[0] + 3 * u * u * t * b[0] + 3 * u * t * t * c[0] + t * t * t * d[0],
-      u * u * u * a[1] + 3 * u * u * t * b[1] + 3 * u * t * t * c[1] + t * t * t * d[1],
-    ];
-  };
-  const shape = (t0: number, t1: number, n = 12) => {
-    const L: P[] = [];
-    const R: P[] = [];
-    let tan: P = [1, 0];
-    for (let i = 0; i <= n; i++) {
-      const t = t0 + ((t1 - t0) * i) / n;
-      const q0 = bez(Math.max(0, t - 0.01));
-      const q1 = bez(Math.min(1, t + 0.01));
-      const len = Math.hypot(q1[0] - q0[0], q1[1] - q0[1]) || 1;
-      tan = [(q1[0] - q0[0]) / len, (q1[1] - q0[1]) / len];
-      const w = (w0 + (w1 - w0) * t) / 2;
-      const m = bez(t);
-      L.push([m[0] - tan[1] * w, m[1] + tan[0] * w]);
-      R.push([m[0] + tan[1] * w, m[1] - tan[0] * w]);
-    }
-    const e = bez(t1);
-    const notch: P = [e[0] - tan[0] * w1 * 0.55, e[1] - tan[1] * w1 * 0.55];
-    const pts = [...L, ...(t1 === 1 ? [notch] : []), ...R.reverse()];
-    return `M${pts.map(pt).join('L')}Z`;
-  };
-  return `<path d="${shape(0, 1, 20)}" fill="${fill}" stroke-linejoin="round"/><path d="${shape(0.8, 1)}" fill="${GOLD}"/>`;
-}
-
-// Pip's band ties, as the loose ends of the pagdi: two soft cloth tails.
-const TIE_A: [P, P, P, P] = [[186, 77], [200, 70], [214, 72], [223, 83]];
-const TIE_B: [P, P, P, P] = [[186, 81], [200, 80], [210, 87], [214, 99]];
-const ties = ribbon(TIE_A, 9, 6.5, '#E8561A') + ribbon(TIE_B, 8.5, 6, '#FF9A4A');
+  <path d="M122 142Q130 145 138 142Q137 155 130 155Q123 155 122 142Z" fill="#5A1E0C"/>
+  <path d="M125 151.5Q130 148 135 151.5Q133.5 155 130 155Q126.5 155 125 151.5Z" fill="#FF9DB0"/>`;
+const mouthO = `<ellipse cx="130" cy="146" rx="3.6" ry="4.2" fill="#5A1E0C"/>`;
+const mouthWavy = stroke('M121 146q2.25-2.6 4.5 0t4.5 0t4.5 0t4.5 0', MOUTH, 2.2);
 
 // The book is held open low in front of his tummy, clear of the mane, so
 // the pages (and the page he turns) can be seen.
-const BOOK_Y = -4;
+const BOOK_Y = -2;
 const book = `<g transform="translate(0 ${BOOK_Y})">
   <path d="M95 183.5L130 190.5L165 183.5V214.5L130 221.5L95 214.5Z" fill="#8B3E1E"/>
   <path d="M95 214.5L130 221.5L165 214.5V216.5L130 223.5L95 216.5Z" fill="#6A2C12"/>
@@ -451,7 +302,7 @@ const dhokla = (x: number, y: number, s = 1) => `
 
 // A steel thali of dhokla held in his right paw in front of his tummy; his
 // left paw takes the near piece.
-const PLATE: P = [139, 202];
+const PLATE: P = [139, 204];
 const plate = `
   <ellipse cx="${PLATE[0]}" cy="${PLATE[1] + 2}" rx="20" ry="6" fill="#CFC3B2"/>
   <ellipse cx="${PLATE[0]}" cy="${PLATE[1]}" rx="20" ry="6.6" fill="#FFFFFF"/>
@@ -461,12 +312,12 @@ const PLATE_TOP: P = [PLATE[0] - 8, PLATE[1] - 2];
 const plateTop = dhokla(PLATE_TOP[0], PLATE_TOP[1]);
 
 // A big soft heart he hugs to his chest.
-const hug = `<g transform="translate(130 198) scale(1.18)">
+const hug = `<g transform="translate(130 200) scale(1.1)">
   <path d="M0 15C-27-1-18-23 0-12C18-23 27-1 0 15Z" fill="#FF8DB3"/>
   <path d="M0 12.5C-23-1.5-15.5-20 0-10C15.5-20 23-1.5 0 12.5Z" fill="#FFA6C6"/>
   <ellipse cx="-9" cy="-9" rx="4.2" ry="2.6" transform="rotate(-30 -9 -9)" fill="#FFE0EC" opacity=".85"/></g>`;
 
-// Pip's particles: the same star, heart, dream squiggle and music notes.
+// Particles: a star, a heart, a dream squiggle, music notes.
 const star = (fill: string) =>
   `<circle r="11" fill="url(#k-glow)"/><path d="m0-9 2.6 6.4L9 0 2.6 2.6 0 9-2.6 2.6-9 0l6.4-2.6Z" fill="${fill}"/>`;
 const heart = `<path d="M0 5C-20-7-7-18 0-9 7-18 20-7 0 5Z" fill="#FF98BA"/>`;
@@ -480,7 +331,7 @@ const fx = (effect: Effect, items: [string, number, number, string][]): RigNode[
   items.map(([id, x, y, svg]) => ({ id, pivot: [x, y], svg: at(x, y, svg), when: { effect } }));
 
 // The dhokla he's about to eat, pinched at the tips of his left paw.
-const SNACK = dhokla(PAW[0] + 3, PAW[1] + 7.5, 0.95);
+const SNACK = dhokla(PAW[0] + 3, PAW[1] + 8.5, 0.95);
 
 const arm = (side: 'L' | 'R'): RigNode => {
   const m = (svg: string) => (side === 'R' ? mirror(svg) : svg);
@@ -526,40 +377,40 @@ export const RIG: RigNode = {
       id: 'breath',
       pivot: [130, 234],
       children: [
-        { id: 'tail', pivot: [110, 205], svg: tail, children: [{ id: 'tuft', pivot: [54, 176], svg: tuft }] },
-        { id: 'legL', pivot: [108, 224], svg: footL },
-        { id: 'legR', pivot: [152, 224], svg: footR },
+        { id: 'tail', pivot: TAIL_CURVE[0], svg: tail, children: [{ id: 'tuft', pivot: [59, 195], svg: tuft }] },
         { id: 'body', pivot: [130, 222], svg: body },
+        { id: 'legL', pivot: FOOT_L, svg: footL },
+        { id: 'legR', pivot: FOOT_R, svg: footR },
         { id: 'book', svg: book, when: { prop: 'book' }, children: [{ id: 'page', pivot: PAGE_PIVOT, svg: page }] },
         { id: 'plate', svg: plate, when: { prop: 'plate' }, children: [{ id: 'plateTop', pivot: PLATE_TOP, svg: plateTop }] },
-        { id: 'hug', pivot: [130, 200], svg: hug, when: { prop: 'heart' } },
+        { id: 'hug', pivot: [130, 202], svg: hug, when: { prop: 'heart' } },
         arm('L'),
         arm('R'),
         {
           id: 'head',
-          pivot: [130, 153],
+          pivot: [130, 170],
           children: [
             { id: 'maneBack', svg: maneBack },
+            { id: 'earL', pivot: [95, 68], svg: ear },
+            { id: 'earR', pivot: [165, 68], svg: mirror(ear) },
             { id: 'mane', svg: maneFront },
-            { id: 'ties', pivot: [188, 78], svg: ties },
-            { id: 'earL', pivot: [72, 100], svg: ear },
-            { id: 'earR', pivot: [188, 100], svg: mirror(ear) },
-            { id: 'face', svg: faceCoat },
+            { id: 'crest', pivot: [129, 50], svg: crest },
+            { id: 'face', svg: face },
             {
               id: 'features',
               children: [
                 { id: 'patches', svg: patches },
                 { id: 'blush', svg: blush },
                 { id: 'blushHot', svg: blushHot, opacity: 0 },
-                { id: 'browL', pivot: [104, 93], svg: browL },
-                { id: 'browR', pivot: [156, 93], svg: browR },
+                { id: 'browL', pivot: BROW_L, svg: browL },
+                { id: 'browR', pivot: [mirrorX(BROW_L[0]), BROW_L[1]], svg: browR },
                 {
                   id: 'gaze',
                   when: { eyes: ['open'] },
                   children: [
-                    { id: 'eyeL', pivot: [105, 116], svg: bead(105, -1) },
-                    { id: 'eyeR', pivot: [155, 116], svg: bead(155, 1) },
-                    { id: 'winkR', pivot: [155, 116], svg: winkR, opacity: 0 },
+                    { id: 'eyeL', pivot: [EYE_L, EYE_Y], svg: bead(EYE_L) },
+                    { id: 'eyeR', pivot: [mirrorX(EYE_L), EYE_Y], svg: bead(mirrorX(EYE_L)) },
+                    { id: 'winkR', pivot: [mirrorX(EYE_L), EYE_Y], svg: winkR, opacity: 0 },
                   ],
                 },
                 { id: 'eyesHappy', svg: happyEyes, when: { eyes: ['happy'] } },
@@ -567,13 +418,11 @@ export const RIG: RigNode = {
                 { id: 'eyesClosed', svg: closedEyes, when: { eyes: ['closed'] } },
                 { id: 'nose', svg: nose },
                 { id: 'mouthSmile', svg: mouthSmile, when: { mouth: ['smile'] } },
-                { id: 'mouthOpen', pivot: [130, 148], svg: mouthOpen, when: { mouth: ['open'] } },
-                { id: 'mouthO', pivot: [130, 151], svg: mouthO, when: { mouth: ['o'] } },
+                { id: 'mouthOpen', pivot: [130, 143], svg: mouthOpen, when: { mouth: ['open'] } },
+                { id: 'mouthO', pivot: [130, 146], svg: mouthO, when: { mouth: ['o'] } },
                 { id: 'mouthWavy', svg: mouthWavy, when: { mouth: ['wavy'] } },
               ],
             },
-            { id: 'turban', pivot: [130, 84], svg: turban },
-            { id: 'crest', pivot: [130, 66], svg: crest },
           ],
         },
         armTop('L'),
@@ -581,33 +430,34 @@ export const RIG: RigNode = {
       ],
     },
     ...fx('sparkles', [
-      ['fx1', 49, 104, star('#F5B127')],
-      ['fx2', 218, 126, star('#F08A2A')],
-      ['fx3', 76, 53, star('#F08A2A')],
-      ['fx4', 192, 48, star('#F5B127')],
+      ['fx1', 38, 112, star('#F5B127')],
+      ['fx2', 222, 128, star('#F08A2A')],
+      ['fx3', 52, 40, star('#F08A2A')],
+      ['fx4', 208, 34, star('#F5B127')],
     ]),
     ...fx('hearts', [
-      ['fx1', 49, 104, heart],
-      ['fx2', 219, 128, heart],
-      ['fx3', 76, 53, heart],
+      ['fx1', 38, 112, heart],
+      ['fx2', 222, 128, heart],
+      ['fx3', 52, 40, heart],
     ]),
     ...fx('zzz', [
-      ['fx1', 198, 94, dream],
-      ['fx2', 212, 74, dream],
-      ['fx3', 226, 54, dream],
+      ['fx1', 216, 72, dream],
+      ['fx2', 230, 52, dream],
+      ['fx3', 244, 32, dream],
     ]),
     ...fx('thoughts', [
-      ['fx1', 210, 70, thought(3)],
-      ['fx2', 220, 55, thought(4.2)],
-      ['fx3', 231, 38, thought(5.4)],
+      ['fx1', 212, 74, thought(3)],
+      ['fx2', 222, 58, thought(4.2)],
+      ['fx3', 233, 40, thought(5.4)],
     ]),
-    ...fx('sweat', [['fx1', 196, 104, sweat]]),
+    ...fx('sweat', [['fx1', 212, 100, sweat]]),
     ...fx('notes', [
-      ['fx1', 39, 64, note],
-      ['fx2', 213, 96, note],
+      ['fx1', 36, 70, note],
+      ['fx2', 220, 104, note],
     ]),
   ],
 };
+
 
 // Clips ------------------------------------------------------------------------------
 
@@ -647,8 +497,8 @@ const DEF_FORE = Math.atan2(PAW[1] - ELBOW[1], PAW[0] - ELBOW[0]);
 const toDeg = (r: number) => (r * 180) / Math.PI;
 const wrap = (a: number) => ((((a + 180) % 360) + 360) % 360) - 180;
 
-// A paw just out of reach stretches the arm a little (Pip's arms stretch
-// too): the forearm slides down the upper arm, up to this far.
+// A paw just out of reach stretches the arm a little: the forearm slides
+// down the upper arm, up to this far.
 const MAX_STRETCH = 7;
 
 // A paw target, optionally with a minimum stretch (to hold an elbow still
@@ -673,7 +523,7 @@ function solveArm(side: 'L' | 'R', target: Target): [number, number, number] {
   });
   // Of the two ways to bend, take the one with the elbow further out to the
   // side, unless that puts it over his face.
-  const onFace = (e: P) => ((e[0] - 130) / 62) ** 2 + ((e[1] - 118) / 56) ** 2 < 1;
+  const onFace = (e: P) => ((e[0] - 130) / 52) ** 2 + ((e[1] - 113) / 47) ** 2 < 1;
   const score = (e: P) => Math.abs(e[0] - 130) - (onFace(e) ? 1000 : 0);
   options.sort((a, b) => score(b.e) - score(a.e));
   const { u, e } = options[0];
@@ -711,7 +561,7 @@ function reach(side: 'L' | 'R', targets: Target[], at?: number[]): Record<string
 
 const RIG_PIVOT: P = [130, 234];
 // At rest the elbows bow out a touch, so the arms hang soft rather than stiff.
-const REST_L: P = [85, 202.6];
+const REST_L: P = [87, 212.6];
 const nudge = (p: P, dx: number, dy: number): P => [p[0] + dx, p[1] + dy];
 const REST_R: P = [mirrorX(REST_L[0]), REST_L[1]];
 const mx = (p: P): P => [mirrorX(p[0]), p[1]];
@@ -734,8 +584,6 @@ function plant(root: Track, pivot: P, add: Track = {}): Track {
   }
   return out;
 }
-const FOOT_L: P = [108, 224];
-const FOOT_R: P = [152, 224];
 const feet = (root: Track, addL: Track = {}, addR: Track = {}) => ({
   legL: plant(root, FOOT_L, addL),
   legR: plant(root, FOOT_R, addR),
@@ -748,7 +596,7 @@ const shift = <T,>(values: T[], by: number): T[] => {
   const out = [...core.slice(k), ...core.slice(0, k)];
   return [...out, out[0]];
 };
-// Pip's sparkle: pops in, drifts up, fades.
+// A sparkle: pops in, drifts up, fades.
 const sparkle = (i: number): Track => ({
   y: shift([8, 8, -4, -4, -23, -23], i),
   sx: shift([0.3, 0.3, 1, 1, 0.5, 0.5], i),
@@ -772,7 +620,7 @@ const CHEER_ROOT: Track = {
   sy: [1, 1, 0.9, 1.025, 0.93, 1.03, 0.96, 1, 1],
   rotate: [0, 0, 0, -4, 0, 3, 0, 0, 0],
 };
-const CHEER_PAWS: P[] = [REST_L, REST_L, [80, 211], [57, 139], [67, 163], [58, 142], [78, 192], REST_L, REST_L];
+const CHEER_PAWS: P[] = [REST_L, REST_L, [84, 219], [68, 150], [74, 168], [69, 154], [82, 200], REST_L, REST_L];
 
 // Hold a value and cut straight to the next one at each switch time, no fade.
 function cut(first: number, switches: [number, number][]): { at: number[]; opacity: number[] } {
@@ -791,27 +639,27 @@ function cut(first: number, switches: [number, number][]): { at: number[]; opaci
 const SQUEEZE: [number, number][] = [[0.11, 1], [0.21, 0], [0.36, 1], [0.45, 0], [0.55, 1], [0.63, 0]];
 const flip = (sw: [number, number][]): [number, number][] => sw.map(([t, v]) => [t, 1 - v]);
 
-// Pip's idle: a curious head tilt that holds, a glance, a weight shift.
+// Idle: a curious head tilt that holds, a glance, a weight shift.
 const IDLE_AT = [0, 0.2, 0.29, 0.39, 0.48, 0.57, 0.66, 0.76, 1];
 // Wave: the elbow parked out by his side (a little stretched so the paw
-// clears the mane), the paw on a circle round it.
-const WAVE_ELBOW: P = [188.5, 155.7];
+// reaches past his cheek), the paw on a circle round it.
+const WAVE_ELBOW: P = [178, 171];
 const WAVE = (deg: number): Target => [
   WAVE_ELBOW[0] + ARM_L2 * Math.cos((deg * Math.PI) / 180),
   WAVE_ELBOW[1] + ARM_L2 * Math.sin((deg * Math.PI) / 180),
   Math.hypot(WAVE_ELBOW[0] - mirrorX(SHOULDER[0]), WAVE_ELBOW[1] - SHOULDER[1]) - ARM_L1,
 ];
 const WAVE_ROOT: Track = { at: [0, 0.07, 0.18, 0.78, 0.88, 1], y: [0, 1, -3, -3, 1, 0], rotate: [0, 0.5, -3, -3, 1, 0] };
-const THINK_CHIN: P = [148, 163];
+const THINK_CHIN: P = [146, 161];
 // Each paw rolls round a loop twice per bar: up and out, down across his
 // chest, low by his side, back up the outside. The paws are half a loop apart.
 const DANCE_AT = [0, 0.25, 0.5, 0.75, 1];
-const DANCE_PAWS: P[] = [[61, 139], [108, 202], [61, 139], [108, 202], [61, 139]];
+const DANCE_PAWS: P[] = [[70, 153], [110, 208], [70, 153], [110, 208], [70, 153]];
 const DANCE_ROOT: Track = { x: [-4, 0, 4, 0, -4], rotate: [-5, 0, 5, 0, -5], y: [0, -4, 0, -4, 0] };
 const LOVE_ROOT: Track = { at: [0, 0.22, 0.4, 0.7, 1], y: [0, -3, -4.5, -3, 0], sx: [1, 1.02, 1.035, 1.02, 1], sy: [1, 1.025, 1.04, 1.025, 1] };
 const OOPS_ROOT: Track = { at: [0, 0.1, 0.3, 1], y: [0, 3, 0, 0], sx: [1, 1.05, 1, 1], sy: [1, 0.94, 1, 1] };
 const EAT_PICK: P = [127, 192];
-const EAT_MOUTH: P = [127, 161];
+const EAT_MOUTH: P = [125, 154];
 const IDLE_ROOT: Track = { at: [0, 0.22, 0.3, 0.4, 0.49, 0.58, 0.66, 0.76, 1], x: [0, 0, 2, 2, 0, -1, -1, 0, 0], rotate: [0, 0, 1.8, 1.8, 0, -1, -1, 0, 0] };
 
 export const CLIPS: Record<Pose, Clip> = {
@@ -833,13 +681,12 @@ export const CLIPS: Record<Pose, Clip> = {
       browR: { at: IDLE_AT, y: [0, 0, -1.5, -1.5, 0, -2, -2, 0, 0] },
       tail: { at: [0, 0.21, 0.35, 0.5, 0.71, 0.85, 1], rotate: [-5, 8, -2, -5, 8, -2, -5] },
       tuft: { at: [0, 0.26, 0.4, 0.55, 0.76, 0.9, 1], rotate: [6, -8, 2, 6, -8, 2, 6] },
-      ties: { rotate: [-6, 8, -6, 8, -6, 8, -6], sx: [1, 0.94, 1, 0.94, 1, 0.94, 1] },
       crest: { at: IDLE_AT, rotate: [0, 0, 4, 3, 0, -3, -2, 0, 0] },
       earL: { at: [0, 0.62, 0.65, 0.68, 0.71, 1], rotate: [0, 0, -14, 5, 0, 0] },
       earR: { at: [0, 0.65, 0.68, 0.71, 0.74, 1], rotate: [0, 0, 11, -4, 0, 0] },
     },
   },
-  // Pip's hello: arm up, wave three times, a wink in the middle.
+  // Hello: arm up, wave three times, a wink in the middle.
   wave: {
     ms: 2800,
     loop: true,
@@ -851,7 +698,7 @@ export const CLIPS: Record<Pose, Clip> = {
       // the forearm swings from it, and the paw drops back in an arc.
       ...reach(
         'R',
-        [REST_R, [180, 210], WAVE(-80), WAVE(-44), WAVE(-92), WAVE(-46), WAVE(-92), WAVE(-46), WAVE(-86), REST_R],
+        [REST_R, [172, 213], WAVE(-80), WAVE(-44), WAVE(-92), WAVE(-46), WAVE(-92), WAVE(-46), WAVE(-86), REST_R],
         [0, 0.07, 0.17, 0.26, 0.35, 0.44, 0.53, 0.62, 0.71, 1],
       ),
       ...reach('L', [REST_L, REST_L, nudge(REST_L, -1.2, 0.4), nudge(REST_L, -1, 0.4), REST_L], [0, 0.1, 0.24, 0.8, 0.94]),
@@ -865,11 +712,10 @@ export const CLIPS: Record<Pose, Clip> = {
       browL: { at: [0, 0.2, 0.8, 1], y: [0, -2.5, -2.5, 0] },
       tail: { rotate: [-8, 12, -8, 12, -8, 12, -8] },
       tuft: { rotate: [8, -10, 8, -10, 8, -10, 8] },
-      ties: { rotate: [-6, 10, -6, 10, -6] },
       earR: { at: [0, 0.24, 0.32, 1], rotate: [0, 0, 10, 0] },
     },
   },
-  // Pip's cheer: crouch, launch, hang, land, a smaller rebound.
+  // Cheer: crouch, launch, hang, land, a smaller rebound.
   cheer: {
     ms: 3600,
     loop: true,
@@ -900,7 +746,6 @@ export const CLIPS: Record<Pose, Clip> = {
       // The tail drags down as he goes up and flicks up as he lands, the tuft a beat behind.
       tail: { at: CHEER_AT, rotate: [0, 2, 8, -14, 10, -12, 8, -3, 0] },
       tuft: { at: [0, 0.1, 0.2, 0.33, 0.44, 0.54, 0.64, 0.74, 1], rotate: [0, 0, -6, 12, -10, 10, -8, 4, 0] },
-      ties: { rotate: [-6, 8, -6, 8, -6, 8, -6, 8, -6, 8, -6] },
       crest: { at: [0, 0.18, 0.32, 0.43, 0.53, 0.64, 1], rotate: [0, 6, -10, 8, -6, 3, 0] },
       earL: { at: [0, 0.18, 0.32, 0.43, 0.53, 1], rotate: [0, 6, -14, 6, -8, 0] },
       earR: { at: [0, 0.18, 0.32, 0.43, 0.53, 1], rotate: [0, -6, 14, -6, 8, 0] },
@@ -919,8 +764,8 @@ export const CLIPS: Record<Pose, Clip> = {
     tracks: {
       // Paws hold the covers by their outer edges. To turn the page the
       // right paw lifts its corner, flicks it over and goes back.
-      ...reach('L', [[98.5, 198], [98.5, 198], [98, 199], [98.5, 198]], [0, 0.6, 0.72, 1]),
-      ...reach('R', [[161.5, 198], [161.5, 198], [159, 199], [150, 190], [140, 189], [161.5, 198], [161.5, 198]], [0, 0.5, 0.56, 0.62, 0.68, 0.84, 1]),
+      ...reach('L', [[98.5, 199], [98.5, 199], [98, 200], [98.5, 199]], [0, 0.6, 0.72, 1]),
+      ...reach('R', [[161.5, 199], [161.5, 199], [159, 200], [150, 191], [140, 190], [161.5, 199], [161.5, 199]], [0, 0.5, 0.56, 0.62, 0.68, 0.84, 1]),
       page: { at: [0, 0.57, 0.6, 0.69, 0.78, 0.83, 1], sx: [1, 1, 1, 0, -1, -1, -1], y: [0, 0, 0, -3, 0, 0, 0], opacity: [0, 0, 1, 1, 1, 0, 0] },
       head: { at: [0, 0.25, 0.5, 0.62, 0.8, 1], rotate: [1, 2.5, 1, -2, 1, 1], y: [3, 4, 3, 2, 3, 3] },
       gaze: { at: [0, 0.3, 0.45, 0.6, 1], x: [-2, 1, 2, -2, -2] },
@@ -928,7 +773,6 @@ export const CLIPS: Record<Pose, Clip> = {
       browR: { at: [0, 0.3, 0.38, 0.5, 1], y: [0, 0, -3, 0, 0] },
       tail: { rotate: [0, 5, 0, -4, 0] },
       tuft: { rotate: [4, -3, -6, 3, 4] },
-      ties: { rotate: [-4, 6, -4, 6, -4] },
     },
   },
   // Holding a plate of dhokla, popping a piece in, chewing happily.
@@ -942,7 +786,7 @@ export const CLIPS: Record<Pose, Clip> = {
       // Right paw holds the thali from below; the left dips in, picks up the
       // near piece, brings it up and pops it in, then drops back to his side.
       ...reach('R', [[156, 208]]),
-      ...reach('L', [REST_L, [81, 207], EAT_PICK, [123, 184], EAT_MOUTH, EAT_MOUTH, [110, 182], REST_L, REST_L], [0, 0.07, 0.19, 0.25, 0.34, 0.42, 0.52, 0.66, 1]),
+      ...reach('L', [REST_L, [84, 215], EAT_PICK, [123, 184], EAT_MOUTH, EAT_MOUTH, [110, 182], REST_L, REST_L], [0, 0.07, 0.19, 0.25, 0.34, 0.42, 0.52, 0.66, 1]),
       snack: cut(0, [[0.19, 1], [0.405, 0]]),
       plateTop: { at: [0, 0.186, 0.19, 0.9, 0.96, 1], opacity: [1, 1, 0, 0, 1, 1], sx: [1, 1, 0.3, 0.3, 1, 1], sy: [1, 1, 0.3, 0.3, 1, 1] },
       mouthO: {
@@ -956,10 +800,9 @@ export const CLIPS: Record<Pose, Clip> = {
       browR: { at: [0, 0.42, 0.52, 0.62, 0.72, 1], y: [0, -2.5, 0, -2.5, 0, 0] },
       tail: { rotate: [0, 9, 0, 9, 0] },
       tuft: { rotate: [0, -8, 4, -8, 0] },
-      ties: { rotate: [-4, 6, -4, 6, -4] },
     },
   },
-  // Pip's ponder: paw to cheek, head tilted, one brow up, eyes searching.
+  // Ponder: paw to chin, head tilted, one brow up, eyes searching.
   think: {
     ms: 5600,
     loop: true,
@@ -968,15 +811,14 @@ export const CLIPS: Record<Pose, Clip> = {
     front: ['armRTop'],
     tracks: {
       // Paw under his chin, elbow out, tapping twice while he ponders.
-      ...reach('R', [THINK_CHIN, THINK_CHIN, [149.5, 166.5], THINK_CHIN, [149.5, 166.5], THINK_CHIN], [0, 0.35, 0.43, 0.51, 0.59, 1]),
-      ...reach('L', [[85, 203], [85.4, 202.4], [85, 203]]),
+      ...reach('R', [THINK_CHIN, THINK_CHIN, [147.5, 164.5], THINK_CHIN, [147.5, 164.5], THINK_CHIN], [0, 0.35, 0.43, 0.51, 0.59, 1]),
+      ...reach('L', [[87, 213], [87.4, 212.4], [87, 213]]),
       head: { at: [0, 0.35, 0.65, 0.8, 1], rotate: [7, 11, 11, 4, 7], y: [0, 2, 2, 0, 0] },
       gaze: { at: [0, 0.35, 0.65, 1], x: [2, -2, -2, 2], y: [-1, -0.5, -0.5, -1] },
       browR: { y: [-2.6], rotate: [-6] },
       browL: { at: [0, 0.35, 0.65, 1], y: [-1.8, -1.3, -1.3, -1.8], rotate: [2, 4, 4, 2] },
       tail: { rotate: [0, 6, 0] },
       tuft: { rotate: [4, -4, 4] },
-      ties: { rotate: [-4, 4, -4] },
       fx1: { at: [0, 0.35, 0.7, 1], opacity: [0.25, 1, 0.25, 0.25], y: [0, -4, 0, 0] },
       fx2: { at: [0, 0.1, 0.45, 0.8, 1], opacity: [0.25, 0.25, 1, 0.25, 0.25], y: [0, 0, -4, 0, 0] },
       fx3: { at: [0, 0.2, 0.55, 0.9, 1], opacity: [0.25, 0.25, 1, 0.25, 0.25], y: [0, 0, -4, 0, 0] },
@@ -1004,12 +846,11 @@ export const CLIPS: Record<Pose, Clip> = {
       earL: { at: [0, 0.1, 0.8, 1], rotate: [0, -22, -16, 0] },
       earR: { at: [0, 0.1, 0.8, 1], rotate: [0, 22, 16, 0] },
       crest: { at: [0, 0.16, 0.34, 0.5, 0.66, 1], rotate: [0, 8, -10, 7, -3, 0] },
-      ties: { at: [0, 0.16, 0.34, 0.5, 1], rotate: [0, 12, -8, 6, 0] },
       tail: { at: [0, 0.1, 0.4, 1], rotate: [0, 14, 6, 0] },
       fx1: { at: [0, 0.15, 0.7, 1], y: [-4, 0, 9, 13], opacity: [0, 1, 1, 0] },
     },
   },
-  // Two quick nods with happy eyes; brows bounce, crest and tail catch up.
+  // Two quick nods with happy eyes; brows bounce, the curl and tail catch up.
   nod: {
     ms: 1000,
     loop: false,
@@ -1023,14 +864,13 @@ export const CLIPS: Record<Pose, Clip> = {
       browL: { at: [0, 0.18, 0.36, 0.54, 1], y: [0, -3, 0, -3, 0] },
       browR: { at: [0, 0.18, 0.36, 0.54, 1], y: [0, -3, 0, -3, 0] },
       crest: { at: [0, 0.24, 0.42, 0.6, 0.8, 1], rotate: [0, -7, 9, -5, 3, 0] },
-      ties: { at: [0, 0.24, 0.42, 0.6, 1], rotate: [0, 10, -6, 6, 0] },
       earL: { at: [0, 0.24, 0.42, 0.6, 1], rotate: [0, 6, -6, 4, 0] },
       earR: { at: [0, 0.24, 0.42, 0.6, 1], rotate: [0, -6, 6, -4, 0] },
       tail: { at: [0, 0.3, 0.55, 0.8, 1], rotate: [0, 14, -4, 10, 0] },
       tuft: { at: [0, 0.38, 0.62, 0.88, 1], rotate: [0, -12, 6, -8, 0] },
     },
   },
-  // Pip's nap: head lowered, relaxed eyes, no brows, a little snore.
+  // Nap: head lowered, relaxed eyes, no brows, a little snore.
   sleep: {
     ms: 4800,
     loop: true,
@@ -1046,7 +886,6 @@ export const CLIPS: Record<Pose, Clip> = {
       browL: { opacity: [0] },
       browR: { opacity: [0] },
       crest: { rotate: [7, 9, 7] },
-      ties: { rotate: [22, 26, 22] },
       earL: { rotate: [-12] },
       earR: { rotate: [12] },
       tail: { rotate: [10, 12, 10] },
@@ -1077,13 +916,12 @@ export const CLIPS: Record<Pose, Clip> = {
       // Wagging on the beat, carried low so the left paw sweeps above it.
       tail: { rotate: [-16, -30, -16, -30, -16, -30, -16, -30, -16] },
       tuft: { at: [0, 0.06, 0.185, 0.31, 0.435, 0.56, 0.685, 0.81, 0.935, 1], rotate: [2, 6, -8, 6, -8, 6, -8, 6, -8, 2] },
-      ties: { rotate: [-8, 10, -8, 10, -8] },
       crest: { rotate: [-6, -10, 6, 10, -6] },
       fx1: rise(0, 20, -6),
       fx2: rise(1, 20, 6),
     },
   },
-  // Pip's heart-hug: lifts up, tilts in, paws to his chest, blushing.
+  // Heart-hug: lifts up, tilts in, paws to his chest, blushing.
   love: {
     ms: 2800,
     loop: true,
@@ -1104,7 +942,6 @@ export const CLIPS: Record<Pose, Clip> = {
       browR: { at: [0, 0.25, 0.7, 1], y: [0, -2.5, -2.5, 0] },
       tail: { rotate: [-8, 12, -8, 12, -8] },
       tuft: { rotate: [8, -10, 8, -10, 8] },
-      ties: { rotate: [-6, 8, -6, 8, -6] },
       fx1: { at: [0, 0.08, 0.24, 0.42, 0.9, 1], y: [22, 22, 0, 0, -36, -36], x: [0, 0, 0, 0, -9, -9], opacity: [0, 0, 0.95, 0.95, 0, 0], sx: [0.3, 0.3, 1, 1, 0.75, 0.75], sy: [0.3, 0.3, 1, 1, 0.75, 0.75] },
       fx2: { at: [0, 0.16, 0.32, 0.5, 0.98, 1], y: [22, 22, 0, 0, -36, -36], x: [0, 0, 0, 0, 9, 9], opacity: [0, 0, 0.95, 0.95, 0, 0], sx: [0.3, 0.3, 1, 1, 0.75, 0.75], sy: [0.3, 0.3, 1, 1, 0.75, 0.75] },
       fx3: { at: [0, 0.24, 0.4, 0.58, 1], y: [22, 22, 0, 0, -30], x: [0, 0, 0, 0, -6], opacity: [0, 0, 0.95, 0.95, 0], sx: [0.3, 0.3, 1, 1, 0.8], sy: [0.3, 0.3, 1, 1, 0.8] },
@@ -1184,7 +1021,7 @@ export function findNode(id: string, node: RigNode = RIG): RigNode | undefined {
   return undefined;
 }
 
-// Ambient motion, on top of every clip (Pip breathes at the same pace).
+// Ambient motion, on top of every clip.
 export const BREATH_MS = 3800;
 export const BREATH_SY = [1, 1.025, 1];
 export const BREATH_SX = [1, 1.012, 1];

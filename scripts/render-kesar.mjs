@@ -122,10 +122,10 @@ if (cmd === 'icons') {
   const still = (opts) => svgFor('idle', 0, { showBubble: false, ...opts });
   // Zoom in so he fills the icon.
   const zoom = (svg, box) => svg.replace(`viewBox="${VB}"`, `viewBox="${box}"`);
-  writeFileSync('assets/icon.png', render(zoom(still({ background: '#FCEBD3' }), '20 6 220 220'), 1024).png);
+  writeFileSync('assets/icon.png', render(zoom(still({ background: '#FCEBD3' }), '15 14 230 230'), 1024).png);
   writeFileSync('assets/splash-icon.png', render(zoom(still(), '10 0 240 240'), 1024).png);
   writeFileSync('assets/android-icon-foreground.png', render(zoom(still(), '-30 -40 320 320'), 512).png);
-  writeFileSync('assets/favicon.png', render(zoom(still(), '64 14 132 132'), 48).png);
+  writeFileSync('assets/favicon.png', render(zoom(still(), '50 14 160 160'), 48).png);
   // Android's themed icon: one flat silhouette that the launcher tints.
   const mono = zoom(still({ shadow: false }), '-30 -40 320 320')
     .replace(/(<svg[^>]*>)/, '$1<defs><filter id="mono"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter></defs><g filter="url(#mono)">')
@@ -134,7 +134,7 @@ if (cmd === 'icons') {
   // Home-screen icons for the installed web app. iOS rounds the corners
   // itself; the maskable one leaves room for Android's circle crop.
   mkdirSync('public/icons', { recursive: true });
-  const tile = zoom(still({ background: '#FCEBD3' }), '20 6 220 220');
+  const tile = zoom(still({ background: '#FCEBD3' }), '15 14 230 230');
   writeFileSync('public/icons/icon-192.png', render(tile, 192).png);
   writeFileSync('public/icons/icon-512.png', render(tile, 512).png);
   writeFileSync('public/icons/apple-touch-icon.png', render(tile, 180).png);
