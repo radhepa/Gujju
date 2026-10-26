@@ -12,6 +12,7 @@ import { Kesar } from '../mascot/Kesar';
 import { useKeys } from '../session/useKeys';
 import { useProgress } from '../state/progress';
 import { Button } from '../ui/Button';
+import { Combo } from '../ui/Combo';
 import { buzz } from '../ui/feedback';
 import { Screen } from '../ui/Screen';
 import { SentenceView } from '../ui/SentenceView';
@@ -46,6 +47,8 @@ export function ClozePlayer({
   const [useChoices, setUseChoices] = useState(mode === 'choice');
   const [showTr, setShowTr] = useState(snapshot.settings.alwaysShowTranslit);
   const [word, setWord] = useState<string | null>(null);
+  // Right answers in a row, for the flame by the progress bar.
+  const [run, setRun] = useState(0);
   const misses = useRef<Record<string, number>>({});
   const firstTry = useRef<Record<string, boolean>>({});
 
@@ -60,6 +63,7 @@ export function ClozePlayer({
   const answer = (chosen: string, correct: boolean) => {
     if (!card || answered) return;
     buzz(correct);
+    setRun((n) => (correct ? n + 1 : 0));
     if (!(card.cardId in firstTry.current)) firstTry.current[card.cardId] = correct;
     if (!correct) {
       misses.current[card.cardId] = (misses.current[card.cardId] ?? 0) + 1;
@@ -143,6 +147,7 @@ export function ClozePlayer({
         <View style={styles.bar}>
           <View style={[styles.fill, { width: `${Math.max(Math.min(progress, 1), 0.02) * 100}%` }]} />
         </View>
+        <Combo count={run} />
         <Pressable onPress={() => setShowTr((v) => !v)} accessibilityLabel="Show transliteration" hitSlop={10}>
           <Ionicons name={showTr ? 'text' : 'text-outline'} size={24} color={showTr ? colors.teal : colors.locked} />
         </Pressable>

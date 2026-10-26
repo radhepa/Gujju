@@ -10,6 +10,7 @@ import { backspace, KEYBOARD, letterTiles, writeCardId } from '../lib/write';
 import { Kesar } from '../mascot/Kesar';
 import { useKeys } from '../session/useKeys';
 import { Button } from '../ui/Button';
+import { Combo } from '../ui/Combo';
 import { buzz } from '../ui/feedback';
 import { Screen } from '../ui/Screen';
 import { Speak } from '../ui/Speak';
@@ -37,6 +38,8 @@ export function WritePlayer({
   const [typed, setTyped] = useState('');
   const [answered, setAnswered] = useState<boolean | null>(null);
   const [showTr, setShowTr] = useState(false);
+  // Right answers in a row, for the flame by the progress bar.
+  const [run, setRun] = useState(0);
   const misses = useRef<Record<string, number>>({});
   const firstTry = useRef<Record<string, boolean>>({});
 
@@ -47,6 +50,7 @@ export function WritePlayer({
   const id = word ? writeCardId(word.id) : '';
 
   const miss = () => {
+    setRun(0);
     misses.current[id] = (misses.current[id] ?? 0) + 1;
     if (!(id in firstTry.current)) firstTry.current[id] = false;
   };
@@ -55,6 +59,7 @@ export function WritePlayer({
     if (!word || !built || answered !== null) return;
     const ok = normGu(built) === normGu(word.gujarati);
     buzz(ok);
+    setRun((n) => (ok ? n + 1 : 0));
     if (!(id in firstTry.current)) firstTry.current[id] = ok;
     if (!ok) {
       misses.current[id] = (misses.current[id] ?? 0) + 1;
@@ -125,6 +130,7 @@ export function WritePlayer({
         <View style={styles.bar}>
           <View style={[styles.fill, { width: `${Math.max(Math.min(progress, 1), 0.02) * 100}%` }]} />
         </View>
+        <Combo count={run} />
       </View>
 
       <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.body}>

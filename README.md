@@ -23,9 +23,10 @@ Runs on iOS and the web from one Expo codebase. On a phone it installs from the 
   - **Out and about, A2** (16 to 26): yesterday and tomorrow, directions, the whole family with the in-laws, shopping, numbers up to 99 with દોઢ and અઢી, the body and feelings, asking nicely, cooking with Ba, describing, can and must
   - **Real conversations, B1** (27 to 32): what's happening now and what already has, childhood and "used to", helper verbs, because and if, phone calls home, festivals and family visits
   - About 440 words and 360 sentences. [docs/curriculum.md](docs/curriculum.md) explains the order
+- **A letter challenge**, because reading the script is where people get stuck. A minute of quick-fire letters against the clock: see a letter and pick its sound, or hear a sound and pick the letter. Fast answers score more, five in a row doubles your points, and you chase your own best. Six challenges: vowels, consonants, the barakhadi (every vowel sign on every letter: ગી, ગિ, ગે), lookalikes only (ઘ or ધ? ટ or ઠ?), digits, and everything mixed, plus a daily mix of what's due and what's shaky. A miss shows the two letters side by side, and the round ends with the pairs you mixed up. Every letter, sign and digit has its own review schedule and a mastery level, shown on a letter board you can tap for notes, lookalikes and words that use it. There's a no-timer mode too
 - **Five exercise types**: pick the sound, pick the letter, match pairs, build the word from letter tiles, build the sentence from a word bank
 - **Short lessons**: 10 to 12 exercises, about five minutes. Anything you miss comes back at the end of the lesson until you get it
-- **No hearts**: a wrong answer costs you the retry and nothing else
+- **No hearts**: a wrong answer costs you the retry and nothing else. Answer several in a row and a flame by the progress bar counts the run
 - **Spaced repetition** with FSRS. Every letter, word and sentence has its own schedule, and the home screen shows how many are due today
 - **XP and a daily streak**, plus a test-out quiz to skip a unit you already know
 - **Transliteration fades out** across units 8 to 10 (shown, then tap-to-reveal, then gone) so you end up actually reading the script
@@ -81,7 +82,7 @@ src/app/            screens (Expo Router)
 src/lib/            exercises, lesson session, scoring, FSRS, streak; no React
 src/storage/        one Store interface, SQLite on iOS, IndexedDB on web
 src/session/        the lesson player and the five exercise views
-src/practice/       the sentence practice player
+src/practice/       the sentence, writing and letter challenge players
 src/mascot/         Kesar's rig (parts, joints, clips) and the component that animates it
 src/state/          progress context, the only thing screens talk to
 scripts/            renders Kesar outside the app: pose sheet, README gif, app icons

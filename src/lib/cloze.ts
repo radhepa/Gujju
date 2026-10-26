@@ -60,8 +60,9 @@ export function cardIdFor(source: PracticeSource, sentenceId: string): string {
   return source.kind === 'collection' ? `cz:${sentenceId}` : `bk:${source.id.slice(5)}:${sentenceId}`;
 }
 
-// Cards outside the course: sentence practice (cz:, bk:) and spelling (wr:).
-export const isPracticeCard = (id: string) => id.startsWith('cz:') || id.startsWith('bk:') || id.startsWith('wr:');
+// Cards outside the course: sentence practice (cz:, bk:), spelling (wr:)
+// and the letter challenge (lt:).
+export const isPracticeCard = (id: string) => /^(cz|bk|wr|lt):/.test(id);
 export const isSentenceCard = (id: string) => id.startsWith('cz:') || id.startsWith('bk:');
 
 export interface ClozeContext {

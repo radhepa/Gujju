@@ -167,6 +167,10 @@ export interface Settings {
   writeMode: WriteMode;
   // Watch & Listen entries the learner has ticked off.
   watched: string[];
+  // Letter challenge: against the clock, or untimed.
+  letterTimed: boolean;
+  // Best sprint score for each letter set.
+  letterBest: Record<string, number>;
   // When a backup file was last saved on this device. Not synced.
   lastBackup: string | null;
 }
@@ -179,6 +183,8 @@ export const DEFAULT_SETTINGS: Settings = {
   speak: true,
   writeMode: 'tiles',
   watched: [],
+  letterTimed: true,
+  letterBest: {},
   lastBackup: null,
 };
 

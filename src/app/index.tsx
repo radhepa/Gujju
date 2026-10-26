@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { course, SECTIONS } from '../content/course';
 import { grammarForUnit } from '../content/guides';
 import { isSentenceCard } from '../lib/cloze';
+import { glyphCatalog, isLetterCard, letterCardId, masteryOf } from '../lib/letters';
 import { isWriteCard } from '../lib/write';
 import { useLevel } from '../state/level';
 import { unitStatuses, type UnitStatus } from '../lib/progress';
@@ -17,12 +18,16 @@ import { Rich } from '../ui/Rich';
 import { Gu, Text } from '../ui/Text';
 import { colors, shadow } from '../ui/theme';
 
+const glyphs = glyphCatalog(course);
+
 export default function Home() {
   const { completed, streak, xpToday, dueIds, learnedIds, snapshot, cardRows } = useProgress();
   const now = new Date();
   const rows = [...cardRows.values()];
   const sentencesDue = rows.filter((c) => isSentenceCard(c.itemId) && isDue(c, now)).length;
   const writeDue = rows.filter((c) => isWriteCard(c.itemId) && isDue(c, now)).length;
+  const lettersDue = rows.filter((c) => isLetterCard(c.itemId) && isDue(c, now)).length;
+  const lettersMastered = glyphs.filter((g) => masteryOf(cardRows.get(letterCardId(g.id))) === 4).length;
   const level = useLevel();
   const goal = snapshot.settings.dailyGoal;
   const statuses = unitStatuses(course, completed);
@@ -82,6 +87,33 @@ export default function Home() {
         </View>
         {dueIds.length > 0 && <Button label="Review" variant="green" onPress={() => router.push('/review')} />}
       </View>
+
+      <Pressable
+        onPress={() => router.push('/letters')}
+        style={({ pressed }) => [styles.letters, shadow, pressed && { opacity: 0.85 }]}
+        accessibilityRole="button"
+        accessibilityLabel="Letter challenge"
+      >
+        <View style={styles.lettersBadge}>
+          <Gu bold style={styles.lettersGlyph}>
+            ઘ
+          </Gu>
+          <Gu style={styles.lettersGlyphSmall}>ધ</Gu>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text weight="black" style={styles.lettersTitle}>
+            Letter challenge
+          </Text>
+          <Text style={styles.reviewSub}>
+            {lettersDue
+              ? `${lettersDue} ${lettersDue === 1 ? 'letter' : 'letters'} ready for a refresh`
+              : lettersMastered
+                ? `${lettersMastered} of ${glyphs.length} letters mastered`
+                : 'A minute of quick-fire reading. Beat your best.'}
+          </Text>
+        </View>
+        <Ionicons name="flash" size={26} color={colors.primary} />
+      </Pressable>
 
       <View style={styles.tiles}>
         <Tile icon="chatbubbles" label="Sentences" sub={sentencesDue ? `${sentencesDue} due` : 'વાક્યો'} color={colors.primary} onPress={() => router.push('/practice')} />
@@ -323,6 +355,30 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   reviewCount: { fontSize: 18 },
+  letters: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: colors.card,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: colors.primary,
+    padding: 12,
+    marginBottom: 12,
+    marginTop: -6,
+  },
+  lettersBadge: {
+    width: 56,
+    height: 56,
+    borderRadius: 14,
+    backgroundColor: colors.primarySoft,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  lettersGlyph: { fontSize: 28, lineHeight: 42, color: colors.primaryDeep },
+  lettersGlyphSmall: { fontSize: 18, lineHeight: 28, color: colors.primary, marginTop: 10 },
+  lettersTitle: { fontSize: 17 },
   level: { backgroundColor: colors.tealSoft, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2 },
   levelText: { color: colors.teal, fontSize: 13 },
   goal: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 12, marginTop: -4 },

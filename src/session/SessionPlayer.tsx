@@ -6,6 +6,7 @@ import { current, isFinished, startSession, submit, summarize, type Summary } fr
 import type { Exercise } from '../lib/types';
 import { Kesar } from '../mascot/Kesar';
 import { Button } from '../ui/Button';
+import { Combo } from '../ui/Combo';
 import { buzz } from '../ui/feedback';
 import { Screen } from '../ui/Screen';
 import { Gu, Text } from '../ui/Text';
@@ -28,6 +29,8 @@ export function SessionPlayer({
 }) {
   const [session, setSession] = useState(() => startSession(exercises));
   const [result, setResult] = useState<Result | null>(null);
+  // Right answers in a row, for the flame by the progress bar.
+  const [run, setRun] = useState(0);
   const ex = current(session);
 
   const finished = useRef(false);
@@ -45,6 +48,7 @@ export function SessionPlayer({
         return;
       }
       buzz(r.correct);
+      setRun((n) => (r.correct ? n + 1 : 0));
       setResult(r);
     },
     [ex?.kind],
@@ -74,6 +78,7 @@ export function SessionPlayer({
         <View style={styles.bar}>
           <View style={[styles.fill, { width: `${Math.max(progress, 0.02) * 100}%` }]} />
         </View>
+        <Combo count={run} />
       </View>
 
       {retry && !result ? (
@@ -100,7 +105,7 @@ export function SessionPlayer({
             <Kesar size={76} reaction={result.correct ? 'nod' : 'oops'} reactionKey={session.index} tappable={false} />
             <View style={{ flex: 1 }}>
               <Text weight="black" style={[styles.verdict, { color: result.correct ? colors.greenDark : colors.redDark }]}>
-                {result.correct ? 'Nice!' : ex.kind === 'match-pairs' ? 'Almost. This one comes back later.' : 'Correct answer:'}
+                {result.correct ? (run >= 5 ? `${run} in a row!` : 'Nice!') : ex.kind === 'match-pairs' ? 'Almost. This one comes back later.' : 'Correct answer:'}
               </Text>
               {!result.correct && result.solution ? (
                 result.solutionIsGujarati ? (
