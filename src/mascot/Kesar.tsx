@@ -18,7 +18,9 @@ import {
   BREATH_SX,
   BREATH_SY,
   CLIPS,
+  FIDGETS,
   PARALLAX,
+  TRICKS,
   RIG,
   densify,
   findNode,
@@ -122,6 +124,12 @@ function Node({ node, clip, d, size }: { node: RigNode; clip: Clip; d: Drivers; 
   );
 }
 
+// Any of these but the one he just did.
+const pick = (from: Pose[], not?: Pose) => {
+  const pool = from.filter((p) => p !== not);
+  return pool[Math.floor(Math.random() * pool.length)];
+};
+
 function useReducedMotion() {
   const [reduced, setReduced] = useState(false);
   useEffect(() => {
@@ -146,7 +154,7 @@ export function Kesar({
   // Plays once over `pose` whenever `reactionKey` changes.
   reaction?: Pose;
   reactionKey?: number | string;
-  // Tap to make him wave.
+  // Tap and he waves; tap again for a trick.
   tappable?: boolean;
   greetOnMount?: boolean;
   style?: StyleProp<ViewStyle>;
@@ -168,6 +176,13 @@ export function Kesar({
   useEffect(() => {
     if (reaction) setPlaying((p) => ({ pose: reaction, n: (p?.n ?? 0) + 1 }));
   }, [reaction, reactionKey]);
+
+  // Left idle a while, he amuses himself: a stretch, a wash, a sneeze.
+  useEffect(() => {
+    if (reduced || playing || pose !== 'idle') return;
+    const timer = setTimeout(() => setPlaying({ pose: pick(FIDGETS), n: 0 }), 14000 + Math.random() * 16000);
+    return () => clearTimeout(timer);
+  }, [pose, playing, reduced]);
 
   // The clip clock.
   useEffect(() => {
@@ -241,12 +256,17 @@ export function Kesar({
     return () => clearTimeout(timer);
   }, [d, reduced]);
 
-  const wave = () => setPlaying((p) => ({ pose: 'wave', n: (p?.n ?? 0) + 1 }));
+  // The first tap says hello; after that every tap gets a different trick.
+  const taps = useRef(0);
+  const tap = () => {
+    const next = taps.current++ ? pick(TRICKS, playing?.pose) : 'wave';
+    setPlaying((p) => ({ pose: next, n: (p?.n ?? 0) + 1 }));
+  };
   const showBubble = !!clip.bubble && size >= 56;
 
   return (
     <Pressable
-      onPress={tappable ? wave : undefined}
+      onPress={tappable ? tap : undefined}
       disabled={!tappable}
       accessibilityRole="image"
       accessibilityLabel="Kesar the lion"
@@ -254,7 +274,7 @@ export function Kesar({
     >
       <View ref={box} style={{ width: size, height: size }}>
         <Node node={RIG} clip={clip} d={d} size={size} />
-        {showBubble && <Bubble text={clip.bubble!} size={size} />}
+        {showBubble && <Bubble key={clip.bubble} text={clip.bubble!} size={size} />}
       </View>
     </Pressable>
   );

@@ -3,6 +3,7 @@
 //   node scripts/render-kesar.mjs poses      # docs/kesar-poses.png, one frame of every pose
 //   node scripts/render-kesar.mjs gif        # docs/kesar.gif
 //   node scripts/render-kesar.mjs icons      # app icon, splash, adaptive icon, favicon
+//   node scripts/render-kesar.mjs frames sneeze [out.png]   # ten stills through one clip
 //
 // Reads the same rig data as the app (src/mascot/rig.ts), so what you see
 // here is what the app draws.
@@ -54,11 +55,13 @@ function draw(node, clip, t, ambient, gaze) {
 }
 
 function bubble(text) {
-  return `<g transform="translate(160 -18)">
-    <rect width="104" height="44" rx="20" fill="#fff" stroke="#7A3D14" stroke-width="3"/>
+  // Roughly as wide as the text (resvg can't measure it), like the app's minWidth.
+  const w = Math.max(104, text.length * 12 + 20);
+  return `<g transform="translate(${Math.min(160, 266 - w)} -18)">
+    <rect width="${w}" height="44" rx="20" fill="#fff" stroke="#7A3D14" stroke-width="3"/>
     <path d="M18 42l-8 14 20-12" fill="#fff" stroke="#7A3D14" stroke-width="3" stroke-linejoin="round"/>
     <rect x="12" y="38" width="22" height="5" fill="#fff"/>
-    <text x="52" y="30" font-family="Noto Sans Gujarati" font-size="21" text-anchor="middle" fill="#2A2420">${text}</text>
+    <text x="${w / 2}" y="30" font-family="Noto Sans Gujarati" font-size="21" text-anchor="middle" fill="#2A2420">${text}</text>
   </g>`;
 }
 
@@ -95,10 +98,26 @@ const cmd = process.argv[2] ?? 'poses';
 
 if (cmd === 'poses') {
   const poses = Object.keys(CLIPS);
-  const pick = { cheer: 0.5, wave: 0.18, eat: 0.3, oops: 0.25, nod: 0.25, dance: 0.25 };
-  const out = sheet(poses.map((p) => svgFor(p, pick[p] ?? 0.3)), 260, 4, CREAM);
+  const pick = {
+    cheer: 0.5, wave: 0.18, eat: 0.3, oops: 0.25, nod: 0.25, dance: 0.25,
+    giggle: 0.38, stretch: 0.5, roar: 0.38, spin: 0.62, pounce: 0.55, groom: 0.55, sneeze: 0.47, shake: 0.4,
+    clap: 0.5, namaste: 0.42, flex: 0.4, wink: 0.45, hiccup: 0.2, mango: 0.6, kite: 0.68, chai: 0.42, butterfly: 0.7,
+  };
+  // Only the wave keeps its bubble: resvg's Gujarati shaping garbles some words.
+  const out = sheet(poses.map((p) => svgFor(p, pick[p] ?? 0.3, { showBubble: p === 'wave' })), 220, 6, CREAM);
   writeFileSync('docs/kesar-poses.png', out.png);
   console.log('docs/kesar-poses.png', poses.join(', '));
+}
+
+// A strip of stills through one clip, for checking a pose frame by frame.
+if (cmd === 'frames') {
+  const pose = process.argv[3];
+  if (!CLIPS[pose]) throw new Error(`No such pose: ${pose}`);
+  const n = 10;
+  const out = sheet([...Array(n)].map((_, i) => svgFor(pose, i / (n - 1))), 200, 5, CREAM);
+  const file = process.argv[4] ?? `kesar-${pose}.png`;
+  writeFileSync(file, out.png);
+  console.log(file);
 }
 
 if (cmd === 'gif') {

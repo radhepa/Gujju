@@ -2,7 +2,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Kesar, type Pose } from '../mascot/Kesar';
-import { CLIPS } from '../mascot/rig';
 import { goBack } from '../ui/nav';
 import { Screen } from '../ui/Screen';
 import { Gu, Text } from '../ui/Text';
@@ -20,11 +19,55 @@ const LABELS: Record<Pose, string> = {
   sleep: 'Nothing due',
   dance: 'Garba time',
   love: 'Thank you',
+  namaste: 'Namaste',
+  mango: 'Kesar mango',
+  chai: 'Chai time',
+  kite: 'Uttarayan',
+  butterfly: 'Butterfly',
+  sing: 'Singing',
+  clap: 'Shabash!',
+  roar: 'Mighty roar',
+  pounce: 'Pounce!',
+  spin: 'Twirl',
+  flex: 'So strong',
+  wink: 'Wink',
+  giggle: 'Giggles',
+  shy: 'Shy',
+  pout: 'Sulking',
+  stretch: 'Big stretch',
+  groom: 'Washing up',
+  shake: 'Fluff up',
+  sneeze: 'Achoo',
+  hiccup: 'Hiccups',
 };
+// The poses he uses around the app; the rest are just him.
+const MOODS: Pose[] = ['idle', 'wave', 'cheer', 'read', 'eat', 'think', 'oops', 'nod', 'sleep', 'dance', 'love'];
+const FUN = (Object.keys(LABELS) as Pose[]).filter((p) => !MOODS.includes(p));
 
 export default function KesarScreen() {
   const [pose, setPose] = useState<Pose>('idle');
   const [bump, setBump] = useState(0);
+
+  const chips = (poses: Pose[]) => (
+    <View style={styles.grid}>
+      {poses.map((p) => (
+        <Pressable
+          key={p}
+          onPress={() => {
+            setPose(p);
+            setBump((b) => b + 1);
+          }}
+          style={[styles.chip, p === pose && styles.chipOn]}
+          accessibilityRole="button"
+          accessibilityState={{ selected: p === pose }}
+        >
+          <Text weight="black" style={[styles.chipText, p === pose && { color: colors.primaryDark }]}>
+            {LABELS[p]}
+          </Text>
+        </Pressable>
+      ))}
+    </View>
+  );
 
   return (
     <Screen>
@@ -43,27 +86,17 @@ export default function KesarScreen() {
       </View>
       <Text style={styles.about}>
         A Gir lion, from the forest where Gujarat's lions live. He's named after kesar: saffron, the colour of his mane,
-        and the Gir Kesar mango that grows in the same forest. Tap him to say hello.
+        and the Gir Kesar mango that grows in the same forest. Tap him to say hello, and keep tapping for tricks.
       </Text>
 
-      <View style={styles.grid}>
-        {(Object.keys(CLIPS) as Pose[]).map((p) => (
-          <Pressable
-            key={p}
-            onPress={() => {
-              setPose(p);
-              setBump((b) => b + 1);
-            }}
-            style={[styles.chip, p === pose && styles.chipOn]}
-            accessibilityRole="button"
-            accessibilityState={{ selected: p === pose }}
-          >
-            <Text weight="black" style={[styles.chipText, p === pose && { color: colors.primaryDark }]}>
-              {LABELS[p]}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
+      <Text weight="black" style={styles.section}>
+        Around the app
+      </Text>
+      {chips(MOODS)}
+      <Text weight="black" style={styles.section}>
+        Just for fun
+      </Text>
+      {chips(FUN)}
     </Screen>
   );
 }
@@ -81,7 +114,8 @@ const styles = StyleSheet.create({
     borderColor: colors.line,
   },
   about: { fontSize: 14, color: colors.muted, lineHeight: 20, marginVertical: 14 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  section: { fontSize: 13, color: colors.muted, textTransform: 'uppercase', letterSpacing: 0.6, marginTop: 6, marginBottom: 8 },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 12 },
   chip: {
     paddingHorizontal: 14,
     paddingVertical: 9,

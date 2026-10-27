@@ -168,8 +168,10 @@ Kesar is a lion cub drawn chibi: a big round head in a puffy two-tone mane, roun
 
 He's a layered SVG rig in the same spirit as a puppet: about 30 parts, each turning on its own joint (shoulder, elbow, neck, ears, tail and the tuft at its tip, the curl on top of his mane). Poses are data in `src/mascot/rig.ts`, keyframes with their own timing, so a clip can have a crouch before a jump, a squash on landing, and a tail that catches up a beat late. Arms are posed by saying where the paw should go; a two-bone solver works out the shoulder and elbow.
 
-His face does a lot of the acting: brows lift, worry and squeeze into a wink, eyes widen or glance around, the blush deepens. On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
+His face does a lot of the acting: brows lift, worry and squeeze into a wink, eyes widen or glance around, the blush deepens, and a clip can cut between eyes (open, shut, ^ ^, > <, a wink) and mouths partway through. On top of every clip he breathes, blinks at random, and his eyes follow your pointer on the web, with the face sliding a little toward where he's looking so the head seems to turn. Reduced-motion settings are respected.
+
+Besides the eleven poses the app uses, he has twenty just for fun: namaste, a Kesar mango he admires and hugs, cutting chai he blows on and sips, a patang for Uttarayan, a butterfly that lands on his nose (he goes cross-eyed), singing, clapping (શાબાશ!), a mighty roar that comes out small, a pounce, a twirl, a flex, a wink, giggles, shyness, a sulk, a big stretch, washing up like a cat, a shake that fluffs his mane, a sneeze and hiccups. Tap him and he waves; keep tapping for a different trick each time. Leave him idle and every so often he stretches, washes, shakes, sneezes, hiccups or winks on his own. All of them are on the Kesar screen.
 
 <img src="docs/kesar-poses.png" alt="All of Kesar's poses" width="560">
 
-`npm run kesar -- poses|gif|icons` renders him outside the app from the same rig, which is how the gif above and the app icon are made.
+`npm run kesar -- poses|gif|icons|frames <pose>` renders him outside the app from the same rig, which is how the gif above and the app icon are made.
